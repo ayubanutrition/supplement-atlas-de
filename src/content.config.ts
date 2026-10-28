@@ -9,6 +9,10 @@ const wirkstoffe = defineCollection({
     title: z.string(),
     description: z.string().max(170),
     substanceId: z.string(),
+    /** Kurzantwort oben auf der Seite (ein Absatz). */
+    summary: z.string(),
+    /** Zusätzliche Quellen-IDs aus data/sources.json, die im Fließtext genannt werden. */
+    extraSources: z.array(z.string()).default([]),
     status: z.enum(['draft', 'published']),
     author: z.string(),
     reviewedBy: z.string().nullable(),

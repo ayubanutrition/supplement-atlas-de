@@ -1,0 +1,44 @@
+// Kategorie-Konfiguration: Texte und Bezugsgrößen je Wirkstoff.
+// Neue Kategorie = ein Eintrag hier + Daten + Artikel (content/wirkstoffe).
+export interface Category {
+  substanceId: string;
+  /** URL-Segment: /wirkstoffe/<slug>/ und /vergleich/<slug>/ */
+  slug: string;
+  name: string;
+  /** Bezugsstoff für den Preisvergleich, wie auf Etiketten deklariert. */
+  unit: string;
+  /** Kurzform für Tabellen. */
+  unitShort: string;
+  calculatorPath: string;
+  /** Hinweis unter dem Vergleich: wann Preis/100 g Pulver ≠ Preis/100 g Wirkstoff. */
+  basisNote: string;
+}
+
+export const CATEGORIES: Category[] = [
+  {
+    substanceId: 'kreatin',
+    slug: 'kreatin',
+    name: 'Kreatin',
+    unit: 'Kreatin-Monohydrat',
+    unitShort: 'Kreatin-Monohydrat',
+    calculatorPath: '/rechner/kreatinpreis/',
+    basisNote:
+      'Alle erfassten Produkte bestehen laut Anbieter zu 100 % aus Kreatin-Monohydrat, deshalb entspricht der Preis pro 100 g Pulver dem Preis pro 100 g Kreatin-Monohydrat.',
+  },
+  {
+    substanceId: 'whey-protein',
+    slug: 'whey-protein',
+    name: 'Whey-Protein',
+    unit: 'Protein',
+    unitShort: 'Protein',
+    calculatorPath: '/rechner/proteinpreis/',
+    basisNote:
+      'Whey-Pulver enthält neben Eiweiß auch Kohlenhydrate, Fett und Aromen. Darum rechnen wir den Preis auf 100 g enthaltenes Protein laut Nährwerttabelle um, nicht auf 100 g Pulver.',
+  },
+];
+
+export const categoryBySubstance = (id: string): Category => {
+  const c = CATEGORIES.find((x) => x.substanceId === id);
+  if (!c) throw new Error(`Keine Kategorie-Konfiguration für ${id}`);
+  return c;
+};

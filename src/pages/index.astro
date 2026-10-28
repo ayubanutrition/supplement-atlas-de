@@ -4,35 +4,35 @@ import { getDataset } from '../lib/load.ts';
 import { published } from '../lib/schema.ts';
 import { formatEur } from '../lib/price.ts';
 import { publishedProducts } from '../lib/view.ts';
+import { CATEGORIES } from '../lib/categories.ts';
 
 const d = getDataset();
-const products = publishedProducts(d, 'kreatin');
 const sourceCount = d.sources.length;
 const duels = published(d.duels);
+const areas = CATEGORIES.map((cat) => {
+  const views = publishedProducts(d, cat.substanceId);
+  const per = views.map((v) => v.latest?.payablePer100).filter((x): x is number => typeof x === 'number');
+  return { cat, views, min: Math.min(...per), max: Math.max(...per) };
+}).filter((a) => a.views.length > 0);
 ---
 <Base title="Supplement Atlas – Nahrungsergänzung nachvollziehbar vergleichen" description="Unabhängiger Vergleich von Nahrungsergänzungsmitteln für Deutschland: Preis pro Gramm Wirkstoff, Etikettangaben und Studienlage – jede Angabe mit Quelle und Datum.">
   <section style="padding:24px 0 8px">
     <h1 style="max-width:18ch">Nahrungsergänzung vergleichen – mit Belegen statt Versprechen.</h1>
     <p class="lede">Wir rechnen Preise auf die enthaltene Wirkstoffmenge um, stellen Etikettangaben nebeneinander und fassen die Studienlage nüchtern zusammen. Jede veränderliche Angabe trägt eine Quelle und ein Abrufdatum.</p>
-    <p style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn" href="/vergleich/kreatin/">Kreatin vergleichen</a> <a class="btn secondary" href="/rechner/kreatinpreis/">Preis pro 100 g berechnen</a></p>
+    <p style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn" href="/vergleich/kreatin/">Kreatin vergleichen</a> <a class="btn secondary" href="/rechner/">Preis pro 100 g berechnen</a></p>
   </section>
 
-  <h2>Erster Bereich: Kreatin</h2>
-  <div class="grid grid-3">
-    <a class="card" href="/wirkstoffe/kreatin/" style="text-decoration:none;color:inherit">
-      <strong>Wirkstoff</strong>
-      <p class="small" style="margin-bottom:0">Was belegt ist, was nicht, welche Aussagen die EU zulässt und was zur Sicherheit bekannt ist.</p>
-    </a>
-    <a class="card" href="/vergleich/kreatin/" style="text-decoration:none;color:inherit">
-      <strong>Vergleich</strong>
-      <p class="small" style="margin-bottom:0">{products.length} erfasste Produkte, Preis pro 100 g Kreatin-Monohydrat von {formatEur(Math.min(...products.map((p) => p.latest?.payablePer100 ?? Infinity)))} bis {formatEur(Math.max(...products.map((p) => p.latest?.payablePer100 ?? 0)))}.</p>
-    </a>
-    <a class="card" href="/rechner/kreatinpreis/" style="text-decoration:none;color:inherit">
-      <strong>Preisrechner</strong>
-      <p class="small" style="margin-bottom:0">Eigenes Angebot eingeben und auf 100 g Wirkstoff umrechnen – inklusive Versand.</p>
-    </a>
+  <h2>Bereiche</h2>
+  <div class="grid grid-2">
+    {areas.map((a) => (
+      <div class="card">
+        <h3 style="margin-top:0">{a.cat.name}</h3>
+        <p class="small">{a.views.length} erfasste Produkte, Preis pro 100 g {a.cat.unit} von {formatEur(a.min)} bis {formatEur(a.max)} (ohne Code, ohne Versand).</p>
+        <p class="small" style="margin-bottom:0"><a href={`/wirkstoffe/${a.cat.slug}/`}>Wirkstoff &amp; Studienlage</a> · <a href={`/vergleich/${a.cat.slug}/`}>Vergleich</a> · <a href={a.cat.calculatorPath}>Rechner</a></p>
+      </div>
+    ))}
   </div>
-  {duels.length > 0 && <p class="small">Direktvergleich: {duels.map((x) => <a href={`/duell/${x.slug}/`}>{x.question.split(':')[0]}</a>)}</p>}
+  {duels.length > 0 && <p class="small">Direktvergleiche: {duels.map((x, i) => <>{i > 0 && ' · '}<a href={`/duell/${x.slug}/`}>{x.question.split(':')[0]}</a></>)}</p>}
 
   <h2>So arbeiten wir</h2>
   <div class="grid grid-2">

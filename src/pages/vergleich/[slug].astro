@@ -4,27 +4,34 @@ import CompareTable from '../../components/CompareTable.astro';
 import PriceBars from '../../components/PriceBars.astro';
 import { getDataset } from '../../lib/load.ts';
 import { published } from '../../lib/schema.ts';
+import { CATEGORIES, type Category } from '../../lib/categories.ts';
 import { formatDate, publishedProducts } from '../../lib/view.ts';
 
+export function getStaticPaths() {
+  const d = getDataset();
+  return CATEGORIES.filter((c) => publishedProducts(d, c.substanceId).length > 0).map((cat) => ({ params: { slug: cat.slug }, props: { cat } }));
+}
+interface Props { cat: Category }
+const { cat } = Astro.props;
 const d = getDataset();
-const views = publishedProducts(d, 'kreatin');
+const views = publishedProducts(d, cat.substanceId);
 const duels = published(d.duels).filter((x) => views.some((v) => v.product.id === x.a));
 const dates = views.flatMap((v) => (v.latest ? [v.latest.obs.observedAt] : [])).sort();
 const asOf = dates.length ? formatDate(dates[dates.length - 1]) : '–';
 ---
 <Base
-  title="Kreatin-Monohydrat im Vergleich: Preis pro 100 g und Etikettangaben"
-  description={`${views.length} Kreatin-Monohydrat-Pulver im Vergleich: Preis pro 100 g, Zutaten, Portionsgröße und Versand – mit Quellen und Abrufdatum.`}
+  title={`${cat.name} im Vergleich: Preis pro 100 g ${cat.unit} und Etikettangaben`}
+  description={`${views.length} Produkte (${cat.name}) im Vergleich: Preis pro 100 g ${cat.unit}, Zutaten, Portionsgröße und Versand – mit Quellen und Abrufdatum.`}
 >
-  <p class="crumbs"><a href="/">Start</a> › <a href="/wirkstoffe/kreatin/">Kreatin</a> › Vergleich</p>
-  <h1>Kreatin-Monohydrat im Vergleich</h1>
-  <p class="lede">Wir vergleichen erfasste Kreatin-Pulver nach dem, was sich belegen lässt: Preis pro 100 g Kreatin-Monohydrat, Zusammensetzung laut Etikett und Versandbedingungen. Stand: {asOf}.</p>
+  <p class="crumbs"><a href="/">Start</a> › <a href={`/wirkstoffe/${cat.slug}/`}>{cat.name}</a> › Vergleich</p>
+  <h1>{cat.name} im Vergleich</h1>
+  <p class="lede">Wir vergleichen erfasste Produkte nach dem, was sich belegen lässt: Preis pro 100 g {cat.unit}, Zusammensetzung laut Etikett und Versandbedingungen. Stand: {asOf}.</p>
 
   <div class="note">
     <strong>Kein Testsieger.</strong> Wir haben keine eigenen Laboranalysen und vergeben noch keine Noten – die Bewertungsrubrik ist in Arbeit. Bisher erfasst: {views.length} Produkte. Die Auswahl ist keine Marktübersicht.
   </div>
 
-  <h2>Preis pro 100 g Kreatin-Monohydrat</h2>
+  <h2>Preis pro 100 g {cat.unit}</h2>
   <PriceBars
     caption="Ohne Rabattcode zahlbarer Preis am Erfassungstag, ohne Versand. Gleiche Skala für alle Balken."
     items={views.map((v) => ({
@@ -38,10 +45,10 @@ const asOf = dates.length ? formatDate(dates[dates.length - 1]) : '–';
     caption="Zum Vergleich: regulärer bzw. vom Shop angegebener Streichpreis pro 100 g."
     items={views.map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.regularPer100 ?? null }))}
   />
-  <p class="small muted">Beide Produkte bestehen laut Anbieter zu 100 % aus Kreatin-Monohydrat, deshalb entspricht der Preis pro 100 g Pulver hier dem Preis pro 100 g Kreatin-Monohydrat. Eigene Packung umrechnen: <a href="/rechner/kreatinpreis/">Kreatin-Preisrechner</a>.</p>
+  <p class="small muted">{cat.basisNote} Eigene Packung umrechnen: <a href={cat.calculatorPath}>Preisrechner</a>.</p>
 
   <h2>Etikett und Konditionen</h2>
-  <CompareTable views={views} caption={`Angaben der Anbieter, erfasst am ${asOf}. Auf schmalen Bildschirmen seitlich wischen.`} />
+  <CompareTable views={views} unit={cat.unit} caption={`Angaben der Anbieter, erfasst am ${asOf}. Auf schmalen Bildschirmen seitlich wischen.`} />
 
   {duels.length > 0 && (
     <>

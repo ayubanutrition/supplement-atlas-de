@@ -97,7 +97,7 @@ export const ClaimSchema = z.object({
 export const EvidenceSchema = z.object({
   id,
   sourceId: id,
-  topic: z.enum(['uebersicht', 'kraft', 'koerperzusammensetzung', 'aeltere', 'kognition', 'nieren']),
+  topic: z.enum(['uebersicht', 'kraft', 'koerperzusammensetzung', 'aeltere', 'kognition', 'nieren', 'muskel', 'quellen', 'sicherheit']),
   title: z.string(),
   pmid: z.string().regex(/^\d+$/).nullable(),
   doi: z.string().nullable(),

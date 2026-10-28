@@ -1,0 +1,21 @@
+---
+import Base from '../../layouts/Base.astro';
+import PriceCalculator from '../../components/PriceCalculator.astro';
+---
+<Base
+  title="Proteinpreis-Rechner: Preis pro 100 g Protein"
+  description="Rechne den Packungspreis eines Proteinpulvers auf 100 g enthaltenes Protein um – mit Eiweißgehalt aus der Nährwerttabelle und Versandkosten."
+>
+  <p class="crumbs"><a href="/">Start</a> › <a href="/rechner/">Rechner</a> › Protein</p>
+  <h1>Proteinpreis-Rechner</h1>
+  <p class="lede">Rechnet einen Packungspreis auf <strong>100 g enthaltenes Protein</strong> um. Pulver mit weniger Eiweiß je 100 g sind sonst scheinbar günstiger, als sie sind.</p>
+  <PriceCalculator
+    unit="Protein"
+    weightHint="Nettofüllmenge laut Etikett, z. B. 1000 für ein Kilo."
+    shareLabel="Protein je 100 g Produkt in g"
+    shareHint="Aus der Nährwerttabelle, Zeile „Eiweiß“ je 100 g (nicht je Portion)."
+    sharePlaceholder="z. B. 75"
+    formula="Preis pro 100 g Protein = (Packungspreis + Versand) ÷ (Packungsinhalt × Proteinanteil ÷ 100) × 100"
+  />
+  <p><a href="/vergleich/whey-protein/">Zum Whey-Protein-Vergleich mit erfassten Preisen →</a></p>
+</Base>

@@ -2,6 +2,8 @@
 title: "Kreatin: Wirkung, Belege, Sicherheit und Preisvergleich"
 description: "Was Kreatin nachweislich bewirkt, welche Aussagen die EU zulässt, was zu Nieren und Kognition bekannt ist – und wie man Preise fair vergleicht."
 substanceId: kreatin
+summary: "Zusammen mit Krafttraining führt Kreatin-Monohydrat in Studien zu etwas mehr Kraftzuwachs und fettfreier Masse als Training allein. In der EU zugelassen sind Aussagen zur Schnellkraftleistung und – für über 55-Jährige mit Krafttraining – zur Muskelkraft, jeweils bei 3 g Kreatin täglich. Für die Gehirnleistung ist ein Nutzen nicht belegt. 3 g pro Tag gelten für gesunde Erwachsene als unbedenklich."
+extraSources: ["vkm-2016-56", "efsa-2016-4400", "efsa-2024-9100"]
 status: published
 author: "Redaktion Supplement Atlas (KI-gestützter Entwurf)"
 reviewedBy: null

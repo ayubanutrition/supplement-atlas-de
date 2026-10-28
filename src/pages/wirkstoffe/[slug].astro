@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import PriceBars from '../../components/PriceBars.astro';
 import SourceList from '../../components/SourceList.astro';
 import { getDataset } from '../../lib/load.ts';
+import { categoryBySubstance } from '../../lib/categories.ts';
 import { formatDate, publishedProducts, sourceMap } from '../../lib/view.ts';
 
 export async function getStaticPaths() {
@@ -13,7 +14,7 @@ export async function getStaticPaths() {
     const unreviewed = entries.filter((e) => !e.data.reviewedBy).map((e) => e.id);
     if (unreviewed.length) throw new Error(`Ohne fachliche Prüfung nicht veröffentlichbar: ${unreviewed.join(', ')}`);
   }
-  return entries.map((entry) => ({ params: { slug: entry.data.substanceId }, props: { entry } }));
+  return entries.map((entry) => ({ params: { slug: categoryBySubstance(entry.data.substanceId).slug }, props: { entry } }));
 }
 interface Props { entry: CollectionEntry<'wirkstoffe'> }
 const { entry } = Astro.props;
@@ -22,7 +23,11 @@ const d = getDataset();
 const src = sourceMap(d);
 const ev = d.evidence.find((e) => e.substanceId === entry.data.substanceId);
 const products = publishedProducts(d, entry.data.substanceId);
+const cat = categoryBySubstance(entry.data.substanceId);
 const topics: Record<string, string> = {
+  muskel: 'Muskelaufbau und Kraft',
+  quellen: 'Proteinquellen im Vergleich',
+  sicherheit: 'Sicherheit und Nierenfunktion',
   kraft: 'Kraft (Erwachsene unter 50)',
   koerperzusammensetzung: 'Körperzusammensetzung',
   aeltere: 'Ältere Erwachsene',
@@ -32,9 +37,7 @@ const topics: Record<string, string> = {
 };
 const used = [
   ...(ev?.claims.map((c) => c.sourceId) ?? []),
-  'vkm-2016-56',
-  'efsa-2016-4400',
-  'efsa-2024-9100',
+  ...entry.data.extraSources,
   ...(ev?.evidence.map((e) => e.sourceId) ?? []),
 ]
   .map((id) => src.get(id))
@@ -43,7 +46,7 @@ const ref = (id: string) => used.findIndex((s) => s.id === id) + 1;
 ---
 <Base title={entry.data.title} description={entry.data.description}>
   <p class="crumbs"><a href="/">Start</a> › Wirkstoffe</p>
-  <h1>{entry.data.title.split(':')[0]}</h1>
+  <h1>{cat.name}</h1>
   <div class="meta-line">
     <span>Aktualisiert: {formatDate(entry.data.updatedAt)}</span>
     <span>Text: {entry.data.author}</span>
@@ -51,7 +54,7 @@ const ref = (id: string) => used.findIndex((s) => s.id === id) + 1;
   </div>
 
   <div class="answer">
-    <p><strong>Kurz gesagt:</strong> Zusammen mit Krafttraining führt Kreatin-Monohydrat in Studien zu etwas mehr Kraftzuwachs und fettfreier Masse als Training allein. In der EU zugelassen sind Aussagen zur Schnellkraftleistung und – für über 55-Jährige mit Krafttraining – zur Muskelkraft, jeweils bei 3 g Kreatin täglich. Für die Gehirnleistung ist ein Nutzen nicht belegt. 3 g pro Tag gelten für gesunde Erwachsene als unbedenklich.</p>
+    <p><strong>Kurz gesagt:</strong> {entry.data.summary}</p>
   </div>
 
   <Content />
@@ -59,7 +62,7 @@ const ref = (id: string) => used.findIndex((s) => s.id === id) + 1;
   {ev && (
     <>
       <h2 id="claims">Zugelassene und abgelehnte Aussagen in der EU</h2>
-      <div class="table-scroll" role="region" aria-label="EU-Aussagen zu Kreatin" tabindex="0">
+      <div class="table-scroll" role="region" aria-label={`EU-Aussagen zu ${cat.name}`} tabindex="0">
         <table>
           <thead><tr><th scope="col">Status</th><th scope="col">Wortlaut</th><th scope="col">Bedingungen</th><th scope="col">Rechtsgrundlage</th></tr></thead>
           <tbody>
@@ -100,10 +103,10 @@ const ref = (id: string) => used.findIndex((s) => s.id === id) + 1;
     <>
       <h2>Erfasste Produkte</h2>
       <PriceBars
-        caption="Preis pro 100 g Kreatin-Monohydrat, ohne Code, ohne Versand."
+        caption={`Preis pro 100 g ${cat.unit}, ohne Code, ohne Versand.`}
         items={products.map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.payablePer100 ?? null, note: v.latest?.isSale ? 'Aktionspreis' : undefined }))}
       />
-      <p><a class="btn" href="/vergleich/kreatin/">Zum Kreatin-Vergleich</a> <a class="btn secondary" href="/rechner/kreatinpreis/">Preis selbst berechnen</a></p>
+      <p><a class="btn" href={`/vergleich/${cat.slug}/`}>Zum {cat.name}-Vergleich</a> <a class="btn secondary" href={cat.calculatorPath}>Preis selbst berechnen</a></p>
     </>
   )}
 

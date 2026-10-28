@@ -1,0 +1,12 @@
+{
+  "id": "myprotein",
+  "name": "Myprotein",
+  "legalProvider": {
+    "name": "THG Nutrition Poland Sp. z o.o.",
+    "address": "Magazynowa 1, 55-040 Magnice, Polen (laut AGB bei manchen Zahlungsarten THG Nutrition Limited, Vereinigtes Königreich)",
+    "sourceId": "myprotein-agb"
+  },
+  "parentCompany": null,
+  "countries": ["DE"],
+  "status": "published"
+}

@@ -1,0 +1,109 @@
+[
+  {
+    "id": "esn-ultrapure-produktseite",
+    "kind": "label",
+    "title": "ESN Ultrapure Kreatin Pulver – Produktseite (Variante Neutral, 500 g)",
+    "publisher": "ESN / Fitmart GmbH & Co. KG",
+    "url": "https://www.esn.com/products/esn-ultrapure-creatine-monohydrate",
+    "retrievedAt": "2026-10-28T23:37:10Z",
+    "note": "Preis aus Shopify-Produktdaten und sichtbarem Text (identisch). Nährwerte-Tab im Browser gerendert am 28.10.2026, 23:43 UTC. Eine Zutatenliste wird auf der Seite nicht angezeigt."
+  },
+  {
+    "id": "esn-impressum",
+    "kind": "impressum",
+    "title": "ESN – Impressum / Kontaktinformationen",
+    "publisher": "Fitmart GmbH & Co. KG",
+    "url": "https://www.esn.com/policies/contact-information",
+    "retrievedAt": "2026-10-28T23:39:11Z",
+    "note": null
+  },
+  {
+    "id": "myprotein-kreatin-produktseite",
+    "kind": "label",
+    "title": "Myprotein Kreatin Monohydrat – Produktseite (Geschmacksneutral, 500 g)",
+    "publisher": "Myprotein / THG Nutrition",
+    "url": "https://de.myprotein.com/p/sporternahrung/creatine-monohydrat/12456626/?variation=12456635",
+    "retrievedAt": "2026-10-28T23:39:46Z",
+    "note": "Preis aus strukturierten Produktdaten (JSON-LD) und sichtbarem Text (identisch). SKU 12456635."
+  },
+  {
+    "id": "myprotein-versand",
+    "kind": "shop",
+    "title": "Myprotein – Lieferinformationen",
+    "publisher": "Myprotein / THG Nutrition",
+    "url": "https://de.myprotein.com/c/customer-services/delivery-information/",
+    "retrievedAt": "2026-10-28T23:40:28Z",
+    "note": null
+  },
+  {
+    "id": "myprotein-agb",
+    "kind": "impressum",
+    "title": "Myprotein – Allgemeine Geschäftsbedingungen (im Footer als „Impressum“ verlinkt)",
+    "publisher": "Myprotein / THG Nutrition",
+    "url": "https://de.myprotein.com/c/customer-services/terms-and-conditions/",
+    "retrievedAt": "2026-10-28T23:40:36Z",
+    "note": "Vertragspartner hängt laut AGB von der Zahlungsart ab."
+  },
+  {
+    "id": "vo-432-2012",
+    "kind": "regulation",
+    "title": "Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025)",
+    "publisher": "Europäische Kommission, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820",
+    "retrievedAt": "2026-10-28",
+    "note": "Wortlaut über die amtliche Fassung des Amts für Veröffentlichungen (Cellar) geprüft."
+  },
+  {
+    "id": "vo-2017-672",
+    "kind": "regulation",
+    "title": "Durchführungsverordnung (EU) 2017/672 – Zulassung einer Angabe zu Kreatin und Krafttraining bei Erwachsenen über 55",
+    "publisher": "Europäische Kommission, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32017R0672",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "vo-2026-1118",
+    "kind": "regulation",
+    "title": "Verordnung (EU) 2026/1118 – Nichtzulassung einer Angabe zu Kreatin und kognitiver Funktion",
+    "publisher": "Europäische Kommission, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/eli/reg/2026/1118/oj",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "efsa-2016-4400",
+    "kind": "authority",
+    "title": "EFSA NDA Panel: Creatine in combination with resistance training and improvement in muscle strength (EFSA Journal 2016;14(2):4400)",
+    "publisher": "Europäische Behörde für Lebensmittelsicherheit (EFSA)",
+    "url": "https://doi.org/10.2903/j.efsa.2016.4400",
+    "retrievedAt": "2026-10-28",
+    "note": "Zusammenfassung geprüft (PubMed)."
+  },
+  {
+    "id": "efsa-2024-9100",
+    "kind": "authority",
+    "title": "EFSA NDA Panel: Creatine and improvement in cognitive function (EFSA Journal 2024;22:e9100)",
+    "publisher": "Europäische Behörde für Lebensmittelsicherheit (EFSA)",
+    "url": "https://doi.org/10.2903/j.efsa.2024.9100",
+    "retrievedAt": "2026-10-28",
+    "note": "Zusammenfassung geprüft (PubMed)."
+  },
+  {
+    "id": "vkm-2016-56",
+    "kind": "authority",
+    "title": "VKM Report 2016:56 – Risk assessment of „other substances“: Creatine",
+    "publisher": "Norwegischer Wissenschaftlicher Ausschuss für Lebensmittelsicherheit (VKM)",
+    "url": "https://vkm.no/download/18.645b840415d03a2fe8f25c8c/1502798218123/cbe622e758.pdf",
+    "retrievedAt": "2026-10-28",
+    "note": "Volltext gelesen. Keine deutsche Behörde; eine BfR-Bewertung zu Kreatin haben wir nicht gefunden."
+  },
+  { "id": "pmid-28615996", "kind": "study", "title": "Kreider et al. (2017): ISSN position stand – safety and efficacy of creatine supplementation", "publisher": "J Int Soc Sports Nutr", "url": "https://pubmed.ncbi.nlm.nih.gov/28615996/", "retrievedAt": "2026-10-28", "note": null },
+  { "id": "pmid-39519498", "kind": "study", "title": "Wang et al. (2024): Creatine and resistance training on muscle strength in adults <50 years – systematic review and meta-analysis", "publisher": "Nutrients", "url": "https://pubmed.ncbi.nlm.nih.gov/39519498/", "retrievedAt": "2026-10-28", "note": null },
+  { "id": "pmid-39074168", "kind": "study", "title": "Desai et al. (2024): Creatine and resistance-training-based changes in body composition – systematic review and meta-analysis", "publisher": "J Strength Cond Res", "url": "https://pubmed.ncbi.nlm.nih.gov/39074168/", "retrievedAt": "2026-10-28", "note": null },
+  { "id": "pmid-29138605", "kind": "study", "title": "Chilibeck et al. (2017): Creatine during resistance training on lean tissue mass and strength in older adults – meta-analysis", "publisher": "Open Access J Sports Med", "url": "https://pubmed.ncbi.nlm.nih.gov/29138605/", "retrievedAt": "2026-10-28", "note": null },
+  { "id": "pmid-41388441", "kind": "study", "title": "Liu et al. (2025): Creatine with resistance training on strength and lean mass in the aged – systematic review and meta-analysis", "publisher": "Eur Rev Aging Phys Act", "url": "https://pubmed.ncbi.nlm.nih.gov/41388441/", "retrievedAt": "2026-10-28", "note": null },
+  { "id": "pmid-39070254", "kind": "study", "title": "Xu et al. (2024): Creatine supplementation and cognitive function in adults – systematic review and meta-analysis", "publisher": "Front Nutr", "url": "https://pubmed.ncbi.nlm.nih.gov/39070254/", "retrievedAt": "2026-10-28", "note": null },
+  { "id": "pmid-42035842", "kind": "study", "title": "Tsiaras et al. (2026): Creatine supplementation and kidney function – systematic review and meta-analysis of RCTs", "publisher": "J Ren Nutr", "url": "https://pubmed.ncbi.nlm.nih.gov/42035842/", "retrievedAt": "2026-10-28", "note": "Online vor Druck." },
+  { "id": "pmid-42507286", "kind": "study", "title": "de Souza Almeida et al. (2026): Creatine supplementation and kidney health – systematic review and meta-analysis", "publisher": "Int Urol Nephrol", "url": "https://pubmed.ncbi.nlm.nih.gov/42507286/", "retrievedAt": "2026-10-28", "note": "Online vor Druck." }
+]

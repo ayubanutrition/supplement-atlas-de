@@ -1,0 +1,41 @@
+---
+// Produkte als Spalten, Merkmale als Zeilen; erste Spalte bleibt beim
+// horizontalen Scrollen auf schmalen Bildschirmen stehen.
+import { formatEur } from '../lib/price.ts';
+import { formatDate, formatGrams, type ProductView } from '../lib/view.ts';
+
+interface Props { views: ProductView[]; caption: string }
+const { views, caption } = Astro.props;
+const rows: { label: string; cell: (v: ProductView) => string }[] = [
+  { label: 'Marke / Anbieter', cell: (v) => `${v.brand.name} (${v.brand.legalProvider.name})` },
+  { label: 'Variante', cell: (v) => v.product.variant },
+  { label: 'Zutaten', cell: (v) => v.product.ingredients ?? 'nicht angegeben' },
+  { label: 'Kreatin-Monohydrat je 100 g', cell: (v) => formatGrams(v.product.activePer100g) },
+  { label: 'Portion laut Anbieter', cell: (v) => formatGrams(v.product.servingSizeG) },
+  { label: 'Preis ohne Code', cell: (v) => (v.latest ? `${formatEur(v.latest.payableCents)}${v.latest.isSale ? ' (Aktion)' : ''}` : 'unbekannt') },
+  { label: 'Pro 100 g Kreatin-Monohydrat', cell: (v) => formatEur(v.latest?.payablePer100) },
+  { label: 'Regulär / Streichpreis', cell: (v) => (v.latest ? `${formatEur(v.latest.obs.regularPriceCents)} (${formatEur(v.latest.regularPer100)}/100 g)` : 'unbekannt') },
+  { label: 'Versand', cell: (v) => v.latest?.obs.shipping.note ?? 'unbekannt' },
+  { label: 'Prüfangabe des Anbieters', cell: (v) => (v.product.labTesting.statement ? 'ja, siehe Produktseite (nicht von uns geprüft)' : 'keine konkrete Angabe gefunden') },
+  { label: 'Preis erfasst am', cell: (v) => (v.latest ? formatDate(v.latest.obs.observedAt) + (v.latest.freshness === 'erneut-pruefen' ? ' – erneut zu prüfen' : '') : '–') },
+];
+---
+<div class="table-scroll" role="region" aria-label={caption} tabindex="0">
+  <table class="compare">
+    <caption>{caption}</caption>
+    <thead>
+      <tr>
+        <td></td>
+        {views.map((v) => <th scope="col"><a href={`/produkte/${v.product.id}/`}>{v.product.name}</a></th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map((r) => (
+        <tr>
+          <th scope="row">{r.label}</th>
+          {views.map((v) => <td>{r.cell(v)}</td>)}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>

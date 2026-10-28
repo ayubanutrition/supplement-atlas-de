@@ -1,0 +1,110 @@
+---
+import Base from '../../layouts/Base.astro';
+import SourceList from '../../components/SourceList.astro';
+import { getDataset } from '../../lib/load.ts';
+import { published } from '../../lib/schema.ts';
+import { formatEur } from '../../lib/price.ts';
+import { formatDate, formatGrams, productView, sourceMap, type ProductView } from '../../lib/view.ts';
+
+export function getStaticPaths() {
+  const d = getDataset();
+  return published(d.products).map((p) => ({ params: { id: p.id }, props: { view: productView(d, p) } }));
+}
+interface Props { view: ProductView }
+const { view } = Astro.props;
+const { product: p, brand, latest } = view;
+const d = getDataset();
+const src = sourceMap(d);
+const ref = (id: string | null) => (id ? src.get(id) : undefined);
+const usedSources = [
+  p.label.sourceId,
+  p.rawMaterial.sourceId,
+  p.labTesting.sourceId,
+  brand.legalProvider.sourceId,
+  brand.parentCompany?.sourceId ?? null,
+  ...p.prices.flatMap((x) => [x.sourceId, x.shipping.sourceId]),
+]
+  .map(ref)
+  .filter((s) => s !== undefined);
+const n = (id: string | null) => (id ? usedSources.findIndex((s) => s.id === id) + 1 : 0);
+const duels = published(d.duels).filter((x) => x.a === p.id || x.b === p.id);
+const substance = d.substances.find((s) => s.id === p.substanceId)!;
+---
+<Base title={`${p.name} (${p.variant}) – Daten & Preis`} description={`${p.name} von ${brand.name}: Zutaten, ${p.activeDeclaredAs} je Portion, Preis pro 100 g und Quellen mit Abrufdatum.`}>
+  <p class="crumbs"><a href="/">Start</a> › <a href={`/wirkstoffe/${substance.id}/`}>{substance.name}</a> › Produkt</p>
+  <h1>{p.name}</h1>
+  <div class="meta-line">
+    <span>Marke: {brand.name}</span>
+    <span>Variante: {p.variant}</span>
+    <span>Etikett abgerufen: {formatDate(p.label.retrievedAt)}</span>
+  </div>
+
+  <div class="answer">
+    {latest && latest.payablePer100 !== null ? (
+      <p><strong>{formatEur(latest.payablePer100)} pro 100 g {p.activeDeclaredAs}</strong> bei {formatEur(latest.payableCents)} für {formatGrams(p.netWeightG)}{latest.isSale ? ' (Aktionspreis, ohne Code)' : ''} – {latest.obs.retailer}, Stand {formatDate(latest.obs.observedAt)}, zzgl. Versand.</p>
+    ) : (
+      <p>Preis pro 100 g derzeit nicht berechenbar.</p>
+    )}
+    <p class="small">Das ist eine Preis- und Etikettenübersicht, keine Qualitäts- oder Laborbewertung.</p>
+  </div>
+
+  <h2>Zusammensetzung laut Anbieter</h2>
+  <div class="table-scroll">
+    <table>
+      <tbody>
+        <tr><th scope="row">Zutaten</th><td>{p.ingredients ?? 'auf der Produktseite nicht angegeben'} <a class="sup" href={`#q-${p.label.sourceId}`}>[{n(p.label.sourceId)}]</a></td></tr>
+        <tr><th scope="row">Nettofüllmenge</th><td class="num">{formatGrams(p.netWeightG)}</td></tr>
+        <tr><th scope="row">{p.activeDeclaredAs} je 100 g</th><td class="num">{formatGrams(p.activePer100g)}</td></tr>
+        <tr><th scope="row">Portionsgröße laut Anbieter</th><td class="num">{formatGrams(p.servingSizeG)}{p.activePerServingG !== null && ` (davon ${formatGrams(p.activePerServingG)} ${p.activeDeclaredAs})`}</td></tr>
+        <tr><th scope="row">Rohstoff / Herkunftsangabe</th><td>{p.rawMaterial.name ?? 'nicht angegeben'} {p.rawMaterial.sourceId && <a class="sup" href={`#q-${p.rawMaterial.sourceId}`}>[{n(p.rawMaterial.sourceId)}]</a>}</td></tr>
+        <tr><th scope="row">Allergenhinweis</th><td>{p.allergenNote ?? 'nicht angegeben'}</td></tr>
+        <tr><th scope="row">Prüfangaben des Anbieters</th><td>{p.labTesting.statement ? <>„{p.labTesting.statement}“ <a class="sup" href={`#q-${p.labTesting.sourceId}`}>[{n(p.labTesting.sourceId)}]</a><div class="small muted">Aussage des Anbieters, von uns nicht überprüft.</div></> : 'keine konkrete Angabe gefunden – das ist kein Hinweis auf mangelnde Qualität'}</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  {p.labelNotes.length > 0 && (
+    <>
+      <h3>Hinweise zu den Anbieterangaben</h3>
+      <ul>{p.labelNotes.map((x) => <li>{x}</li>)}</ul>
+    </>
+  )}
+
+  <h2>Preisbeobachtungen</h2>
+  {p.prices.map((obs) => {
+    const v = productView(d, { ...p, prices: [obs] }).latest!;
+    return (
+      <div class="card price-card">
+        <p style="margin-top:0"><strong>{obs.retailer}</strong> ({obs.country}) <a class="sup" href={`#q-${obs.sourceId}`}>[{n(obs.sourceId)}]</a> · erfasst {formatDate(obs.observedAt)} {v.freshness === 'erneut-pruefen' ? <span class="tag warn">erneut zu prüfen</span> : <span class="tag ok">≤ 30 Tage alt</span>}</p>
+        <dl class="kv">
+          {obs.salePriceCents !== null && (
+            <>
+              <dt>Aktionspreis</dt>
+              <dd><strong class="num">{formatEur(obs.salePriceCents)}</strong> · {formatEur(v.salePer100)} pro 100 g<div class="small muted">{obs.saleConditions}</div></dd>
+            </>
+          )}
+          <dt>{obs.salePriceCents !== null ? 'Streichpreis' : 'Preis'}</dt>
+          <dd><strong class="num">{formatEur(obs.regularPriceCents)}</strong> · {formatEur(v.regularPer100)} pro 100 g{obs.regularPriceNote && <div class="small muted">{obs.regularPriceNote}</div>}</dd>
+          <dt>Versand</dt>
+          <dd>{obs.shipping.note} {obs.shipping.sourceId && obs.shipping.sourceId !== obs.sourceId && <a class="sup" href={`#q-${obs.shipping.sourceId}`}>[{n(obs.shipping.sourceId)}]</a>}</dd>
+        </dl>
+      </div>
+    );
+  })}
+
+  <h2>Anbieter</h2>
+  <p>{brand.name} wird angeboten von <strong>{brand.legalProvider.name}</strong>{brand.legalProvider.address && `, ${brand.legalProvider.address}`} <a class="sup" href={`#q-${brand.legalProvider.sourceId}`}>[{n(brand.legalProvider.sourceId)}]</a>.
+    {brand.parentCompany ? <> Mutterunternehmen: {brand.parentCompany.name} <a class="sup" href={`#q-${brand.parentCompany.sourceId}`}>[{n(brand.parentCompany.sourceId)}]</a>.</> : ' Ein Mutterunternehmen haben wir nicht belegt.'}</p>
+
+  {duels.length > 0 && (
+    <>
+      <h2>Direktvergleich</h2>
+      <ul>{duels.map((x) => <li><a href={`/duell/${x.slug}/`}>{x.question}</a></li>)}</ul>
+    </>
+  )}
+
+  <h2>Änderungen</h2>
+  <ul class="small">{p.changelog.map((c) => <li>{formatDate(c.date)}: {c.note}</li>)}</ul>
+
+  <SourceList sources={usedSources} />
+</Base>

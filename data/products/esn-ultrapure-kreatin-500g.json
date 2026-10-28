@@ -1,0 +1,46 @@
+{
+  "id": "esn-ultrapure-kreatin-500g",
+  "brandId": "esn",
+  "substanceId": "kreatin",
+  "name": "ESN Ultrapure Kreatin Pulver",
+  "variant": "Neutral, 500 g",
+  "netWeightG": 500,
+  "activeDeclaredAs": "Kreatin-Monohydrat",
+  "activePer100g": 100,
+  "servingSizeG": 3.5,
+  "activePerServingG": 3.5,
+  "ingredients": null,
+  "rawMaterial": { "name": null, "sourceId": null },
+  "allergenNote": null,
+  "labTesting": {
+    "statement": "Ultrapure Creatine wird regelmäßig von einem externen DAkkS-akkreditierten Labor getestet, um höchste Qualität und Reinheit sicherzustellen.",
+    "sourceId": "esn-ultrapure-produktseite"
+  },
+  "label": { "sourceId": "esn-ultrapure-produktseite", "version": "2026-10-28", "retrievedAt": "2026-10-28T23:43:35Z" },
+  "labelNotes": [
+    "Nährwerte je Tagesportion (3,5 g Pulver): 3500 mg Kreatin-Monohydrat, davon 3000 mg Kreatin. Rechnerisch enthalten 3,5 g Kreatin-Monohydrat etwa 3,08 g Kreatin; der Anbieter rundet ab.",
+    "Eine Zutaten- oder Allergenliste wird auf der Produktseite nicht angezeigt. Der Anteil von 100 % Kreatin-Monohydrat ergibt sich aus der Nährwerttabelle (3,5 g Monohydrat je 3,5 g Pulver).",
+    "Die Seite verlinkt „Alle Laboranalysen (PDF)“; Inhalt und Aktualität haben wir nicht geprüft."
+  ],
+  "prices": [
+    {
+      "retailer": "esn.com",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 2990,
+      "regularPriceNote": "Preis ohne Rabattcode. Auf der Seite werden wechselnde Code-Aktionen beworben; ob sie für diese Variante gelten, haben wir nicht geprüft.",
+      "salePriceCents": null,
+      "saleConditions": null,
+      "shipping": {
+        "note": "4,90 € innerhalb Deutschlands; kostenlos ab 75 € Bestellwert.",
+        "costCents": 490,
+        "freeFromCents": 7500,
+        "sourceId": "esn-ultrapure-produktseite"
+      },
+      "observedAt": "2026-10-28T23:37:10Z",
+      "sourceId": "esn-ultrapure-produktseite"
+    }
+  ],
+  "status": "published",
+  "changelog": [{ "date": "2026-10-28", "note": "Erstaufnahme: Etikettangaben, Preis und Versand erfasst." }]
+}

@@ -1,0 +1,29 @@
+---
+import type { Source } from '../lib/schema.ts';
+import { formatDate } from '../lib/view.ts';
+
+interface Props { sources: Source[]; heading?: string }
+const { sources, heading = 'Quellen' } = Astro.props;
+const kindLabel: Record<Source['kind'], string> = {
+  label: 'Etikett/Produktseite',
+  shop: 'Shopseite',
+  impressum: 'Impressum',
+  study: 'Studie',
+  regulation: 'Rechtsvorschrift',
+  authority: 'Behörde',
+  other: 'Sonstige',
+};
+const unique = [...new Map(sources.map((s) => [s.id, s])).values()];
+---
+<section aria-labelledby="quellen">
+  <h2 id="quellen">{heading}</h2>
+  <ol class="sources">
+    {unique.map((s) => (
+      <li id={`q-${s.id}`}>
+        <a href={s.url} rel="nofollow noopener" target="_blank">{s.title}</a>
+        <span class="muted"> – {s.publisher}, {kindLabel[s.kind]}, abgerufen am {formatDate(s.retrievedAt)}</span>
+        {s.note && <div class="small muted">{s.note}</div>}
+      </li>
+    ))}
+  </ol>
+</section>

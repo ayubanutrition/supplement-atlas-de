@@ -1,0 +1,93 @@
+// Browser-QA gegen eine laufende Vorschau (pnpm preview).
+// Prüft: Statuscodes interner Links, horizontales Überlaufen bei 360 px,
+// Konsolenfehler, axe-core-Befunde, Rechner per Tastatur.
+// Benötigt Playwright (in der Claude-Cloud-Umgebung vorinstalliert).
+// Aufruf: node scripts/qa-browser.cjs [baseUrl] [screenshotDir]
+const { chromium } = require('playwright');
+const fs = require('node:fs');
+const path = require('node:path');
+
+const BASE = process.argv[2] || 'http://localhost:4321';
+const SHOTS = process.argv[3] || null;
+const AXE = fs.readFileSync(path.join(__dirname, '..', 'node_modules', 'axe-core', 'axe.min.js'), 'utf8');
+const START = ['/', '/wirkstoffe/kreatin/', '/vergleich/kreatin/', '/rechner/kreatinpreis/', '/methodik/', '/ueber-uns/'];
+const problems = [];
+
+(async () => {
+  const browser = await chromium.launch();
+  const seen = new Set();
+  const queue = [...START];
+  const results = [];
+
+  for (const width of [360, 1280]) {
+    const ctx = await browser.newContext({ viewport: { width, height: 800 }, locale: 'de-DE' });
+    const page = await ctx.newPage();
+    const errors = [];
+    page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+    page.on('pageerror', (e) => errors.push(e.message));
+    const pages = width === 360 ? queue : [...seen];
+    for (let i = 0; i < pages.length; i++) {
+      const url = pages[i];
+      if (width === 360) seen.add(url);
+      const res = await page.goto(BASE + url, { waitUntil: 'load' });
+      const status = res.status();
+      if (status !== 200) problems.push(`${url}: HTTP ${status}`);
+      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
+      if (overflow > 0) problems.push(`${url} @${width}px: horizontaler Überlauf ${overflow}px`);
+      if (width === 360) {
+        const links = await page.$$eval('a[href^="/"]', (as) => as.map((a) => a.getAttribute('href').split('#')[0]));
+        for (const l of links) if (!seen.has(l) && !queue.includes(l)) queue.push(l);
+        await page.addScriptTag({ content: AXE });
+        const axe = await page.evaluate(async () => {
+          const r = await window.axe.run(document, { runOnly: ['wcag2a', 'wcag2aa', 'wcag21aa', 'best-practice'] });
+          return r.violations.map((v) => `${v.impact} ${v.id} (${v.nodes.length}×): ${v.help}`);
+        });
+        axe.forEach((a) => problems.push(`${url} axe: ${a}`));
+        const meta = await page.evaluate(() => ({
+          title: document.title,
+          robots: document.querySelector('meta[name=robots]')?.content,
+          h1: document.querySelectorAll('h1').length,
+        }));
+        if (meta.h1 !== 1) problems.push(`${url}: ${meta.h1} h1-Elemente`);
+        results.push({ url, status, ...meta });
+      }
+      if (SHOTS) await page.screenshot({ path: path.join(SHOTS, `${width}${url.replace(/\//g, '_') || '_'}.png`), fullPage: true });
+    }
+    errors.forEach((e) => problems.push(`Konsole @${width}px: ${e}`));
+    await ctx.close();
+  }
+
+  // 404 muss echten Statuscode liefern
+  const p404 = await browser.newPage();
+  const r404 = await p404.goto(BASE + '/gibt-es-nicht/');
+  if (r404.status() !== 404) problems.push(`/gibt-es-nicht/: erwartet 404, erhalten ${r404.status()}`);
+
+  // Rechner nur per Tastatur bedienen
+  const kp = await browser.newPage({ viewport: { width: 360, height: 800 } });
+  await kp.goto(BASE + '/rechner/kreatinpreis/');
+  await kp.keyboard.press('Tab'); // Skip-Link
+  let guard = 0;
+  while ((await kp.evaluate(() => document.activeElement?.id)) !== 'price' && guard++ < 20) await kp.keyboard.press('Tab');
+  await kp.keyboard.type('24,90');
+  await kp.keyboard.press('Tab');
+  await kp.keyboard.type('500');
+  const r100 = (await kp.textContent('#r100')).replace(/ /g, ' ');
+  const r1 = (await kp.textContent('#r1')).replace(/ /g, ' ');
+  if (r100 !== '4,98 €') problems.push(`Rechner: erwartet 4,98 € pro 100 g, erhalten ${r100}`);
+  if (r1 !== '0,05 €') problems.push(`Rechner: erwartet 0,05 € pro g, erhalten ${r1}`);
+  await kp.keyboard.press('Tab');
+  await kp.keyboard.press('Control+A');
+  await kp.keyboard.type('120');
+  const err = await kp.isVisible('#out-error');
+  if (!err) problems.push('Rechner: ungültiger Anteil (120) zeigt keinen Fehler');
+
+  await browser.close();
+  console.log(JSON.stringify(results, null, 1));
+  console.log(`Rechner per Tastatur: ${r100} pro 100 g, ${r1} pro g; Fehlermeldung bei ungültigem Anteil: ${err}`);
+  if (problems.length) {
+    console.log(`\n${problems.length} Befund(e):`);
+    problems.forEach((p) => console.log(' - ' + p));
+    process.exit(1);
+  }
+  console.log('\nKeine Befunde.');
+})();

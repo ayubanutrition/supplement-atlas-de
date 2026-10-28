@@ -1,0 +1,43 @@
+{
+  "id": "myprotein-kreatin-monohydrat-500g",
+  "brandId": "myprotein",
+  "substanceId": "kreatin",
+  "name": "Myprotein Kreatin Monohydrat",
+  "variant": "Geschmacksneutral, 500 g",
+  "netWeightG": 500,
+  "activeDeclaredAs": "Kreatin-Monohydrat",
+  "activePer100g": 100,
+  "servingSizeG": 3.4,
+  "activePerServingG": 3.4,
+  "ingredients": "Kreatin-Monohydrat.",
+  "rawMaterial": { "name": null, "sourceId": null },
+  "allergenNote": "„Hergestellt in einer Anlage, die auch Milch verarbeitet.“ An anderer Stelle derselben Seite werden zusätzlich Soja, Ei und Gluten genannt.",
+  "labTesting": { "statement": null, "sourceId": null },
+  "label": { "sourceId": "myprotein-kreatin-produktseite", "version": "2026-10-28", "retrievedAt": "2026-10-28T23:39:46Z" },
+  "labelNotes": [
+    "Nährwerttabelle je Portion (3,4 g): 3,4 g Kreatin-Monohydrat, davon 3,0 g Kreatin; 147 Portionen je Packung.",
+    "Widerspruch auf der Seite: Die Verzehrsempfehlung nennt 3 g (ca. 1 Messlöffel), die Nährwerttabelle 3,4 g je Portion.",
+    "Für diese Variante fanden wir keinen konkreten Prüf- oder Zertifikatshinweis. Eine separate 1-kg-Variante trägt den Zusatz „Informed Sport“."
+  ],
+  "prices": [
+    {
+      "retailer": "de.myprotein.com",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 1999,
+      "regularPriceNote": "Vom Shop als durchgestrichener „War“-Preis angezeigt. Ob dieser Preis zuletzt tatsächlich verlangt wurde, ist nicht geprüft.",
+      "salePriceCents": 1499,
+      "saleConditions": "Shop-Aktion „Bis zu 30 % Rabatt auf Bestseller – kein Code benötigt“, laut Shop ab 28.10.2026, Ende unbekannt. In der App teils andere Preise.",
+      "shipping": {
+        "note": "4,99 € unter 50 € Bestellwert; kostenlos ab 50 €.",
+        "costCents": 499,
+        "freeFromCents": 5000,
+        "sourceId": "myprotein-versand"
+      },
+      "observedAt": "2026-10-28T23:39:46Z",
+      "sourceId": "myprotein-kreatin-produktseite"
+    }
+  ],
+  "status": "published",
+  "changelog": [{ "date": "2026-10-28", "note": "Erstaufnahme: Etikettangaben, Preis, Aktionspreis und Versand erfasst." }]
+}

@@ -1,0 +1,48 @@
+---
+import Base from '../layouts/Base.astro';
+import { STALE_AFTER_DAYS } from '../lib/price.ts';
+---
+<Base title="Methodik: Wie wir Daten erheben, rechnen und bewerten" description="Quellenregeln, Preisnormalisierung, Umgang mit fehlenden Angaben und warum wir noch keine Noten vergeben.">
+  <p class="crumbs"><a href="/">Start</a> › Methodik</p>
+  <h1>Methodik</h1>
+  <p class="lede">Hier steht, woher unsere Angaben stammen, wie wir rechnen und wo die Grenzen liegen. Diese Seite ändert sich, wenn sich die Regeln ändern.</p>
+
+  <h2>Quellen und Datum</h2>
+  <ul>
+    <li>Etikett-, Preis- und Versandangaben stammen von der Produktseite bzw. dem Shop des Anbieters. Wir speichern die URL und den Abrufzeitpunkt.</li>
+    <li>Fehlt eine Angabe beim Anbieter, schreiben wir „nicht angegeben“. Eine fehlende Angabe ist kein Hinweis auf schlechte Qualität.</li>
+    <li>Widersprüche auf einer Anbieterseite (z. B. zwei unterschiedliche Portionsgrößen) dokumentieren wir sichtbar beim Produkt.</li>
+    <li>Prüf- und Laborhinweise geben wir wörtlich wieder und kennzeichnen sie als Anbieteraussage. Wir führen keine eigenen Analysen durch.</li>
+  </ul>
+
+  <h2>Preise</h2>
+  <ul>
+    <li>Erfasst wird der Preis ohne Rabattcode, Abo oder App. Aktionspreise führen wir getrennt vom regulären bzw. vom Shop angezeigten Streichpreis.</li>
+    <li>Versandkosten stehen daneben, werden aber nicht in den Preis pro 100 g eingerechnet, weil sie vom Warenkorb abhängen. Im <a href="/rechner/kreatinpreis/">Rechner</a> lassen sie sich einbeziehen.</li>
+    <li>Preise älter als {STALE_AFTER_DAYS} Tage werden als „erneut zu prüfen“ markiert und nicht mehr als aktueller Bestpreis hervorgehoben.</li>
+    <li>Gerechnet wird in ganzen Cent; gerundet wird erst am Ende.</li>
+  </ul>
+
+  <h2>Preis pro Wirkstoffmenge</h2>
+  <p>Beim Kreatin vergleichen wir den Preis pro 100 g <strong>Kreatin-Monohydrat</strong>:</p>
+  <p><code>Preis pro 100 g = Preis ÷ (Füllmenge × Monohydrat-Anteil ÷ 100) × 100</code></p>
+  <p>Warum Monohydrat und nicht „davon Kreatin“? Etiketten geben die Monohydrat-Menge einheitlich an, die daraus berechnete Kreatin-Menge aber unterschiedlich gerundet (z. B. „3,5 g Monohydrat, davon 3,0 g Kreatin“, obwohl es rechnerisch 3,08 g sind). Ein Vergleich auf Basis der gerundeten Kreatin-Angabe würde einzelne Anbieter um einige Prozent benachteiligen. Wer den Preis pro Gramm reines Kreatin braucht: Preis pro 100 g Monohydrat ÷ 0,879.</p>
+
+  <h2>Studienlage</h2>
+  <ul>
+    <li>Wir beginnen mit systematischen Übersichtsarbeiten und Metaanalysen an Menschen und nennen Population, Vergleich, Messgröße und Grenzen.</li>
+    <li>Ergebnisse stammen bislang aus den Zusammenfassungen der Arbeiten; das kennzeichnen wir. Tierversuche gelten nicht als Beleg für Wirkungen beim Menschen.</li>
+    <li>Finanzierung und Interessenkonflikte nennen wir, soweit sie in den Arbeiten angegeben sind.</li>
+    <li>Was in der EU als gesundheitsbezogene Aussage zugelassen oder abgelehnt ist, prüfen wir im Amtsblatt.</li>
+    <li>Wir vergeben keine medizinische Gesamtnote für Wirkstoffe.</li>
+  </ul>
+
+  <h2>Noten und Rankings</h2>
+  <p>Derzeit vergeben wir <strong>keine Punktnoten und keinen Testsieger</strong>. Bevor wir Noten veröffentlichen, legen wir pro Kategorie eine Rubrik fest: was 1, 5 und 10 bedeuten, welche Daten nötig sind, wie fehlende Angaben zählen und wie stark jedes Kriterium gewichtet wird. Diese Rubrik wird hier veröffentlicht und an mehreren echten Produkten erprobt.</p>
+
+  <h2>Auswahl der Produkte</h2>
+  <p>Die bisher erfassten Produkte sind ein Startpunkt, keine vollständige Marktübersicht. Wir nehmen Produkte auf, die in Deutschland erhältlich sind und deren Anbieter prüfbare Angaben veröffentlichen. Eine bezahlte Aufnahme gibt es nicht.</p>
+
+  <h2>Fehler melden</h2>
+  <p>Korrekturen dokumentieren wir im Änderungsprotokoll der jeweiligen Produktseite. Ein Kontaktweg wird mit den Betreiberangaben vor der Veröffentlichung ergänzt.</p>
+</Base>

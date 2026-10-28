@@ -1,0 +1,56 @@
+---
+import Base from '../../layouts/Base.astro';
+import CompareTable from '../../components/CompareTable.astro';
+import PriceBars from '../../components/PriceBars.astro';
+import { getDataset } from '../../lib/load.ts';
+import { published, type Duel } from '../../lib/schema.ts';
+import { formatEur } from '../../lib/price.ts';
+import { formatDate, productView } from '../../lib/view.ts';
+
+// Nur ausdrücklich angelegte Duelle – keine automatisch erzeugten Paarungen.
+export function getStaticPaths() {
+  return published(getDataset().duels).map((duel) => ({ params: { slug: duel.slug }, props: { duel } }));
+}
+interface Props { duel: Duel }
+const { duel } = Astro.props;
+const d = getDataset();
+const [a, b] = [duel.a, duel.b].map((id) => productView(d, d.products.find((p) => p.id === id)!));
+const pa = a.latest?.payablePer100 ?? null;
+const pb = b.latest?.payablePer100 ?? null;
+const cheaper = pa !== null && pb !== null && pa !== pb ? (pa < pb ? a : b) : null;
+const pricier = cheaper === a ? b : a;
+const diffPct =
+  cheaper && pa !== null && pb !== null ? Math.round((Math.abs(pa - pb) / Math.max(pa, pb)) * 100) : null;
+const asOf = [a, b].map((v) => v.latest?.obs.observedAt ?? '').sort().pop() ?? '';
+---
+<Base title={`${a.product.name} vs. ${b.product.name}`} description={`${a.product.name} und ${b.product.name} im direkten Vergleich: Preis pro 100 g, Zutaten, Portion und Versand – mit Quellen.`}>
+  <p class="crumbs"><a href="/">Start</a> › <a href="/vergleich/kreatin/">Kreatin-Vergleich</a> › Duell</p>
+  <h1>{a.product.name} vs. {b.product.name}</h1>
+  <p class="lede">{duel.question}</p>
+
+  <div class="answer">
+    {cheaper ? (
+      <p><strong>Beim Preis ohne Code war {cheaper.product.name} am {formatDate(asOf)} rund {diffPct} % günstiger</strong> ({formatEur(cheaper.latest!.payablePer100)} gegenüber {formatEur(pricier.latest!.payablePer100)} pro 100 g Kreatin-Monohydrat){cheaper.latest!.isSale ? ', allerdings als zeitlich unbestimmte Aktion' : ''}.</p>
+    ) : (
+      <p>Ein Preisunterschied lässt sich derzeit nicht berechnen oder ist gleich.</p>
+    )}
+    <p>Inhaltlich sind beide laut Etikett reines Kreatin-Monohydrat. Unterschiede gibt es bei den Angaben der Anbieter: {a.product.labTesting.statement ? `${a.brand.name} nennt externe Labortests` : `${a.brand.name} nennt keine konkreten Labortests`}, {b.product.labTesting.statement ? `${b.brand.name} ebenfalls` : `${b.brand.name} nennt für diese Variante keine`}. Geprüft haben wir das nicht.</p>
+  </div>
+
+  <h2>Preis pro 100 g Kreatin-Monohydrat</h2>
+  <PriceBars
+    caption="Ohne Code zahlbarer Preis am Erfassungstag, ohne Versand."
+    items={[a, b].map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.payablePer100 ?? null, note: v.latest?.isSale ? 'Aktionspreis' : 'regulärer Preis' }))}
+  />
+  <p class="small muted">Mit regulärem bzw. Streichpreis: {a.product.name} {formatEur(a.latest?.regularPer100)}, {b.product.name} {formatEur(b.latest?.regularPer100)} pro 100 g. Versand kommt jeweils hinzu, wenn der Mindestbestellwert nicht erreicht wird.</p>
+
+  <h2>Alle Angaben nebeneinander</h2>
+  <CompareTable views={[a, b]} caption="Angaben der Anbieter. Details und Quellen auf den Produktseiten." />
+
+  <h2>Für wen was passt</h2>
+  <ul>
+    <li>Wer vor allem auf den Preis achtet: Entscheidend ist der Preis am Kauftag – Aktionen ändern das Ergebnis schnell. Mit dem <a href="/rechner/kreatinpreis/">Preisrechner</a> lässt sich ein aktuelles Angebot nachrechnen.</li>
+    <li>Wer Wert auf dokumentierte Prüfungen legt: Ein Anbieterhinweis auf Labortests ist kein unabhängiger Nachweis. Vor dem Kauf die verlinkten Analysen beim Anbieter ansehen und auf Chargenbezug und Datum achten.</li>
+  </ul>
+  <p class="small muted">Produktseiten: <a href={`/produkte/${a.product.id}/`}>{a.product.name}</a> · <a href={`/produkte/${b.product.id}/`}>{b.product.name}</a></p>
+</Base>

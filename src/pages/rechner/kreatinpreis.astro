@@ -1,0 +1,104 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Kreatin-Preisrechner: Preis pro 100 g Kreatin-Monohydrat"
+  description="Rechne den Packungspreis eines Kreatin-Produkts auf 100 g bzw. 1 g Kreatin-Monohydrat um – mit Versandkosten und Wirkstoffanteil."
+>
+  <p class="crumbs"><a href="/">Start</a> › Rechner</p>
+  <h1>Kreatin-Preisrechner</h1>
+  <p class="lede">Rechnet einen Packungspreis auf <strong>100 g Kreatin-Monohydrat</strong> um. So lassen sich Packungen unterschiedlicher Größe und Kapseln mit Pulver vergleichen.</p>
+
+  <div class="grid grid-2" style="align-items:start">
+    <form class="card" id="calc" novalidate>
+      <div class="field">
+        <label for="price">Packungspreis in €</label>
+        <input id="price" name="price" type="text" inputmode="decimal" autocomplete="off" placeholder="z. B. 24,90" aria-describedby="price-hint" />
+        <span class="hint" id="price-hint">Preis laut Shop, ohne Versand.</span>
+      </div>
+      <div class="field">
+        <label for="weight">Packungsinhalt in g</label>
+        <input id="weight" name="weight" type="text" inputmode="decimal" autocomplete="off" placeholder="z. B. 500" aria-describedby="weight-hint" />
+        <span class="hint" id="weight-hint">Nettofüllmenge laut Etikett. Bei Kapseln: Kapselanzahl × Kreatin je Kapsel, dann Anteil 100 %.</span>
+      </div>
+      <div class="field">
+        <label for="share">Kreatin-Monohydrat je 100 g Produkt in g</label>
+        <input id="share" name="share" type="text" inputmode="decimal" autocomplete="off" value="100" aria-describedby="share-hint" />
+        <span class="hint" id="share-hint">Reines Pulver: 100. Bei Mischungen den Wert aus der Nährwerttabelle eintragen.</span>
+      </div>
+      <div class="field">
+        <label for="shipping">Versandkosten in € (optional)</label>
+        <input id="shipping" name="shipping" type="text" inputmode="decimal" autocomplete="off" placeholder="0" />
+      </div>
+    </form>
+
+    <section class="card" aria-labelledby="ergebnis">
+      <h2 id="ergebnis" style="margin-top:0">Ergebnis</h2>
+      <div aria-live="polite" id="out">
+        <p class="muted" id="out-empty">Packungspreis und Packungsinhalt eingeben.</p>
+        <div id="out-values" hidden>
+          <div class="small muted">pro 100 g Kreatin-Monohydrat</div>
+          <p class="result" id="r100">–</p>
+          <div class="small muted">pro 1 g Kreatin-Monohydrat</div>
+          <p class="result" style="font-size:1.2rem" id="r1">–</p>
+          <p class="small muted" id="rdetail"></p>
+        </div>
+        <p class="note" id="out-error" hidden></p>
+      </div>
+    </section>
+  </div>
+
+  <h2>So wird gerechnet</h2>
+  <p><code>Preis pro 100 g = (Packungspreis + Versand) ÷ enthaltenes Kreatin-Monohydrat in g × 100</code></p>
+  <p>Enthaltenes Kreatin-Monohydrat = Packungsinhalt × Anteil je 100 g ÷ 100. Gerundet wird erst am Ende auf ganze Cent.</p>
+  <p>Kreatin-Monohydrat besteht zu rund 88 % aus Kreatin, der Rest ist gebundenes Wasser. Wir rechnen mit der deklarierten Menge Kreatin-Monohydrat, weil Etiketten fast immer so angeben. Die Vergleichseinheit ist keine Verzehrempfehlung.</p>
+  <p><a href="/vergleich/kreatin/">Zum Kreatin-Vergleich mit erfassten Preisen →</a></p>
+</Base>
+
+<script>
+  import { activeAmount, eurToCents, formatEur, parseDecimal, pricePer } from '../../lib/price.ts';
+
+  const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+  const fields = ['price', 'weight', 'share', 'shipping'].map($);
+  const [price, weight, share, shipping] = fields;
+  const empty = document.getElementById('out-empty')!;
+  const values = document.getElementById('out-values')!;
+  const error = document.getElementById('out-error')!;
+
+  function show(state: 'empty' | 'values' | 'error', msg = '') {
+    empty.hidden = state !== 'empty';
+    values.hidden = state !== 'values';
+    error.hidden = state !== 'error';
+    error.textContent = msg;
+  }
+
+  function update() {
+    fields.forEach((f) => f.removeAttribute('aria-invalid'));
+    const p = parseDecimal(price.value);
+    const w = parseDecimal(weight.value);
+    const s = parseDecimal(share.value);
+    const ship = shipping.value.trim() === '' ? 0 : parseDecimal(shipping.value);
+
+    if (price.value.trim() === '' || weight.value.trim() === '') return show('empty');
+    const bad: [HTMLInputElement, string][] = [];
+    if (p === null || p < 0) bad.push([price, 'Packungspreis ist keine gültige Zahl.']);
+    if (w === null || w <= 0) bad.push([weight, 'Packungsinhalt muss größer als 0 sein.']);
+    if (s === null || s <= 0 || s > 100) bad.push([share, 'Anteil muss zwischen 0 und 100 g je 100 g liegen.']);
+    if (ship === null || ship < 0) bad.push([shipping, 'Versandkosten sind keine gültige Zahl.']);
+    if (bad.length) {
+      bad.forEach(([f]) => f.setAttribute('aria-invalid', 'true'));
+      return show('error', bad.map((b) => b[1]).join(' '));
+    }
+    const total = eurToCents(p!) + eurToCents(ship!);
+    const active = activeAmount(w, s);
+    document.getElementById('r100')!.textContent = formatEur(pricePer(total, active, 100));
+    document.getElementById('r1')!.textContent = formatEur(pricePer(total, active, 1));
+    document.getElementById('rdetail')!.textContent =
+      `Gerechnet mit ${formatEur(total)} für ${new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 }).format(active!)} g Kreatin-Monohydrat.`;
+    show('values');
+  }
+
+  fields.forEach((f) => f.addEventListener('input', update));
+  document.getElementById('calc')!.addEventListener('submit', (e) => e.preventDefault());
+  update();
+</script>

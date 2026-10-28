@@ -1,0 +1,12 @@
+{
+  "id": "esn",
+  "name": "ESN",
+  "legalProvider": {
+    "name": "Fitmart GmbH & Co. KG",
+    "address": "Werner-von-Siemens-Straße 8, 25337 Elmshorn",
+    "sourceId": "esn-impressum"
+  },
+  "parentCompany": null,
+  "countries": ["DE"],
+  "status": "published"
+}

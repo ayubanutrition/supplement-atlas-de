@@ -127,3 +127,30 @@ describe('Aktionsende', () => {
     expect(priceNote(reg)).toBe('regulärer Preis');
   });
 });
+
+describe('Omega-3-Preise pro 10 g EPA+DHA (Entwurf, Stand 29.10.2026)', () => {
+  // Handrechnung: Kapseln × (EPA+DHA je Kapsel) = g; Preis ÷ g × 10
+  it('ESN: 16,90 € / (60 × 700 mg = 42 g) × 10 = 4,02 €', () => {
+    expect(view('esn-omega-3-60').latest!.payablePerBasis).toBe(402);
+  });
+  it('Bulk: Aktion 15,99 € / (90 × 550 mg = 49,5 g) × 10 = 3,23 €; Streichpreis 21,99 € → 4,44 €', () => {
+    const v = view('bulk-omega-3-90').latest!;
+    expect(v.payablePerBasis).toBe(323);
+    expect(v.regularPerBasis).toBe(444);
+  });
+  it('Bodylab24: Angebot 9,90 € / (120 × 300 mg = 36 g) × 10 = 2,75 €; Streichpreis 15,99 € → 4,44 €', () => {
+    const v = view('bodylab24-omega-3-120').latest!;
+    expect(v.payablePerBasis).toBe(275);
+    expect(v.regularPerBasis).toBe(444);
+  });
+  it('Natural Elements: 29,99 € / (365 × 300 mg = 109,5 g) × 10 = 2,74 €', () => {
+    expect(view('natural-elements-omega-3-365').latest!.payablePerBasis).toBe(274);
+  });
+  it('Gesamtmenge EPA+DHA stimmt mit Kapselzahl × Dosis überein', () => {
+    const g = (id: string) => data.products.find((p) => p.id === id)!.activeTotalG;
+    expect(g('esn-omega-3-60')).toBeCloseTo(60 * 0.7);
+    expect(g('bulk-omega-3-90')).toBeCloseTo(90 * 0.55);
+    expect(g('bodylab24-omega-3-120')).toBeCloseTo(120 * 0.3);
+    expect(g('natural-elements-omega-3-365')).toBeCloseTo(365 * 0.3);
+  });
+});

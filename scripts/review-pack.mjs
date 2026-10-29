@@ -26,7 +26,7 @@ for (const f of readdirSync('content/wirkstoffe').filter((x) => x.endsWith('.md'
   const sid = /^substanceId:\s*(.+)$/m.exec(fm)[1].trim();
   const cat = CATEGORIES.find((c) => c.substanceId === sid);
   const ev = data.evidence.find((e) => e.substanceId === sid);
-  out.push(`---`, '', `# ${cat.name}`, '', '## A. Artikeltext (zu prüfen)', '', `Kurzantwort: ${/^summary:\s*"(.*)"$/m.exec(fm)?.[1] ?? ''}`, '', body.trim().replace(/^## /gm, '### '), '');
+  out.push(`---`, '', `# ${cat.name}${/^status:\s*draft/m.test(fm) ? ' (Artikel im ENTWURF – noch nicht zur Veröffentlichung vorgesehen)' : ''}`, '', '## A. Artikeltext (zu prüfen)', '', `Kurzantwort: ${/^summary:\s*"(.*)"$/m.exec(fm)?.[1] ?? ''}`, '', body.trim().replace(/^## /gm, '### '), '');
   out.push('## B. EU-Aussagen', '', '| Status | Wortlaut | Bedingungen | Rechtsgrundlage | Quelle |', '|---|---|---|---|---|');
   for (const c of ev.claims) out.push(`| ${c.status} | ${c.wording} | ${c.conditions} | ${c.regulation} | ${link(c.sourceId)} |`);
   out.push('', '## C. Studien', '');
@@ -35,11 +35,11 @@ for (const f of readdirSync('content/wirkstoffe').filter((x) => x.endsWith('.md'
   const extra = /^extraSources:\s*\[(.*)\]/m.exec(fm)?.[1].split(',').map((x) => x.replace(/["\s]/g, '')).filter(Boolean) ?? [];
   for (const id of extra) out.push(`- ${link(id)}${src.get(id)?.note ? ` – ${src.get(id).note}` : ''}`);
   out.push('', '## E. Preisvergleich (Zahlen nachrechnen)', '', `| Produkt | Packung | Wirkstoff (je 100 g bzw. je Packung) | Preis (ohne Code) | Pro ${cat.basisLabel} Wirkstoff | Streichpreis → pro ${cat.basisLabel} | Stand |`, '|---|---|---|---|---|---|---|');
-  for (const p of data.products.filter((x) => x.substanceId === sid && x.status === 'published')) {
+  for (const p of data.products.filter((x) => x.substanceId === sid)) {
     const pr = [...p.prices].sort((a, b) => b.observedAt.localeCompare(a.observedAt))[0];
     const act = packActive(p);
     const pay = pr.salePriceCents ?? pr.regularPriceCents;
-    out.push(`| ${p.name} (${p.variant}) | ${p.netWeightG ?? '–'} g | ${p.activePer100g ?? (p.activeTotalG ?? '–')} g | ${formatEur(pay)}${pr.salePriceCents !== null ? ' (Aktion)' : ''} | ${formatEur(pricePer(pay, act, cat.basisG))} | ${formatEur(pr.regularPriceCents)} → ${formatEur(pricePer(pr.regularPriceCents, act, cat.basisG))} | ${pr.observedAt.slice(0, 10)} |`);
+    out.push(`| ${p.name} (${p.variant})${p.status === 'draft' ? ' – ENTWURF' : ''} | ${p.netWeightG ?? '–'} g | ${p.activePer100g ?? (p.activeTotalG ?? '–')} g | ${formatEur(pay)}${pr.salePriceCents !== null ? ' (Aktion)' : ''} | ${formatEur(pricePer(pay, act, cat.basisG))} | ${formatEur(pr.regularPriceCents)} → ${formatEur(pricePer(pr.regularPriceCents, act, cat.basisG))} | ${pr.observedAt.slice(0, 10)} |`);
   }
   out.push('');
 }

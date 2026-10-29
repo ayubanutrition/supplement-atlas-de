@@ -43,6 +43,18 @@ export const CATEGORIES: Category[] = [
     basisNote:
       'Whey-Pulver enthält neben Eiweiß auch Kohlenhydrate, Fett und Aromen. Darum rechnen wir den Preis auf 100 g enthaltenes Protein laut Nährwerttabelle um, nicht auf 100 g Pulver. Zusammensetzung (reines Konzentrat oder Mischung mit Isolat), Geschmack und Packungsgröße unterscheiden sich; siehe „Wie vergleichbar sind die Produkte?“.',
   },
+  {
+    substanceId: 'omega-3',
+    slug: 'omega-3',
+    name: 'Omega-3',
+    unit: 'EPA+DHA',
+    unitShort: 'EPA+DHA',
+    basisG: 10,
+    basisLabel: '10 g',
+    calculatorPath: '/rechner/omega3preis/',
+    basisNote:
+      'Fischöl-Kapseln unterscheiden sich stark im Gehalt an EPA und DHA. Darum rechnen wir den Preis auf 10 g EPA+DHA laut Etikett um (Summe aus EPA und DHA je Kapsel × Kapselzahl), nicht auf Kapseln oder Fischöl-Menge. Die erfassten Packungen unterscheiden sich stark in der Kapselzahl (60 bis 365); größere Packungen sind je Gramm meist deutlich günstiger, auch innerhalb einer Marke.',
+  },
 ];
 
 export const categoryBySubstance = (id: string): Category => {

@@ -1,0 +1,61 @@
+{
+  "id": "bodylab24-omega-3-120",
+  "brandId": "bodylab24",
+  "substanceId": "omega-3",
+  "name": "Bodylab24 Omega-3",
+  "variant": "120 Kapseln",
+  "netWeightG": null,
+  "activeDeclaredAs": "EPA+DHA",
+  "activePer100g": null,
+  "activeTotalG": 36.0,
+  "servingSizeG": null,
+  "activePerServingG": 0.6,
+  "ingredients": "Fischöl (Triglyceride), Gelatine, Feuchthaltemittel: Glycerin; gereinigtes Wasser, D-alpha-Tocopherol (Vitamin E).",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": "Enthält Fischerzeugnisse.",
+  "labTesting": {
+    "statement": "Laborgeprüfte Qualität & 20 Jahre Erfahrung",
+    "sourceId": "bodylab24-omega3-produktseite"
+  },
+  "label": {
+    "sourceId": "bodylab24-omega3-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T01:23:52Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: Triglycerid-Form laut Zutatenliste. Portion = 2 Kapseln: 360 mg EPA + 240 mg DHA (je Kapsel 180 + 120 mg, zusammen 300 mg). Die Summe aus EPA und DHA nennt die Seite nicht; wir haben sie aus den Einzelwerten gerechnet. 120 Kapseln × 300 mg = 36 g EPA+DHA.",
+    "Die Seite nennt an anderer Stelle „1000 mg pro Kapsel“ (gemeint ist offenbar Fischöl); maßgeblich ist die Tabelle.",
+    "Die Prüfaussage nennt kein Labor und keinen Prüfumfang; sie ist eine Herstellerangabe.",
+    "Größere Packung: 360 Kapseln für 24,90 € laut Seite (108 g EPA+DHA, rechnerisch 2,31 € je 10 g)."
+  ],
+  "prices": [
+    {
+      "retailer": "bodylab24.de",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 1599,
+      "regularPriceNote": "Vom Shop als durchgestrichener Preis angezeigt. Ob er zuletzt tatsächlich verlangt wurde, ist nicht geprüft.",
+      "salePriceCents": 990,
+      "saleConditions": "Shop-Angebot „–38 %“, laut Seite ohne Gutscheincode; kein Enddatum genannt.",
+      "saleEndsAt": null,
+      "shipping": {
+        "note": "4,90 € innerhalb Deutschlands; kostenlos ab 85 € Bestellwert; Lieferung 2–3 Werktage.",
+        "costCents": 490,
+        "freeFromCents": 8500,
+        "sourceId": "bodylab24-versand-seite"
+      },
+      "observedAt": "2026-10-29T01:23:52Z",
+      "sourceId": "bodylab24-omega3-produktseite"
+    }
+  ],
+  "status": "draft",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Entwurf angelegt (Omega-3-Cluster noch ohne fachliche Prüfung)."
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "omega-3",
+  "name": "Omega-3 (EPA und DHA)",
+  "synonyms": [
+    "Omega-3",
+    "Fischöl",
+    "EPA",
+    "DHA",
+    "Omega 3"
+  ],
+  "forms": [
+    "Fischöl-Kapseln (Triglycerid oder Ethylester)"
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-29"
+}

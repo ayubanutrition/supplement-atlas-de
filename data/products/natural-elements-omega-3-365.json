@@ -1,0 +1,61 @@
+{
+  "id": "natural-elements-omega-3-365",
+  "brandId": "natural-elements",
+  "substanceId": "omega-3",
+  "name": "Natural Elements Omega 3 Fischöl Kapseln",
+  "variant": "365 Kapseln",
+  "netWeightG": null,
+  "activeDeclaredAs": "EPA+DHA",
+  "activePer100g": null,
+  "activeTotalG": 109.5,
+  "servingSizeG": null,
+  "activePerServingG": 0.6,
+  "ingredients": "Fischöl, Gelatine (Rind), Feuchthaltemittel: Glycerin; Wasser, DL-α-Tocopherylacetat, Antioxidationsmittel: stark tocopherolhaltige Extrakte",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": null,
+  "labTesting": {
+    "statement": "Wir lassen unsere Produktionschargen von unabhängigen Laboren auf bedenkliche Rückstände & Co. analysieren. Du findest die Untersuchungsbescheinigung unter „Qualitätsnachweis“.",
+    "sourceId": "naturalelements-omega3-produktseite"
+  },
+  "label": {
+    "sourceId": "naturalelements-omega3-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T01:24:40Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: Triglycerid-Form laut Seite („um 70 % höhere Bioverfügbarkeit als Ethylester“ ist eine Herstellerangabe, von uns nicht geprüft). Portion = 2 Kapseln: 360 mg EPA + 240 mg DHA (je Kapsel 180 + 120 mg, zusammen 300 mg). 365 Kapseln × 300 mg = 109,5 g EPA+DHA.",
+    "Widerspruch auf der Seite: „ohne Antioxidationsmittel“ in den Merkmalen, aber „Antioxidationsmittel: stark tocopherolhaltige Extrakte“ in der Zutatenliste.",
+    "Der Reiter „Qualitätsnachweis“ zeigte keinen Inhalt; die Untersuchungsbescheinigung haben wir nicht gesehen. Fischart und Herkunft nennt die Seite für diese Variante nicht.",
+    "Optionales Abo (–10 %) nicht eingerechnet."
+  ],
+  "prices": [
+    {
+      "retailer": "naturalelements.de",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 2999,
+      "regularPriceNote": null,
+      "salePriceCents": null,
+      "saleConditions": null,
+      "saleEndsAt": null,
+      "shipping": {
+        "note": "3,50 € pauschal; kostenlos ab 50 € Bestellwert.",
+        "costCents": 350,
+        "freeFromCents": 5000,
+        "sourceId": "naturalelements-omega3-produktseite"
+      },
+      "observedAt": "2026-10-29T01:24:40Z",
+      "sourceId": "naturalelements-omega3-produktseite"
+    }
+  ],
+  "status": "draft",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Entwurf angelegt (Omega-3-Cluster noch ohne fachliche Prüfung)."
+    }
+  ]
+}

@@ -109,6 +109,15 @@ const problems = [];
   const pShip = (await pp.textContent('#r100')).replace(/\u00a0/g, ' ');
   if (pShip !== '5,71 €') problems.push(`Proteinrechner mit Versand: erwartet 5,71 €, erhalten ${pShip}`);
 
+  // Omega-3-Rechner: ESN 16,90 € / 60 Kapseln à 400 + 300 mg = 42 g → 4,02 € pro 10 g
+  const op = await browser.newPage({ viewport: { width: 360, height: 800 } });
+  await op.goto(BASE + '/rechner/omega3preis/');
+  await op.fill('#price', '16,90'); await op.fill('#count', '60'); await op.fill('#epa', '400'); await op.fill('#dha', '300');
+  const o10 = (await op.textContent('#r10')).replace(/\u00a0/g, ' ');
+  if (o10 !== '4,02 €') problems.push(`Omega-3-Rechner: erwartet 4,02 €, erhalten ${o10}`);
+  await op.fill('#epa', '1200'); await op.fill('#dha', '900');
+  if (!(await op.isVisible('#out-error'))) problems.push('Omega-3-Rechner: Wert je Portion (2100 mg je Kapsel) wird nicht beanstandet');
+
   await browser.close();
   console.log(JSON.stringify(results, null, 1));
   console.log(`Rechner per Tastatur: ${r100} pro 100 g, ${r1} pro g; Fehlermeldung bei ungültigem Anteil: ${err}`);

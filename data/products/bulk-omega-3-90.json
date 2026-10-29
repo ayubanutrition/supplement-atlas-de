@@ -1,0 +1,60 @@
+{
+  "id": "bulk-omega-3-90",
+  "brandId": "bulk",
+  "substanceId": "omega-3",
+  "name": "Bulk Extra Starke Omega-3 Weichkapseln",
+  "variant": "90 Kapseln",
+  "netWeightG": null,
+  "activeDeclaredAs": "EPA+DHA",
+  "activePer100g": null,
+  "activeTotalG": 49.5,
+  "servingSizeG": null,
+  "activePerServingG": 1.65,
+  "ingredients": "Omega-3-Fischöl, Weichkapselhülle (Rindergelatine, Glycerin, Wasser), Antioxidationsmittel (stark tocopherolhaltige Extrakte).",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": "Enthält Fisch. Kann Soja, glutenhaltiges Getreide, Krebstiere, Weichtiere, Schwefeldioxid und Sulphite enthalten.",
+  "labTesting": {
+    "statement": "Unsere Softgel-Kapseln stammen aus hochwertigem Fischöl und werden nach höchsten Standards für Reinheit und Wirksamkeit hergestellt.",
+    "sourceId": "bulk-omega3-produktseite"
+  },
+  "label": {
+    "sourceId": "bulk-omega3-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T01:22:21Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: Kapselform nicht angegeben. Portion = 3 Kapseln: 990 mg EPA + 660 mg DHA (je Kapsel 330 + 220 mg, zusammen 550 mg). Die Summe aus EPA und DHA nennt die Seite nicht; wir haben sie aus den Einzelwerten gerechnet. 90 Kapseln × 550 mg = 49,5 g EPA+DHA.",
+    "Die Prüfaussage nennt weder Labor noch Prüfumfang; sie ist eine Herstellerangabe.",
+    "Größere Packung: 270 Kapseln im Aktionspreis 39,99 € (148,5 g EPA+DHA, rechnerisch 2,69 € je 10 g; Aktion laut Seite bis 03.11.2026)."
+  ],
+  "prices": [
+    {
+      "retailer": "bulk.com",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 2199,
+      "regularPriceNote": "Vom Shop als durchgestrichener Preis angezeigt. Ob er zuletzt tatsächlich verlangt wurde, ist nicht geprüft.",
+      "salePriceCents": 1599,
+      "saleConditions": "Shop-Aktion „Payday Sale: Bis zu 75 % Rabatt – kein Code nötig“; laut strukturierten Daten gültig bis 03.11.2026.",
+      "saleEndsAt": "2026-11-03",
+      "shipping": {
+        "note": "4,95 € unter 59 € Bestellwert; kostenlos ab 59 €; Lieferung 2–4 Werktage.",
+        "costCents": 495,
+        "freeFromCents": 5900,
+        "sourceId": "bulk-omega3-produktseite"
+      },
+      "observedAt": "2026-10-29T01:22:21Z",
+      "sourceId": "bulk-omega3-produktseite"
+    }
+  ],
+  "status": "draft",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Entwurf angelegt (Omega-3-Cluster noch ohne fachliche Prüfung)."
+    }
+  ]
+}

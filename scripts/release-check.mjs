@@ -34,6 +34,8 @@ const expired = data.products.filter((p) => p.status === 'published').flatMap((p
 if (expired.length) blockers.push(`Aktionen laut Anbieter beendet (Preis neu erfassen): ${[...new Set(expired)].join(', ')}`);
 const soon = data.products.filter((p) => p.status === 'published').flatMap((p) => p.prices.filter((x) => x.saleEndsAt && x.saleEndsAt >= today && x.saleEndsAt <= new Date(Date.now() + 7 * 864e5).toISOString().slice(0, 10)).map((x) => `${p.id} (bis ${x.saleEndsAt})`));
 if (soon.length) infos.push(`Aktionen laufen innerhalb von 7 Tagen aus: ${soon.join(', ')}`);
+const draftArticles = readdirSync('content/wirkstoffe').filter((f) => f.endsWith('.md') && /^status:\s*draft/m.test(readFileSync(`content/wirkstoffe/${f}`, 'utf8').split('---')[1] ?? ''));
+if (draftArticles.length) infos.push(`Artikel im Entwurf (werden nicht gezeigt): ${draftArticles.join(', ')}`);
 const drafts = data.products.filter((p) => p.status === 'draft').map((p) => p.id);
 if (drafts.length) infos.push(`Produkte im Entwurf (werden nicht gezeigt): ${drafts.join(', ')}`);
 const untested = data.evidence.flatMap((e) => e.evidence).filter((x) => x.certainty === 'nicht bewertet').length;

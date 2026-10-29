@@ -88,10 +88,114 @@ In der EU dürfen Hersteller nur zugelassene gesundheitsbezogene Angaben verwend
 | Bodylab24 Creatine Powder (500 g) | 500 g | 100 g | 13,50 € (Aktion) | 2,70 € | 19,99 € → 4,00 € | 2026-10-29 |
 | Bulk Kreatin Monohydrat (Neutral, 500 g) | 500 g | 100 g | 15,99 € (Aktion) | 3,20 € | 24,99 € → 5,00 € | 2026-10-28 |
 | ESN Ultrapure Kreatin Pulver (Neutral, 500 g) | 500 g | 100 g | 29,90 € | 5,98 € | 29,90 € → 5,98 € | 2026-10-28 |
+| More Nutrition Daily Creatine (Neutral, 250 g) – ENTWURF | 250 g | 100 g | 25,99 € | 10,40 € | 25,99 € → 10,40 € | 2026-10-29 |
 | Myprotein Kreatin Monohydrat (Geschmacksneutral, 500 g) | 500 g | 100 g | 14,99 € (Aktion) | 3,00 € | 19,99 € → 4,00 € | 2026-10-28 |
 | Natural Elements Kreatin Monohydrat Pulver (500 g (einzige Variante)) | 500 g | 100 g | 16,99 € | 3,40 € | 16,99 € → 3,40 € | 2026-10-29 |
 | nu3 Creatine Pulver (Geschmacksneutral, 500 g) | 500 g | 100 g | 36,99 € (Aktion) | 7,40 € | 38,99 € → 7,80 € | 2026-10-29 |
 | Weider Pure Creatine (600 g) | 600 g | 100 g | 36,99 € | 6,17 € | 36,99 € → 6,17 € | 2026-10-29 |
+
+---
+
+# Omega-3 (Artikel im ENTWURF – noch nicht zur Veröffentlichung vorgesehen)
+
+## A. Artikeltext (zu prüfen)
+
+Kurzantwort: Für gesunde Menschen hält das BfR Omega-3-Präparate nicht für notwendig, vor allem bei regelmäßigem Fischverzehr. Große Studien und Übersichtsarbeiten finden bei Vorbeugung von Herz-Kreislauf-Erkrankungen kaum oder keinen Nutzen; höhere Dosen können das Risiko für Vorhofflimmern erhöhen. Zugelassen sind in der EU einzelne Aussagen (z. B. Herzfunktion bei 250 mg EPA+DHA täglich) unter festen Bedingungen. Wer Kapseln vergleicht, sollte den EPA+DHA-Gehalt je Kapsel statt die Fischöl-Menge zugrunde legen.
+
+### Was ist Omega-3?
+
+Omega-3-Fettsäuren sind mehrfach ungesättigte Fette. Bei Fischöl-Kapseln geht es um zwei davon: **EPA** und **DHA**. Pflanzliche Quellen wie Leinöl liefern stattdessen Alpha-Linolensäure (ALA), eine andere Fettsäure. Wie viel EPA und DHA in einer Kapsel stecken, steht auf dem Etikett; die Menge „Fischöl“ sagt darüber wenig. Eine Kapsel mit 1000 mg Fischöl kann sehr unterschiedlich viel EPA+DHA enthalten.
+
+### Brauchen gesunde Menschen Omega-3-Kapseln?
+
+Das Bundesinstitut für Risikobewertung (BfR) hält Nahrungsergänzungsmittel mit EPA und DHA bei gesunden Menschen **nicht für notwendig**, insbesondere bei regelmäßigem Fischverzehr. Für die Referenz nennt die DGE in ihrem Referenzwerte-Tool 250 mg EPA+DHA pro Tag (die Einordnung als Richt- oder Schätzwert konnten wir nicht eindeutig klären).
+
+### Was zeigen die Studien zum Herz?
+
+- Eine große Cochrane-Übersicht (86 Studien, rund 163.000 Teilnehmende) fand **kaum oder keinen Effekt** auf Gesamtsterblichkeit, Herz-Kreislauf-Ereignisse und Schlaganfall. Bei koronaren Herzereignissen gab es einen kleinen Vorteil mit niedriger Evidenzsicherheit.
+- In den großen Einzelstudien VITAL (25.871 Gesunde, 1 g täglich) und ASCEND (15.480 Menschen mit Diabetes) war der jeweilige Hauptendpunkt nicht signifikant.
+- Die Metaanalysen widersprechen sich im Gesamtbild: Eine von 2018 findet keinen signifikanten Effekt, eine von 2019 leicht weniger Herzinfarkte.
+- Die deutlich positive Studie REDUCE-IT verwendete **4 g reines EPA als Arzneimittel** bei Patienten mit erhöhten Triglyceriden. Sie ist nicht auf frei verkäufliche Kapseln übertragbar; eine ähnliche Studie mit 4 g EPA+DHA (STRENGTH) fand keinen Nutzen.
+
+### Triglyceride
+
+Sehr hohe Dosen (4 g täglich, als Arzneimittel) senken erhöhte Triglyceride laut einer Stellungnahme der American Heart Association um mindestens 30 %. In der Cochrane-Übersicht lagen die Triglyceride insgesamt rund 15 % niedriger. Die in der EU zugelassene Aussage zu den Triglyceriden setzt **2 g EPA+DHA täglich** voraus; je nach Produkt braucht man dafür eine bis mehrere Portionen.
+
+### Gehirn und Stimmung
+
+Die Aussage „Omega-3 hilft dem Gehirn“ ist für Supplemente nicht belegt. Bei Älteren schützte Omega-3 in der Studie VITAL-DEP nicht vor Depression; das Risiko war sogar knapp erhöht. Der Cochrane-Review zu Depression (Erwachsene mit Major Depression) sieht eine sehr unsichere, wahrscheinlich nicht bedeutsame Verbesserung. Der Cochrane-Review zu geistigem Abbau stammt von 2012 und fand keinen Vorteil.
+
+### Schwangerschaft
+
+Ein Cochrane-Review (70 Studien) fand weniger Frühgeburten bei Omega-3-Supplementen (13,4 % vs. 11,9 %). Die DGE nennt für Schwangere und Stillende mindestens 200 mg DHA täglich im Durchschnitt; nach der BfR-Seite kommt bei fehlendem Fischverzehr eine DHA-Supplementierung nach Beratung in Frage. Wer in der Schwangerschaft Kapseln nehmen möchte, sollte das mit der Ärztin oder dem Arzt besprechen.
+
+### Risiken und Grenzen
+
+- **Vorhofflimmern:** Metaanalysen fanden ein höheres Risiko, vor allem bei höheren Dosen (über 1 g täglich). Das BfR rät Menschen mit Herzerkrankungen oder Risikofaktoren, Omega-3-Präparate nur nach ärztlicher Rücksprache und besonders bei langfristiger Einnahme einzunehmen.
+- **Blutungen:** Insgesamt kein Unterschied; bei hochdosiertem, gereinigtem EPA (Arzneimittel) etwa 50 % mehr.
+- **Obergrenzen:** Das BfR empfiehlt höchstens 1,5 g EPA+DHA täglich aus allen Quellen. Die EFSA leitete 2012 keinen Höchstwert ab und sah bei bis zu 5 g EPA+DHA täglich aus Supplementen keine Sicherheitsbedenken, vorausgesetzt, die Fette sind nicht oxidiert. Beide Aussagen stehen nebeneinander; als vorsichtige Orientierung gilt die niedrigere Grenze des BfR.
+- **Qualität und Oxidation:** Fischöle werden leicht ranzig; Antioxidantien wie Vitamin E sollen das bremsen. Zwei Laboranalysen von Produkten (Neuseeland 2017, Frankreich 2022) kamen zu unterschiedlichen Ergebnissen und betreffen nicht den deutschen Markt. Für Deutschland haben wir keine belastbaren Messdaten gefunden.
+
+### Was darf auf der Packung stehen?
+
+In der EU sind mehrere Aussagen zugelassen, jeweils mit festen Mengen und Bedingungen (siehe Tabelle unten): zur Herzfunktion (250 mg EPA+DHA täglich), zu Gehirn und Sehkraft (250 mg DHA), zu Triglyceriden (2 g) und zum Blutdruck (3 g). Bei Nahrungsergänzungsmitteln ist ein Hinweis auf höchstens 5 g EPA+DHA pro Tag vorgeschrieben. Aussagen zu Depression, Konzentration oder Herzinfarkt-Vorbeugung gehören nicht dazu.
+
+### Worauf beim Kauf achten?
+
+- **EPA+DHA je Kapsel:** Das ist die entscheidende Zahl. Steht auf der Packung ein Wert „je Portion“ (z. B. 3 Kapseln), durch die Kapselzahl teilen.
+- **Preis je 10 g EPA+DHA:** Fischöl-Menge und Kapselzahl verzerren den Vergleich. Mit dem Rechner und im Vergleich normalisieren wir auf 10 g EPA+DHA. Größere Packungen sind meist deutlich günstiger je Gramm.
+- **Form:** Triglycerid oder Ethylester; Herstellerangaben zur Aufnahme („höhere Bioverfügbarkeit“) haben wir nicht geprüft.
+- **Frische und Prüfangaben:** Hinweise wie „laborgeprüft“ sind Herstellerangaben. Aussagekräftig wären aktuelle Analysen mit Peroxid- und Anisidinzahl; sie sind bei den erfassten Produkten nicht öffentlich einsehbar.
+- **Alternative:** Wer regelmäßig Fisch isst, braucht laut BfR in der Regel keine Kapseln.
+
+## B. EU-Aussagen
+
+| Status | Wortlaut | Bedingungen | Rechtsgrundlage | Quelle |
+|---|---|---|---|---|
+| zugelassen | EPA und DHA tragen zu einer normalen Herzfunktion bei. | Nur für Lebensmittel, die als „Quelle von Omega-3-Fettsäuren“ gelten dürfen (mind. 40 mg EPA+DHA je 100 g und 100 kcal). Verbraucher sind zu unterrichten, dass sich die Wirkung bei täglich 250 mg EPA und DHA einstellt. Hinweis: Im amtlichen deutschen Text steht in der Bedingung „DPA“ statt „DHA“ (Tippfehler). | VO (EU) Nr. 432/2012 | [Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025; EPA/DHA/DHA)](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820) (abgerufen 2026-10-29) |
+| zugelassen | DHA trägt zur Erhaltung einer normalen Gehirnfunktion bei. | Mindestens 40 mg DHA je 100 g und je 100 kcal; Wirkung bei täglich 250 mg DHA. | VO (EU) Nr. 432/2012 | [Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025; EPA/DHA/DHA)](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820) (abgerufen 2026-10-29) |
+| zugelassen | DHA trägt zur Erhaltung normaler Sehkraft bei. | Mindestens 40 mg DHA je 100 g und je 100 kcal; Wirkung bei täglich 250 mg DHA. | VO (EU) Nr. 432/2012 | [Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025; EPA/DHA/DHA)](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820) (abgerufen 2026-10-29) |
+| zugelassen | DHA und EPA tragen zur Aufrechterhaltung eines normalen Triglyceridspiegels im Blut bei. | Verzehr muss täglich 2 g EPA und DHA gewährleisten; bei Nahrungsergänzungsmitteln Hinweis, dass 5 g EPA+DHA pro Tag nicht überschritten werden dürfen; nicht für Lebensmittel für Kinder. | VO (EU) Nr. 432/2012 | [Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025; EPA/DHA/DHA)](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820) (abgerufen 2026-10-29) |
+| zugelassen | DHA und EPA tragen zur Aufrechterhaltung eines normalen Blutdrucks bei. | Verzehr muss täglich 3 g EPA und DHA gewährleisten; Hinweis auf höchstens 5 g EPA+DHA pro Tag; nicht für Lebensmittel für Kinder. | VO (EU) Nr. 432/2012 | [Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025; EPA/DHA/DHA)](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820) (abgerufen 2026-10-29) |
+| zugelassen | „Quelle von Omega-3-Fettsäuren“ (nährwertbezogene Angabe). | Zulässig nur bei mindestens 0,3 g Alpha-Linolensäure je 100 g und 100 kcal oder zusammen mindestens 40 mg EPA und DHA je 100 g und 100 kcal. „Hoher Gehalt“: mindestens 0,6 g ALA bzw. 80 mg EPA+DHA. | VO (EG) Nr. 1924/2006, Anhang | [Verordnung (EG) Nr. 1924/2006 – Anhang: Quelle von Omega-3-Fettsäuren (konsolidierte Fassung vom 13.12.2014)](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02006R1924-20141213) (abgerufen 2026-10-29) |
+
+## C. Studien
+
+- **Omega-3 und Herz-Kreislauf-Erkrankungen (Cochrane-Review)** (2020, Systematischer Review mit Metaanalyse, 86 randomisierte Studien) – PMID [32114706](https://pubmed.ncbi.nlm.nih.gov/32114706/), DOI 10.1002/14651858.CD003177.pub5. Population: 162.796 Erwachsene mit unterschiedlichem Herz-Kreislauf-Risiko. Ergebnis: Kaum oder kein Effekt auf Gesamtsterblichkeit (RR 0,97), Herz-Kreislauf-Ereignisse (RR 0,96), Schlaganfall und Rhythmusstörungen. Bei koronaren Herzereignissen ein kleiner Vorteil (RR 0,91) mit niedriger Evidenzsicherheit; Triglyceride um etwa 15 % niedriger. Grenzen: Nur 28 von 86 Studien mit niedrigem Verzerrungsrisiko; überwiegend Hocheinkommensländer. Finanzierung/Interessen: Alle Autoren erklären keine Interessenkonflikte.. Grundlage: abstract.
+- **Omega-3 zur Vorbeugung bei Gesunden (VITAL)** (2019, Randomisierte Studie, placebokontrolliert, 5,3 Jahre) – PMID [30415637](https://pubmed.ncbi.nlm.nih.gov/30415637/), DOI 10.1056/NEJMoa1811403. Population: 25.871 Personen (Männer ab 50, Frauen ab 55) ohne Herz-Kreislauf-Erkrankung. Ergebnis: Der Hauptendpunkt war nicht signifikant (HR 0,92; 0,80–1,06). Herzinfarkte waren in einem Nebenendpunkt seltener (HR 0,72). Kein Mehr an Blutungen oder schweren Nebenwirkungen. Grenzen: Das Herzinfarkt-Ergebnis stammt aus einem sekundären Endpunkt. Finanzierung/Interessen: Gefördert u. a. von den US-amerikanischen National Institutes of Health.. Grundlage: abstract.
+- **Omega-3 bei Diabetes (ASCEND)** (2018, Randomisierte Studie, placebokontrolliert, 7,4 Jahre) – PMID [30146932](https://pubmed.ncbi.nlm.nih.gov/30146932/), DOI 10.1056/NEJMoa1804989. Population: 15.480 Menschen mit Diabetes ohne Herz-Kreislauf-Erkrankung. Ergebnis: Kein Unterschied (8,9 % vs. 9,2 %; Rate Ratio 0,97). Kein Unterschied bei der Gesamtsterblichkeit. Grenzen: Einnahmetreue 76 %. Finanzierung/Interessen: Gefördert u. a. von der British Heart Foundation.. Grundlage: abstract.
+- **Hochdosiertes EPA als Arzneimittel (REDUCE-IT)** (2019, Randomisierte Studie, doppelblind) – PMID [30415628](https://pubmed.ncbi.nlm.nih.gov/30415628/), DOI 10.1056/NEJMoa1812792. Population: 8179 Patienten unter Statin mit erhöhten Triglyceriden, überwiegend mit Herzerkrankung. Ergebnis: Deutlich weniger Ereignisse (17,2 % vs. 22,0 %; HR 0,75). Mehr Krankenhausaufnahmen wegen Vorhofflimmern (3,1 % vs. 2,1 %). Grenzen: Verschreibungspflichtiges, reines EPA in 4 g; nicht auf frei verkäufliche Fischölkapseln übertragbar. Finanzierung/Interessen: Finanziert vom Hersteller Amarin Pharma.. Grundlage: abstract.
+- **Hochdosiertes EPA+DHA gegen Maisöl (STRENGTH)** (2020, Randomisierte Studie, doppelblind, vorzeitig beendet) – PMID [33190147](https://pubmed.ncbi.nlm.nih.gov/33190147/), DOI 10.1001/jama.2020.22258. Population: 13.078 Patienten unter Statin mit hohem Risiko und erhöhten Triglyceriden. Ergebnis: Kein Unterschied (12,0 % vs. 12,2 %; HR 0,99). Mehr Magen-Darm-Beschwerden (24,7 % vs. 14,7 %). Grenzen: Vorzeitiger Abbruch; Arzneimittelstudie mit hoher Dosis. Finanzierung/Interessen: Interessenkonflikte mehrerer Autoren mit Herstellern (u. a. AstraZeneca); Förderer im Abstract nicht genannt.. Grundlage: abstract.
+- **Metaanalyse großer Omega-3-Studien (2018)** (2018, Metaanalyse von 10 randomisierten Studien) – PMID [29387889](https://pubmed.ncbi.nlm.nih.gov/29387889/), DOI 10.1001/jamacardio.2017.5205. Population: 77.917 Personen mit hohem Risiko. Ergebnis: Kein signifikanter Effekt auf schwere Gefäßereignisse (RR 0,97) oder koronare Todesfälle, auch nicht in Untergruppen. Grenzen: Nur große, lange Studien mit Hochrisiko-Personen. Finanzierung/Interessen: Mehrere Autoren leiteten Studien mit Industrie-Förderung; Förderer im Abstract nicht genannt.. Grundlage: abstract.
+- **Aktualisierte Metaanalyse zu marinem Omega-3 (2019)** (2019, Metaanalyse von 13 randomisierten Studien (Fixed-Effect)) – PMID [31567003](https://pubmed.ncbi.nlm.nih.gov/31567003/), DOI 10.1161/JAHA.119.013543. Population: 127.477 Teilnehmende. Ergebnis: Ohne REDUCE-IT leicht weniger Herzinfarkte (RR 0,92) und koronare Todesfälle (RR 0,92); mit REDUCE-IT stärker, aber uneinheitlich. Widerspricht im Gesamtbild der Metaanalyse von 2018. Grenzen: Fixed-Effect-Modell; Heterogenität. Finanzierung/Interessen: nicht geprüft. Grundlage: abstract.
+- **AHA-Empfehlung zu hohen Triglyceriden** (2019, Wissenschaftliche Stellungnahme (narrativ, kein systematischer Review)) – PMID [31422671](https://pubmed.ncbi.nlm.nih.gov/31422671/), DOI 10.1161/CIR.0000000000000709. Population: Erwachsene mit hohen Triglyceriden. Ergebnis: Bei sehr hohen Triglyceriden senken 4 g/Tag EPA+DHA-Arzneimittel die Werte um mindestens 30 %. Grenzen: Gilt für Arzneimittel in pharmakologischer Dosis, nicht für übliche Supplemente. Finanzierung/Interessen: nicht geprüft. Grundlage: abstract.
+- **Omega-3 und Depression bei Älteren (VITAL-DEP)** (2021, Randomisierte Studie, placebokontrolliert, 5,3 Jahre) – PMID [34932079](https://pubmed.ncbi.nlm.nih.gov/34932079/), DOI 10.1001/jama.2021.21187. Population: 18.353 Erwachsene ab 50 ohne Depression. Ergebnis: Kein Schutz vor Depression: das Risiko war sogar leicht höher (HR 1,13; knapp signifikant), der Stimmungswert unterschied sich nicht. Grenzen: Prüft keine Behandlung bestehender Depression; knappes Ergebnis bei mehreren Endpunkten. Finanzierung/Interessen: Einzelne Autoren mit Unterstützung von Herstellern; Förderer im Abstract nicht genannt.. Grundlage: abstract.
+- **Omega-3 bei Depression (Cochrane-Review)** (2021, Systematischer Review mit Metaanalyse, 35 Studien) – PMID [34817851](https://pubmed.ncbi.nlm.nih.gov/34817851/), DOI 10.1002/14651858.CD004692.pub5. Population: Erwachsene mit Major Depression. Ergebnis: Kleine Verbesserung der Symptome, laut Autoren sehr niedrige Evidenzsicherheit und wahrscheinlich klinisch nicht bedeutsam; kein belegter Unterschied bei Remission und Ansprechen. Grenzen: Sehr niedrige bis niedrige Sicherheit, hohe Heterogenität. Finanzierung/Interessen: nicht geprüft. Grundlage: abstract.
+- **Omega-3 und geistiger Abbau (Cochrane-Review, 2012)** (2012, Systematischer Review, 3 randomisierte Studien) – PMID [22696350](https://pubmed.ncbi.nlm.nih.gov/22696350/), DOI 10.1002/14651858.CD005379.pub3. Population: 4080 kognitiv gesunde Personen ab 60. Ergebnis: Kein Vorteil bei den Denktests; keine Studie zur Demenzentstehung. Grenzen: Veraltet (Recherche 2012), nur 3 Studien, kurze Dauer. Finanzierung/Interessen: Ein Autor leitete eine eingeschlossene Studie.. Grundlage: abstract.
+- **Omega-3 in der Schwangerschaft (Cochrane-Review)** (2018, Systematischer Review mit Metaanalyse, 70 randomisierte Studien) – PMID [30480773](https://pubmed.ncbi.nlm.nih.gov/30480773/), DOI 10.1002/14651858.CD003402.pub3. Population: 19.927 Schwangere. Ergebnis: Weniger Frühgeburten vor 37 Wochen (13,4 % vs. 11,9 %; RR 0,89, hohe Evidenzsicherheit) und vor 34 Wochen (RR 0,58). Etwas häufiger Übertragung über 42 Wochen (RR 1,61). Grenzen: Dosis und Zeitpunkt nicht aufgeschlüsselt; Recherche 2018. Finanzierung/Interessen: Mehrere Autoren leiteten eingeschlossene Studien.. Grundlage: abstract.
+- **Omega-3 und Vorhofflimmern (Metaanalyse 2021)** (2021, Systematischer Review mit Metaanalyse, 7 randomisierte Studien) – PMID [34612056](https://pubmed.ncbi.nlm.nih.gov/34612056/), DOI 10.1161/CIRCULATIONAHA.121.055654. Population: 81.210 Patienten, mittleres Alter 65. Ergebnis: Höheres Risiko (HR 1,25), stärker bei mehr als 1 g/Tag (HR 1,49). Grenzen: Vorhofflimmern war meist ein Nebenereignis; Hochrisiko-Gruppen. Finanzierung/Interessen: nicht geprüft. Grundlage: abstract.
+- **Omega-3 und Vorhofflimmern (Metaanalyse 2026)** (2026, Metaanalyse von 35 randomisierten Studien) – PMID [42517224](https://pubmed.ncbi.nlm.nih.gov/42517224/), DOI 10.1161/CIRCEP.125.014785. Population: 114.592 Personen ab 50 Jahren. Ergebnis: Nur bei Hochrisiko-Gruppen mit mehr als 1500 mg/Tag erhöhtes Risiko (OR 1,43; absolut etwa 0,8 Prozentpunkte mehr); bei niedriger Dosis oder niedrigem Risiko kein signifikanter Unterschied. Grenzen: Gruppierung nach Risiko und Dosis nachträglich möglich. Finanzierung/Interessen: Mehrere Autoren mit Verbindungen zur Omega-3-Branche (u. a. Hersteller, Branchenverband).. Grundlage: abstract.
+- **Omega-3 und Blutungsrisiko (Metaanalyse 2024)** (2024, Systematischer Review mit Metaanalyse, 11 randomisierte Studien) – PMID [38742535](https://pubmed.ncbi.nlm.nih.gov/38742535/), DOI 10.1161/JAHA.123.032390. Population: 120.643 Patienten. Ergebnis: Insgesamt kein Unterschied (RR 1,09). Bei hochdosiertem, gereinigtem EPA etwa 50 % mehr Blutungen (absolut +0,6 %). Grenzen: Wenige Studien mit hochdosiertem EPA. Finanzierung/Interessen: nicht geprüft. Grundlage: abstract.
+- **Gehalt und Oxidation von Fischöl-Supplementen (Neuseeland)** (2017, Laboranalyse von 47 Produkten (keine Humanstudie)) – PMID [28469193](https://pubmed.ncbi.nlm.nih.gov/28469193/), DOI 10.1038/s41598-017-01470-4. Population: 47 Fischölprodukte, Neuseeland. Ergebnis: 72–86 % hielten die Branchengrenzwerte ein; 91 % entsprachen den EPA/DHA-Angaben. Grenzen: Neuseeländischer Markt 2017, nicht übertragbar auf Deutschland. Finanzierung/Interessen: Autoren arbeiten für den Branchenverband GOED bzw. in dessen Mitgliedslaboren.. Grundlage: abstract.
+- **Fettqualität von Omega-3-Supplementen (Frankreich)** (2022, Laboranalyse von 20 Produkten (keine Humanstudie)) – PMID [36291569](https://pubmed.ncbi.nlm.nih.gov/36291569/), DOI 10.3390/biom12101361. Population: 20 Omega-3-Supplemente, Frankreich. Ergebnis: Nur 2,5 % erfüllten ihre Omega-3-Deklaration nicht; alle hielten die Oxidationsgrenzwerte ein. Grenzen: Nur 20 Produkte, anderer Markt; die Studie widerspricht dem Befund einer früheren Studie mit viel Oxidation. Finanzierung/Interessen: Keine Interessenkonflikte erklärt.. Grundlage: abstract.
+
+## D. Behörden und weitere Quellen im Text
+
+- [EFSA NDA Panel: Scientific Opinion on the Tolerable Upper Intake Level of EPA, DHA and DPA (EFSA Journal 2012;10(7):2815)](https://doi.org/10.2903/j.efsa.2012.2815) (abgerufen 2026-10-29) – Nur die Zusammenfassung wurde gelesen (Volltext gesperrt). Die EFSA leitete keinen Höchstwert ab.
+- [DGE Referenzwerte-Tool: EPA+DHA 250 mg/Tag](https://www.dge.de/wissenschaft/referenzwerte-tool/filter/689/635) (abgerufen 2026-10-29) – Die Wertkategorie (Richtwert/Schätzwert) ist im abgerufenen Text nicht eindeutig zuordenbar.
+- [BfR: Omega-3-Fettsäuren – Wichtig, aber in Maßen (Fragen und Antworten, 30.04.2026)](https://www.bfr.bund.de/fragen-und-antworten/thema/omega-3-fettsaeuren-wichtig-aber-in-massen/) (abgerufen 2026-10-29)
+- [BfR Mitteilung 57/2023: Omega-3-Präparate können bei Herzpatienten das Risiko für Vorhofflimmern erhöhen](https://www.bfr.bund.de/cm/343/praeparate-mit-omega-3-fettsaeuren-koennen-bei-herzpatienten-das-risiko-fuer-vorhofflimmern-erhoehen.pdf) (abgerufen 2026-10-29)
+- [BfR Stellungnahme 030/2009: Höchstmengen bei Anreicherung mit Omega-3-Fettsäuren](https://www.BFR.bund.de/cm/343/fuer_die_anreicherung_von_lebensmitteln_mit_omega_3_fettsaeuren_empfiehlt_das_bfr_die_festsetzung_von_hoechstmengen.pdf) (abgerufen 2026-10-29)
+- [Verbraucherzentrale: Sind Omega-3-Fettsäure-Kapseln eine sinnvolle Nahrungsergänzung? (Stand 24.03.2026)](https://www.verbraucherzentrale.de/wissen/lebensmittel/nahrungsergaenzungsmittel/sind-omega3fettsaeurekapseln-eine-sinnvolle-nahrungsergaenzung-8585) (abgerufen 2026-10-29) – Enthält keine eigenen Messdaten zur Oxidation.
+
+## E. Preisvergleich (Zahlen nachrechnen)
+
+| Produkt | Packung | Wirkstoff (je 100 g bzw. je Packung) | Preis (ohne Code) | Pro 10 g Wirkstoff | Streichpreis → pro 10 g | Stand |
+|---|---|---|---|---|---|---|
+| Bodylab24 Omega-3 (120 Kapseln) – ENTWURF | – g | 36 g | 9,90 € (Aktion) | 2,75 € | 15,99 € → 4,44 € | 2026-10-29 |
+| Bulk Extra Starke Omega-3 Weichkapseln (90 Kapseln) – ENTWURF | – g | 49.5 g | 15,99 € (Aktion) | 3,23 € | 21,99 € → 4,44 € | 2026-10-29 |
+| ESN Omega-3 Kapseln (60 Kapseln) – ENTWURF | – g | 42 g | 16,90 € | 4,02 € | 16,90 € → 4,02 € | 2026-10-29 |
+| Natural Elements Omega 3 Fischöl Kapseln (365 Kapseln) – ENTWURF | – g | 109.5 g | 29,99 € | 2,74 € | 29,99 € → 2,74 € | 2026-10-29 |
 
 ---
 
@@ -187,4 +291,5 @@ In der EU sind für Protein drei gesundheitsbezogene Aussagen zugelassen: Protei
 | ESN Designer Whey Protein (Vanilla Milk, 908 g) | 908 g | 75 g | 47,90 € | 7,03 € | 47,90 € → 7,03 € | 2026-10-28 |
 | Myprotein Impact Whey Protein (Vanille, 900 g) | 900 g | 72 g | 35,99 € (Aktion) | 5,55 € | 44,99 € → 6,94 € | 2026-10-29 |
 | Optimum Nutrition Gold Standard 100% Whey (French Vanilla, 900 g) | 900 g | 79 g | 49,99 € | 7,03 € | 49,99 € → 7,03 € | 2026-10-29 |
+| Scitec Nutrition 100% Whey Protein Professional (Geschmack nicht gewählt, Titel „1 kg“) – ENTWURF | 1000 g | 73 g | 37,50 € | 5,14 € | 37,50 € → 5,14 € | 2026-10-29 |
 

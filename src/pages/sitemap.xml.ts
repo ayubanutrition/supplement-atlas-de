@@ -9,7 +9,7 @@ import { publishedProducts } from '../lib/view.ts';
 export const GET: APIRoute = async ({ site }) => {
   const indexing = Boolean(site) && process.env.PUBLIC_INDEXING === 'true';
   const d = getDataset();
-  const paths = ['/', '/methodik/', '/ueber-uns/', '/impressum/', '/datenschutz/', '/rechner/', '/rechner/kreatinpreis/', '/rechner/proteinpreis/'];
+  const paths = ['/', '/methodik/', '/ueber-uns/', '/impressum/', '/datenschutz/', '/rechner/', '/rechner/kreatinpreis/', '/rechner/proteinpreis/', '/rechner/omega3preis/'];
   const articles = await getCollection('wirkstoffe', (e) => e.data.status === 'published');
   for (const a of articles) paths.push(`/wirkstoffe/${CATEGORIES.find((c) => c.substanceId === a.data.substanceId)!.slug}/`);
   for (const c of CATEGORIES) if (publishedProducts(d, c.substanceId).length) paths.push(`/vergleich/${c.slug}/`);

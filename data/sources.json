@@ -565,5 +565,266 @@
     "url": "https://www.weider.de/policies/legal-notice",
     "retrievedAt": "2026-10-29T01:10:06Z",
     "note": null
+  },
+  {
+    "id": "vo-432-2012-omega3",
+    "kind": "regulation",
+    "title": "Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025; EPA/DHA/DHA)",
+    "publisher": "Europäische Kommission, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820",
+    "retrievedAt": "2026-10-29",
+    "note": "Wortlaut über die amtliche Fassung des Amts für Veröffentlichungen geprüft. Der amtliche deutsche Text enthält in der Herz-Angabe einen Tippfehler („DPA“ statt „DHA“)."
+  },
+  {
+    "id": "vo-1924-2006-omega3",
+    "kind": "regulation",
+    "title": "Verordnung (EG) Nr. 1924/2006 – Anhang: Quelle von Omega-3-Fettsäuren (konsolidierte Fassung vom 13.12.2014)",
+    "publisher": "Europäisches Parlament und Rat, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02006R1924-20141213",
+    "retrievedAt": "2026-10-29",
+    "note": "Neuere Konsolidierung nicht abrufbar; spätere Änderungen nicht ausgeschlossen."
+  },
+  {
+    "id": "efsa-2012-2815",
+    "kind": "authority",
+    "title": "EFSA NDA Panel: Scientific Opinion on the Tolerable Upper Intake Level of EPA, DHA and DPA (EFSA Journal 2012;10(7):2815)",
+    "publisher": "Europäische Behörde für Lebensmittelsicherheit (EFSA)",
+    "url": "https://doi.org/10.2903/j.efsa.2012.2815",
+    "retrievedAt": "2026-10-29",
+    "note": "Nur die Zusammenfassung wurde gelesen (Volltext gesperrt). Die EFSA leitete keinen Höchstwert ab."
+  },
+  {
+    "id": "dge-referenzwerte-tool",
+    "kind": "authority",
+    "title": "DGE Referenzwerte-Tool: EPA+DHA 250 mg/Tag",
+    "publisher": "Deutsche Gesellschaft für Ernährung (DGE)",
+    "url": "https://www.dge.de/wissenschaft/referenzwerte-tool/filter/689/635",
+    "retrievedAt": "2026-10-29",
+    "note": "Die Wertkategorie (Richtwert/Schätzwert) ist im abgerufenen Text nicht eindeutig zuordenbar."
+  },
+  {
+    "id": "bfr-omega3-faq-2026",
+    "kind": "authority",
+    "title": "BfR: Omega-3-Fettsäuren – Wichtig, aber in Maßen (Fragen und Antworten, 30.04.2026)",
+    "publisher": "Bundesinstitut für Risikobewertung (BfR)",
+    "url": "https://www.bfr.bund.de/fragen-und-antworten/thema/omega-3-fettsaeuren-wichtig-aber-in-massen/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "bfr-57-2023",
+    "kind": "authority",
+    "title": "BfR Mitteilung 57/2023: Omega-3-Präparate können bei Herzpatienten das Risiko für Vorhofflimmern erhöhen",
+    "publisher": "Bundesinstitut für Risikobewertung (BfR)",
+    "url": "https://www.bfr.bund.de/cm/343/praeparate-mit-omega-3-fettsaeuren-koennen-bei-herzpatienten-das-risiko-fuer-vorhofflimmern-erhoehen.pdf",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "bfr-030-2009",
+    "kind": "authority",
+    "title": "BfR Stellungnahme 030/2009: Höchstmengen bei Anreicherung mit Omega-3-Fettsäuren",
+    "publisher": "Bundesinstitut für Risikobewertung (BfR)",
+    "url": "https://www.BFR.bund.de/cm/343/fuer_die_anreicherung_von_lebensmitteln_mit_omega_3_fettsaeuren_empfiehlt_das_bfr_die_festsetzung_von_hoechstmengen.pdf",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "vz-omega3-2026",
+    "kind": "other",
+    "title": "Verbraucherzentrale: Sind Omega-3-Fettsäure-Kapseln eine sinnvolle Nahrungsergänzung? (Stand 24.03.2026)",
+    "publisher": "Verbraucherzentrale",
+    "url": "https://www.verbraucherzentrale.de/wissen/lebensmittel/nahrungsergaenzungsmittel/sind-omega3fettsaeurekapseln-eine-sinnvolle-nahrungsergaenzung-8585",
+    "retrievedAt": "2026-10-29",
+    "note": "Enthält keine eigenen Messdaten zur Oxidation."
+  },
+  {
+    "id": "pmid-32114706",
+    "kind": "study",
+    "title": "Abdelhamid et al. (2020): Omega-3 for primary and secondary prevention of cardiovascular disease (Cochrane)",
+    "publisher": "Cochrane Database Syst Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32114706/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-30415637",
+    "kind": "study",
+    "title": "Manson et al. (2019): Marine n-3 fatty acids and prevention of cardiovascular disease and cancer (VITAL)",
+    "publisher": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30415637/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-30146932",
+    "kind": "study",
+    "title": "ASCEND (2018): n-3 fatty acid supplements in diabetes mellitus",
+    "publisher": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30146932/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-30415628",
+    "kind": "study",
+    "title": "Bhatt et al. (2019): Icosapent ethyl for hypertriglyceridemia (REDUCE-IT)",
+    "publisher": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30415628/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-33190147",
+    "kind": "study",
+    "title": "Nicholls et al. (2020): High-dose omega-3 vs corn oil (STRENGTH)",
+    "publisher": "JAMA",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33190147/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-29387889",
+    "kind": "study",
+    "title": "Aung et al. (2018): Omega-3 supplement use and cardiovascular disease risks – meta-analysis of 10 trials",
+    "publisher": "JAMA Cardiol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29387889/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-31567003",
+    "kind": "study",
+    "title": "Hu et al. (2019): Marine omega-3 and cardiovascular disease – updated meta-analysis of 13 RCTs",
+    "publisher": "J Am Heart Assoc",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31567003/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-31422671",
+    "kind": "study",
+    "title": "Skulas-Ray et al. (2019): Omega-3 fatty acids for hypertriglyceridemia – AHA science advisory",
+    "publisher": "Circulation",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31422671/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-34932079",
+    "kind": "study",
+    "title": "Okereke et al. (2021): Marine omega-3 and depression (VITAL-DEP)",
+    "publisher": "JAMA",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34932079/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-34817851",
+    "kind": "study",
+    "title": "Omega-3 fatty acids for depression in adults (Cochrane, 2021)",
+    "publisher": "Cochrane Database Syst Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34817851/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-22696350",
+    "kind": "study",
+    "title": "Omega-3 fatty acid for the prevention of cognitive decline and dementia (Cochrane, 2012)",
+    "publisher": "Cochrane Database Syst Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22696350/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-30480773",
+    "kind": "study",
+    "title": "Middleton et al. (2018): Omega-3 fatty acid addition during pregnancy (Cochrane)",
+    "publisher": "Cochrane Database Syst Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30480773/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-34612056",
+    "kind": "study",
+    "title": "Gencer et al. (2021): Marine omega-3 and atrial fibrillation – meta-analysis",
+    "publisher": "Circulation",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34612056/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-42517224",
+    "kind": "study",
+    "title": "Omega-3 and atrial fibrillation – updated meta-analysis of 35 trials (2026)",
+    "publisher": "Circ Arrhythm Electrophysiol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42517224/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-38742535",
+    "kind": "study",
+    "title": "Bleeding risk in patients receiving omega-3 PUFA – meta-analysis (2024)",
+    "publisher": "J Am Heart Assoc",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38742535/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-28469193",
+    "kind": "study",
+    "title": "Omega-3 content and oxidation state of fish oil supplements in New Zealand (2017)",
+    "publisher": "Sci Rep",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28469193/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-36291569",
+    "kind": "study",
+    "title": "Lipid quality in commercial omega-3 supplements sold in the French market (2022)",
+    "publisher": "Biomolecules",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36291569/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "esn-omega3-produktseite",
+    "kind": "label",
+    "title": "ESN Omega-3 Kapseln – Produktseite (60 Kapseln)",
+    "publisher": "ESN / Fitmart GmbH & Co. KG",
+    "url": "https://www.esn.com/products/esn-omega-3",
+    "retrievedAt": "2026-10-29T01:20:06Z",
+    "note": "EPA/DHA im Reiter „Nährwerte“ gelesen. Die Werte „1200 mg EPA / 900 mg DHA“ gelten je Portion (3 Kapseln), nicht je Kapsel. Eine Zutatenliste steht nicht auf der Seite."
+  },
+  {
+    "id": "bulk-omega3-produktseite",
+    "kind": "label",
+    "title": "Bulk Extra Starke Omega-3 Weichkapseln 1000 mg – Produktseite (90 Kapseln)",
+    "publisher": "Bulk / Sports Supplements Limited",
+    "url": "https://www.bulk.com/de/products/extra-starke-omega-3-weichkapseln/bpb-o3ss-0000",
+    "retrievedAt": "2026-10-29T01:22:21Z",
+    "note": "Preise aus strukturierten Daten und Seitentext; Aktionsende nur in den strukturierten Daten. Die „Preis je Portion“-Angabe der Seite bezieht sich auf eine Kapsel."
+  },
+  {
+    "id": "bodylab24-omega3-produktseite",
+    "kind": "label",
+    "title": "Bodylab24 Omega-3 (120 Kapseln) – Produktseite",
+    "publisher": "Bodylab24 / ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/products/omega-3-120-kapseln-24841",
+    "retrievedAt": "2026-10-29T01:23:52Z",
+    "note": null
+  },
+  {
+    "id": "naturalelements-omega3-produktseite",
+    "kind": "label",
+    "title": "natural elements Omega 3 Fischöl Kapseln (365 Kapseln) – Produktseite",
+    "publisher": "natural elements GmbH",
+    "url": "https://naturalelements.de/products/omega-3-fischol-kapseln",
+    "retrievedAt": "2026-10-29T01:24:40Z",
+    "note": "Die Variante mit 180 Kapseln hat widersprüchliche Seitentexte und wird nicht verwendet."
   }
 ]

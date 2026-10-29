@@ -1,6 +1,6 @@
 # Arbeitsstand
 
-Stand: 29.10.2026 · Branch `feat/m3-protein` (enthält M1/M2; Basis `main` @ 5a4b1b2)
+Stand: 29.10.2026 · Branch `feat/omega3` (enthält M1–M3 aus `feat/m3-protein`; Basis `main` @ 5a4b1b2)
 
 ## Verifiziert
 - M0–M2: Astro 7.3.8 + TypeScript, ein Zod-Schema für Build/Validator/Tests, Draft- und Quellenregeln, Kreatin-Strecke.
@@ -10,8 +10,9 @@ Stand: 29.10.2026 · Branch `feat/m3-protein` (enthält M1/M2; Basis `main` @ 5a
   - Whey: 5 veröffentlichte Produkte (ESN, Myprotein, Bulk, Bodylab24, Optimum Nutrition), 3 Duelle; Scitec als **Entwurf** (Gewicht 1000 g vs. 920 g, Sorte, Versand ungeklärt). Vergleichbarkeitshinweise sichtbar (ESN/Bodylab24 sind Konzentrat-Isolat-Mischungen, Geschmack und Packung unterschiedlich, drei von vier Preisen sind Aktionen; Reihenfolge kippt zwischen Aktions- und Streichpreis).
   - Evidenz: Kreatin 8 Arbeiten + 3 EU-Aussagen; Protein 13 Arbeiten + 4 EU-Aussagen (Wortlaut aus Amtsblatt-Ursprungsfassungen); 63 dokumentierte Quellen.
   - Release-Technik: `wrangler.jsonc` (Workers Static Assets), `_headers` (CSP u. a., mit Testserver geprüft), `sitemap.xml` nur nach Freigabe, `noindex`/robots bis Freigabe.
-- Prüfungen: `pnpm build` = Datenprüfung + 42 Tests + 31 Seiten + Output-Prüfung grün. Browser-QA (`scripts/qa-browser.cjs`, gegen Server mit echten Headern): alle internen Links 200, 404 korrekt, kein Überlauf bei 360 px, keine Konsolenfehler, keine axe-core-Befunde (WCAG 2.1 AA + Best Practice), beide Rechner korrekt. Screenshots 360/1280 px gesichtet.
+- Prüfungen: `pnpm build` = Datenprüfung + 49 Tests + 32 Seiten + Output-Prüfung grün. Browser-QA (`scripts/qa-browser.cjs`, gegen Server mit echten Headern): alle internen Links 200, 404 korrekt, kein Überlauf bei 360 px, keine Konsolenfehler, keine axe-core-Befunde (WCAG 2.1 AA + Best Practice), beide Rechner korrekt. Screenshots 360/1280 px gesichtet.
 - Freigabesperren (alle getestet): Build mit `PUBLIC_INDEXING=true` bricht ab ohne `reviewedBy` am Artikel, ohne vollständiges Impressum (`data/operator.json`) und ohne geprüfte Datenschutzerklärung. `pnpm release-check` listet alle offenen Blocker; Schritt-für-Schritt-Anleitung in `docs/RELEASE.md`.
+- **Omega-3-Cluster (Entwurf, nicht veröffentlicht):** Artikel `content/wirkstoffe/omega-3.md` (`status: draft`, ohne Fachprüfung), 6 EU-Aussagen, 17 Quellen/Studien, 4 Produkte (ESN, Bulk, Bodylab24, Natural Elements) als Entwurf, Preisbasis 10 g EPA+DHA (Kapselzahl × EPA+DHA je Kapsel), Rechner `/rechner/omega3preis/` (live, neutral). Mit lokal freigeschaltetem Cluster gebaut und im Browser geprüft (38 Seiten, keine Befunde). Zur Freigabe: Fachprüfung, dann `status: published` in Artikel, Substanz und Produkten; Preise ggf. neu erfassen.
 - Aktionspreise mit Enddatum (`saleEndsAt`): nach Ablauf automatisch „Aktion beendet – erneut prüfen“ (nu3 bis 30.10.2026, Bulk bis 03.11.2026).
 - Output-Prüfung nach jedem Build (mit absichtlichen Fehlern getestet) und Mobil-Performance-Stichprobe (gedrosselt: LCP 0,45–0,72 s, CLS 0; HTML 4–23 KB, CSS 6,5 KB).
 - Protein-Aussagen gegen die konsolidierte EU-Fassung (20.08.2025) wörtlich bestätigt; Nährwertangabe „Proteinquelle“ (VO 1924/2006) noch aus der Ursprungsfassung.

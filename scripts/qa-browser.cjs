@@ -81,6 +81,22 @@ const problems = [];
   const err = await kp.isVisible('#out-error');
   if (!err) problems.push('Rechner: ungültiger Anteil (120) zeigt keinen Fehler');
 
+  // Sortierschalter im Vergleich: Standard alphabetisch, per Tastatur auf Preis umstellbar
+  const sp = await browser.newPage({ viewport: { width: 360, height: 800 } });
+  await sp.goto(BASE + '/vergleich/whey-protein/');
+  const names = async () => sp.$$eval('figure.bars:first-of-type .bar-label', (els) => els.map((e) => e.textContent.trim().split('\n')[0]));
+  const alpha = await names();
+  if (JSON.stringify(alpha) !== JSON.stringify([...alpha].sort((a, b) => a.localeCompare(b, 'de')))) problems.push('Vergleich: Standardsortierung nicht alphabetisch');
+  await sp.focus('#sortbar button[data-sort="pay"]');
+  await sp.keyboard.press('Enter');
+  const byPay = await names();
+  if (!byPay[0].startsWith('Bodylab24')) problems.push(`Vergleich: Sortierung nach Preis, erwartet Bodylab24 zuerst, erhalten ${byPay[0]}`);
+  if ((await sp.getAttribute('#sortbar button[data-sort="pay"]', 'aria-pressed')) !== 'true') problems.push('Vergleich: aria-pressed nicht gesetzt');
+  await sp.focus('#sortbar button[data-sort="reg"]');
+  await sp.keyboard.press('Space');
+  const byReg = await names();
+  if (!byReg[0].startsWith('Bulk')) problems.push(`Vergleich: Sortierung nach Listenpreis, erwartet Bulk zuerst, erhalten ${byReg[0]}`);
+
   // Proteinrechner: 37,90 € / 1000 g bei 75 g Protein je 100 g = 5,05 € pro 100 g
   const pp = await browser.newPage({ viewport: { width: 360, height: 800 } });
   await pp.goto(BASE + '/rechner/proteinpreis/');

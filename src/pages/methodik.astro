@@ -19,7 +19,8 @@ import { STALE_AFTER_DAYS } from '../lib/price.ts';
   <ul>
     <li>Erfasst wird der Preis ohne Rabattcode, Abo oder App. Aktionspreise führen wir getrennt vom regulären bzw. vom Shop angezeigten Streichpreis.</li>
     <li>Versandkosten stehen daneben, werden aber nicht in den Preis pro 100 g eingerechnet, weil sie vom Warenkorb abhängen. Im <a href="/rechner/kreatinpreis/">Rechner</a> lassen sie sich einbeziehen.</li>
-    <li>Preise älter als {STALE_AFTER_DAYS} Tage werden als „erneut zu prüfen“ markiert und nicht mehr als aktueller Bestpreis hervorgehoben.</li>
+    <li>Preise älter als {STALE_AFTER_DAYS} Tage werden als „erneut zu prüfen“ markiert und nicht mehr als aktueller Bestpreis hervorgehoben. Nennt der Anbieter ein Aktionsende, gilt der Preis danach als „Aktion beendet – erneut prüfen“.</li>
+    <li>Streichpreise („War“, UVP) zeigen wir als vom Shop angegebenen Vergleichswert. Ob sie je verlangt wurden, prüfen wir nicht.</li>
     <li>Gerechnet wird in ganzen Cent; gerundet wird erst am Ende.</li>
   </ul>
 
@@ -38,10 +39,12 @@ import { STALE_AFTER_DAYS } from '../lib/price.ts';
   </ul>
 
   <h2>Noten und Rankings</h2>
-  <p>Derzeit vergeben wir <strong>keine Punktnoten und keinen Testsieger</strong>. Bevor wir Noten veröffentlichen, legen wir pro Kategorie eine Rubrik fest: was 1, 5 und 10 bedeuten, welche Daten nötig sind, wie fehlende Angaben zählen und wie stark jedes Kriterium gewichtet wird. Diese Rubrik wird hier veröffentlicht und an mehreren echten Produkten erprobt.</p>
+  <p>Wir vergeben <strong>keine Punktnoten und keinen Testsieger</strong>. Das haben wir an den erfassten Daten geprüft: Je nachdem, ob man den aktuellen Aktionspreis oder den Streich-/Listenpreis nimmt, ändert sich die Preisreihenfolge stark (beim Whey-Vergleich bei allen fünf Produkten). Eine einzelne Preisnote würde deshalb Genauigkeit vortäuschen.</p>
+  <p>Stattdessen zeigen wir die Preise je 100 g Wirkstoff auf beiden Basen, Angaben zur Zusammensetzung und zu Prüfhinweisen des Anbieters als Tabelle und weisen Unterschiede in der Vergleichbarkeit aus (z. B. Mischung mit Isolat, Marken-Rohstoff, andere Packungsgröße). Die Balken sind standardmäßig alphabetisch sortiert, damit keine Rangfolge entsteht; der Sortierschalter ändert das nur auf Wunsch. Noten kämen erst mit einer veröffentlichten, an echten Produkten erprobten Rubrik und stabilen Ergebnissen.</p>
 
   <h2>Auswahl der Produkte</h2>
   <p>Die bisher erfassten Produkte sind ein Startpunkt, keine vollständige Marktübersicht. Wir nehmen Produkte auf, die in Deutschland erhältlich sind und deren Anbieter prüfbare Angaben veröffentlichen. Eine bezahlte Aufnahme gibt es nicht.</p>
+  <p>Ein Produkt bleibt <strong>Entwurf</strong> (und wird nicht gezeigt), wenn zentrale Angaben ungeklärt sind, etwa Verfügbarkeit, Nettogewicht oder Sorte. Shops, die automatisierte Abrufe durch Sicherheitsprüfungen blockieren, umgehen wir nicht; deren Produkte fehlen deshalb.</p>
 
   <h2>Fehler melden</h2>
   <p>Korrekturen dokumentieren wir im Änderungsprotokoll der jeweiligen Produktseite. Ein Kontaktweg wird mit den Betreiberangaben vor der Veröffentlichung ergänzt.</p>

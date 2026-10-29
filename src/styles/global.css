@@ -140,3 +140,7 @@ input[aria-invalid='true'] { border-color: var(--focus); }
 .kv dd { margin: 0; }
 @media (min-width: 640px) { .kv { grid-template-columns: 10rem 1fr; } .kv dt { margin-top: 2px; } }
 .price-card { margin-bottom: 12px; max-width: 760px; }
+
+.sortbar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 8px 0 4px; }
+.sortbar button { font: inherit; font-size: 0.9rem; padding: 6px 12px; border: 1px solid var(--muted); border-radius: 999px; background: var(--surface); color: var(--ink); cursor: pointer; }
+.sortbar button[aria-pressed='true'] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }

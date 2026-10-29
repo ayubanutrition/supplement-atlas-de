@@ -3,7 +3,7 @@
 // fehlende Werte als "nicht berechenbar" – Farbe trägt keine eigene Information.
 import { formatEur } from '../lib/price.ts';
 
-interface Item { label: string; href?: string; cents: number | null; note?: string }
+interface Item { label: string; href?: string; cents: number | null; note?: string; sortPay?: number | null; sortReg?: number | null }
 interface Props { items: Item[]; caption: string }
 const { items, caption } = Astro.props;
 const max = Math.max(1, ...items.map((i) => i.cents ?? 0));
@@ -11,7 +11,7 @@ const max = Math.max(1, ...items.map((i) => i.cents ?? 0));
 <figure class="bars" aria-label={caption}>
   <figcaption class="small muted">{caption}</figcaption>
   {items.map((i) => (
-    <div class="bar-row">
+    <div class="bar-row" data-name={i.label} data-pay={i.sortPay ?? ""} data-reg={i.sortReg ?? ""}>
       <div class="bar-label">
         {i.href ? <a href={i.href}>{i.label}</a> : i.label}
         {i.note && <div class="small muted">{i.note}</div>}

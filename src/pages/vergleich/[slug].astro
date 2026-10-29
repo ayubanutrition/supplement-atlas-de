@@ -32,6 +32,13 @@ const asOf = dates.length ? formatDate(dates[dates.length - 1]) : '–';
   </div>
 
   <h2>Preis pro 100 g {cat.unit}</h2>
+  <div class="sortbar" id="sortbar" role="group" aria-label="Sortierung der Balken" hidden>
+    <span class="small muted">Sortierung:</span>
+    <button type="button" data-sort="name" aria-pressed="true">Alphabetisch</button>
+    <button type="button" data-sort="pay" aria-pressed="false">Preis ohne Code</button>
+    <button type="button" data-sort="reg" aria-pressed="false">Streich-/Listenpreis</button>
+    <span class="small muted" id="sort-status" aria-live="polite"></span>
+  </div>
   <PriceBars
     caption="Ohne Rabattcode zahlbarer Preis am Erfassungstag, ohne Versand. Gleiche Skala für alle Balken."
     items={views.map((v) => ({
@@ -39,11 +46,13 @@ const asOf = dates.length ? formatDate(dates[dates.length - 1]) : '–';
       href: `/produkte/${v.product.id}/`,
       cents: v.latest?.payablePer100 ?? null,
       note: priceNote(v.latest),
+      sortPay: v.latest?.payablePer100 ?? null,
+      sortReg: v.latest?.regularPer100 ?? null,
     }))}
   />
   <PriceBars
     caption="Zum Vergleich: regulärer bzw. vom Shop angegebener Streichpreis pro 100 g."
-    items={views.map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.regularPer100 ?? null }))}
+    items={views.map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.regularPer100 ?? null, sortPay: v.latest?.payablePer100 ?? null, sortReg: v.latest?.regularPer100 ?? null }))}
   />
   <p class="small muted">{cat.basisNote} Eigene Packung umrechnen: <a href={cat.calculatorPath}>Preisrechner</a>.</p>
 
@@ -74,3 +83,32 @@ const asOf = dates.length ? formatDate(dates[dates.length - 1]) : '–';
   </ul>
   <p>Wie wir Daten erheben und rechnen: <a href="/methodik/">Methodik</a>.</p>
 </Base>
+
+<script>
+  // Progressive Verbesserung: Balken umsortieren. Standard bleibt alphabetisch (keine Rangfolge unterstellen).
+  const bar = document.getElementById('sortbar');
+  if (bar) {
+    bar.hidden = false;
+    const status = document.getElementById('sort-status')!;
+    const labels: Record<string, string> = { name: 'alphabetisch', pay: 'nach Preis ohne Code, günstigster zuerst', reg: 'nach Streich-/Listenpreis, günstigster zuerst' };
+    const figures = Array.from(document.querySelectorAll<HTMLElement>('figure.bars'));
+    const apply = (mode: string) => {
+      for (const fig of figures) {
+        const rows = Array.from(fig.querySelectorAll<HTMLElement>('.bar-row'));
+        rows.sort((a, b) => {
+          if (mode === 'name') return a.dataset.name!.localeCompare(b.dataset.name!, 'de');
+          const av = a.dataset[mode], bv = b.dataset[mode];
+          // Fehlende Werte ans Ende
+          if (!av && !bv) return 0;
+          if (!av) return 1;
+          if (!bv) return -1;
+          return Number(av) - Number(bv) || a.dataset.name!.localeCompare(b.dataset.name!, 'de');
+        });
+        rows.forEach((r) => fig.appendChild(r));
+      }
+      bar.querySelectorAll<HTMLButtonElement>('button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.sort === mode)));
+      status.textContent = 'Sortiert ' + labels[mode] + '.';
+    };
+    bar.querySelectorAll<HTMLButtonElement>('button').forEach((b) => b.addEventListener('click', () => apply(b.dataset.sort!)));
+  }
+</script>

@@ -25,8 +25,8 @@ const rel = (vals) => {
   const lo = Math.min(...vals), hi = Math.max(...vals);
   return vals.map((v) => (hi === lo ? 5.5 : +(10 - 9 * ((v - lo) / (hi - lo))).toFixed(1)));
 };
-const pay = views.map((v) => v.latest.payablePer100);
-const reg = views.map((v) => v.latest.regularPer100);
+const pay = views.map((v) => v.latest.payablePerBasis);
+const reg = views.map((v) => v.latest.regularPerBasis);
 const cPay = rel(pay), cReg = rel(reg);
 const rank = (xs) => xs.map((x) => 1 + xs.filter((y) => y < x).length);
 const rPay = rank(pay), rReg = rank(reg);

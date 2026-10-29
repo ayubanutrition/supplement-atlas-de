@@ -17,22 +17,22 @@ const { duel } = Astro.props;
 const d = getDataset();
 const [a, b] = [duel.a, duel.b].map((id) => productView(d, d.products.find((p) => p.id === id)!));
 const cat = categoryBySubstance(a.product.substanceId);
-const pa = a.latest?.payablePer100 ?? null;
-const pb = b.latest?.payablePer100 ?? null;
+const pa = a.latest?.payablePerBasis ?? null;
+const pb = b.latest?.payablePerBasis ?? null;
 const cheaper = pa !== null && pb !== null && pa !== pb ? (pa < pb ? a : b) : null;
 const pricier = cheaper === a ? b : a;
 const diffPct =
   cheaper && pa !== null && pb !== null ? Math.round((Math.abs(pa - pb) / Math.max(pa, pb)) * 100) : null;
 const asOf = [a, b].map((v) => v.latest?.obs.observedAt ?? '').sort().pop() ?? '';
 ---
-<Base title={`${a.product.name} vs. ${b.product.name}`} description={`${a.product.name} und ${b.product.name} im direkten Vergleich: Preis pro 100 g, Zutaten, Portion und Versand – mit Quellen.`}>
+<Base title={`${a.product.name} vs. ${b.product.name}`} description={`${a.product.name} und ${b.product.name} im direkten Vergleich: Preis pro ${cat.basisLabel}, Zutaten, Portion und Versand – mit Quellen.`}>
   <p class="crumbs"><a href="/">Start</a> › <a href={`/vergleich/${cat.slug}/`}>{cat.name}-Vergleich</a> › Duell</p>
   <h1>{a.product.name} vs. {b.product.name}</h1>
   <p class="lede">{duel.question}</p>
 
   <div class="answer">
     {cheaper ? (
-      <p><strong>Beim Preis ohne Code war {cheaper.product.name} am {formatDate(asOf)} rund {diffPct} % günstiger</strong> ({formatEur(cheaper.latest!.payablePer100)} gegenüber {formatEur(pricier.latest!.payablePer100)} pro 100 g {cat.unit}){cheaper.latest!.isSale ? ', allerdings als zeitlich unbestimmte Aktion' : ''}.</p>
+      <p><strong>Beim Preis ohne Code war {cheaper.product.name} am {formatDate(asOf)} rund {diffPct} % günstiger</strong> ({formatEur(cheaper.latest!.payablePerBasis)} gegenüber {formatEur(pricier.latest!.payablePerBasis)} pro {cat.basisLabel} {cat.unit}){cheaper.latest!.isSale ? ', allerdings als zeitlich unbestimmte Aktion' : ''}.</p>
     ) : (
       <p>Ein Preisunterschied lässt sich derzeit nicht berechnen oder ist gleich.</p>
     )}
@@ -48,15 +48,15 @@ const asOf = [a, b].map((v) => v.latest?.obs.observedAt ?? '').sort().pop() ?? '
     </>
   )}
 
-  <h2>Preis pro 100 g {cat.unit}</h2>
+  <h2>Preis pro {cat.basisLabel} {cat.unit}</h2>
   <PriceBars
     caption="Ohne Code zahlbarer Preis am Erfassungstag, ohne Versand."
-    items={[a, b].map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.payablePer100 ?? null, note: priceNote(v.latest) }))}
+    items={[a, b].map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.payablePerBasis ?? null, note: priceNote(v.latest) }))}
   />
-  <p class="small muted">Mit regulärem bzw. Streichpreis: {a.product.name} {formatEur(a.latest?.regularPer100)}, {b.product.name} {formatEur(b.latest?.regularPer100)} pro 100 g. Versand kommt jeweils hinzu, wenn der Mindestbestellwert nicht erreicht wird.</p>
+  <p class="small muted">Mit regulärem bzw. Streichpreis: {a.product.name} {formatEur(a.latest?.regularPerBasis)}, {b.product.name} {formatEur(b.latest?.regularPerBasis)} pro {cat.basisLabel}. Versand kommt jeweils hinzu, wenn der Mindestbestellwert nicht erreicht wird.</p>
 
   <h2>Alle Angaben nebeneinander</h2>
-  <CompareTable views={[a, b]} unit={cat.unit} caption="Angaben der Anbieter. Details und Quellen auf den Produktseiten." />
+  <CompareTable views={[a, b]} unit={cat.unit} basis={cat.basisLabel} caption="Angaben der Anbieter. Details und Quellen auf den Produktseiten." />
 
   <h2>Für wen was passt</h2>
   <ul>

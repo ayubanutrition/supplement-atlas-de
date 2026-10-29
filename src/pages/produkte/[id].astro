@@ -4,6 +4,7 @@ import SourceList from '../../components/SourceList.astro';
 import { getDataset } from '../../lib/load.ts';
 import { published } from '../../lib/schema.ts';
 import { formatEur } from '../../lib/price.ts';
+import { categoryBySubstance } from '../../lib/categories.ts';
 import { formatDate, formatGrams, productView, sourceMap, type ProductView } from '../../lib/view.ts';
 
 export function getStaticPaths() {
@@ -29,6 +30,7 @@ const usedSources = [
 const n = (id: string | null) => (id ? usedSources.findIndex((s) => s.id === id) + 1 : 0);
 const duels = published(d.duels).filter((x) => x.a === p.id || x.b === p.id);
 const substance = d.substances.find((s) => s.id === p.substanceId)!;
+const cat = categoryBySubstance(p.substanceId);
 ---
 <Base title={`${p.name} (${p.variant}) – Daten & Preis`} description={`${p.name} von ${brand.name}: Zutaten, ${p.activeDeclaredAs} je Portion, Preis pro 100 g und Quellen mit Abrufdatum.`}>
   <p class="crumbs"><a href="/">Start</a> › <a href={`/wirkstoffe/${substance.id}/`}>{substance.name}</a> › Produkt</p>
@@ -40,10 +42,10 @@ const substance = d.substances.find((s) => s.id === p.substanceId)!;
   </div>
 
   <div class="answer">
-    {latest && latest.payablePer100 !== null ? (
-      <p><strong>{formatEur(latest.payablePer100)} pro 100 g {p.activeDeclaredAs}</strong> bei {formatEur(latest.payableCents)} für {formatGrams(p.netWeightG)}{latest.isSale ? ' (Aktionspreis, ohne Code)' : ''} – {latest.obs.retailer}, Stand {formatDate(latest.obs.observedAt)}, zzgl. Versand.</p>
+    {latest && latest.payablePerBasis !== null ? (
+      <p><strong>{formatEur(latest.payablePerBasis)} pro {cat.basisLabel} {p.activeDeclaredAs}</strong> bei {formatEur(latest.payableCents)} {p.netWeightG !== null ? `für ${formatGrams(p.netWeightG)}` : 'je Packung'}{latest.isSale ? ' (Aktionspreis, ohne Code)' : ''} – {latest.obs.retailer}, Stand {formatDate(latest.obs.observedAt)}, zzgl. Versand.</p>
     ) : (
-      <p>Preis pro 100 g derzeit nicht berechenbar.</p>
+      <p>Preis pro {cat.basisLabel} derzeit nicht berechenbar.</p>
     )}
     <p class="small">Das ist eine Preis- und Etikettenübersicht, keine Qualitäts- oder Laborbewertung.</p>
   </div>
@@ -53,8 +55,9 @@ const substance = d.substances.find((s) => s.id === p.substanceId)!;
     <table>
       <tbody>
         <tr><th scope="row">Zutaten</th><td>{p.ingredients ?? 'auf der Produktseite nicht angegeben'} <a class="sup" href={`#q-${p.label.sourceId}`}>[{n(p.label.sourceId)}]</a></td></tr>
-        <tr><th scope="row">Nettofüllmenge</th><td class="num">{formatGrams(p.netWeightG)}</td></tr>
-        <tr><th scope="row">{p.activeDeclaredAs} je 100 g</th><td class="num">{formatGrams(p.activePer100g)}</td></tr>
+        {p.netWeightG !== null && <tr><th scope="row">Nettofüllmenge</th><td class="num">{formatGrams(p.netWeightG)}</td></tr>}
+        {p.activePer100g !== null && <tr><th scope="row">{p.activeDeclaredAs} je 100 g</th><td class="num">{formatGrams(p.activePer100g)}</td></tr>}
+        {p.activeTotalG !== null && <tr><th scope="row">{p.activeDeclaredAs} je Packung</th><td class="num">{formatGrams(p.activeTotalG)}</td></tr>}
         <tr><th scope="row">Portionsgröße laut Anbieter</th><td class="num">{formatGrams(p.servingSizeG)}{p.activePerServingG !== null && ` (davon ${formatGrams(p.activePerServingG)} ${p.activeDeclaredAs})`}</td></tr>
         <tr><th scope="row">Rohstoff / Herkunftsangabe</th><td>{p.rawMaterial.name ?? 'nicht angegeben'} {p.rawMaterial.sourceId && <a class="sup" href={`#q-${p.rawMaterial.sourceId}`}>[{n(p.rawMaterial.sourceId)}]</a>}</td></tr>
         <tr><th scope="row">Allergenhinweis</th><td>{p.allergenNote ?? 'nicht angegeben'}</td></tr>
@@ -80,11 +83,11 @@ const substance = d.substances.find((s) => s.id === p.substanceId)!;
           {obs.salePriceCents !== null && (
             <>
               <dt>Aktionspreis</dt>
-              <dd><strong class="num">{formatEur(obs.salePriceCents)}</strong> · {formatEur(v.salePer100)} pro 100 g<div class="small muted">{obs.saleConditions}</div></dd>
+              <dd><strong class="num">{formatEur(obs.salePriceCents)}</strong> · {formatEur(v.salePerBasis)} pro {cat.basisLabel}<div class="small muted">{obs.saleConditions}</div></dd>
             </>
           )}
           <dt>{obs.salePriceCents !== null ? 'Streichpreis' : 'Preis'}</dt>
-          <dd><strong class="num">{formatEur(obs.regularPriceCents)}</strong> · {formatEur(v.regularPer100)} pro 100 g{obs.regularPriceNote && <div class="small muted">{obs.regularPriceNote}</div>}</dd>
+          <dd><strong class="num">{formatEur(obs.regularPriceCents)}</strong> · {formatEur(v.regularPerBasis)} pro {cat.basisLabel}{obs.regularPriceNote && <div class="small muted">{obs.regularPriceNote}</div>}</dd>
           <dt>Versand</dt>
           <dd>{obs.shipping.note} {obs.shipping.sourceId && obs.shipping.sourceId !== obs.sourceId && <a class="sup" href={`#q-${obs.shipping.sourceId}`}>[{n(obs.shipping.sourceId)}]</a>}</dd>
         </dl>

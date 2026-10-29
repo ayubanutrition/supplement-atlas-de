@@ -93,3 +93,10 @@ describe('priceFreshness', () => {
     expect(priceFreshness('2026-10-28T14:00:00Z', '2026-10-28')).toBe('aktuell');
   });
 });
+
+describe('Preisbasis je Gramm (Kapselprodukte)', () => {
+  it('Gesamtmenge 54 g EPA+DHA, 36,00 € → 0,67 € pro g', () => {
+    // 90 Kapseln × 600 mg = 54 g
+    expect(pricePer(3600, 54, 1)).toBe(67); // 66,67 Cent gerundet
+  });
+});

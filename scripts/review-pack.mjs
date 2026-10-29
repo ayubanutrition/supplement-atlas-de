@@ -3,7 +3,8 @@
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { loadDataset } from '../src/lib/load.ts';
 import { CATEGORIES } from '../src/lib/categories.ts';
-import { activeAmount, formatEur, pricePer } from '../src/lib/price.ts';
+import { formatEur, pricePer } from '../src/lib/price.ts';
+import { packActive } from '../src/lib/view.ts';
 
 const { data, errors } = loadDataset();
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
@@ -33,12 +34,12 @@ for (const f of readdirSync('content/wirkstoffe').filter((x) => x.endsWith('.md'
   out.push('', '## D. Behörden und weitere Quellen im Text', '');
   const extra = /^extraSources:\s*\[(.*)\]/m.exec(fm)?.[1].split(',').map((x) => x.replace(/["\s]/g, '')).filter(Boolean) ?? [];
   for (const id of extra) out.push(`- ${link(id)}${src.get(id)?.note ? ` – ${src.get(id).note}` : ''}`);
-  out.push('', '## E. Preisvergleich (Zahlen nachrechnen)', '', '| Produkt | Packung | Wirkstoff je 100 g | Preis (ohne Code) | Pro 100 g Wirkstoff | Streichpreis → pro 100 g | Stand |', '|---|---|---|---|---|---|---|');
+  out.push('', '## E. Preisvergleich (Zahlen nachrechnen)', '', `| Produkt | Packung | Wirkstoff (je 100 g bzw. je Packung) | Preis (ohne Code) | Pro ${cat.basisLabel} Wirkstoff | Streichpreis → pro ${cat.basisLabel} | Stand |`, '|---|---|---|---|---|---|---|');
   for (const p of data.products.filter((x) => x.substanceId === sid && x.status === 'published')) {
     const pr = [...p.prices].sort((a, b) => b.observedAt.localeCompare(a.observedAt))[0];
-    const act = activeAmount(p.netWeightG, p.activePer100g);
+    const act = packActive(p);
     const pay = pr.salePriceCents ?? pr.regularPriceCents;
-    out.push(`| ${p.name} (${p.variant}) | ${p.netWeightG} g | ${p.activePer100g} g | ${formatEur(pay)}${pr.salePriceCents !== null ? ' (Aktion)' : ''} | ${formatEur(pricePer(pay, act, 100))} | ${formatEur(pr.regularPriceCents)} → ${formatEur(pricePer(pr.regularPriceCents, act, 100))} | ${pr.observedAt.slice(0, 10)} |`);
+    out.push(`| ${p.name} (${p.variant}) | ${p.netWeightG ?? '–'} g | ${p.activePer100g ?? (p.activeTotalG ?? '–')} g | ${formatEur(pay)}${pr.salePriceCents !== null ? ' (Aktion)' : ''} | ${formatEur(pricePer(pay, act, cat.basisG))} | ${formatEur(pr.regularPriceCents)} → ${formatEur(pricePer(pr.regularPriceCents, act, cat.basisG))} | ${pr.observedAt.slice(0, 10)} |`);
   }
   out.push('');
 }

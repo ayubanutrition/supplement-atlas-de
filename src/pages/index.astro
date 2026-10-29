@@ -11,7 +11,7 @@ const sourceCount = d.sources.length;
 const duels = published(d.duels);
 const areas = CATEGORIES.map((cat) => {
   const views = publishedProducts(d, cat.substanceId);
-  const per = views.map((v) => v.latest?.payablePer100).filter((x): x is number => typeof x === 'number');
+  const per = views.map((v) => v.latest?.payablePerBasis).filter((x): x is number => typeof x === 'number');
   return { cat, views, min: Math.min(...per), max: Math.max(...per) };
 }).filter((a) => a.views.length > 0);
 ---
@@ -27,7 +27,7 @@ const areas = CATEGORIES.map((cat) => {
     {areas.map((a) => (
       <div class="card">
         <h3 style="margin-top:0">{a.cat.name}</h3>
-        <p class="small">{a.views.length} erfasste Produkte, Preis pro 100 g {a.cat.unit} von {formatEur(a.min)} bis {formatEur(a.max)} (ohne Code, ohne Versand).</p>
+        <p class="small">{a.views.length} erfasste Produkte, Preis pro {a.cat.basisLabel} {a.cat.unit} von {formatEur(a.min)} bis {formatEur(a.max)} (ohne Code, ohne Versand).</p>
         <p class="small" style="margin-bottom:0"><a href={`/wirkstoffe/${a.cat.slug}/`}>Wirkstoff &amp; Studienlage</a> · <a href={`/vergleich/${a.cat.slug}/`}>Vergleich</a> · <a href={a.cat.calculatorPath}>Rechner</a></p>
       </div>
     ))}

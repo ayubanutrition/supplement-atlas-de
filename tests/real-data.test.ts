@@ -11,40 +11,40 @@ describe('Kreatin-Preise (Stand 28.10.2026)', () => {
   it('ESN: 29,90 € / 500 g × 100 = 5,98 € pro 100 g', () => {
     const v = view('esn-ultrapure-kreatin-500g').latest!;
     expect(v.payableCents).toBe(2990);
-    expect(v.payablePer100).toBe(598);
+    expect(v.payablePerBasis).toBe(598);
     expect(v.isSale).toBe(false);
   });
 
   it('Myprotein: Aktion 14,99 € → 3,00 €/100 g; Streichpreis 19,99 € → 4,00 €/100 g', () => {
     const v = view('myprotein-kreatin-monohydrat-500g').latest!;
     expect(v.payableCents).toBe(1499);
-    expect(v.payablePer100).toBe(300); // 299,8 Cent gerundet
-    expect(v.regularPer100).toBe(400); // 399,8 Cent gerundet
+    expect(v.payablePerBasis).toBe(300); // 299,8 Cent gerundet
+    expect(v.regularPerBasis).toBe(400); // 399,8 Cent gerundet
     expect(v.isSale).toBe(true);
   });
 
   it('Bulk: Aktion 15,99 € → 3,20 €/100 g; Streichpreis 24,99 € → 5,00 €/100 g', () => {
     const v = view('bulk-kreatin-monohydrat-500g').latest!;
-    expect(v.payablePer100).toBe(320); // 319,8 gerundet
-    expect(v.regularPer100).toBe(500); // 499,8 gerundet
+    expect(v.payablePerBasis).toBe(320); // 319,8 gerundet
+    expect(v.regularPerBasis).toBe(500); // 499,8 gerundet
   });
 
   it('Bodylab24: Angebot 13,50 € → 2,70 €/100 g; Streichpreis 19,99 € → 4,00 €/100 g', () => {
     const v = view('bodylab24-creatine-powder-500g').latest!;
-    expect(v.payablePer100).toBe(270);
-    expect(v.regularPer100).toBe(400); // 399,8 gerundet
+    expect(v.payablePerBasis).toBe(270);
+    expect(v.regularPerBasis).toBe(400); // 399,8 gerundet
   });
 
   it('nu3: Aktion 36,99 € → 7,40 €/100 g; UVP 38,99 € → 7,80 €/100 g', () => {
     const v = view('nu3-creatine-pulver-500g').latest!;
-    expect(v.payablePer100).toBe(740); // 739,8 gerundet
-    expect(v.regularPer100).toBe(780); // 779,8 gerundet
+    expect(v.payablePerBasis).toBe(740); // 739,8 gerundet
+    expect(v.regularPerBasis).toBe(780); // 779,8 gerundet
   });
   it('Natural Elements: 16,99 € / 500 g = 3,40 €/100 g', () => {
-    expect(view('natural-elements-kreatin-monohydrat-500g').latest!.payablePer100).toBe(340);
+    expect(view('natural-elements-kreatin-monohydrat-500g').latest!.payablePerBasis).toBe(340);
   });
   it('Weider: 36,99 € / 600 g = 6,17 €/100 g (616,5 Cent, kaufmännisch gerundet)', () => {
-    expect(view('weider-pure-creatine-600g').latest!.payablePer100).toBe(617);
+    expect(view('weider-pure-creatine-600g').latest!.payablePerBasis).toBe(617);
   });
 
   it('nur veröffentlichte Produkte erscheinen im Vergleich', () => {
@@ -72,27 +72,27 @@ describe('Whey-Preise pro 100 g Protein (Stand 29.10.2026)', () => {
   // Handrechnung: Preis ÷ (Packung × Eiweiß je 100 g ÷ 100) × 100
   it('Bodylab24: 37,90 € / (1000 g × 75 %) = 5,05 €; Streichpreis 57,99 € → 7,73 €', () => {
     const v = view('bodylab24-whey-protein-1000g').latest!;
-    expect(v.payablePer100).toBe(505);
-    expect(v.regularPer100).toBe(773);
+    expect(v.payablePerBasis).toBe(505);
+    expect(v.regularPerBasis).toBe(773);
   });
   it('Bulk: 37,99 € / 710 g = 5,35 €; Streichpreis 43,99 € → 6,20 €', () => {
     const v = view('bulk-pure-whey-1kg').latest!;
-    expect(v.payablePer100).toBe(535);
-    expect(v.regularPer100).toBe(620);
+    expect(v.payablePerBasis).toBe(535);
+    expect(v.regularPerBasis).toBe(620);
   });
   it('Myprotein: 35,99 € / 648 g = 5,55 €; Streichpreis 44,99 € → 6,94 €', () => {
     const v = view('myprotein-impact-whey-900g').latest!;
-    expect(v.payablePer100).toBe(555);
-    expect(v.regularPer100).toBe(694);
+    expect(v.payablePerBasis).toBe(555);
+    expect(v.regularPerBasis).toBe(694);
   });
   it('ESN: 47,90 € / 681 g = 7,03 € (keine Aktion)', () => {
     const v = view('esn-designer-whey-908g').latest!;
-    expect(v.payablePer100).toBe(703);
+    expect(v.payablePerBasis).toBe(703);
     expect(v.isSale).toBe(false);
   });
   it('Optimum Nutrition: 49,99 € / (900 g × 79 %) = 7,03 € (keine Aktion)', () => {
     const v = view('optimum-nutrition-gold-standard-whey-900g').latest!;
-    expect(v.payablePer100).toBe(703); // 4999 / 711 g
+    expect(v.payablePerBasis).toBe(703); // 4999 / 711 g
     expect(v.isSale).toBe(false);
   });
   it('Entwurf Scitec erscheint nicht im Vergleich', () => {
@@ -102,8 +102,8 @@ describe('Whey-Preise pro 100 g Protein (Stand 29.10.2026)', () => {
   });
   it('Reihenfolge kippt je nach Preisbasis (Listenpreis vs. Aktion) – beides wird gezeigt', () => {
     const ids = ['bodylab24-whey-protein-1000g', 'bulk-pure-whey-1kg', 'myprotein-impact-whey-900g', 'esn-designer-whey-908g'];
-    const byPayable = [...ids].sort((a, b) => view(a).latest!.payablePer100! - view(b).latest!.payablePer100!);
-    const byRegular = [...ids].sort((a, b) => view(a).latest!.regularPer100! - view(b).latest!.regularPer100!);
+    const byPayable = [...ids].sort((a, b) => view(a).latest!.payablePerBasis! - view(b).latest!.payablePerBasis!);
+    const byRegular = [...ids].sort((a, b) => view(a).latest!.regularPerBasis! - view(b).latest!.regularPerBasis!);
     expect(byPayable[0]).toBe('bodylab24-whey-protein-1000g');
     expect(byRegular[0]).toBe('bulk-pure-whey-1kg');
   });

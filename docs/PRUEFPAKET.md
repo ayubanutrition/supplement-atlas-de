@@ -83,7 +83,7 @@ In der EU dürfen Hersteller nur zugelassene gesundheitsbezogene Angaben verwend
 
 ## E. Preisvergleich (Zahlen nachrechnen)
 
-| Produkt | Packung | Wirkstoff je 100 g | Preis (ohne Code) | Pro 100 g Wirkstoff | Streichpreis → pro 100 g | Stand |
+| Produkt | Packung | Wirkstoff (je 100 g bzw. je Packung) | Preis (ohne Code) | Pro 100 g Wirkstoff | Streichpreis → pro 100 g | Stand |
 |---|---|---|---|---|---|---|
 | Bodylab24 Creatine Powder (500 g) | 500 g | 100 g | 13,50 € (Aktion) | 2,70 € | 19,99 € → 4,00 € | 2026-10-29 |
 | Bulk Kreatin Monohydrat (Neutral, 500 g) | 500 g | 100 g | 15,99 € (Aktion) | 3,20 € | 24,99 € → 5,00 € | 2026-10-28 |
@@ -180,7 +180,7 @@ In der EU sind für Protein drei gesundheitsbezogene Aussagen zugelassen: Protei
 
 ## E. Preisvergleich (Zahlen nachrechnen)
 
-| Produkt | Packung | Wirkstoff je 100 g | Preis (ohne Code) | Pro 100 g Wirkstoff | Streichpreis → pro 100 g | Stand |
+| Produkt | Packung | Wirkstoff (je 100 g bzw. je Packung) | Preis (ohne Code) | Pro 100 g Wirkstoff | Streichpreis → pro 100 g | Stand |
 |---|---|---|---|---|---|---|
 | Bodylab24 Whey Protein (Vanilla, 1000 g) | 1000 g | 75 g | 37,90 € (Aktion) | 5,05 € | 57,99 € → 7,73 € | 2026-10-29 |
 | Bulk Pure Whey Protein (Vanille, 1 kg) | 1000 g | 71 g | 37,99 € (Aktion) | 5,35 € | 43,99 € → 6,20 € | 2026-10-29 |

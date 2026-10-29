@@ -1,16 +1,17 @@
 // Aufbereitung der Daten für die Seiten. Keine Bewertung, nur Rechnung.
 import { activeAmount, pricePer, priceFreshness, type PriceFreshness } from './price.ts';
+import { categoryBySubstance } from './categories.ts';
 import type { Brand, Dataset, PriceObservation, Product, Source } from './schema.ts';
 import { published } from './schema.ts';
 
 export interface PriceView {
   obs: PriceObservation;
-  regularPer100: number | null;
-  salePer100: number | null;
+  regularPerBasis: number | null;
+  salePerBasis: number | null;
   regularPerGram: number | null;
   /** Ohne Code zahlbarer Preis am Beobachtungstag (Aktion, sonst regulär). */
   payableCents: number;
-  payablePer100: number | null;
+  payablePerBasis: number | null;
   isSale: boolean;
   /** Aktion laut Anbieter bereits beendet: Preis nicht mehr als aktuell zeigen. */
   saleExpired: boolean;
@@ -29,15 +30,21 @@ export function today(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
+/** Wirkstoffmenge je Packung in g: Gesamtmenge, sonst Füllmenge × Anteil. */
+export function packActive(p: Product): number | null {
+  return p.activeTotalG ?? activeAmount(p.netWeightG, p.activePer100g);
+}
+
 export function priceView(p: Product, obs: PriceObservation, asOf = today()): PriceView {
-  const active = activeAmount(p.netWeightG, p.activePer100g);
+  const active = packActive(p);
+  const basis = categoryBySubstance(p.substanceId).basisG;
   return {
     obs,
-    regularPer100: pricePer(obs.regularPriceCents, active, 100),
-    salePer100: obs.salePriceCents === null ? null : pricePer(obs.salePriceCents, active, 100),
+    regularPerBasis: pricePer(obs.regularPriceCents, active, basis),
+    salePerBasis: obs.salePriceCents === null ? null : pricePer(obs.salePriceCents, active, basis),
     regularPerGram: pricePer(obs.regularPriceCents, active, 1),
     payableCents: obs.salePriceCents ?? obs.regularPriceCents,
-    payablePer100: pricePer(obs.salePriceCents ?? obs.regularPriceCents, active, 100),
+    payablePerBasis: pricePer(obs.salePriceCents ?? obs.regularPriceCents, active, basis),
     isSale: obs.salePriceCents !== null,
     saleExpired: Boolean(obs.saleEndsAt && obs.saleEndsAt < asOf),
     freshness: Boolean(obs.saleEndsAt && obs.saleEndsAt < asOf) ? 'erneut-pruefen' : priceFreshness(obs.observedAt, asOf),
@@ -50,7 +57,7 @@ export function productView(d: Dataset, p: Product, asOf = today()): ProductView
   return {
     product: p,
     brand,
-    activeG: activeAmount(p.netWeightG, p.activePer100g),
+    activeG: packActive(p),
     latest: sorted[0] ? priceView(p, sorted[0], asOf) : null,
   };
 }

@@ -19,6 +19,7 @@ function product(over: Partial<Product> = {}): Product {
     netWeightG: 500,
     activeDeclaredAs: 'Kreatin-Monohydrat',
     activePer100g: 100,
+    activeTotalG: null,
     servingSizeG: 3,
     activePerServingG: 3,
     ingredients: 'Kreatin-Monohydrat',
@@ -85,9 +86,14 @@ describe('crossCheck', () => {
     expect(crossCheck(d).join()).toMatch(/ohne Preisbeobachtung/);
   });
 
-  it('blockiert Veröffentlichung ohne bekannten Wirkstoffanteil', () => {
+  it('blockiert Veröffentlichung ohne bekannte Wirkstoffmenge', () => {
     const d = dataset({ products: [product({ activePer100g: null })], duels: [] });
-    expect(crossCheck(d).join()).toMatch(/ohne Wirkstoffanteil/);
+    expect(crossCheck(d).join()).toMatch(/ohne Wirkstoffmenge/);
+  });
+
+  it('akzeptiert Kapselprodukte mit Gesamtmenge statt Füllmenge/Anteil', () => {
+    const d = dataset({ products: [product({ netWeightG: null, activePer100g: null, activeTotalG: 54 })], duels: [] });
+    expect(crossCheck(d)).toEqual([]);
   });
 
   it('erlaubt Entwürfe mit unvollständigen Daten', () => {

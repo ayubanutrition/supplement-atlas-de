@@ -103,8 +103,8 @@ const ref = (id: string) => used.findIndex((s) => s.id === id) + 1;
     <>
       <h2>Erfasste Produkte</h2>
       <PriceBars
-        caption={`Preis pro 100 g ${cat.unit}, ohne Code, ohne Versand.`}
-        items={products.map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.payablePer100 ?? null, note: priceNote(v.latest) }))}
+        caption={`Preis pro ${cat.basisLabel} ${cat.unit}, ohne Code, ohne Versand.`}
+        items={products.map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.payablePerBasis ?? null, note: priceNote(v.latest) }))}
       />
       <p><a class="btn" href={`/vergleich/${cat.slug}/`}>Zum {cat.name}-Vergleich</a> <a class="btn secondary" href={cat.calculatorPath}>Preis selbst berechnen</a></p>
     </>

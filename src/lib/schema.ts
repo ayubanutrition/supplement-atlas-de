@@ -65,11 +65,14 @@ export const ProductSchema = z.object({
   substanceId: id,
   name: z.string(),
   variant: z.string(),
-  netWeightG: z.number().positive(),
+  /** Füllmenge in g; bei Kapselprodukten ohne Gewichtsangabe null. */
+  netWeightG: z.number().positive().nullable(),
   /** Wie der Wirkstoff auf dem Etikett deklariert ist (Bezugsgröße für Preisvergleich). */
   activeDeclaredAs: z.string(),
   /** Gramm deklarierter Wirkstoff je 100 g Produkt; null = nicht angegeben. */
   activePer100g: z.number().min(0).max(100).nullable(),
+  /** Gesamtmenge Wirkstoff je Packung in g (z. B. Kapseln × EPA+DHA); hat Vorrang vor Füllmenge × Anteil. */
+  activeTotalG: z.number().positive().nullable().default(null),
   servingSizeG: z.number().positive().nullable(),
   activePerServingG: z.number().nonnegative().nullable(),
   /** Zutatenliste wörtlich; null = vom Anbieter nicht angegeben/nicht auffindbar. */
@@ -196,7 +199,7 @@ export function crossCheck(d: Dataset): string[] {
     if (p.status === 'published') {
       if (brand && brand.status !== 'published') errors.push(`${w}: veröffentlicht, Marke aber Entwurf`);
       if (p.prices.length === 0) errors.push(`${w}: veröffentlicht ohne Preisbeobachtung`);
-      if (p.activePer100g === null) errors.push(`${w}: veröffentlicht ohne Wirkstoffanteil`);
+      if (p.activePer100g == null && p.activeTotalG == null) errors.push(`${w}: veröffentlicht ohne Wirkstoffmenge`);
     }
   }
   for (const e of d.evidence) {

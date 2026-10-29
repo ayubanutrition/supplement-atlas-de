@@ -1,0 +1,60 @@
+{
+  "id": "weider-magnesium-complex-120",
+  "brandId": "weider",
+  "substanceId": "magnesium",
+  "name": "Weider Magnesium Complex",
+  "variant": "120 Kapseln",
+  "netWeightG": null,
+  "activeDeclaredAs": "elementares Magnesium",
+  "activePer100g": null,
+  "activeTotalG": 15.0,
+  "servingSizeG": null,
+  "activePerServingG": 0.25,
+  "ingredients": "Magnesiummalat, Hydroxypropylmethylcellulose (Kapselhülle); Magnesiumcitrat, Magnesiumbisglycinat.",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": null,
+  "labTesting": {
+    "statement": null,
+    "sourceId": null
+  },
+  "label": {
+    "sourceId": "weider-magnesium-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T01:59:46Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: Mischung aus Magnesiummalat, -citrat und -bisglycinat (Anteile nicht angegeben). Portion = 2 Kapseln = 250 mg elementares Magnesium (125 mg je Kapsel, 120 Kapseln = 15 g); 67 % der Nährstoffbezugswerte. Die Tagesdosis liegt auf dem BfR-Vorschlag von 250 mg.",
+    "Magnesium je Kapsel bzw. Tablette haben wir aus dem Portionswert gerechnet; die Seite nennt ihn nur je Portion. ",
+    "Kein Prüf- und kein Allergenhinweis auf der Seite gefunden. Lieferzeit laut Seite 3 Werktage."
+  ],
+  "prices": [
+    {
+      "retailer": "weider.de",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 1699,
+      "regularPriceNote": null,
+      "salePriceCents": null,
+      "saleConditions": null,
+      "saleEndsAt": null,
+      "shipping": {
+        "note": "5,99 € bis 78,99 € Bestellwert; kostenlos ab 79 €.",
+        "costCents": 599,
+        "freeFromCents": 7900,
+        "sourceId": "weider-versand"
+      },
+      "observedAt": "2026-10-29T01:59:46Z",
+      "sourceId": "weider-magnesium-produktseite"
+    }
+  ],
+  "status": "draft",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Entwurf angelegt (Magnesium-Cluster noch ohne fachliche Prüfung)."
+    }
+  ]
+}

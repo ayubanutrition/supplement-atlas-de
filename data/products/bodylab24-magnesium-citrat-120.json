@@ -1,0 +1,61 @@
+{
+  "id": "bodylab24-magnesium-citrat-120",
+  "brandId": "bodylab24",
+  "substanceId": "magnesium",
+  "name": "Bodylab24 Magnesium Citrat (Frey Nutrition)",
+  "variant": "120 Kapseln",
+  "netWeightG": null,
+  "activeDeclaredAs": "elementares Magnesium",
+  "activePer100g": null,
+  "activeTotalG": 18.0,
+  "servingSizeG": null,
+  "activePerServingG": 0.3,
+  "ingredients": "Magnesiumcitrat, Rindergelatine (Kapsel), Füllstoff Cellulose, Trennmittel (Magnesiumsalze von Speisefettsäuren, Siliciumdioxid).",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": null,
+  "labTesting": {
+    "statement": "Laborgeprüfte Qualität & 20 Jahre Erfahrung",
+    "sourceId": "bodylab24-magnesium-produktseite"
+  },
+  "label": {
+    "sourceId": "bodylab24-magnesium-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T01:55:29Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: Form Citrat. Tagesdosis laut Anbieter 2 Kapseln = 300 mg Magnesium (150 mg je Kapsel, 120 Kapseln = 18 g); 80 % der Nährstoffbezugswerte. Die vom Anbieter empfohlene Tagesdosis liegt über dem BfR-Vorschlag von 250 mg Magnesium je Tagesverzehrempfehlung (siehe Artikel zur Obergrenze).",
+    "Magnesium je Kapsel bzw. Tablette haben wir aus dem Portionswert gerechnet; die Seite nennt ihn nur je Portion. Die Tabelle schreibt „Magnesium“, nicht ausdrücklich „elementar“; die NRV-Angabe (80 % von 375 mg = 300 mg) spricht dafür.",
+    "Die Seite zeigt das Etikett „Angebot/Sale“, aber der Vergleichspreis ist gleich dem Preis: es gibt keinen Preisnachlass.",
+    "Kein Prüfbericht verlinkt, kein Prüfinstitut genannt; die Prüfaussage ist eine Herstellerangabe. Keine Allergenangabe gefunden; Kapsel aus Rindergelatine."
+  ],
+  "prices": [
+    {
+      "retailer": "bodylab24.de",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 1690,
+      "regularPriceNote": null,
+      "salePriceCents": null,
+      "saleConditions": null,
+      "saleEndsAt": null,
+      "shipping": {
+        "note": "4,90 € innerhalb Deutschlands; kostenlos ab 85 € Bestellwert; Lieferung 2–3 Werktage.",
+        "costCents": 490,
+        "freeFromCents": 8500,
+        "sourceId": "bodylab24-versand-seite"
+      },
+      "observedAt": "2026-10-29T01:55:29Z",
+      "sourceId": "bodylab24-magnesium-produktseite"
+    }
+  ],
+  "status": "draft",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Entwurf angelegt (Magnesium-Cluster noch ohne fachliche Prüfung)."
+    }
+  ]
+}

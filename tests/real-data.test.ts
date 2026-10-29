@@ -155,3 +155,28 @@ describe('Omega-3-Preise pro 10 g EPA+DHA (Entwurf, Stand 29.10.2026)', () => {
     expect(g('natural-elements-omega-3-365')).toBeCloseTo(365 * 0.3);
   });
 });
+
+describe('Magnesium-Preise pro 10 g elementares Magnesium (Entwurf, Stand 29.10.2026)', () => {
+  // Handrechnung: Stück × Magnesium je Stück = g; Preis ÷ g × 10
+  it('natural elements: 18,99 € / (180 × 120 mg = 21,6 g) × 10 = 8,79 €', () => {
+    expect(view('natural-elements-magnesiumcitrat-180').latest!.payablePerBasis).toBe(879);
+  });
+  it('Bodylab24: 16,90 € / (120 × 150 mg = 18 g) × 10 = 9,39 €', () => {
+    expect(view('bodylab24-magnesium-citrat-120').latest!.payablePerBasis).toBe(939);
+  });
+  it('Bulk: Aktion 7,49 € / (60 × 100 mg = 6 g) × 10 = 12,48 €; Streichpreis 9,99 € → 16,65 €', () => {
+    const v = view('bulk-magnesium-bisglycinat-60').latest!;
+    expect(v.payablePerBasis).toBe(1248);
+    expect(v.regularPerBasis).toBe(1665);
+  });
+  it('Weider: 16,99 € / (120 × 125 mg = 15 g) × 10 = 11,33 €', () => {
+    expect(view('weider-magnesium-complex-120').latest!.payablePerBasis).toBe(1133);
+  });
+  it('Gesamtmenge Magnesium stimmt mit Stückzahl × Dosis überein', () => {
+    const g = (id: string) => data.products.find((p) => p.id === id)!.activeTotalG;
+    expect(g('natural-elements-magnesiumcitrat-180')).toBeCloseTo(180 * 0.12);
+    expect(g('bodylab24-magnesium-citrat-120')).toBeCloseTo(120 * 0.15);
+    expect(g('bulk-magnesium-bisglycinat-60')).toBeCloseTo(60 * 0.1);
+    expect(g('weider-magnesium-complex-120')).toBeCloseTo(120 * 0.125);
+  });
+});

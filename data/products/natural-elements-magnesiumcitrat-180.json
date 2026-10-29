@@ -1,0 +1,61 @@
+{
+  "id": "natural-elements-magnesiumcitrat-180",
+  "brandId": "natural-elements",
+  "substanceId": "magnesium",
+  "name": "Natural Elements Magnesiumcitrat Kapseln",
+  "variant": "180 Kapseln (Einmalkauf)",
+  "netWeightG": null,
+  "activeDeclaredAs": "elementares Magnesium",
+  "activePer100g": null,
+  "activeTotalG": 21.6,
+  "servingSizeG": null,
+  "activePerServingG": 0.36,
+  "ingredients": "Tri-Magnesiumdicitrat, Überzugsmittel: Hydroxypropylmethylcellulose (pflanzlich)",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": "Auf der Seite als Produktattribut „Ohne Allergene“, außerdem vegan, glutenfrei, laktosefrei; kein formaler Allergenhinweis.",
+  "labTesting": {
+    "statement": "Wir lassen jede Charge von einem unabhängigen deutschen und akkreditierten Labor prüfen.",
+    "sourceId": "ne-magnesiumcitrat-produktseite"
+  },
+  "label": {
+    "sourceId": "ne-magnesiumcitrat-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T01:54:01Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: Form Citrat (Tri-Magnesiumdicitrat). Portion = 3 Kapseln = 360 mg elementares Magnesium (120 mg je Kapsel, 180 Kapseln = 21,6 g). Die vom Anbieter empfohlene Tagesdosis liegt über dem BfR-Vorschlag von 250 mg Magnesium je Tagesverzehrempfehlung (siehe Artikel zur Obergrenze). Tagesdosis laut Anbieter: 3 Kapseln (360 mg).",
+    "Magnesium je Kapsel bzw. Tablette haben wir aus dem Portionswert gerechnet; die Seite nennt ihn nur je Portion. ",
+    "Die verlinkte Untersuchungsbescheinigung (Eurofins, 05.08.2025) gilt nur für eine Charge und bestätigt laut Dokument den deklarierten Magnesiumgehalt; für die aktuell verkaufte Charge ist sie nicht belegt.",
+    "Hinweis des Anbieters: „Es kann eine leicht abführende Wirkung auftreten.“ Abo-Rabatt (–10 %) und Newsletter-Angebot nicht eingerechnet."
+  ],
+  "prices": [
+    {
+      "retailer": "naturalelements.de",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 1899,
+      "regularPriceNote": null,
+      "salePriceCents": null,
+      "saleConditions": null,
+      "saleEndsAt": null,
+      "shipping": {
+        "note": "3,50 € pauschal; kostenlos ab 50 € Bestellwert.",
+        "costCents": 350,
+        "freeFromCents": 5000,
+        "sourceId": "naturalelements-versand"
+      },
+      "observedAt": "2026-10-29T01:54:01Z",
+      "sourceId": "ne-magnesiumcitrat-produktseite"
+    }
+  ],
+  "status": "draft",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Entwurf angelegt (Magnesium-Cluster noch ohne fachliche Prüfung)."
+    }
+  ]
+}

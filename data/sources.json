@@ -1042,5 +1042,59 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/36749131/",
     "retrievedAt": "2026-10-29",
     "note": null
+  },
+  {
+    "id": "ne-magnesiumcitrat-produktseite",
+    "kind": "label",
+    "title": "natural elements Magnesiumcitrat Kapseln (180 Kapseln) – Produktseite",
+    "publisher": "natural elements GmbH",
+    "url": "https://naturalelements.de/products/magnesiumcitrat-kapseln?variant=49846887219537",
+    "retrievedAt": "2026-10-29T01:54:01Z",
+    "note": "Preis der gewählten Variante-ID (180 Kapseln). Die Variante mit 365 Kapseln wurde nicht erhoben."
+  },
+  {
+    "id": "ne-magnesiumcitrat-eurofins-2025",
+    "kind": "study",
+    "title": "Eurofins Analytik GmbH: Untersuchungsbescheinigung Magnesiumcitrat, Lot 20478268E14751, 05.08.2025 (verlinkt von natural elements)",
+    "publisher": "Eurofins Analytik GmbH (im Auftrag von natural elements)",
+    "url": "https://cdn.shopify.com/s/files/1/0794/6292/4625/files/15213_2025.pdf",
+    "retrievedAt": "2026-10-29T01:54:57Z",
+    "note": "Gilt nur für diese Charge; für die aktuell verkaufte Charge nicht belegt. Geprüft auf Schwermetalle, Mikrobiologie, Ethylenoxid; der deklarierte Magnesiumgehalt wird laut Bescheinigung bestätigt."
+  },
+  {
+    "id": "naturalelements-versand",
+    "kind": "shop",
+    "title": "natural elements – Zahlung und Versand",
+    "publisher": "natural elements GmbH",
+    "url": "https://naturalelements.de/pages/zahlung-versand",
+    "retrievedAt": "2026-10-29T01:55:09Z",
+    "note": null
+  },
+  {
+    "id": "bodylab24-magnesium-produktseite",
+    "kind": "label",
+    "title": "Bodylab24 / Frey Nutrition Magnesium Citrat (120 Kapseln) – Produktseite",
+    "publisher": "Bodylab24 / ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/products/magnesium-citrat-120-kapseln",
+    "retrievedAt": "2026-10-29T01:55:29Z",
+    "note": "Hersteller laut Produktseite: FREY Nutrition, Paderborn. Die Tabelle nennt „Magnesium“ ohne das Wort „elementar“; die NRV-Angabe (80 % = 300 mg) spricht für elementares Magnesium."
+  },
+  {
+    "id": "bulk-magnesium-produktseite",
+    "kind": "label",
+    "title": "Bulk Magnesium Bisglycinat Tabletten 500 mg (60 Tabletten) – Produktseite",
+    "publisher": "Bulk / Sports Supplements Limited",
+    "url": "https://www.bulk.com/de/products/magnesium-bisglycinat-tabletten-500mg/bpb-magb-0000",
+    "retrievedAt": "2026-10-29T01:59:17Z",
+    "note": "Preise aus strukturierten Daten (SKU für 60 Tabletten); Aktionsende nur dort. „500 mg“ im Namen ist die Verbindung je Tablette, nicht Magnesium."
+  },
+  {
+    "id": "weider-magnesium-produktseite",
+    "kind": "label",
+    "title": "Weider Magnesium Complex (120 Kapseln) – Produktseite",
+    "publisher": "Weider Germany GmbH",
+    "url": "https://www.weider.de/products/magnesium-caps",
+    "retrievedAt": "2026-10-29T01:59:46Z",
+    "note": null
   }
 ]

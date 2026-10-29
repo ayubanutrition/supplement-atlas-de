@@ -135,6 +135,17 @@ const problems = [];
   await op.fill('#epa', '1200'); await op.fill('#dha', '900');
   if (!(await op.isVisible('#out-error'))) problems.push('Omega-3-Rechner: Wert je Portion (2100 mg je Kapsel) wird nicht beanstandet');
 
+  // Magnesium-Rechner: Weider 16,99 € / 120 Kapseln à 125 mg = 15 g → 11,33 € pro 10 g
+  const mp = await browser.newPage({ viewport: { width: 360, height: 800 } });
+  await mp.goto(BASE + '/rechner/magnesiumpreis/');
+  await mp.fill('#price', '16,99'); await mp.fill('#count', '120'); await mp.fill('#mg', '125');
+  const m10 = (await mp.textContent('#r10')).replace(/\u00a0/g, ' ');
+  if (m10 !== '11,33 €') problems.push(`Magnesium-Rechner: erwartet 11,33 €, erhalten ${m10}`);
+  await mp.fill('#mg', '250');
+  if (m10 === (await mp.textContent('#r10')).replace(/\u00a0/g, ' ')) problems.push('Magnesium-Rechner: Ergebnis ändert sich nicht bei neuem Wert');
+  await mp.fill('#mg', '1000');
+  if (!(await mp.isVisible('#out-error'))) problems.push('Magnesium-Rechner: 1000 mg je Stück wird nicht beanstandet');
+
   await browser.close();
   console.log(JSON.stringify(results, null, 1));
   console.log(`Rechner per Tastatur: ${r100} pro 100 g, ${r1} pro g; Fehlermeldung bei ungültigem Anteil: ${err}`);

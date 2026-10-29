@@ -11,8 +11,11 @@ Strategie: [CLAUDE_MASTER_HANDOFF.md](CLAUDE_MASTER_HANDOFF.md) · Aktueller Sta
 | `pnpm install` | Abhängigkeiten installieren (Versionen exakt gepinnt) |
 | `pnpm validate` | Daten in `data/` gegen Schema und Querverweise prüfen |
 | `pnpm test` | Rechenlogik, Veröffentlichungsregeln, echte Preise nachrechnen |
-| `pnpm build` | validate + test + statischer Build nach `dist/` |
+| `pnpm build` | validate + test + statischer Build nach `dist/` + Output-Prüfung (`scripts/check-dist.mjs`: Links, Anker, h1, Titel, noindex, keine Entwurfsseiten) |
 | `pnpm preview` | gebaute Seite lokal ausliefern |
+| `node scripts/serve-dist.cjs [port]` | `dist/` mit den Headern aus `public/_headers` ausliefern (wie Cloudflare) |
+| `node scripts/perf-sample.cjs [url]` | Mobil-Stichprobe: FCP, LCP, CLS, Transfergröße (gedrosselt) |
+| `pnpm release-check` / `pnpm review-pack` | offene Release-Blocker / Prüfpaket für die Fachprüfung |
 | `node scripts/qa-browser.cjs http://localhost:4321 [screenshotDir]` | Browser-QA: Links, 404, 360 px, axe-core, Rechner per Tastatur (benötigt Playwright) |
 
 Für Cloudflare später: Build-Befehl `pnpm build`, Ausgabeverzeichnis `dist`.

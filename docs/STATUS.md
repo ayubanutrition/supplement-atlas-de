@@ -12,6 +12,8 @@ Stand: 29.10.2026 · Branch `feat/m3-protein` (enthält M1/M2; Basis `main` @ 5a
   - Release-Technik: `wrangler.jsonc` (Workers Static Assets), `_headers` (CSP u. a., mit Testserver geprüft), `sitemap.xml` nur nach Freigabe, `noindex`/robots bis Freigabe.
 - Prüfungen: `pnpm build` = Datenprüfung + 35 Tests + 25 Seiten grün. Browser-QA (`scripts/qa-browser.cjs`, gegen Server mit echten Headern): alle internen Links 200, 404 korrekt, kein Überlauf bei 360 px, keine Konsolenfehler, keine axe-core-Befunde (WCAG 2.1 AA + Best Practice), beide Rechner korrekt. Screenshots 360/1280 px gesichtet.
 - Freigabesperren (alle getestet): Build mit `PUBLIC_INDEXING=true` bricht ab ohne `reviewedBy` am Artikel, ohne vollständiges Impressum (`data/operator.json`) und ohne geprüfte Datenschutzerklärung. `pnpm release-check` listet alle offenen Blocker; Schritt-für-Schritt-Anleitung in `docs/RELEASE.md`.
+- Output-Prüfung nach jedem Build (mit absichtlichen Fehlern getestet) und Mobil-Performance-Stichprobe (gedrosselt: LCP 0,45–0,72 s, CLS 0; HTML 4–23 KB, CSS 6,5 KB).
+- Protein-Aussagen gegen die konsolidierte EU-Fassung (20.08.2025) wörtlich bestätigt; Nährwertangabe „Proteinquelle“ (VO 1924/2006) noch aus der Ursprungsfassung.
 - Pull Request (Entwurf): https://github.com/ayubanutrition/supplement-atlas-de/pull/1
 
 ## Entscheidungen
@@ -32,7 +34,7 @@ Stand: 29.10.2026 · Branch `feat/m3-protein` (enthält M1/M2; Basis `main` @ 5a
 2. **Impressum/Kontakt:** `data/operator.json` mit echten Angaben füllen; **Datenschutz-Text** (Entwurf des technischen Ist-Zustands liegt vor) rechtlich prüfen lassen.
 3. **Domain/Marke** nicht geprüft, nichts gekauft. Cloudflare-Konto nicht verbunden (`wrangler.jsonc` + gepinnter Wrangler 4.151.3 liegen bereit, Dry-Run geprüft; Build `pnpm build`, Deploy `npx wrangler deploy`).
 4. Preise sind Momentaufnahmen vom 28./29.10.2026 und werden nach 30 Tagen als „erneut zu prüfen“ markiert; die Bulk-Aktion endet laut Shop am 03.11.2026.
-5. Quellenlücken: ESN ohne Zutatenliste (Kreatin); Prüfberichte/PDFs der Anbieter nicht geöffnet; Herstellerangaben zu Tests nicht verifiziert; konsolidierte EU-Fassung bei Protein-Claims nicht abgeglichen; More-Nutrition-Verfügbarkeit ungeklärt.
+5. Quellenlücken: ESN ohne Zutatenliste (Kreatin); Prüfberichte/PDFs der Anbieter nicht geöffnet; Herstellerangaben zu Tests nicht verifiziert; VO 1924/2006 nur als Ursprungsfassung geprüft; More-Nutrition-Verfügbarkeit ungeklärt.
 6. `gh` ohne gültiges Token und GraphQL gesperrt; PR-Anlage über die REST-API funktioniert (`gh api repos/…/pulls`).
 
 ## Nächste Aufgabe

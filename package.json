@@ -12,7 +12,7 @@
     "release-check": "node scripts/release-check.mjs",
     "review-pack": "node scripts/review-pack.mjs",
     "test": "vitest run",
-    "build": "pnpm validate && pnpm test && astro build",
+    "build": "pnpm validate && pnpm test && astro build && node scripts/check-dist.mjs",
     "preview": "astro preview"
   },
   "dependencies": {

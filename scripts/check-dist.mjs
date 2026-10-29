@@ -29,6 +29,7 @@ for (const f of htmlFiles) {
   else if (titles.has(title)) errors.push(`${u}: Titel doppelt mit ${titles.get(title)}`);
   else titles.set(title, u);
   if (!/<meta name="description" content="[^"]{20,}"/.test(html) ) errors.push(`${u}: Beschreibung fehlt/zu kurz`);
+  if (!/<meta property="og:title" content="[^"]+"/.test(html)) errors.push(`${u}: og:title fehlt`);
   if (!/<html lang="de"/.test(html)) errors.push(`${u}: lang="de" fehlt`);
   const robots = /<meta name="robots" content="([^"]+)"/.exec(html)?.[1];
   if (!indexing && !/noindex/.test(robots ?? '')) errors.push(`${u}: Vorschau ohne noindex (${robots})`);

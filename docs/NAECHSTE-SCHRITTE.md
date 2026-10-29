@@ -14,11 +14,11 @@ Stand prüfen: In Claude Code `pnpm release-check` ausführen lassen. Jeder offe
 **Schick mir:** „Datenschutz geprüft von &lt;Name&gt;, &lt;Datum&gt;“ und die gewünschten Änderungen.
 **Dann:** Ich passe den Text an und trage die Prüfung ein (`privacyReviewedBy`).
 
-## 3. Fachprüfung der Omega-3-Seite
-**Was:** Kreatin und Whey-Protein sind als geprüft eingetragen. Der Omega-3-Artikel ist noch ein Entwurf und wird nicht angezeigt.
-**Ablauf:** Die prüfende Person liest `docs/PRUEFPAKET.md` (wird mit `pnpm review-pack` neu erzeugt), Abschnitt „Omega-3“. Zu den bereits geprüften Artikeln sind nachträgliche Abschwächungen in `docs/AENDERUNGEN-NACH-PRUEFUNG.md` zusammengefasst.
+## 3. Fachprüfung der Omega-3- und Magnesium-Seite
+**Was:** Kreatin und Whey-Protein sind als geprüft eingetragen. Die Artikel zu Omega-3 und Magnesium sind noch Entwürfe und werden nicht angezeigt.
+**Ablauf:** Die prüfende Person liest `docs/PRUEFPAKET.md` (wird mit `pnpm review-pack` neu erzeugt), Abschnitte „Omega-3“ und „Magnesium“. Zu den bereits geprüften Artikeln sind nachträgliche Abschwächungen in `docs/AENDERUNGEN-NACH-PRUEFUNG.md` zusammengefasst.
 **Schick mir:** Name, Qualifikation und Datum der Prüfung (die Qualifikation fehlt auch bei den ersten beiden Artikeln) sowie Änderungswünsche.
-**Dann:** Ich setze Artikel, Substanz und die 4 Produkte von `draft` auf `published`, erfasse die Preise neu und prüfe alles.
+**Dann:** Ich setze Artikel, Substanz und je 4 Produkte von `draft` auf `published`, erfasse die Preise neu und prüfe alles.
 
 ## 4. Vorschau ins Netz stellen (kostenlos)
 **Was:** Die Seite kostet 0 €. Eine eigene Domain brauchst du dafür nicht.
@@ -42,4 +42,4 @@ Einzelheiten: `docs/RELEASE.md`.
 - `pnpm release-check` zeigt auslaufende Aktionen 7 Tage im Voraus.
 
 ## Vorlage zum Weitermachen (in Claude Code einfügen)
-> Setze am verifizierten Repo-Stand fort. Lies CLAUDE.md und docs/STATUS.md; prüfe Branch und offene Änderungen. Hier sind meine Angaben: …  (Impressum / Datenschutzprüfung / Fachprüfung Omega-3 / Cloudflare-Adresse). Trage sie ein, führe `pnpm build` und `pnpm release-check` aus, committe und berichte den Stand.
+> Setze am verifizierten Repo-Stand fort. Lies CLAUDE.md und docs/STATUS.md; prüfe Branch und offene Änderungen. Hier sind meine Angaben: …  (Impressum / Datenschutzprüfung / Fachprüfung Omega-3 und Magnesium / Cloudflare-Adresse). Trage sie ein, führe `pnpm build` und `pnpm release-check` aus, committe und berichte den Stand.

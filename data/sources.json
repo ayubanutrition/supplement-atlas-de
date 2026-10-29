@@ -340,5 +340,59 @@
     "url": "https://pubmed.ncbi.nlm.nih.gov/28642676/",
     "retrievedAt": "2026-10-28",
     "note": null
+  },
+  {
+    "id": "bulk-kreatin-produktseite",
+    "kind": "label",
+    "title": "Bulk Kreatin Monohydrat – Produktseite (Neutral, 500 g, Aktionsansicht)",
+    "publisher": "Bulk / Sports Supplements Limited",
+    "url": "https://www.bulk.com/de/products/creatine-monohydrate-eu/bpb-cmon-0000-eu1?view=ppc&o=MTc4LTMyLDE3OS02OQ==",
+    "retrievedAt": "2026-10-28T23:57:23Z",
+    "note": "Preise aus strukturierten Daten (JSON-LD, SKU BPB-CMON-0000-0500-EU) und Seitentext. Dass „Neutral/500 g“ gewählt ist, ergibt sich aus der SKU; die Größenauswahl ließ sich im Browser nicht bedienen. Anbieterangaben aus dem Seitenfuß; eine eigene Impressumsseite war nicht abrufbar (403)."
+  },
+  {
+    "id": "bodylab24-kreatin-produktseite",
+    "kind": "label",
+    "title": "Bodylab24 Creatine Powder (500 g) – Produktseite",
+    "publisher": "Bodylab24 / ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/products/bodylab24-creatine-powder-500g",
+    "retrievedAt": "2026-10-29T00:00:30Z",
+    "note": "Preise aus Shopify-Produktdaten und sichtbarem Text."
+  },
+  {
+    "id": "bodylab24-impressum",
+    "kind": "impressum",
+    "title": "Bodylab24 – Impressum",
+    "publisher": "ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/policies/legal-notice",
+    "retrievedAt": "2026-10-29T00:01:12Z",
+    "note": null
+  },
+  {
+    "id": "bodylab24-versand",
+    "kind": "shop",
+    "title": "Bodylab24 – Hilfe und Kontakt (Versandkosten)",
+    "publisher": "ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/pages/hilfe-und-kontakt",
+    "retrievedAt": "2026-10-29T00:02:12Z",
+    "note": null
+  },
+  {
+    "id": "morenutrition-daily-creatine",
+    "kind": "label",
+    "title": "More Nutrition Daily Creatine – Produktseite (Neutral, 250 g)",
+    "publisher": "More Nutrition / Quality First GmbH",
+    "url": "https://morenutrition.de/products/daily-creatine",
+    "retrievedAt": "2026-10-29T00:02:26Z",
+    "note": "Verfügbarkeit widersprüchlich (strukturierte Daten „SoldOut“, Shop-Daten „verfügbar“)."
+  },
+  {
+    "id": "morenutrition-impressum",
+    "kind": "impressum",
+    "title": "More Nutrition – Impressum",
+    "publisher": "Quality First GmbH",
+    "url": "https://morenutrition.de/policies/legal-notice",
+    "retrievedAt": "2026-10-29T00:03:31Z",
+    "note": null
   }
 ]

@@ -5,5 +5,12 @@
     "b": "myprotein-kreatin-monohydrat-500g",
     "question": "ESN Ultrapure oder Myprotein Kreatin Monohydrat: Was unterscheidet die beiden 500-g-Packungen?",
     "status": "published"
+  },
+  {
+    "slug": "myprotein-kreatin-monohydrat-500g-vs-bulk-kreatin-monohydrat-500g",
+    "a": "myprotein-kreatin-monohydrat-500g",
+    "b": "bulk-kreatin-monohydrat-500g",
+    "question": "Myprotein oder Bulk Kreatin Monohydrat: Was unterscheidet die beiden 500-g-Packungen?",
+    "status": "published"
   }
 ]

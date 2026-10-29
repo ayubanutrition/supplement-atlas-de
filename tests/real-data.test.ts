@@ -23,13 +23,31 @@ describe('Kreatin-Preise (Stand 28.10.2026)', () => {
     expect(v.isSale).toBe(true);
   });
 
+  it('Bulk: Aktion 15,99 € → 3,20 €/100 g; Streichpreis 24,99 € → 5,00 €/100 g', () => {
+    const v = view('bulk-kreatin-monohydrat-500g').latest!;
+    expect(v.payablePer100).toBe(320); // 319,8 gerundet
+    expect(v.regularPer100).toBe(500); // 499,8 gerundet
+  });
+
+  it('Bodylab24: Angebot 13,50 € → 2,70 €/100 g; Streichpreis 19,99 € → 4,00 €/100 g', () => {
+    const v = view('bodylab24-creatine-powder-500g').latest!;
+    expect(v.payablePer100).toBe(270);
+    expect(v.regularPer100).toBe(400); // 399,8 gerundet
+  });
+
   it('nur veröffentlichte Produkte erscheinen im Vergleich', () => {
     const ids = publishedProducts(data, 'kreatin', '2026-10-28').map((v) => v.product.id);
-    expect(ids).toEqual(['esn-ultrapure-kreatin-500g', 'myprotein-kreatin-monohydrat-500g']);
+    expect(ids).toEqual([
+      'bodylab24-creatine-powder-500g',
+      'bulk-kreatin-monohydrat-500g',
+      'esn-ultrapure-kreatin-500g',
+      'myprotein-kreatin-monohydrat-500g',
+    ]);
+    expect(ids).not.toContain('more-nutrition-daily-creatine-250g');
   });
 
   it('Preise werden nach 30 Tagen als erneut zu prüfen markiert', () => {
-    const p = data.products[0];
+    const p = data.products.find((x) => x.id === 'esn-ultrapure-kreatin-500g')!;
     expect(productView(data, p, '2026-11-27').latest!.freshness).toBe('aktuell');
     expect(productView(data, p, '2026-11-28').latest!.freshness).toBe('erneut-pruefen');
   });

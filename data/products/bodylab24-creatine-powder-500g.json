@@ -1,0 +1,59 @@
+{
+  "id": "bodylab24-creatine-powder-500g",
+  "brandId": "bodylab24",
+  "substanceId": "kreatin",
+  "name": "Bodylab24 Creatine Powder",
+  "variant": "500 g",
+  "netWeightG": 500,
+  "activeDeclaredAs": "Kreatin-Monohydrat",
+  "activePer100g": 100,
+  "servingSizeG": 5,
+  "activePerServingG": 5,
+  "ingredients": "100 % mikronisiertes Creatin Monohydrat. Das Produkt enthält keine weiteren Zusatzstoffe.",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": null,
+  "labTesting": {
+    "statement": "Unser Creatine Powder wird laufend überprüft und ist auf der Kölner Liste gelistet – HIER findest Du den Prüfbericht.",
+    "sourceId": "bodylab24-kreatin-produktseite"
+  },
+  "label": {
+    "sourceId": "bodylab24-kreatin-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T00:00:30Z"
+  },
+  "labelNotes": [
+    "Der Anteil von 100 % Kreatin-Monohydrat je 100 g ergibt sich aus der Ein-Zutaten-Liste; die Nährwerttabelle des Shops nennt nur Werte je Portion.",
+    "Nährwerte je Portion (5 g, 1 Messlöffel): 5 g Kreatin-Monohydrat, davon 4,5 g Kreatin. Rechnerisch wären etwa 4,4 g zu erwarten; vermutlich gerundet.",
+    "Die Seite verlinkt einen Prüfbericht zur „Kölner Liste“; wir haben ihn nicht geöffnet. Die Aussage ist eine Herstellerangabe.",
+    "Allergenhinweise fanden wir auf der Seite nicht."
+  ],
+  "prices": [
+    {
+      "retailer": "bodylab24.de",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 1999,
+      "regularPriceNote": "Vom Shop als durchgestrichener Preis angezeigt (–32 %). Ob er zuletzt tatsächlich verlangt wurde, ist nicht geprüft.",
+      "salePriceCents": 1350,
+      "saleConditions": "Shop-Angebot ohne Code; ein Enddatum nennt die Seite nicht.",
+      "shipping": {
+        "note": "4,90 € innerhalb Deutschlands; kostenlos ab 85 € Bestellwert; Lieferung 2–3 Werktage.",
+        "costCents": 490,
+        "freeFromCents": 8500,
+        "sourceId": "bodylab24-versand"
+      },
+      "observedAt": "2026-10-29T00:00:30Z",
+      "sourceId": "bodylab24-kreatin-produktseite"
+    }
+  ],
+  "status": "published",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Erstaufnahme: Etikettangaben, Angebotspreis und Versand erfasst."
+    }
+  ]
+}

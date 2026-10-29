@@ -1,0 +1,58 @@
+{
+  "id": "more-nutrition-daily-creatine-250g",
+  "brandId": "more-nutrition",
+  "substanceId": "kreatin",
+  "name": "More Nutrition Daily Creatine",
+  "variant": "Neutral, 250 g",
+  "netWeightG": 250,
+  "activeDeclaredAs": "Kreatin-Monohydrat",
+  "activePer100g": 100,
+  "servingSizeG": 3.5,
+  "activePerServingG": 3.5,
+  "ingredients": "Kreatin Monohydrat",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": null,
+  "labTesting": {
+    "statement": null,
+    "sourceId": null
+  },
+  "label": {
+    "sourceId": "morenutrition-daily-creatine",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T00:02:26Z"
+  },
+  "labelNotes": [
+    "Der Anteil von 100 % Kreatin-Monohydrat je 100 g ergibt sich aus der Ein-Zutaten-Liste; die Nährwerttabelle des Shops nennt nur Werte je Portion.",
+    "Nährwerte je Tagesportion: 3500 mg Kreatin-Monohydrat, davon 3000 mg Kreatin; 71 Portionen.",
+    "ENTWURF: Verfügbarkeit widersprüchlich (strukturierte Daten „SoldOut“, Shop-Daten „verfügbar“, Seite zeigt zugleich „ausverkauft“ und „auf Lager“). Nur eine 250-g-Dose, keine 500-g-Variante. Erst veröffentlichen, wenn die Verfügbarkeit geklärt ist."
+  ],
+  "prices": [
+    {
+      "retailer": "morenutrition.de",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 2599,
+      "regularPriceNote": "Nur mit Code AKTION 10 % Rabatt (nicht eingerechnet).",
+      "salePriceCents": null,
+      "saleConditions": null,
+      "shipping": {
+        "note": "4,90 €; kostenlos ab 55 € Bestellwert; Lieferzeit laut Seite 3–5 Tage.",
+        "costCents": 490,
+        "freeFromCents": 5500,
+        "sourceId": "morenutrition-daily-creatine"
+      },
+      "observedAt": "2026-10-29T00:02:26Z",
+      "sourceId": "morenutrition-daily-creatine"
+    }
+  ],
+  "status": "draft",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Entwurf angelegt; Verfügbarkeit ungeklärt."
+    }
+  ]
+}

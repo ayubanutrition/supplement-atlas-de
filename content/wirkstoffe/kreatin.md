@@ -20,7 +20,7 @@ Kreatin-Monohydrat besteht zu **87,9 %** aus Kreatin, der Rest ist Wasser (berec
 
 Am besten belegt ist der Nutzen **in Kombination mit Krafttraining**. Systematische Übersichtsarbeiten finden bei Erwachsenen unter 50 einen zusätzlichen Kraftzuwachs und etwas mehr fettfreie Masse gegenüber Training mit Placebo. Bei älteren Erwachsenen sind die Zusatzeffekte kleiner, aber in mehreren Auswertungen nachweisbar. Für Frauen gibt es deutlich weniger Daten als für Männer.
 
-Ein Teil der zusätzlichen „Magermasse“ ist Wasser, das Kreatin in den Muskel zieht. Das erklärt auch, warum das Körpergewicht in den ersten Wochen oft leicht steigt.
+Die zusätzliche „Magermasse“ enthält wahrscheinlich auch Wasser im Muskel; die Zusammenfassung der Metaanalyse unterscheidet das nicht. Eine Gewichtszunahme ist deshalb nicht allein Muskelaufbau.
 
 Ohne Training ist ein Effekt auf Kraft oder Muskulatur nicht zu erwarten – die Studien untersuchen fast immer die Kombination.
 
@@ -30,9 +30,9 @@ Eine Metaanalyse von 2024 fand einen kleinen positiven Effekt auf Gedächtnislei
 
 ## Ist Kreatin sicher?
 
-Für gesunde Erwachsene gilt eine Aufnahme von **3 g pro Tag** in Nahrungsergänzungsmitteln nach mehreren behördlichen Risikobewertungen als unbedenklich, zuletzt ausführlich beim norwegischen Ausschuss für Lebensmittelsicherheit (VKM, 2016). Für höhere Dosen ist die Datenlage dort als begrenzt eingestuft. Für **Kinder und Jugendliche** konnte der VKM ein Risiko bei allen geprüften Dosen nicht ausschließen.
+Für gesunde Erwachsene gilt eine Aufnahme von **3 g pro Tag** in Nahrungsergänzungsmitteln nach der Risikobewertung des norwegischen Ausschusses für Lebensmittelsicherheit (VKM, 2016) als unbedenklich; der Bericht nennt frühere Bewertungen (u. a. EFSA 2004) mit demselben Ergebnis. Für höhere Dosen ist die Datenlage dort als begrenzt eingestuft. Für **Kinder und Jugendliche** konnte der VKM ein Risiko bei allen geprüften Dosen nicht ausschließen.
 
-**Nieren:** Kreatin erhöht den Kreatininwert im Blut. Das ist ein Laborwert, aus dem die Nierenfunktion oft nur geschätzt wird – die Schätzung fällt dann scheinbar schlechter aus. In einer Metaanalyse von 2026 blieb die direkt gemessene Filtrationsrate unverändert. Wer Kreatin nimmt, sollte das vor Blutuntersuchungen erwähnen. Menschen mit Nierenerkrankungen sollten Kreatin nur nach ärztlicher Rücksprache verwenden; für sie gelten die Aussagen zu Gesunden nicht.
+**Nieren:** Kreatin erhöht den Kreatininwert im Blut. Das ist ein Laborwert, aus dem die Nierenfunktion oft nur geschätzt wird – die Schätzung fällt dann scheinbar schlechter aus. In einer Metaanalyse von 2026 war die direkt gemessene Filtrationsrate nicht signifikant verändert (grenzwertig, p = 0,06); die Autoren deuten den Anstieg des Kreatinins als veränderten Kreatininstoffwechsel, nicht als Nierenschaden. Wer Kreatin nimmt, sollte das vor Blutuntersuchungen erwähnen. Menschen mit Nierenerkrankungen sollten Kreatin nur nach ärztlicher Rücksprache verwenden; für sie gelten die Aussagen zu Gesunden nicht.
 
 Langzeitdaten über mehr als ein Jahr sind in den Nieren-Metaanalysen kaum enthalten.
 

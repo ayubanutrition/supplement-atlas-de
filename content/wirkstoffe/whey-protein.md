@@ -12,7 +12,7 @@ updatedAt: "2026-10-29"
 
 ## Was ist Whey-Protein?
 
-Whey ist Molkenprotein: ein Eiweißgemisch, das bei der Käseherstellung anfällt und als Pulver verkauft wird. Das **Konzentrat** ist die Standardform. Es enthält neben Eiweiß auch Milchzucker, Fett und meist Aromen und Süßungsmittel. Deshalb sagt der Packungspreis wenig: Entscheidend ist, wie viel Protein tatsächlich in der Packung steckt. Das steht in der Nährwerttabelle (Eiweiß je 100 g).
+Whey ist Molkenprotein: ein Eiweißgemisch, das bei der Käseherstellung anfällt und als Pulver verkauft wird. Das **Konzentrat** ist die Standardform. Es enthält neben Eiweiß auch Kohlenhydrate und Fett (siehe Nährwerttabellen der erfassten Produkte) und meist Aromen und Süßungsmittel. Deshalb sagt der Packungspreis wenig: Entscheidend ist, wie viel Protein tatsächlich in der Packung steckt. Das steht in der Nährwerttabelle (Eiweiß je 100 g).
 
 Whey ist ein Milcherzeugnis und muss nach der EU-Lebensmittelinformationsverordnung als Allergen Milch gekennzeichnet sein.
 

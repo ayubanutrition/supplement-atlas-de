@@ -21,10 +21,15 @@ Stand: 29.10.2026 · Branch `feat/m3-protein` (enthält M1/M2; Basis `main` @ 5a
 - Systemschriften, kein Drittanbieter-Request. Abhängigkeiten gepinnt (astro 7.3.8, vitest 5.0.4, zod 4.6.7, axe-core 4.13.0).
 - Nicht abrufbar, bewusst weggelassen: Sunday Natural, HSN (Bot-Schutz, nicht umgangen), foodspring (Proxy-Sperre), Bulk-AGB (403).
 
+## Entscheidungen des Eigentümers (29.10.2026)
+- Impressum: vorerst nicht; Seite bleibt Vorschau mit `noindex`.
+- Hosting: zuerst kostenlose Vorschau über Cloudflare (`workers.dev`), Domain später.
+- Fachprüfung: durch eine qualifizierte Person; Name/Qualifikation folgen. Prüfpaket: `pnpm review-pack` → `docs/PRUEFPAKET.md`.
+
 ## Offen / Blocker (nur der Eigentümer kann das lösen)
 1. **Fachliche Prüfung** beider Artikel durch qualifizierte Person (`reviewedBy`) – ohne sie keine Indexierung.
 2. **Impressum/Kontakt:** `data/operator.json` mit echten Angaben füllen; **Datenschutz-Text** (Entwurf des technischen Ist-Zustands liegt vor) rechtlich prüfen lassen.
-3. **Domain/Marke** nicht geprüft, nichts gekauft. Cloudflare-Konto nicht verbunden (`wrangler.jsonc` liegt bereit; Build `pnpm build`, Ausgabe `dist`).
+3. **Domain/Marke** nicht geprüft, nichts gekauft. Cloudflare-Konto nicht verbunden (`wrangler.jsonc` + gepinnter Wrangler 4.151.3 liegen bereit, Dry-Run geprüft; Build `pnpm build`, Deploy `npx wrangler deploy`).
 4. Preise sind Momentaufnahmen vom 28./29.10.2026 und werden nach 30 Tagen als „erneut zu prüfen“ markiert; die Bulk-Aktion endet laut Shop am 03.11.2026.
 5. Quellenlücken: ESN ohne Zutatenliste (Kreatin); Prüfberichte/PDFs der Anbieter nicht geöffnet; Herstellerangaben zu Tests nicht verifiziert; konsolidierte EU-Fassung bei Protein-Claims nicht abgeglichen; More-Nutrition-Verfügbarkeit ungeklärt.
 6. `gh` ohne gültiges Token und GraphQL gesperrt; PR-Anlage über die REST-API funktioniert (`gh api repos/…/pulls`).

@@ -2,6 +2,8 @@
 
 Deutschsprachige Vergleichsplattform für Nahrungsergänzungsmittel, getrennt von ayubanutrition.de. Status: Vorschau, nicht veröffentlicht.
 
+**Was du jetzt tun musst:** [docs/NAECHSTE-SCHRITTE.md](docs/NAECHSTE-SCHRITTE.md)
+
 Strategie: [CLAUDE_MASTER_HANDOFF.md](CLAUDE_MASTER_HANDOFF.md) · Aktueller Stand: [docs/STATUS.md](docs/STATUS.md)
 
 ## Befehle (Node ≥ 22, pnpm)

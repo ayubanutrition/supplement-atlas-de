@@ -42,4 +42,5 @@ Stand: 29.10.2026 · Branch `feat/omega3` (enthält M1–M3 aus `feat/m3-protein
 6. `gh` ohne gültiges Token und GraphQL gesperrt; PR-Anlage über die REST-API funktioniert (`gh api repos/…/pulls`).
 
 ## Nächste Aufgabe
+Owner-Anleitung in einfacher Sprache: `docs/NAECHSTE-SCHRITTE.md`.
 Eigentümer: `docs/RELEASE.md` Schritte 1–3 (Prüfung, Impressum, Domain-/Cloudflare-Entscheidung). Danach M4: Vorschau prüfen, `pnpm release-check` ohne Blocker, Variablen setzen, veröffentlichen. Parallel möglich: Rubrik an den 7 Kreatin-Produkten kalibrieren (Schwelle 6 erreicht; Whey hat 5), Omega-3/Magnesium vorbereiten. Preise nu3 (bis 30.10.) und Bulk (bis 03.11.) laufen ab.

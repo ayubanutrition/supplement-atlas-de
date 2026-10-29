@@ -9,13 +9,13 @@ Gilt für jeden, der Daten ergänzt (Mensch, Claude, Codex). Ziel: nachvollziehb
 - **Kein flächiges Scraping.** Nur die nötigen Seiten je Produkt abrufen; keine Bilder oder langen Texte kopieren.
 
 ## Ein Produkt anlegen
-1. Eine konkrete Variante wählen (Geschmack, Packung). Wenn die Seite keine Sorte/Größe eindeutig zeigt oder sich widerspricht → Status `draft`.
+1. Eine konkrete Variante wählen (Geschmack, Packung). **Fallstrick:** Das Top-Level-`price` im Shopify-`.js` und die vorgewählte Variante gehören oft zu einer anderen Größe (z. B. 250 g statt 500 g). Immer den Preis der gewählten Variante-ID lesen. Wenn die Seite keine Sorte/Größe eindeutig zeigt oder sich widerspricht → Status `draft`.
 2. **Quelle** anlegen (Produktseite; Impressum; Versandseite, falls Versand dort steht). Hinweis zu Besonderheiten ins Feld `note` (z. B. „Preis nur in strukturierten Daten“).
 3. **Wirkstoffmenge** bestimmen:
    - Pulver: Füllmenge (`netWeightG`) × Anteil je 100 g (`activePer100g`). „100 %“ aus der Ein-Zutaten-Liste ist erlaubt, wird aber im Hinweis vermerkt.
    - Kapseln: Gesamtmenge je Packung (`activeTotalG`) = Kapseln × Wirkstoff je Kapsel. **Wert je Portion auf je Kapsel umrechnen** (z. B. 3 Kapseln = 1200 mg EPA → 400 mg je Kapsel).
 4. **Preis**: Preis ohne Code in Cent. Aktion → `salePriceCents` + `saleConditions` + `saleEndsAt` (Datum, falls der Anbieter eines nennt, auch in strukturierten Daten). Durchgestrichener Preis → `regularPriceNote` („Ob er zuletzt verlangt wurde, ist nicht geprüft“). Versand getrennt erfassen.
-5. **Zusammensetzung wörtlich** (`ingredients`), Allergenhinweis, Rohstoff (nur wenn auf der Seite genannt, mit Quelle), Prüfaussagen **wörtlich** und als Herstellerangabe.
+5. **Zusammensetzung wörtlich** (`ingredients`), Allergenhinweis, Rohstoff (nur wenn auf der Seite genannt, mit Quelle), Prüfaussagen **wörtlich** und als Herstellerangabe. Zitate dürfen nicht umformuliert oder gekürzt werden, ohne dass es erkennbar ist (Auslassung mit „…“). Steht ein Hinweis nur indirekt auf der Seite (z. B. Allergen nur fett in der Zutatenliste), das so beschreiben statt als Seitenzitat auszugeben.
 6. **Hinweise (`labelNotes`)**: Widersprüche auf der Seite (Portion 3 g vs. 3,4 g; „ohne Zuckerzusatz“ vs. Zucker in der Tabelle), Lücken (keine Zutatenliste), nicht geöffnete Prüfberichte. Beginnt ein Hinweis mit `Vergleichbarkeit:`, erscheint er im Vergleich (z. B. Mischung mit Isolat, Marken-Rohstoff, andere Packungsgröße, anderer Geschmack).
 7. `pnpm validate && pnpm test`; **Preis von Hand nachrechnen** und in `tests/real-data.test.ts` als Test festhalten (Formel im Kommentar).
 

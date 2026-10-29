@@ -30,6 +30,7 @@ Für Cloudflare später: Build-Befehl `pnpm build`, Ausgabeverzeichnis `dist`.
 - `src/lib/categories.ts` – Kategorien (Kreatin, Whey-Protein): Bezugsstoff, Rechner, Texte.
 - `src/pages/` – Startseite, `/wirkstoffe/[slug]/`, `/produkte/[id]/`, `/vergleich/[slug]/`, `/duell/[slug]/`, `/rechner/…`, `/methodik/`, `/ueber-uns/`, 404, `sitemap.xml`.
 - `wrangler.jsonc`, `public/_headers` – Cloudflare Workers Static Assets, Sicherheits-Header.
+- `docs/DATEN-ERFASSEN.md` – Checkliste zum Erfassen von Produkten, Studien und Aussagen.
 - `docs/RUBRIK-ENTWURF.md` – nicht öffentlicher Entwurf der Bewertungsrubrik.
 
 ## Veröffentlichungsregeln im Code

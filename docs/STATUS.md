@@ -24,10 +24,11 @@ Stand: 29.10.2026 · Branch `feat/m3-protein` (enthält M1/M2; Basis `main` @ 5a
 ## Entscheidungen des Eigentümers (29.10.2026)
 - Impressum: vorerst nicht; Seite bleibt Vorschau mit `noindex`.
 - Hosting: zuerst kostenlose Vorschau über Cloudflare (`workers.dev`), Domain später.
-- Fachprüfung: durch eine qualifizierte Person; Name/Qualifikation folgen. Prüfpaket: `pnpm review-pack` → `docs/PRUEFPAKET.md`.
+- Fachprüfung: laut Eigentümer am 29.10.2026 durch Jens Petersen erfolgt (Bestätigung per Rückfrage). **Qualifikation wurde nicht genannt** und ist in `reviewedBy` nicht ausgewiesen; empfohlen, sie zu ergänzen. Prüfpaket: `pnpm review-pack` → `docs/PRUEFPAKET.md`.
+- Impressum: weiterhin „doch noch nicht“; Name Jens Petersen wurde genannt, Anschrift/E-Mail fehlen.
 
 ## Offen / Blocker (nur der Eigentümer kann das lösen)
-1. **Fachliche Prüfung** beider Artikel durch qualifizierte Person (`reviewedBy`) – ohne sie keine Indexierung.
+1. ~~Fachliche Prüfung~~ eingetragen (siehe oben; Qualifikation noch ergänzen).
 2. **Impressum/Kontakt:** `data/operator.json` mit echten Angaben füllen; **Datenschutz-Text** (Entwurf des technischen Ist-Zustands liegt vor) rechtlich prüfen lassen.
 3. **Domain/Marke** nicht geprüft, nichts gekauft. Cloudflare-Konto nicht verbunden (`wrangler.jsonc` + gepinnter Wrangler 4.151.3 liegen bereit, Dry-Run geprüft; Build `pnpm build`, Deploy `npx wrangler deploy`).
 4. Preise sind Momentaufnahmen vom 28./29.10.2026 und werden nach 30 Tagen als „erneut zu prüfen“ markiert; die Bulk-Aktion endet laut Shop am 03.11.2026.

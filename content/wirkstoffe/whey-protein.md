@@ -6,7 +6,7 @@ summary: "Zusätzliches Protein bringt zusammen mit Krafttraining in Studien ein
 extraSources: ["efsa-2012-2557", "dge-2017-protein", "dge-sport-2020", "vo-1169-2011"]
 status: published
 author: "Redaktion Supplement Atlas (KI-gestützter Entwurf)"
-reviewedBy: null
+reviewedBy: "Jens Petersen (Prüfung bestätigt am 29.10.2026)"
 updatedAt: "2026-10-29"
 ---
 

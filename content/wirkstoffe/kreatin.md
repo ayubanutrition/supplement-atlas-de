@@ -6,7 +6,7 @@ summary: "Zusammen mit Krafttraining führt Kreatin-Monohydrat in Studien zu etw
 extraSources: ["vkm-2016-56", "efsa-2016-4400", "efsa-2024-9100"]
 status: published
 author: "Redaktion Supplement Atlas (KI-gestützter Entwurf)"
-reviewedBy: null
+reviewedBy: "Jens Petersen (Prüfung bestätigt am 29.10.2026)"
 updatedAt: "2026-10-28"
 ---
 

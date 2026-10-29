@@ -33,7 +33,7 @@ export const CATEGORIES: Category[] = [
     unitShort: 'Protein',
     calculatorPath: '/rechner/proteinpreis/',
     basisNote:
-      'Whey-Pulver enthält neben Eiweiß auch Kohlenhydrate, Fett und Aromen. Darum rechnen wir den Preis auf 100 g enthaltenes Protein laut Nährwerttabelle um, nicht auf 100 g Pulver.',
+      'Whey-Pulver enthält neben Eiweiß auch Kohlenhydrate, Fett und Aromen. Darum rechnen wir den Preis auf 100 g enthaltenes Protein laut Nährwerttabelle um, nicht auf 100 g Pulver. Zusammensetzung (reines Konzentrat oder Mischung mit Isolat), Geschmack und Packungsgröße unterscheiden sich; siehe „Wie vergleichbar sind die Produkte?“.',
   },
 ];
 

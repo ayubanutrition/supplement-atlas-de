@@ -1,0 +1,59 @@
+{
+  "id": "bulk-pure-whey-1kg",
+  "brandId": "bulk",
+  "substanceId": "whey-protein",
+  "name": "Bulk Pure Whey Protein",
+  "variant": "Vanille, 1 kg",
+  "netWeightG": 1000,
+  "activeDeclaredAs": "Protein",
+  "activePer100g": 71,
+  "servingSizeG": 32,
+  "activePerServingG": 23,
+  "ingredients": "Molkenproteinkonzentrat (Milch), Emulgator (Sonnenblumenlecithin), Aromen, Verdickungsmittel (Xanthan), Süßungsmittel (Sucralose).",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": "Enthält Milch. „Kann Soja, glutenhaltiges Getreide, Senf, Sesamsamen, Schwefeldioxid und Sulphite enthalten.“",
+  "labTesting": {
+    "statement": "Jede Charge jedes Produkts wird gründlich getestet, um sicherzustellen, dass du das beste Erlebnis mit Bulk™ erhältst.",
+    "sourceId": "bulk-whey-produktseite"
+  },
+  "label": {
+    "sourceId": "bulk-whey-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T00:03:52Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: reines Whey-Konzentrat. Geschmack „Vanille“, 1 kg. Höherer Kohlenhydrat- und Zuckeranteil als die anderen erfassten Pulver.",
+    "Nährwerte je 100 g: 378 kcal, Fett 3,5 g, Kohlenhydrate 15 g (davon Zucker 12 g), Eiweiß 71 g, Salz 1,0 g. Je Portion (32 g): 23 g Protein; die Portionszahl nennt die Seite nicht (rechnerisch etwa 31).",
+    "Die Seite wirbt „ohne Zuckerzusatz“ bei 12 g Zucker je 100 g (laut Fußnote natürlich vorkommend) und „bis zu 24 g Protein“ bei 23 g in der Tabelle.",
+    "Die Prüfaussage ist unspezifisch (kein Labor, kein Zertifikat genannt). Herstellerangabe."
+  ],
+  "prices": [
+    {
+      "retailer": "bulk.com",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 4399,
+      "regularPriceNote": "Vom Shop als durchgestrichener Preis angezeigt. Dauer und Herkunft sind nicht belegt.",
+      "salePriceCents": 3799,
+      "saleConditions": "Shop-Aktion „Payday Sale: Bis zu 75 % Rabatt – kein Code nötig“; laut strukturierten Daten gültig bis 03.11.2026.",
+      "shipping": {
+        "note": "4,95 € innerhalb Deutschlands; kostenlos ab 59 € Bestellwert; Lieferung 2–4 Werktage.",
+        "costCents": 495,
+        "freeFromCents": 5900,
+        "sourceId": "bulk-whey-produktseite"
+      },
+      "observedAt": "2026-10-29T00:03:43Z",
+      "sourceId": "bulk-whey-produktseite"
+    }
+  ],
+  "status": "published",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Erstaufnahme: Nährwerte, Zutaten, Preis und Versand erfasst."
+    }
+  ]
+}

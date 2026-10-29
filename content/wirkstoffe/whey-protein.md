@@ -52,5 +52,5 @@ In der EU sind für Protein drei gesundheitsbezogene Aussagen zugelassen: Protei
 - **Eiweiß je 100 g:** Das ist die wichtigste Zahl. Zwischen Produkten liegen oft große Unterschiede.
 - **Preis pro 100 g Protein:** Nicht den Packungspreis vergleichen, sondern den Preis pro 100 g enthaltenes Protein (Rechner und Vergleich nutzen genau diese Formel).
 - **Zutatenliste:** Mehr Zusatzstoffe, Zucker und Fett bedeuten weniger Protein pro Gramm Pulver.
-- **Gleiche Kategorie vergleichen:** Konzentrat, Isolat, Casein und pflanzliche Pulver haben unterschiedliche Zusammensetzungen; unser Vergleich zeigt nur Whey-Konzentrate.
+- **Gleiche Kategorie vergleichen:** Konzentrat, Isolat, Casein und pflanzliche Pulver haben unterschiedliche Zusammensetzungen. Unser Vergleich enthält Whey-Pulver auf Konzentrat-Basis; zwei der erfassten Produkte sind Mischungen mit Isolat (ein Produkt auch mit Hydrolysat). Das ist bei jedem Produkt vermerkt.
 - **Prüfangaben:** Hinweise auf Labortests sind Herstellerangaben. Aussagekräftig sind aktuelle, chargenbezogene Analysen eines unabhängigen Labors.

@@ -39,6 +39,15 @@ const asOf = [a, b].map((v) => v.latest?.obs.observedAt ?? '').sort().pop() ?? '
     <p>Unterschiede gibt es bei den Angaben der Anbieter: {a.product.labTesting.statement ? `${a.brand.name} nennt externe Labortests` : `${a.brand.name} nennt keine konkreten Labortests`}, {b.product.labTesting.statement ? `${b.brand.name} ebenfalls` : `${b.brand.name} nennt für diese Variante keine`}. Geprüft haben wir das nicht.</p>
   </div>
 
+  {[a, b].some((v) => v.product.labelNotes.some((n) => n.startsWith('Vergleichbarkeit:'))) && (
+    <>
+      <h2>Wie vergleichbar sind die Produkte?</h2>
+      <ul>
+        {[a, b].map((v) => v.product.labelNotes.filter((n) => n.startsWith('Vergleichbarkeit:')).map((n) => <li><strong>{v.product.name}:</strong> {n.replace('Vergleichbarkeit: ', '')}</li>))}
+      </ul>
+    </>
+  )}
+
   <h2>Preis pro 100 g {cat.unit}</h2>
   <PriceBars
     caption="Ohne Code zahlbarer Preis am Erfassungstag, ohne Versand."

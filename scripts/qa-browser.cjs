@@ -81,6 +81,18 @@ const problems = [];
   const err = await kp.isVisible('#out-error');
   if (!err) problems.push('Rechner: ungültiger Anteil (120) zeigt keinen Fehler');
 
+  // Proteinrechner: 37,90 € / 1000 g bei 75 g Protein je 100 g = 5,05 € pro 100 g
+  const pp = await browser.newPage({ viewport: { width: 360, height: 800 } });
+  await pp.goto(BASE + '/rechner/proteinpreis/');
+  await pp.fill('#price', '37,90');
+  await pp.fill('#weight', '1000');
+  await pp.fill('#share', '75');
+  const p100 = (await pp.textContent('#r100')).replace(/\u00a0/g, ' ');
+  if (p100 !== '5,05 €') problems.push(`Proteinrechner: erwartet 5,05 €, erhalten ${p100}`);
+  await pp.fill('#shipping', '4,90');
+  const pShip = (await pp.textContent('#r100')).replace(/\u00a0/g, ' ');
+  if (pShip !== '5,71 €') problems.push(`Proteinrechner mit Versand: erwartet 5,71 €, erhalten ${pShip}`);
+
   await browser.close();
   console.log(JSON.stringify(results, null, 1));
   console.log(`Rechner per Tastatur: ${r100} pro 100 g, ${r1} pro g; Fehlermeldung bei ungültigem Anteil: ${err}`);

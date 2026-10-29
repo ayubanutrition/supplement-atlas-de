@@ -394,5 +394,68 @@
     "url": "https://morenutrition.de/policies/legal-notice",
     "retrievedAt": "2026-10-29T00:03:31Z",
     "note": null
+  },
+  {
+    "id": "esn-whey-produktseite",
+    "kind": "label",
+    "title": "ESN Designer Whey Protein – Produktseite (Vanilla Milk, 908 g)",
+    "publisher": "ESN / Fitmart GmbH & Co. KG",
+    "url": "https://www.esn.com/products/esn-designer-whey-protein?variant=47947601379643",
+    "retrievedAt": "2026-10-28T23:57:52Z",
+    "note": "Nährwerte im Browser (Tab „Nährwerte und Aminosäureprofil“) gelesen; eine Zutatenliste gilt laut Seite für alle Sorten."
+  },
+  {
+    "id": "esn-versand-hilfe",
+    "kind": "shop",
+    "title": "ESN – Versandkosten und Versandländer (Hilfecenter, Stand laut Seite 17.04.2026)",
+    "publisher": "ESN / Fitmart GmbH & Co. KG",
+    "url": "https://service.esn.com/hc/de/articles/15027500094737-Versandkosten-und-Versandl%C3%A4nder",
+    "retrievedAt": "2026-10-28T23:59:32Z",
+    "note": null
+  },
+  {
+    "id": "myprotein-whey-produktseite",
+    "kind": "label",
+    "title": "Myprotein Impact Whey Protein – Produktseite (Vanille, 900 g)",
+    "publisher": "Myprotein / THG Nutrition",
+    "url": "https://de.myprotein.com/p/sporternahrung/impact-whey-protein/10530943/",
+    "retrievedAt": "2026-10-29T00:00:14Z",
+    "note": "Seite widerspricht sich bei Portionswerten (Werbetext 23 g Protein, Tabelle 22 g)."
+  },
+  {
+    "id": "myprotein-qualitaet",
+    "kind": "other",
+    "title": "Myprotein – Qualität",
+    "publisher": "Myprotein / THG Nutrition",
+    "url": "https://de.myprotein.com/c/about-us/quality/",
+    "retrievedAt": "2026-10-29T00:00:51Z",
+    "note": null
+  },
+  {
+    "id": "bodylab24-whey-produktseite",
+    "kind": "label",
+    "title": "Bodylab24 Whey Protein (1000 g) – Produktseite (Vanilla)",
+    "publisher": "Bodylab24 / ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/products/bodylab24-whey-protein-1000g?variant=42053668175985",
+    "retrievedAt": "2026-10-29T00:02:31Z",
+    "note": null
+  },
+  {
+    "id": "bodylab24-versand-seite",
+    "kind": "shop",
+    "title": "Bodylab24 – Versand",
+    "publisher": "ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/pages/versand",
+    "retrievedAt": "2026-10-29T00:03:16Z",
+    "note": null
+  },
+  {
+    "id": "bulk-whey-produktseite",
+    "kind": "label",
+    "title": "Bulk Pure Whey Protein – Produktseite (Vanille, 1 kg)",
+    "publisher": "Bulk / Sports Supplements Limited",
+    "url": "https://www.bulk.com/de/products/pure-whey-protein-de/bpb-wpc8-0000?view=ppc&o=MTc4LTI2LDE3OS0yNQ==",
+    "retrievedAt": "2026-10-29T00:03:52Z",
+    "note": "Preise aus strukturierten Daten (JSON-LD) und Seitentext; Versandtabelle auf der Produktseite."
   }
 ]

@@ -47,6 +47,15 @@ const asOf = dates.length ? formatDate(dates[dates.length - 1]) : '–';
   />
   <p class="small muted">{cat.basisNote} Eigene Packung umrechnen: <a href={cat.calculatorPath}>Preisrechner</a>.</p>
 
+  {views.some((v) => v.product.labelNotes.some((n) => n.startsWith('Vergleichbarkeit:'))) && (
+    <>
+      <h2>Wie vergleichbar sind die Produkte?</h2>
+      <ul>
+        {views.map((v) => v.product.labelNotes.filter((n) => n.startsWith('Vergleichbarkeit:')).map((n) => <li><strong>{v.product.name}:</strong> {n.replace('Vergleichbarkeit: ', '')}</li>))}
+      </ul>
+    </>
+  )}
+
   <h2>Etikett und Konditionen</h2>
   <CompareTable views={views} unit={cat.unit} caption={`Angaben der Anbieter, erfasst am ${asOf}. Auf schmalen Bildschirmen seitlich wischen.`} />
 

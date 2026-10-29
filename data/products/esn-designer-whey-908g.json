@@ -1,0 +1,60 @@
+{
+  "id": "esn-designer-whey-908g",
+  "brandId": "esn",
+  "substanceId": "whey-protein",
+  "name": "ESN Designer Whey Protein",
+  "variant": "Vanilla Milk, 908 g",
+  "netWeightG": 908,
+  "activeDeclaredAs": "Protein",
+  "activePer100g": 75,
+  "servingSizeG": 30,
+  "activePerServingG": 23,
+  "ingredients": "Molkenproteinmischung 94 % (ultrafiltriertes Molkenproteinkonzentrat, cross-flow mikrofiltriertes Molkenproteinisolat), Aroma, Emulgator (Lecithine (Sonnenblume, Soja*)), Salz, Trennmittel (Siliciumdioxid), Süßungsmittel (Sucralose, Steviolglycoside aus Stevia), Farbstoff (Carotin). *Abhängig von Verfügbarkeit.",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": "Enthält Milch (Molke) und Soja (Lecithin, abhängig von Verfügbarkeit); keine „Kann enthalten“-Angabe gefunden.",
+  "labTesting": {
+    "statement": "Alle Chargen durchlaufen unabhängige Labortests, die Sicherheit, exakte Inhaltsstoffangaben und höchste Qualitätsstandards bestätigen.",
+    "sourceId": "esn-whey-produktseite"
+  },
+  "label": {
+    "sourceId": "esn-whey-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-28T23:57:52Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: Mischung aus Whey-Konzentrat und Whey-Isolat, nicht reines Konzentrat. Geschmack „Vanilla Milk“, 908 g.",
+    "Nährwerte je 100 g: 418 kcal, Fett 6,2 g, Kohlenhydrate 7,3 g (davon Zucker 5,0 g), Eiweiß 75 g, Salz 0,73 g. Je Portion (30 g): 23 g Protein, 30 Portionen.",
+    "Die Zutatenliste gilt laut Seite für alle Sorten; ob die Nährwerttabelle sortenspezifisch ist, sagt die Seite nicht.",
+    "Die Seite wirbt mit „ohne Zuckerzusatz“ bei 5,0 g Zucker je 100 g (laut Fußnote milchzuckerbedingt) und mit „bis zu 25 g Protein“ bei 23 g in der Tabelle.",
+    "Die Seite verlinkt „Alle Laboranalysen (PDF)“; wir haben sie nicht geöffnet. Die Prüfaussage ist eine Herstellerangabe."
+  ],
+  "prices": [
+    {
+      "retailer": "esn.com",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 4790,
+      "regularPriceNote": null,
+      "salePriceCents": null,
+      "saleConditions": null,
+      "shipping": {
+        "note": "4,90 € innerhalb Deutschlands; kostenlos ab 75 € Bestellwert; Lieferung 2–4 Werktage.",
+        "costCents": 490,
+        "freeFromCents": 7500,
+        "sourceId": "esn-versand-hilfe"
+      },
+      "observedAt": "2026-10-28T23:56:17Z",
+      "sourceId": "esn-whey-produktseite"
+    }
+  ],
+  "status": "published",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Erstaufnahme: Nährwerte, Zutaten, Preis und Versand erfasst."
+    }
+  ]
+}

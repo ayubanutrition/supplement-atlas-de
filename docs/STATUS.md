@@ -1,30 +1,32 @@
 # Arbeitsstand
 
-Stand: 29.10.2026 · Branch `feat/m1-m2-kreatin` (Basis `main` @ 5a4b1b2)
+Stand: 29.10.2026 · Branch `feat/m3-protein` (enthält M1/M2; Basis `main` @ 5a4b1b2)
 
 ## Verifiziert
-- M0: Repo `ayubanutrition/supplement-atlas-de` (privat) mit Startdateien auf `main`.
-- M1: Astro 7.3.8 + TypeScript, ein Zod-Schema für Build/Validator/Tests, Draft- und Quellenregeln, Navigation, drei Seitentypen (Wirkstoff, Produkt, Vergleich) plus Duell, Rechner, Methodik, Über uns, 404.
-- M2: Kreatin-Strecke mit echten Daten, abgerufen 28.10.2026:
-  - ESN Ultrapure Kreatin 500 g: 29,90 € → 5,98 €/100 g Monohydrat.
-  - Myprotein Kreatin Monohydrat 500 g: Aktion 14,99 € → 3,00 €/100 g; Streichpreis 19,99 € → 4,00 €/100 g.
-  - 2 zugelassene + 1 abgelehnter EU-Claim (Wortlaut aus Amtsblatt), 8 Studien mit verifizierter PMID, VKM-Risikobewertung.
-- Prüfungen: `pnpm build` (Datenprüfung, 27 Tests, 10 Seiten) grün. Browser-QA (`scripts/qa-browser.cjs`): alle internen Links 200, 404 korrekt, kein Überlauf bei 360 px, keine Konsolenfehler, keine axe-core-Befunde (WCAG 2.1 AA + Best Practice), Rechner per Tastatur korrekt (24,90 €/500 g → 4,98 €). Screenshots 360/1280 px manuell gesichtet.
-- Freigabesperre getestet: Build mit `PUBLIC_INDEXING=true` bricht ab („Ohne fachliche Prüfung nicht veröffentlichbar: kreatin“).
+- M0–M2: Astro 7.3.8 + TypeScript, ein Zod-Schema für Build/Validator/Tests, Draft- und Quellenregeln, Kreatin-Strecke.
+- M3 (Launch-Kern, technisch fertig, Inhalte im Entwurf):
+  - Kategorien datengetrieben (`src/lib/categories.ts`): Kreatin und Whey-Protein, je Wirkstoffseite, Vergleich, Rechner, Duelle.
+  - Kreatin: 4 veröffentlichte Produkte (ESN, Myprotein, Bulk, Bodylab24), 2 Duelle; More Nutrition als **Entwurf** (Verfügbarkeit widersprüchlich).
+  - Whey: 4 veröffentlichte Produkte (ESN, Myprotein, Bulk, Bodylab24), 2 Duelle. Vergleichbarkeitshinweise sichtbar (ESN/Bodylab24 sind Konzentrat-Isolat-Mischungen, Geschmack und Packung unterschiedlich, drei von vier Preisen sind Aktionen; Reihenfolge kippt zwischen Aktions- und Streichpreis).
+  - Evidenz: Kreatin 8 Arbeiten + 3 EU-Aussagen; Protein 13 Arbeiten + 4 EU-Aussagen (Wortlaut aus Amtsblatt-Ursprungsfassungen); 51 dokumentierte Quellen.
+  - Release-Technik: `wrangler.jsonc` (Workers Static Assets), `_headers` (CSP u. a., mit Testserver geprüft), `sitemap.xml` nur nach Freigabe, `noindex`/robots bis Freigabe.
+- Prüfungen: `pnpm build` = Datenprüfung + 34 Tests + 23 Seiten grün. Browser-QA (`scripts/qa-browser.cjs`, gegen Server mit echten Headern): alle internen Links 200, 404 korrekt, kein Überlauf bei 360 px, keine Konsolenfehler, keine axe-core-Befunde (WCAG 2.1 AA + Best Practice), beide Rechner korrekt. Screenshots 360/1280 px gesichtet.
+- Freigabesperre: Build mit `PUBLIC_INDEXING=true` bricht ab, solange ein Artikel kein `reviewedBy` hat.
 
-## Plankorrekturen (entschieden)
-- Preisbasis Kreatin = **Kreatin-Monohydrat**, nicht „davon Kreatin“: Etiketten runden die Kreatinangabe unterschiedlich (ESN 3,5 g → „3,0 g“, rechnerisch 3,08 g); sonst ~3 % Verzerrung. Umrechnung ÷ 0,879 in Methodik.
-- Vergleich zeigt den **ohne Code zahlbaren Preis** (Aktion, sonst regulär) und separat Streichpreis; Versand daneben, nicht eingerechnet.
-- Systemschriften statt Webfonts (keine Drittanbieter-Requests, 0 €).
-- Abhängigkeiten auf Versionen ≥ 2 Wochen gepinnt (astro 7.3.8, vitest 5.0.4, zod 4.6.7, axe-core 4.13.0).
+## Entscheidungen
+- Preisbasis Kreatin = Kreatin-Monohydrat (Etiketten runden „davon Kreatin“ unterschiedlich); Whey = Protein laut Nährwerttabelle.
+- Anzeige = ohne Code zahlbarer Preis (Aktion, sonst regulär) plus Streichpreis; Versand daneben, nicht eingerechnet.
+- Keine Punktnoten, kein Testsieger. Rubrik nur als Entwurf: `docs/RUBRIK-ENTWURF.md`.
+- Systemschriften, kein Drittanbieter-Request. Abhängigkeiten gepinnt (astro 7.3.8, vitest 5.0.4, zod 4.6.7, axe-core 4.13.0).
+- Nicht abrufbar, bewusst weggelassen: Sunday Natural, HSN (Bot-Schutz, nicht umgangen), foodspring (Proxy-Sperre), Bulk-AGB (403).
 
-## Offen / Blocker
-- **Fachliche Prüfung** des Kreatin-Artikels durch qualifizierte Person (`reviewedBy`) – blockiert Indexierung.
-- ESN zeigt keine Zutaten-/Allergenliste; „Alle Laboranalysen (PDF)“ nicht ausgewertet.
-- Myprotein: Seite widerspricht sich (Portion 3 vs. 3,4 g; Allergene). Dokumentiert, nicht aufgelöst.
-- Fließtext des Artikels hat noch keine Inline-Belege; Belege stehen in Claims-/Studienblöcken darunter.
-- Betreiberangaben, Impressum, Datenschutz, Domain, Cloudflare – nicht begonnen (M4).
-- `gh` CLI in der Cloud-Umgebung ohne gültiges Token; Push läuft über Git-Proxy, PR muss im Browser angelegt werden.
+## Offen / Blocker (nur der Eigentümer kann das lösen)
+1. **Fachliche Prüfung** beider Artikel durch qualifizierte Person (`reviewedBy`) – ohne sie keine Indexierung.
+2. **Impressum, Datenschutz, Kontakt** (Betreiberangaben) fehlen; dürfen nicht erfunden werden.
+3. **Domain/Marke** nicht geprüft, nichts gekauft. Cloudflare-Konto nicht verbunden (`wrangler.jsonc` liegt bereit; Build `pnpm build`, Ausgabe `dist`).
+4. Preise sind Momentaufnahmen vom 28./29.10.2026 und werden nach 30 Tagen als „erneut zu prüfen“ markiert; die Bulk-Aktion endet laut Shop am 03.11.2026.
+5. Quellenlücken: ESN ohne Zutatenliste (Kreatin); Prüfberichte/PDFs der Anbieter nicht geöffnet; Herstellerangaben zu Tests nicht verifiziert; konsolidierte EU-Fassung bei Protein-Claims nicht abgeglichen; More-Nutrition-Verfügbarkeit ungeklärt.
+6. `gh` CLI hat in der Cloud kein gültiges Token: Pull Request im Browser anlegen.
 
 ## Nächste Aufgabe
-M3 beginnen: Protein-Cluster analog anlegen (Rechner „Preis pro 100 g Protein“, 2–4 echte Produkte), dazu 4–6 weitere Kreatin-Produkte erfassen. Vorher: Bewertungsrubrik-Entwurf Kreatin (1/5/10-Anker) als Entwurf, nicht öffentlich.
+Nach fachlicher Prüfung und Betreiberangaben: M4 (Cloudflare-Vorschau, Domain-Entscheidung mit konkreten Kosten, Freigabe). Parallel möglich: weitere Produkte erfassen, Rubrik kalibrieren (mind. 6 Produkte je Kategorie), Omega-3/Magnesium vorbereiten.

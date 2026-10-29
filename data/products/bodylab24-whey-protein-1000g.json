@@ -1,0 +1,60 @@
+{
+  "id": "bodylab24-whey-protein-1000g",
+  "brandId": "bodylab24",
+  "substanceId": "whey-protein",
+  "name": "Bodylab24 Whey Protein",
+  "variant": "Vanilla, 1000 g",
+  "netWeightG": 1000,
+  "activeDeclaredAs": "Protein",
+  "activePer100g": 75,
+  "servingSizeG": 30,
+  "activePerServingG": 22.5,
+  "ingredients": "Mischung aus Molkenproteinen (Molkenproteinkonzentrat, Molkenproteinisolat, Molkenproteinhydrolysat); Aroma, Emulgator: Sojalecithine; Verdickungsmittel: Xanthan, Guarkernmehl, Natrium-Carboxymethylcellulose; Süßungsmittel: Acesulfam K, Sucralose; Trennmittel: Siliciumdioxid; Salz.",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": "Enthält Milcherzeugnisse und Soja.",
+  "labTesting": {
+    "statement": "Das BODYLAB Whey Protein Vanille in der 1- und 2-Kilogramm-Packung wird als einziges Whey Protein in Deutschland vom SGS Institut Fresenius in regelmäßigen Abständen hinsichtlich Protein- und Aminosäuregehalt überprüft und ist in die Kölner Liste aufgenommen.",
+    "sourceId": "bodylab24-whey-produktseite"
+  },
+  "label": {
+    "sourceId": "bodylab24-whey-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T00:02:31Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: Mischung aus Whey-Konzentrat, -Isolat und -Hydrolysat, nicht reines Konzentrat; zusätzlich Verdickungsmittel und zwei Süßungsmittel. Geschmack „Vanilla“, 1000 g.",
+    "Nährwerte je 100 g: 385 kcal, Fett 5,0 g, Kohlenhydrate 7,5 g (davon Zucker 5,5 g), Eiweiß 75 g, Salz 0,5 g. Je Portion (30 g Messlöffel): 22,5 g Protein; die Portionszahl nennt die Seite nicht (rechnerisch etwa 33).",
+    "Die Seite schreibt ausdrücklich, dass die Angaben für die Sorte Vanilla gelten.",
+    "Der Streichpreis wird einmal „Regulärer Preis“, einmal „Vergleichspreis“ genannt; ob er je verlangt wurde, ist nicht geprüft.",
+    "SGS-Prüfung und Kölner-Liste-Eintrag stammen nur vom Shop und sind nicht bei Dritten verifiziert."
+  ],
+  "prices": [
+    {
+      "retailer": "bodylab24.de",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 5799,
+      "regularPriceNote": "Vom Shop als durchgestrichener Preis angezeigt. Dauer und Herkunft sind nicht belegt.",
+      "salePriceCents": 3790,
+      "saleConditions": "Shop-Angebot „–35 %“ ohne Code; kein Enddatum genannt.",
+      "shipping": {
+        "note": "4,90 € innerhalb Deutschlands; kostenlos ab 85 € Bestellwert; Lieferung 2–3 Werktage.",
+        "costCents": 490,
+        "freeFromCents": 8500,
+        "sourceId": "bodylab24-versand-seite"
+      },
+      "observedAt": "2026-10-29T00:02:31Z",
+      "sourceId": "bodylab24-whey-produktseite"
+    }
+  ],
+  "status": "published",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Erstaufnahme: Nährwerte, Zutaten, Preis und Versand erfasst."
+    }
+  ]
+}

@@ -52,3 +52,34 @@ describe('Kreatin-Preise (Stand 28.10.2026)', () => {
     expect(productView(data, p, '2026-11-28').latest!.freshness).toBe('erneut-pruefen');
   });
 });
+
+describe('Whey-Preise pro 100 g Protein (Stand 29.10.2026)', () => {
+  // Handrechnung: Preis ÷ (Packung × Eiweiß je 100 g ÷ 100) × 100
+  it('Bodylab24: 37,90 € / (1000 g × 75 %) = 5,05 €; Streichpreis 57,99 € → 7,73 €', () => {
+    const v = view('bodylab24-whey-protein-1000g').latest!;
+    expect(v.payablePer100).toBe(505);
+    expect(v.regularPer100).toBe(773);
+  });
+  it('Bulk: 37,99 € / 710 g = 5,35 €; Streichpreis 43,99 € → 6,20 €', () => {
+    const v = view('bulk-pure-whey-1kg').latest!;
+    expect(v.payablePer100).toBe(535);
+    expect(v.regularPer100).toBe(620);
+  });
+  it('Myprotein: 35,99 € / 648 g = 5,55 €; Streichpreis 44,99 € → 6,94 €', () => {
+    const v = view('myprotein-impact-whey-900g').latest!;
+    expect(v.payablePer100).toBe(555);
+    expect(v.regularPer100).toBe(694);
+  });
+  it('ESN: 47,90 € / 681 g = 7,03 € (keine Aktion)', () => {
+    const v = view('esn-designer-whey-908g').latest!;
+    expect(v.payablePer100).toBe(703);
+    expect(v.isSale).toBe(false);
+  });
+  it('Reihenfolge kippt je nach Preisbasis (Listenpreis vs. Aktion) – beides wird gezeigt', () => {
+    const ids = ['bodylab24-whey-protein-1000g', 'bulk-pure-whey-1kg', 'myprotein-impact-whey-900g', 'esn-designer-whey-908g'];
+    const byPayable = [...ids].sort((a, b) => view(a).latest!.payablePer100! - view(b).latest!.payablePer100!);
+    const byRegular = [...ids].sort((a, b) => view(a).latest!.regularPer100! - view(b).latest!.regularPer100!);
+    expect(byPayable[0]).toBe('bodylab24-whey-protein-1000g');
+    expect(byRegular[0]).toBe('bulk-pure-whey-1kg');
+  });
+});

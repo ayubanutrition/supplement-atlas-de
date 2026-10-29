@@ -23,7 +23,10 @@ Für Cloudflare später: Build-Befehl `pnpm build`, Ausgabeverzeichnis `dist`.
 - `content/wirkstoffe/` – redaktionelle Texte (Markdown) mit `status` und `reviewedBy`.
 - `src/lib/schema.ts` – ein Schema für Build, Validator und Tests, inkl. Querprüfungen.
 - `src/lib/price.ts` – Preisnormalisierung in ganzen Cent.
-- `src/pages/` – Startseite, `/wirkstoffe/[slug]/`, `/produkte/[id]/`, `/vergleich/kreatin/`, `/duell/[slug]/`, `/rechner/kreatinpreis/`, `/methodik/`, `/ueber-uns/`, 404.
+- `src/lib/categories.ts` – Kategorien (Kreatin, Whey-Protein): Bezugsstoff, Rechner, Texte.
+- `src/pages/` – Startseite, `/wirkstoffe/[slug]/`, `/produkte/[id]/`, `/vergleich/[slug]/`, `/duell/[slug]/`, `/rechner/…`, `/methodik/`, `/ueber-uns/`, 404, `sitemap.xml`.
+- `wrangler.jsonc`, `public/_headers` – Cloudflare Workers Static Assets, Sicherheits-Header.
+- `docs/RUBRIK-ENTWURF.md` – nicht öffentlicher Entwurf der Bewertungsrubrik.
 
 ## Veröffentlichungsregeln im Code
 

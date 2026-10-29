@@ -98,12 +98,247 @@
     "retrievedAt": "2026-10-28",
     "note": "Volltext gelesen. Keine deutsche Behörde; eine BfR-Bewertung zu Kreatin haben wir nicht gefunden."
   },
-  { "id": "pmid-28615996", "kind": "study", "title": "Kreider et al. (2017): ISSN position stand – safety and efficacy of creatine supplementation", "publisher": "J Int Soc Sports Nutr", "url": "https://pubmed.ncbi.nlm.nih.gov/28615996/", "retrievedAt": "2026-10-28", "note": null },
-  { "id": "pmid-39519498", "kind": "study", "title": "Wang et al. (2024): Creatine and resistance training on muscle strength in adults <50 years – systematic review and meta-analysis", "publisher": "Nutrients", "url": "https://pubmed.ncbi.nlm.nih.gov/39519498/", "retrievedAt": "2026-10-28", "note": null },
-  { "id": "pmid-39074168", "kind": "study", "title": "Desai et al. (2024): Creatine and resistance-training-based changes in body composition – systematic review and meta-analysis", "publisher": "J Strength Cond Res", "url": "https://pubmed.ncbi.nlm.nih.gov/39074168/", "retrievedAt": "2026-10-28", "note": null },
-  { "id": "pmid-29138605", "kind": "study", "title": "Chilibeck et al. (2017): Creatine during resistance training on lean tissue mass and strength in older adults – meta-analysis", "publisher": "Open Access J Sports Med", "url": "https://pubmed.ncbi.nlm.nih.gov/29138605/", "retrievedAt": "2026-10-28", "note": null },
-  { "id": "pmid-41388441", "kind": "study", "title": "Liu et al. (2025): Creatine with resistance training on strength and lean mass in the aged – systematic review and meta-analysis", "publisher": "Eur Rev Aging Phys Act", "url": "https://pubmed.ncbi.nlm.nih.gov/41388441/", "retrievedAt": "2026-10-28", "note": null },
-  { "id": "pmid-39070254", "kind": "study", "title": "Xu et al. (2024): Creatine supplementation and cognitive function in adults – systematic review and meta-analysis", "publisher": "Front Nutr", "url": "https://pubmed.ncbi.nlm.nih.gov/39070254/", "retrievedAt": "2026-10-28", "note": null },
-  { "id": "pmid-42035842", "kind": "study", "title": "Tsiaras et al. (2026): Creatine supplementation and kidney function – systematic review and meta-analysis of RCTs", "publisher": "J Ren Nutr", "url": "https://pubmed.ncbi.nlm.nih.gov/42035842/", "retrievedAt": "2026-10-28", "note": "Online vor Druck." },
-  { "id": "pmid-42507286", "kind": "study", "title": "de Souza Almeida et al. (2026): Creatine supplementation and kidney health – systematic review and meta-analysis", "publisher": "Int Urol Nephrol", "url": "https://pubmed.ncbi.nlm.nih.gov/42507286/", "retrievedAt": "2026-10-28", "note": "Online vor Druck." }
+  {
+    "id": "pmid-28615996",
+    "kind": "study",
+    "title": "Kreider et al. (2017): ISSN position stand – safety and efficacy of creatine supplementation",
+    "publisher": "J Int Soc Sports Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28615996/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-39519498",
+    "kind": "study",
+    "title": "Wang et al. (2024): Creatine and resistance training on muscle strength in adults <50 years – systematic review and meta-analysis",
+    "publisher": "Nutrients",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39519498/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-39074168",
+    "kind": "study",
+    "title": "Desai et al. (2024): Creatine and resistance-training-based changes in body composition – systematic review and meta-analysis",
+    "publisher": "J Strength Cond Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39074168/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-29138605",
+    "kind": "study",
+    "title": "Chilibeck et al. (2017): Creatine during resistance training on lean tissue mass and strength in older adults – meta-analysis",
+    "publisher": "Open Access J Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29138605/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-41388441",
+    "kind": "study",
+    "title": "Liu et al. (2025): Creatine with resistance training on strength and lean mass in the aged – systematic review and meta-analysis",
+    "publisher": "Eur Rev Aging Phys Act",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41388441/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-39070254",
+    "kind": "study",
+    "title": "Xu et al. (2024): Creatine supplementation and cognitive function in adults – systematic review and meta-analysis",
+    "publisher": "Front Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39070254/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-42035842",
+    "kind": "study",
+    "title": "Tsiaras et al. (2026): Creatine supplementation and kidney function – systematic review and meta-analysis of RCTs",
+    "publisher": "J Ren Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42035842/",
+    "retrievedAt": "2026-10-28",
+    "note": "Online vor Druck."
+  },
+  {
+    "id": "pmid-42507286",
+    "kind": "study",
+    "title": "de Souza Almeida et al. (2026): Creatine supplementation and kidney health – systematic review and meta-analysis",
+    "publisher": "Int Urol Nephrol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42507286/",
+    "retrievedAt": "2026-10-28",
+    "note": "Online vor Druck."
+  },
+  {
+    "id": "vo-1924-2006",
+    "kind": "regulation",
+    "title": "Verordnung (EG) Nr. 1924/2006 – nährwert- und gesundheitsbezogene Angaben (Anhang: Proteinquelle, hoher Proteingehalt; Ursprungsfassung)",
+    "publisher": "Europäisches Parlament und Rat, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32006R1924",
+    "retrievedAt": "2026-10-28",
+    "note": "Amtliche deutsche Ursprungsfassung geprüft; spätere Änderungen nicht ausgeschlossen."
+  },
+  {
+    "id": "vo-1169-2011",
+    "kind": "regulation",
+    "title": "Verordnung (EU) Nr. 1169/2011 – Lebensmittelinformation, Anhang II (Allergene)",
+    "publisher": "Europäisches Parlament und Rat, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32011R1169",
+    "retrievedAt": "2026-10-28",
+    "note": "Ursprungsfassung geprüft."
+  },
+  {
+    "id": "vo-432-2012-ursprung",
+    "kind": "regulation",
+    "title": "Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (Ursprungsfassung; Proteine)",
+    "publisher": "Europäische Kommission, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32012R0432",
+    "retrievedAt": "2026-10-28",
+    "note": "Proteine-Einträge aus der Ursprungsfassung; nicht gegen die aktuelle konsolidierte Fassung abgeglichen."
+  },
+  {
+    "id": "efsa-2012-2557",
+    "kind": "authority",
+    "title": "EFSA NDA Panel: Scientific Opinion on Dietary Reference Values for protein (EFSA Journal 2012;10(2):2557)",
+    "publisher": "Europäische Behörde für Lebensmittelsicherheit (EFSA)",
+    "url": "https://www.efsa.europa.eu/en/press/news/120209",
+    "retrievedAt": "2026-10-28",
+    "note": "Volltext gelesen. Stand 2012; spätere Aktualisierung nicht geprüft."
+  },
+  {
+    "id": "dge-2017-protein",
+    "kind": "authority",
+    "title": "DGE: Neue Referenzwerte für Protein (DGE aktuell 08/2017)",
+    "publisher": "Deutsche Gesellschaft für Ernährung (DGE)",
+    "url": "https://www.dge.de/fileadmin/dok/presse/meldungen/2011-2018/DGE-Pressemeldung-aktuell-08-2017-Referenzwert-Protein.pdf",
+    "retrievedAt": "2026-10-28",
+    "note": "Pressemitteilung; die D-A-CH-Referenzwerttabelle selbst wurde nicht abgerufen."
+  },
+  {
+    "id": "dge-sport-2020",
+    "kind": "authority",
+    "title": "König et al.: Proteinzufuhr im Sport – Position der DGE-Arbeitsgruppe Sporternährung (Ernährungs Umschau 2020;67(7))",
+    "publisher": "Deutsche Gesellschaft für Ernährung (DGE)",
+    "url": "https://www.dge.de/fileadmin/dok/wissenschaft/positionen/EU07_2020_M406_M413_1.pdf",
+    "retrievedAt": "2026-10-28",
+    "note": "Volltext gelesen."
+  },
+  {
+    "id": "pmid-28698222",
+    "kind": "study",
+    "title": "Morton et al. (2018): Protein supplementation and resistance-training gains in healthy adults – systematic review, meta-analysis, meta-regression",
+    "publisher": "Br J Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28698222/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-35187864",
+    "kind": "study",
+    "title": "Nunes et al. (2022): Protein intake to support muscle mass and function in healthy adults – systematic review and meta-analysis",
+    "publisher": "J Cachexia Sarcopenia Muscle",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35187864/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-38039960",
+    "kind": "study",
+    "title": "Timing and types of protein supplementation in adults undergoing resistance training – network meta-analysis (2023)",
+    "publisher": "Int J Sport Nutr Exerc Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38039960/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-34673936",
+    "kind": "study",
+    "title": "Protein interventions with resistance exercise in older adults – systematic review and meta-analysis (2022)",
+    "publisher": "Am J Clin Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34673936/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-28814401",
+    "kind": "study",
+    "title": "Protein supplementation combined with resistance exercise in older adults – systematic review and meta-analysis (2017)",
+    "publisher": "Am J Clin Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28814401/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-38350303",
+    "kind": "study",
+    "title": "Whey protein supplementation for sarcopenia in older adults – systematic review and meta-analysis (2024)",
+    "publisher": "J Nutr Health Aging",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38350303/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-23867520",
+    "kind": "study",
+    "title": "Bauer et al. (2013): Optimal dietary protein intake in older people – PROT-AGE position paper",
+    "publisher": "J Am Med Dir Assoc",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23867520/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-29722584",
+    "kind": "study",
+    "title": "Messina et al. (2018): Soy protein versus animal protein and gains in muscle mass and strength – meta-analysis",
+    "publisher": "Int J Sport Nutr Exerc Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29722584/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-33670701",
+    "kind": "study",
+    "title": "Animal protein versus plant protein in supporting lean mass and muscle strength – systematic review and meta-analysis (2021)",
+    "publisher": "Nutrients",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33670701/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-41059835",
+    "kind": "study",
+    "title": "Animal-based versus plant-based protein blend on muscle adaptations to resistance training – randomized trial (2025)",
+    "publisher": "J Int Soc Sports Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41059835/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-30383278",
+    "kind": "study",
+    "title": "Devries et al. (2019): Kidney function in healthy adults on higher- versus lower-protein diets – systematic review and meta-analysis",
+    "publisher": "J Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30383278/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-30032227",
+    "kind": "study",
+    "title": "Van Elswyk et al. (2019): Renal health in healthy individuals with protein intake above the US RDA – systematic review",
+    "publisher": "Adv Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30032227/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-28642676",
+    "kind": "study",
+    "title": "Jäger et al. (2017): ISSN position stand – protein and exercise",
+    "publisher": "J Int Soc Sports Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28642676/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  }
 ]

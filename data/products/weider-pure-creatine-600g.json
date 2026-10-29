@@ -1,0 +1,58 @@
+{
+  "id": "weider-pure-creatine-600g",
+  "brandId": "weider",
+  "substanceId": "kreatin",
+  "name": "Weider Pure Creatine",
+  "variant": "600 g",
+  "netWeightG": 600,
+  "activeDeclaredAs": "Kreatin-Monohydrat",
+  "activePer100g": 100,
+  "servingSizeG": 3.4,
+  "activePerServingG": 3.4,
+  "ingredients": "100 % Kreatinmonohydrat.",
+  "rawMaterial": {
+    "name": "Creapure®",
+    "sourceId": "weider-pure-creatine"
+  },
+  "allergenNote": null,
+  "labTesting": {
+    "statement": null,
+    "sourceId": null
+  },
+  "label": {
+    "sourceId": "weider-pure-creatine",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T01:08:19Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: Marken-Rohstoff Creapure® („aus deutscher Herstellung“) laut Produktseite. Packungsgröße 600 g statt 500 g; es gibt keine 500-g-Variante.",
+    "Nährwerte je 100 g: 100 g Kreatinmonohydrat, davon 88 g Kreatin. Je Portion: 3,4 g Monohydrat bzw. 3,0 g Kreatin.",
+    "Keine Allergen- und keine Prüfangabe auf der Seite gefunden. Lieferzeit: Produktseite 3 Werktage, Versandrichtlinie 3–5 Werktage."
+  ],
+  "prices": [
+    {
+      "retailer": "weider.de",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 3699,
+      "regularPriceNote": null,
+      "salePriceCents": null,
+      "saleConditions": null,
+      "shipping": {
+        "note": "5,99 € bis 78,99 € Bestellwert; kostenlos ab 79 €.",
+        "costCents": 599,
+        "freeFromCents": 7900,
+        "sourceId": "weider-versand"
+      },
+      "observedAt": "2026-10-29T01:08:19Z",
+      "sourceId": "weider-pure-creatine"
+    }
+  ],
+  "status": "published",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Erstaufnahme: Etikettangaben, Preis und Versand erfasst."
+    }
+  ]
+}

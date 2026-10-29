@@ -1,0 +1,14 @@
+{
+  "_hinweis": "Vom Betreiber auszufüllen. Alle Felder müssen echte Angaben enthalten; die Seite wird erst mit vollständigen Angaben freigegeben (siehe docs/RELEASE.md).",
+  "name": null,
+  "legalForm": null,
+  "street": null,
+  "postalCodeCity": null,
+  "email": null,
+  "phone": null,
+  "representedBy": null,
+  "register": null,
+  "vatId": null,
+  "responsibleForContent": null,
+  "privacyReviewedBy": null
+}

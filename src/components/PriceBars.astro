@@ -1,0 +1,31 @@
+---
+// Horizontale Balken auf identischer Skala. Zahl immer als Text sichtbar,
+// fehlende Werte als "nicht berechenbar" – Farbe trägt keine eigene Information.
+import { formatEur } from '../lib/price.ts';
+
+interface Item { label: string; href?: string; cents: number | null; note?: string; sortPay?: number | null; sortReg?: number | null }
+interface Props { items: Item[]; caption: string; /** Gemeinsames Maximum, wenn mehrere Grafiken dieselbe Skala teilen. */ max?: number }
+const { items, caption, max: sharedMax } = Astro.props;
+const max = Math.max(1, sharedMax ?? 0, ...items.map((i) => i.cents ?? 0));
+---
+<figure class="bars" aria-label={caption}>
+  <figcaption class="small muted">{caption}</figcaption>
+  {items.map((i) => (
+    <div class="bar-row" data-name={i.label} data-pay={i.sortPay ?? ""} data-reg={i.sortReg ?? ""}>
+      <div class="bar-label">
+        {i.href ? <a href={i.href}>{i.label}</a> : i.label}
+        {i.note && i.cents !== null && <div class="small muted">{i.note}</div>}
+      </div>
+      {i.cents === null ? (
+        <div class="bar-na">{i.note ?? 'nicht berechenbar – Angabe fehlt'}</div>
+      ) : (
+        <div class="bar-cell">
+          <div class="bar-track" aria-hidden="true">
+            <div class="bar-fill" style={`width:${Math.max(2, (i.cents / max) * 100)}%`}></div>
+          </div>
+          <span class="bar-value">{formatEur(i.cents)}</span>
+        </div>
+      )}
+    </div>
+  ))}
+</figure>

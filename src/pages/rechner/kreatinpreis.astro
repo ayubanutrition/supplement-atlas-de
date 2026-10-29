@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import PriceCalculator from '../../components/PriceCalculator.astro';
+---
+<Base
+  title="Kreatin-Preisrechner: Preis pro 100 g Kreatin-Monohydrat"
+  description="Rechne den Packungspreis eines Kreatin-Produkts auf 100 g bzw. 1 g Kreatin-Monohydrat um – mit Versandkosten und Wirkstoffanteil."
+>
+  <p class="crumbs"><a href="/">Start</a> › <a href="/rechner/">Rechner</a> › Kreatin</p>
+  <h1>Kreatin-Preisrechner</h1>
+  <p class="lede">Rechnet einen Packungspreis auf <strong>100 g Kreatin-Monohydrat</strong> um. So lassen sich Packungen unterschiedlicher Größe und Mischprodukte vergleichen.</p>
+  <PriceCalculator
+    unit="Kreatin-Monohydrat"
+    weightHint="Nettofüllmenge laut Etikett. Bei Kapseln: Kapselanzahl × Kreatin je Kapsel."
+    shareLabel="Kreatin-Monohydrat je 100 g Produkt in g"
+    shareHint="Reines Pulver: 100. Bei Mischungen den Wert aus der Nährwerttabelle eintragen."
+    shareDefault="100"
+    formula="Preis pro 100 g = (Packungspreis + Versand) ÷ enthaltenes Kreatin-Monohydrat in g × 100"
+  />
+  <p>Kreatin-Monohydrat besteht zu rund 88 % aus Kreatin, der Rest ist gebundenes Wasser. Wir rechnen mit der deklarierten Menge Kreatin-Monohydrat, weil Etiketten fast immer so angeben.</p>
+  <p><a href="/vergleich/kreatin/">Zum Kreatin-Vergleich mit erfassten Preisen →</a></p>
+</Base>

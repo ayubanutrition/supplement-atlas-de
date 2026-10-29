@@ -1,0 +1,1100 @@
+[
+  {
+    "id": "esn-ultrapure-produktseite",
+    "kind": "label",
+    "title": "ESN Ultrapure Kreatin Pulver – Produktseite (Variante Neutral, 500 g)",
+    "publisher": "ESN / Fitmart GmbH & Co. KG",
+    "url": "https://www.esn.com/products/esn-ultrapure-creatine-monohydrate",
+    "retrievedAt": "2026-10-28T23:37:10Z",
+    "note": "Preis aus Shopify-Produktdaten und sichtbarem Text (identisch). Nährwerte-Tab im Browser gerendert am 28.10.2026, 23:43 UTC. Eine Zutatenliste wird auf der Seite nicht angezeigt."
+  },
+  {
+    "id": "esn-impressum",
+    "kind": "impressum",
+    "title": "ESN – Impressum / Kontaktinformationen",
+    "publisher": "Fitmart GmbH & Co. KG",
+    "url": "https://www.esn.com/policies/contact-information",
+    "retrievedAt": "2026-10-28T23:39:11Z",
+    "note": null
+  },
+  {
+    "id": "myprotein-kreatin-produktseite",
+    "kind": "label",
+    "title": "Myprotein Kreatin Monohydrat – Produktseite (Geschmacksneutral, 500 g)",
+    "publisher": "Myprotein / THG Nutrition",
+    "url": "https://de.myprotein.com/p/sporternahrung/creatine-monohydrat/12456626/?variation=12456635",
+    "retrievedAt": "2026-10-28T23:39:46Z",
+    "note": "Preis aus strukturierten Produktdaten (JSON-LD) und sichtbarem Text (identisch). SKU 12456635."
+  },
+  {
+    "id": "myprotein-versand",
+    "kind": "shop",
+    "title": "Myprotein – Lieferinformationen",
+    "publisher": "Myprotein / THG Nutrition",
+    "url": "https://de.myprotein.com/c/customer-services/delivery-information/",
+    "retrievedAt": "2026-10-28T23:40:28Z",
+    "note": null
+  },
+  {
+    "id": "myprotein-agb",
+    "kind": "impressum",
+    "title": "Myprotein – Allgemeine Geschäftsbedingungen (im Footer als „Impressum“ verlinkt)",
+    "publisher": "Myprotein / THG Nutrition",
+    "url": "https://de.myprotein.com/c/customer-services/terms-and-conditions/",
+    "retrievedAt": "2026-10-28T23:40:36Z",
+    "note": "Vertragspartner hängt laut AGB von der Zahlungsart ab."
+  },
+  {
+    "id": "vo-432-2012",
+    "kind": "regulation",
+    "title": "Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025)",
+    "publisher": "Europäische Kommission, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820",
+    "retrievedAt": "2026-10-28",
+    "note": "Wortlaut über die amtliche Fassung des Amts für Veröffentlichungen (Cellar) geprüft."
+  },
+  {
+    "id": "vo-2017-672",
+    "kind": "regulation",
+    "title": "Durchführungsverordnung (EU) 2017/672 – Zulassung einer Angabe zu Kreatin und Krafttraining bei Erwachsenen über 55",
+    "publisher": "Europäische Kommission, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32017R0672",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "vo-2026-1118",
+    "kind": "regulation",
+    "title": "Verordnung (EU) 2026/1118 – Nichtzulassung einer Angabe zu Kreatin und kognitiver Funktion",
+    "publisher": "Europäische Kommission, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/eli/reg/2026/1118/oj",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "efsa-2016-4400",
+    "kind": "authority",
+    "title": "EFSA NDA Panel: Creatine in combination with resistance training and improvement in muscle strength (EFSA Journal 2016;14(2):4400)",
+    "publisher": "Europäische Behörde für Lebensmittelsicherheit (EFSA)",
+    "url": "https://doi.org/10.2903/j.efsa.2016.4400",
+    "retrievedAt": "2026-10-28",
+    "note": "Zusammenfassung geprüft (PubMed)."
+  },
+  {
+    "id": "efsa-2024-9100",
+    "kind": "authority",
+    "title": "EFSA NDA Panel: Creatine and improvement in cognitive function (EFSA Journal 2024;22:e9100)",
+    "publisher": "Europäische Behörde für Lebensmittelsicherheit (EFSA)",
+    "url": "https://doi.org/10.2903/j.efsa.2024.9100",
+    "retrievedAt": "2026-10-28",
+    "note": "Zusammenfassung geprüft (PubMed)."
+  },
+  {
+    "id": "vkm-2016-56",
+    "kind": "authority",
+    "title": "VKM Report 2016:56 – Risk assessment of „other substances“: Creatine",
+    "publisher": "Norwegischer Wissenschaftlicher Ausschuss für Lebensmittelsicherheit (VKM)",
+    "url": "https://vkm.no/download/18.645b840415d03a2fe8f25c8c/1502798218123/cbe622e758.pdf",
+    "retrievedAt": "2026-10-28",
+    "note": "Volltext gelesen. Keine deutsche Behörde; eine BfR-Bewertung zu Kreatin haben wir nicht gefunden."
+  },
+  {
+    "id": "pmid-28615996",
+    "kind": "study",
+    "title": "Kreider et al. (2017): ISSN position stand – safety and efficacy of creatine supplementation",
+    "publisher": "J Int Soc Sports Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28615996/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-39519498",
+    "kind": "study",
+    "title": "Wang et al. (2024): Creatine and resistance training on muscle strength in adults <50 years – systematic review and meta-analysis",
+    "publisher": "Nutrients",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39519498/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-39074168",
+    "kind": "study",
+    "title": "Desai et al. (2024): Creatine and resistance-training-based changes in body composition – systematic review and meta-analysis",
+    "publisher": "J Strength Cond Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39074168/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-29138605",
+    "kind": "study",
+    "title": "Chilibeck et al. (2017): Creatine during resistance training on lean tissue mass and strength in older adults – meta-analysis",
+    "publisher": "Open Access J Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29138605/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-41388441",
+    "kind": "study",
+    "title": "Liu et al. (2025): Creatine with resistance training on strength and lean mass in the aged – systematic review and meta-analysis",
+    "publisher": "Eur Rev Aging Phys Act",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41388441/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-39070254",
+    "kind": "study",
+    "title": "Xu et al. (2024): Creatine supplementation and cognitive function in adults – systematic review and meta-analysis",
+    "publisher": "Front Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39070254/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-42035842",
+    "kind": "study",
+    "title": "Tsiaras et al. (2026): Creatine supplementation and kidney function – systematic review and meta-analysis of RCTs",
+    "publisher": "J Ren Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42035842/",
+    "retrievedAt": "2026-10-28",
+    "note": "Online vor Druck."
+  },
+  {
+    "id": "pmid-42507286",
+    "kind": "study",
+    "title": "de Souza Almeida et al. (2026): Creatine supplementation and kidney health – systematic review and meta-analysis",
+    "publisher": "Int Urol Nephrol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42507286/",
+    "retrievedAt": "2026-10-28",
+    "note": "Online vor Druck."
+  },
+  {
+    "id": "vo-1924-2006",
+    "kind": "regulation",
+    "title": "Verordnung (EG) Nr. 1924/2006 – nährwert- und gesundheitsbezogene Angaben (Anhang: Proteinquelle, hoher Proteingehalt; Ursprungsfassung)",
+    "publisher": "Europäisches Parlament und Rat, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32006R1924",
+    "retrievedAt": "2026-10-28",
+    "note": "Amtliche deutsche Ursprungsfassung geprüft; spätere Änderungen nicht ausgeschlossen."
+  },
+  {
+    "id": "vo-1169-2011",
+    "kind": "regulation",
+    "title": "Verordnung (EU) Nr. 1169/2011 – Lebensmittelinformation, Anhang II (Allergene)",
+    "publisher": "Europäisches Parlament und Rat, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32011R1169",
+    "retrievedAt": "2026-10-28",
+    "note": "Ursprungsfassung geprüft."
+  },
+  {
+    "id": "vo-432-2012-ursprung",
+    "kind": "regulation",
+    "title": "Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025; Proteine)",
+    "publisher": "Europäische Kommission, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820",
+    "retrievedAt": "2026-10-29",
+    "note": "Wortlaut der drei Protein-Aussagen und Verwendungsbedingung in der konsolidierten Fassung vom 20.08.2025 wörtlich bestätigt (amtliche Fassung über das Amt für Veröffentlichungen)."
+  },
+  {
+    "id": "efsa-2012-2557",
+    "kind": "authority",
+    "title": "EFSA NDA Panel: Scientific Opinion on Dietary Reference Values for protein (EFSA Journal 2012;10(2):2557)",
+    "publisher": "Europäische Behörde für Lebensmittelsicherheit (EFSA)",
+    "url": "https://www.efsa.europa.eu/en/press/news/120209",
+    "retrievedAt": "2026-10-28",
+    "note": "Volltext gelesen. Stand 2012; spätere Aktualisierung nicht geprüft."
+  },
+  {
+    "id": "dge-2017-protein",
+    "kind": "authority",
+    "title": "DGE: Neue Referenzwerte für Protein (DGE aktuell 08/2017)",
+    "publisher": "Deutsche Gesellschaft für Ernährung (DGE)",
+    "url": "https://www.dge.de/fileadmin/dok/presse/meldungen/2011-2018/DGE-Pressemeldung-aktuell-08-2017-Referenzwert-Protein.pdf",
+    "retrievedAt": "2026-10-28",
+    "note": "Pressemitteilung; die D-A-CH-Referenzwerttabelle selbst wurde nicht abgerufen."
+  },
+  {
+    "id": "dge-sport-2020",
+    "kind": "authority",
+    "title": "König et al.: Proteinzufuhr im Sport – Position der DGE-Arbeitsgruppe Sporternährung (Ernährungs Umschau 2020;67(7))",
+    "publisher": "Deutsche Gesellschaft für Ernährung (DGE)",
+    "url": "https://www.dge.de/fileadmin/dok/wissenschaft/positionen/EU07_2020_M406_M413_1.pdf",
+    "retrievedAt": "2026-10-28",
+    "note": "Volltext gelesen."
+  },
+  {
+    "id": "pmid-28698222",
+    "kind": "study",
+    "title": "Morton et al. (2018): Protein supplementation and resistance-training gains in healthy adults – systematic review, meta-analysis, meta-regression",
+    "publisher": "Br J Sports Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28698222/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-35187864",
+    "kind": "study",
+    "title": "Nunes et al. (2022): Protein intake to support muscle mass and function in healthy adults – systematic review and meta-analysis",
+    "publisher": "J Cachexia Sarcopenia Muscle",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35187864/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-38039960",
+    "kind": "study",
+    "title": "Timing and types of protein supplementation in adults undergoing resistance training – network meta-analysis (2023)",
+    "publisher": "Int J Sport Nutr Exerc Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38039960/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-34673936",
+    "kind": "study",
+    "title": "Protein interventions with resistance exercise in older adults – systematic review and meta-analysis (2022)",
+    "publisher": "Am J Clin Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34673936/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-28814401",
+    "kind": "study",
+    "title": "Protein supplementation combined with resistance exercise in older adults – systematic review and meta-analysis (2017)",
+    "publisher": "Am J Clin Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28814401/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-38350303",
+    "kind": "study",
+    "title": "Whey protein supplementation for sarcopenia in older adults – systematic review and meta-analysis (2024)",
+    "publisher": "J Nutr Health Aging",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38350303/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-23867520",
+    "kind": "study",
+    "title": "Bauer et al. (2013): Optimal dietary protein intake in older people – PROT-AGE position paper",
+    "publisher": "J Am Med Dir Assoc",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23867520/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-29722584",
+    "kind": "study",
+    "title": "Messina et al. (2018): Soy protein versus animal protein and gains in muscle mass and strength – meta-analysis",
+    "publisher": "Int J Sport Nutr Exerc Metab",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29722584/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-33670701",
+    "kind": "study",
+    "title": "Animal protein versus plant protein in supporting lean mass and muscle strength – systematic review and meta-analysis (2021)",
+    "publisher": "Nutrients",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33670701/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-41059835",
+    "kind": "study",
+    "title": "Animal-based versus plant-based protein blend on muscle adaptations to resistance training – randomized trial (2025)",
+    "publisher": "J Int Soc Sports Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41059835/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-30383278",
+    "kind": "study",
+    "title": "Devries et al. (2019): Kidney function in healthy adults on higher- versus lower-protein diets – systematic review and meta-analysis",
+    "publisher": "J Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30383278/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-30032227",
+    "kind": "study",
+    "title": "Van Elswyk et al. (2019): Renal health in healthy individuals with protein intake above the US RDA – systematic review",
+    "publisher": "Adv Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30032227/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "pmid-28642676",
+    "kind": "study",
+    "title": "Jäger et al. (2017): ISSN position stand – protein and exercise",
+    "publisher": "J Int Soc Sports Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28642676/",
+    "retrievedAt": "2026-10-28",
+    "note": null
+  },
+  {
+    "id": "bulk-kreatin-produktseite",
+    "kind": "label",
+    "title": "Bulk Kreatin Monohydrat – Produktseite (Neutral, 500 g, Aktionsansicht)",
+    "publisher": "Bulk / Sports Supplements Limited",
+    "url": "https://www.bulk.com/de/products/creatine-monohydrate-eu/bpb-cmon-0000-eu1?view=ppc&o=MTc4LTMyLDE3OS02OQ==",
+    "retrievedAt": "2026-10-28T23:57:23Z",
+    "note": "Preise aus strukturierten Daten (JSON-LD, SKU BPB-CMON-0000-0500-EU) und Seitentext. Dass „Neutral/500 g“ gewählt ist, ergibt sich aus der SKU; die Größenauswahl ließ sich im Browser nicht bedienen. Anbieterangaben aus dem Seitenfuß; eine eigene Impressumsseite war nicht abrufbar (403)."
+  },
+  {
+    "id": "bodylab24-kreatin-produktseite",
+    "kind": "label",
+    "title": "Bodylab24 Creatine Powder (500 g) – Produktseite",
+    "publisher": "Bodylab24 / ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/products/bodylab24-creatine-powder-500g",
+    "retrievedAt": "2026-10-29T00:00:30Z",
+    "note": "Preise aus Shopify-Produktdaten und sichtbarem Text."
+  },
+  {
+    "id": "bodylab24-impressum",
+    "kind": "impressum",
+    "title": "Bodylab24 – Impressum",
+    "publisher": "ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/policies/legal-notice",
+    "retrievedAt": "2026-10-29T00:01:12Z",
+    "note": null
+  },
+  {
+    "id": "bodylab24-versand",
+    "kind": "shop",
+    "title": "Bodylab24 – Hilfe und Kontakt (Versandkosten)",
+    "publisher": "ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/pages/hilfe-und-kontakt",
+    "retrievedAt": "2026-10-29T00:02:12Z",
+    "note": null
+  },
+  {
+    "id": "morenutrition-daily-creatine",
+    "kind": "label",
+    "title": "More Nutrition Daily Creatine – Produktseite (Neutral, 250 g)",
+    "publisher": "More Nutrition / Quality First GmbH",
+    "url": "https://morenutrition.de/products/daily-creatine",
+    "retrievedAt": "2026-10-29T00:02:26Z",
+    "note": "Verfügbarkeit widersprüchlich (strukturierte Daten „SoldOut“, Shop-Daten „verfügbar“)."
+  },
+  {
+    "id": "morenutrition-impressum",
+    "kind": "impressum",
+    "title": "More Nutrition – Impressum",
+    "publisher": "Quality First GmbH",
+    "url": "https://morenutrition.de/policies/legal-notice",
+    "retrievedAt": "2026-10-29T00:03:31Z",
+    "note": null
+  },
+  {
+    "id": "esn-whey-produktseite",
+    "kind": "label",
+    "title": "ESN Designer Whey Protein – Produktseite (Vanilla Milk, 908 g)",
+    "publisher": "ESN / Fitmart GmbH & Co. KG",
+    "url": "https://www.esn.com/products/esn-designer-whey-protein?variant=47947601379643",
+    "retrievedAt": "2026-10-28T23:57:52Z",
+    "note": "Nährwerte im Browser (Tab „Nährwerte und Aminosäureprofil“) gelesen; eine Zutatenliste gilt laut Seite für alle Sorten."
+  },
+  {
+    "id": "esn-versand-hilfe",
+    "kind": "shop",
+    "title": "ESN – Versandkosten und Versandländer (Hilfecenter, Stand laut Seite 17.04.2026)",
+    "publisher": "ESN / Fitmart GmbH & Co. KG",
+    "url": "https://service.esn.com/hc/de/articles/15027500094737-Versandkosten-und-Versandl%C3%A4nder",
+    "retrievedAt": "2026-10-28T23:59:32Z",
+    "note": null
+  },
+  {
+    "id": "myprotein-whey-produktseite",
+    "kind": "label",
+    "title": "Myprotein Impact Whey Protein – Produktseite (Vanille, 900 g)",
+    "publisher": "Myprotein / THG Nutrition",
+    "url": "https://de.myprotein.com/p/sporternahrung/impact-whey-protein/10530943/",
+    "retrievedAt": "2026-10-29T00:00:14Z",
+    "note": "Seite widerspricht sich bei Portionswerten (Werbetext 23 g Protein, Tabelle 22 g)."
+  },
+  {
+    "id": "myprotein-qualitaet",
+    "kind": "other",
+    "title": "Myprotein – Qualität",
+    "publisher": "Myprotein / THG Nutrition",
+    "url": "https://de.myprotein.com/c/about-us/quality/",
+    "retrievedAt": "2026-10-29T00:00:51Z",
+    "note": null
+  },
+  {
+    "id": "bodylab24-whey-produktseite",
+    "kind": "label",
+    "title": "Bodylab24 Whey Protein (1000 g) – Produktseite (Vanilla)",
+    "publisher": "Bodylab24 / ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/products/bodylab24-whey-protein-1000g?variant=42053668175985",
+    "retrievedAt": "2026-10-29T00:02:31Z",
+    "note": null
+  },
+  {
+    "id": "bodylab24-versand-seite",
+    "kind": "shop",
+    "title": "Bodylab24 – Versand",
+    "publisher": "ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/pages/versand",
+    "retrievedAt": "2026-10-29T00:03:16Z",
+    "note": null
+  },
+  {
+    "id": "bulk-whey-produktseite",
+    "kind": "label",
+    "title": "Bulk Pure Whey Protein – Produktseite (Vanille, 1 kg)",
+    "publisher": "Bulk / Sports Supplements Limited",
+    "url": "https://www.bulk.com/de/products/pure-whey-protein-de/bpb-wpc8-0000?view=ppc&o=MTc4LTI2LDE3OS0yNQ==",
+    "retrievedAt": "2026-10-29T00:03:52Z",
+    "note": "Preise aus strukturierten Daten (JSON-LD) und Seitentext; Versandtabelle auf der Produktseite."
+  },
+  {
+    "id": "on-whey-produktseite",
+    "kind": "label",
+    "title": "Optimum Nutrition Gold Standard 100% Whey Protein Powder – Produktseite (French Vanilla, 900 g)",
+    "publisher": "Optimum Nutrition (DE-Shop)",
+    "url": "https://www.optimumnutrition.com/de-de/products/gold-standard-100-whey-protein-powder-eu",
+    "retrievedAt": "2026-10-29T01:03:12Z",
+    "note": "Preis aus den Shop-Produktdaten (EUR); Nährwerte und Zutaten aus dem eingebetteten Variantendatensatz. Die Variante „Vanilla Ice Cream“ hatte dort keine Nährwertdaten."
+  },
+  {
+    "id": "on-kontakt",
+    "kind": "impressum",
+    "title": "Optimum Nutrition DE – Kontakt (Anbieterangaben, Versandhinweis)",
+    "publisher": "Optimum Nutrition (DE-Shop)",
+    "url": "https://www.optimumnutrition.com/de-de/pages/contact",
+    "retrievedAt": "2026-10-29T01:09:56Z",
+    "note": "Rechtsform wird auf der Seite nicht genannt."
+  },
+  {
+    "id": "scitec-whey-produktseite",
+    "kind": "label",
+    "title": "Scitec Nutrition 100% Whey Protein Professional – Produktseite (Titel „1 kg“)",
+    "publisher": "Scitec Nutrition / BioTechUSA Kft. (scitecshop.de)",
+    "url": "https://scitecshop.de/molkenprotein-konzentrat/scitec-nutrition-100-whey-protein-professional-1-kg-p16209",
+    "retrievedAt": "2026-10-29T01:07:53Z",
+    "note": "Gewicht (1000 g laut Titel, 920 g laut Portionstabelle) und Geschmack nicht eindeutig."
+  },
+  {
+    "id": "scitec-impressum",
+    "kind": "impressum",
+    "title": "Scitec Webshop – Impressum/Fußbereich (BioTechUSA Kft.)",
+    "publisher": "BioTechUSA Kft.",
+    "url": "https://scitecshop.de/impressum-a5834",
+    "retrievedAt": "2026-10-29T01:08:40Z",
+    "note": "Der Impressum-Text wird im Abruf nicht ausgeliefert; Firmenangaben aus dem Seitenfuß."
+  },
+  {
+    "id": "nu3-kreatin-shopapotheke",
+    "kind": "label",
+    "title": "nu3 Creatine Pulver (500 g) – Produktseite bei Shop Apotheke",
+    "publisher": "Shop-Apotheke B.V.",
+    "url": "https://www.shop-apotheke.com/fitness/8102833/nu3-creatine-pulver.htm",
+    "retrievedAt": "2026-10-29T01:02:56Z",
+    "note": "nu3.de leitet auf Shop Apotheke um; es gibt keinen eigenen nu3-Shop mehr. Streichpreis ist laut Seite ein UVP-Preis; der Preis ist laut strukturierten Daten nur bis 30.10.2026 gültig."
+  },
+  {
+    "id": "shop-apotheke-versand",
+    "kind": "shop",
+    "title": "Shop Apotheke – Versandkosten",
+    "publisher": "Shop-Apotheke B.V.",
+    "url": "https://www.shop-apotheke.com/lp/versandkkosten/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "shop-apotheke-impressum",
+    "kind": "impressum",
+    "title": "Shop Apotheke – Impressum",
+    "publisher": "Shop-Apotheke B.V.",
+    "url": "https://www.shop-apotheke.com/rechtliches/apotheke_impressum/",
+    "retrievedAt": "2026-10-29T01:03:14Z",
+    "note": null
+  },
+  {
+    "id": "natural-elements-kreatin",
+    "kind": "label",
+    "title": "natural elements Kreatin Monohydrat Pulver (500 g) – Produktseite",
+    "publisher": "natural elements GmbH",
+    "url": "https://naturalelements.de/products/kreatin-monohydrat-pulver",
+    "retrievedAt": "2026-10-29T01:03:49Z",
+    "note": "Der Shop liegt unter naturalelements.de (ohne Bindestrich). Portionszahl steht nur im Alt-Text des Produktbilds und wird nicht verwendet."
+  },
+  {
+    "id": "natural-elements-impressum",
+    "kind": "impressum",
+    "title": "natural elements – Impressum",
+    "publisher": "natural elements GmbH",
+    "url": "https://naturalelements.de/policies/legal-notice",
+    "retrievedAt": "2026-10-29T01:04:55Z",
+    "note": null
+  },
+  {
+    "id": "weider-pure-creatine",
+    "kind": "label",
+    "title": "Weider Pure Creatine (600 g) – Produktseite",
+    "publisher": "Weider Germany GmbH",
+    "url": "https://www.weider.de/products/pure-creatine",
+    "retrievedAt": "2026-10-29T01:08:19Z",
+    "note": "Nährwerttabelle nur über die aufgeklappten Details lesbar. Es gibt keine 500-g-Variante, nur 250 g (ausverkauft) und 600 g."
+  },
+  {
+    "id": "weider-versand",
+    "kind": "shop",
+    "title": "Weider – Versandrichtlinie",
+    "publisher": "Weider Germany GmbH",
+    "url": "https://www.weider.de/policies/shipping-policy",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "weider-impressum",
+    "kind": "impressum",
+    "title": "Weider – Impressum",
+    "publisher": "Weider Germany GmbH",
+    "url": "https://www.weider.de/policies/legal-notice",
+    "retrievedAt": "2026-10-29T01:10:06Z",
+    "note": null
+  },
+  {
+    "id": "vo-432-2012-omega3",
+    "kind": "regulation",
+    "title": "Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025; EPA/DHA/DHA)",
+    "publisher": "Europäische Kommission, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820",
+    "retrievedAt": "2026-10-29",
+    "note": "Wortlaut über die amtliche Fassung des Amts für Veröffentlichungen geprüft. Der amtliche deutsche Text enthält in der Herz-Angabe einen Tippfehler („DPA“ statt „DHA“)."
+  },
+  {
+    "id": "vo-1924-2006-omega3",
+    "kind": "regulation",
+    "title": "Verordnung (EG) Nr. 1924/2006 – Anhang: Quelle von Omega-3-Fettsäuren (konsolidierte Fassung vom 13.12.2014)",
+    "publisher": "Europäisches Parlament und Rat, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02006R1924-20141213",
+    "retrievedAt": "2026-10-29",
+    "note": "Neuere Konsolidierung nicht abrufbar; spätere Änderungen nicht ausgeschlossen."
+  },
+  {
+    "id": "efsa-2012-2815",
+    "kind": "authority",
+    "title": "EFSA NDA Panel: Scientific Opinion on the Tolerable Upper Intake Level of EPA, DHA and DPA (EFSA Journal 2012;10(7):2815)",
+    "publisher": "Europäische Behörde für Lebensmittelsicherheit (EFSA)",
+    "url": "https://doi.org/10.2903/j.efsa.2012.2815",
+    "retrievedAt": "2026-10-29",
+    "note": "Nur die Zusammenfassung wurde gelesen (Volltext gesperrt). Die EFSA leitete keinen Höchstwert ab."
+  },
+  {
+    "id": "dge-referenzwerte-tool",
+    "kind": "authority",
+    "title": "DGE Referenzwerte-Tool: EPA+DHA 250 mg/Tag",
+    "publisher": "Deutsche Gesellschaft für Ernährung (DGE)",
+    "url": "https://www.dge.de/wissenschaft/referenzwerte-tool/filter/689/635",
+    "retrievedAt": "2026-10-29",
+    "note": "Die Wertkategorie (Richtwert/Schätzwert) ist im abgerufenen Text nicht eindeutig zuordenbar."
+  },
+  {
+    "id": "bfr-omega3-faq-2026",
+    "kind": "authority",
+    "title": "BfR: Omega-3-Fettsäuren – Wichtig, aber in Maßen (Fragen und Antworten, 30.04.2026)",
+    "publisher": "Bundesinstitut für Risikobewertung (BfR)",
+    "url": "https://www.bfr.bund.de/fragen-und-antworten/thema/omega-3-fettsaeuren-wichtig-aber-in-massen/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "bfr-57-2023",
+    "kind": "authority",
+    "title": "BfR Mitteilung 57/2023: Omega-3-Präparate können bei Herzpatienten das Risiko für Vorhofflimmern erhöhen",
+    "publisher": "Bundesinstitut für Risikobewertung (BfR)",
+    "url": "https://www.bfr.bund.de/cm/343/praeparate-mit-omega-3-fettsaeuren-koennen-bei-herzpatienten-das-risiko-fuer-vorhofflimmern-erhoehen.pdf",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "bfr-030-2009",
+    "kind": "authority",
+    "title": "BfR Stellungnahme 030/2009: Höchstmengen bei Anreicherung mit Omega-3-Fettsäuren",
+    "publisher": "Bundesinstitut für Risikobewertung (BfR)",
+    "url": "https://www.BFR.bund.de/cm/343/fuer_die_anreicherung_von_lebensmitteln_mit_omega_3_fettsaeuren_empfiehlt_das_bfr_die_festsetzung_von_hoechstmengen.pdf",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "vz-omega3-2026",
+    "kind": "other",
+    "title": "Verbraucherzentrale: Sind Omega-3-Fettsäure-Kapseln eine sinnvolle Nahrungsergänzung? (Stand 24.03.2026)",
+    "publisher": "Verbraucherzentrale",
+    "url": "https://www.verbraucherzentrale.de/wissen/lebensmittel/nahrungsergaenzungsmittel/sind-omega3fettsaeurekapseln-eine-sinnvolle-nahrungsergaenzung-8585",
+    "retrievedAt": "2026-10-29",
+    "note": "Enthält keine eigenen Messdaten zur Oxidation."
+  },
+  {
+    "id": "pmid-32114706",
+    "kind": "study",
+    "title": "Abdelhamid et al. (2020): Omega-3 for primary and secondary prevention of cardiovascular disease (Cochrane)",
+    "publisher": "Cochrane Database Syst Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32114706/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-30415637",
+    "kind": "study",
+    "title": "Manson et al. (2019): Marine n-3 fatty acids and prevention of cardiovascular disease and cancer (VITAL)",
+    "publisher": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30415637/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-30146932",
+    "kind": "study",
+    "title": "ASCEND (2018): n-3 fatty acid supplements in diabetes mellitus",
+    "publisher": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30146932/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-30415628",
+    "kind": "study",
+    "title": "Bhatt et al. (2019): Icosapent ethyl for hypertriglyceridemia (REDUCE-IT)",
+    "publisher": "N Engl J Med",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30415628/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-33190147",
+    "kind": "study",
+    "title": "Nicholls et al. (2020): High-dose omega-3 vs corn oil (STRENGTH)",
+    "publisher": "JAMA",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33190147/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-29387889",
+    "kind": "study",
+    "title": "Aung et al. (2018): Omega-3 supplement use and cardiovascular disease risks – meta-analysis of 10 trials",
+    "publisher": "JAMA Cardiol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/29387889/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-31567003",
+    "kind": "study",
+    "title": "Hu et al. (2019): Marine omega-3 and cardiovascular disease – updated meta-analysis of 13 RCTs",
+    "publisher": "J Am Heart Assoc",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31567003/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-31422671",
+    "kind": "study",
+    "title": "Skulas-Ray et al. (2019): Omega-3 fatty acids for hypertriglyceridemia – AHA science advisory",
+    "publisher": "Circulation",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31422671/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-34932079",
+    "kind": "study",
+    "title": "Okereke et al. (2021): Marine omega-3 and depression (VITAL-DEP)",
+    "publisher": "JAMA",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34932079/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-34817851",
+    "kind": "study",
+    "title": "Omega-3 fatty acids for depression in adults (Cochrane, 2021)",
+    "publisher": "Cochrane Database Syst Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34817851/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-22696350",
+    "kind": "study",
+    "title": "Omega-3 fatty acid for the prevention of cognitive decline and dementia (Cochrane, 2012)",
+    "publisher": "Cochrane Database Syst Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22696350/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-30480773",
+    "kind": "study",
+    "title": "Middleton et al. (2018): Omega-3 fatty acid addition during pregnancy (Cochrane)",
+    "publisher": "Cochrane Database Syst Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30480773/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-34612056",
+    "kind": "study",
+    "title": "Gencer et al. (2021): Marine omega-3 and atrial fibrillation – meta-analysis",
+    "publisher": "Circulation",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34612056/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-42517224",
+    "kind": "study",
+    "title": "Omega-3 and atrial fibrillation – updated meta-analysis of 35 trials (2026)",
+    "publisher": "Circ Arrhythm Electrophysiol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42517224/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-38742535",
+    "kind": "study",
+    "title": "Bleeding risk in patients receiving omega-3 PUFA – meta-analysis (2024)",
+    "publisher": "J Am Heart Assoc",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/38742535/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-28469193",
+    "kind": "study",
+    "title": "Omega-3 content and oxidation state of fish oil supplements in New Zealand (2017)",
+    "publisher": "Sci Rep",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28469193/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-36291569",
+    "kind": "study",
+    "title": "Lipid quality in commercial omega-3 supplements sold in the French market (2022)",
+    "publisher": "Biomolecules",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36291569/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "esn-omega3-produktseite",
+    "kind": "label",
+    "title": "ESN Omega-3 Kapseln – Produktseite (60 Kapseln)",
+    "publisher": "ESN / Fitmart GmbH & Co. KG",
+    "url": "https://www.esn.com/products/esn-omega-3",
+    "retrievedAt": "2026-10-29T01:20:06Z",
+    "note": "EPA/DHA im Reiter „Nährwerte“ gelesen. Die Werte „1200 mg EPA / 900 mg DHA“ gelten je Portion (3 Kapseln), nicht je Kapsel. Eine Zutatenliste steht nicht auf der Seite."
+  },
+  {
+    "id": "bulk-omega3-produktseite",
+    "kind": "label",
+    "title": "Bulk Extra Starke Omega-3 Weichkapseln 1000 mg – Produktseite (90 Kapseln)",
+    "publisher": "Bulk / Sports Supplements Limited",
+    "url": "https://www.bulk.com/de/products/extra-starke-omega-3-weichkapseln/bpb-o3ss-0000",
+    "retrievedAt": "2026-10-29T01:22:21Z",
+    "note": "Preise aus strukturierten Daten und Seitentext; Aktionsende nur in den strukturierten Daten. Die „Preis je Portion“-Angabe der Seite bezieht sich auf eine Kapsel."
+  },
+  {
+    "id": "bodylab24-omega3-produktseite",
+    "kind": "label",
+    "title": "Bodylab24 Omega-3 (120 Kapseln) – Produktseite",
+    "publisher": "Bodylab24 / ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/products/omega-3-120-kapseln-24841",
+    "retrievedAt": "2026-10-29T01:23:52Z",
+    "note": null
+  },
+  {
+    "id": "naturalelements-omega3-produktseite",
+    "kind": "label",
+    "title": "natural elements Omega 3 Fischöl Kapseln (365 Kapseln) – Produktseite",
+    "publisher": "natural elements GmbH",
+    "url": "https://naturalelements.de/products/omega-3-fischol-kapseln",
+    "retrievedAt": "2026-10-29T01:24:40Z",
+    "note": "Die Variante mit 180 Kapseln hat widersprüchliche Seitentexte und wird nicht verwendet."
+  },
+  {
+    "id": "vo-432-2012-magnesium",
+    "kind": "regulation",
+    "title": "Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025; Magnesium)",
+    "publisher": "Europäische Kommission, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820",
+    "retrievedAt": "2026-10-29",
+    "note": "Wortlaut der Magnesium-Angaben aus der amtlichen Fassung des Amts für Veröffentlichungen. Konsolidierte Fassungen haben keine Rechtswirkung; verbindlich ist das Amtsblatt."
+  },
+  {
+    "id": "vo-1169-2011-nrv",
+    "kind": "regulation",
+    "title": "Verordnung (EU) Nr. 1169/2011, Anhang XIII Teil A (Nährstoffbezugswerte; Magnesium 375 mg; konsolidierte Fassung vom 01.04.2025)",
+    "publisher": "Europäisches Parlament und Rat, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02011R1169-20250401",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "efsa-mg-referenzwerte-2015",
+    "kind": "authority",
+    "title": "EFSA: Referenzwerte für Magnesium (Adäquate Zufuhr; Pressemeldung 28.07.2015)",
+    "publisher": "Europäische Behörde für Lebensmittelsicherheit (EFSA)",
+    "url": "https://www.efsa.europa.eu/en/press/news/150728",
+    "retrievedAt": "2026-10-29",
+    "note": "Nur die Pressemeldung wurde gelesen, nicht das Gutachten."
+  },
+  {
+    "id": "scf-2001-magnesium-ul",
+    "kind": "authority",
+    "title": "SCF: Opinion on the Tolerable Upper Intake Level of Magnesium (SCF/CS/NUT/UPPLEV/54, 11.10.2001)",
+    "publisher": "Wissenschaftlicher Lebensmittelausschuss der EU (SCF)",
+    "url": "https://ec.europa.eu/food/fs/sc/scf/out105_en.pdf",
+    "retrievedAt": "2026-10-29",
+    "note": "Wortlaut im PDF gelesen. EFSA hat den Wert laut DGE und BfR übernommen; das EFSA-Dokument selbst wurde nicht geöffnet."
+  },
+  {
+    "id": "bfr-009-2021-magnesium",
+    "kind": "authority",
+    "title": "BfR: Höchstmengenvorschläge für Magnesium in Lebensmitteln einschließlich Nahrungsergänzungsmitteln (Stellungnahme 009/2021)",
+    "publisher": "Bundesinstitut für Risikobewertung (BfR)",
+    "url": "https://www.bfr.bund.de/cm/343/hoechstmengenvorschlaege-fuer-magnesium-in-lebensmitteln-inklusive-nahrungsergaenzungsmitteln.pdf",
+    "retrievedAt": "2026-10-29",
+    "note": "Eine neuere Fassung wurde nicht gesucht."
+  },
+  {
+    "id": "dge-faq-magnesium-2022",
+    "kind": "authority",
+    "title": "DGE: Fragen und Antworten zu Magnesium (2022)",
+    "publisher": "Deutsche Gesellschaft für Ernährung (DGE)",
+    "url": "https://www.dge.de/fileadmin/dok/gesunde-ernaehrung/faq/DGE-FAQ-Magnesium-2022.pdf",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-32956536",
+    "kind": "study",
+    "title": "Magnesium for skeletal muscle cramps (Cochrane, 2020)",
+    "publisher": "Cochrane Database Syst Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32956536/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-27402922",
+    "kind": "study",
+    "title": "Zhang et al. (2016): Magnesium supplementation and blood pressure – meta-analysis of 34 RCTs",
+    "publisher": "Hypertension",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27402922/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-28724644",
+    "kind": "study",
+    "title": "Magnesium and blood pressure in insulin resistance, prediabetes or chronic diseases – meta-analysis (2017)",
+    "publisher": "Am J Clin Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28724644/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-16856052",
+    "kind": "study",
+    "title": "Magnesium supplementation for essential hypertension in adults (Cochrane, 2006)",
+    "publisher": "Cochrane Database Syst Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16856052/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-33865376",
+    "kind": "study",
+    "title": "Oral magnesium for insomnia in older adults – systematic review and meta-analysis (2021)",
+    "publisher": "BMC Complement Med Ther",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33865376/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-42661485",
+    "kind": "study",
+    "title": "Magnesium supplementation for sleep in adults – systematic review of RCTs (2026)",
+    "publisher": "J Diet Suppl",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42661485/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-40918053",
+    "kind": "study",
+    "title": "Magnesium bisglycinate in healthy adults reporting poor sleep – randomized trial (2025)",
+    "publisher": "Nat Sci Sleep",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40918053/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-32503201",
+    "kind": "study",
+    "title": "The role and the effect of magnesium in mental disorders – systematic review (2020)",
+    "publisher": "Nutrients",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32503201/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-28445426",
+    "kind": "study",
+    "title": "Magnesium supplementation and subjective anxiety and stress – systematic review (2017)",
+    "publisher": "Nutrients",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28445426/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-28654669",
+    "kind": "study",
+    "title": "Role of magnesium supplementation in the treatment of depression – randomized clinical trial (2017)",
+    "publisher": "PLoS One",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28654669/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-39404918",
+    "kind": "study",
+    "title": "Dietary supplements for migraine prophylaxis – systematic review and dose-response meta-analysis (2025)",
+    "publisher": "Neurol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39404918/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-30764890",
+    "kind": "study",
+    "title": "Vitamins and minerals for migraine prophylaxis – systematic review and meta-analysis (2019)",
+    "publisher": "Can J Neurol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30764890/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-27530471",
+    "kind": "study",
+    "title": "Magnesium and glucose metabolism in people with or at risk of diabetes – meta-analysis (2016)",
+    "publisher": "Eur J Clin Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27530471/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-14596323",
+    "kind": "study",
+    "title": "Mg citrate more bioavailable than other Mg preparations – randomised double-blind study (2003)",
+    "publisher": "Magnes Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14596323/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-32162607",
+    "kind": "study",
+    "title": "Bioavailability of Mg from Mg citrate and Mg oxide by urinary excretion (2019)",
+    "publisher": "Magnes Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32162607/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-39770988",
+    "kind": "study",
+    "title": "Magnesium absorption of microencapsulated magnesium versus other magnesium sources – randomized crossover study (2024)",
+    "publisher": "Nutrients",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39770988/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-37487817",
+    "kind": "study",
+    "title": "Perspective: Call for re-evaluation of the tolerable upper intake level for magnesium supplementation in adults (2023)",
+    "publisher": "Adv Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37487817/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-36749131",
+    "kind": "study",
+    "title": "Magnesium supplementation and vascular calcification in CKD (MAGiCAL-CKD, 2023)",
+    "publisher": "J Am Soc Nephrol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36749131/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "ne-magnesiumcitrat-produktseite",
+    "kind": "label",
+    "title": "natural elements Magnesiumcitrat Kapseln (180 Kapseln) – Produktseite",
+    "publisher": "natural elements GmbH",
+    "url": "https://naturalelements.de/products/magnesiumcitrat-kapseln?variant=49846887219537",
+    "retrievedAt": "2026-10-29T01:54:01Z",
+    "note": "Preis der gewählten Variante-ID (180 Kapseln). Die Variante mit 365 Kapseln wurde nicht erhoben."
+  },
+  {
+    "id": "ne-magnesiumcitrat-eurofins-2025",
+    "kind": "study",
+    "title": "Eurofins Analytik GmbH: Untersuchungsbescheinigung Magnesiumcitrat, Lot 20478268E14751, 05.08.2025 (verlinkt von natural elements)",
+    "publisher": "Eurofins Analytik GmbH (im Auftrag von natural elements)",
+    "url": "https://cdn.shopify.com/s/files/1/0794/6292/4625/files/15213_2025.pdf",
+    "retrievedAt": "2026-10-29T01:54:57Z",
+    "note": "Gilt nur für diese Charge; für die aktuell verkaufte Charge nicht belegt. Geprüft auf Schwermetalle, Mikrobiologie, Ethylenoxid; der deklarierte Magnesiumgehalt wird laut Bescheinigung bestätigt."
+  },
+  {
+    "id": "naturalelements-versand",
+    "kind": "shop",
+    "title": "natural elements – Zahlung und Versand",
+    "publisher": "natural elements GmbH",
+    "url": "https://naturalelements.de/pages/zahlung-versand",
+    "retrievedAt": "2026-10-29T01:55:09Z",
+    "note": null
+  },
+  {
+    "id": "bodylab24-magnesium-produktseite",
+    "kind": "label",
+    "title": "Bodylab24 / Frey Nutrition Magnesium Citrat (120 Kapseln) – Produktseite",
+    "publisher": "Bodylab24 / ADDVANCE Consumer Health Group GmbH",
+    "url": "https://www.bodylab24.de/products/magnesium-citrat-120-kapseln",
+    "retrievedAt": "2026-10-29T01:55:29Z",
+    "note": "Hersteller laut Produktseite: FREY Nutrition, Paderborn. Die Tabelle nennt „Magnesium“ ohne das Wort „elementar“; die NRV-Angabe (80 % = 300 mg) spricht für elementares Magnesium."
+  },
+  {
+    "id": "bulk-magnesium-produktseite",
+    "kind": "label",
+    "title": "Bulk Magnesium Bisglycinat Tabletten 500 mg (60 Tabletten) – Produktseite",
+    "publisher": "Bulk / Sports Supplements Limited",
+    "url": "https://www.bulk.com/de/products/magnesium-bisglycinat-tabletten-500mg/bpb-magb-0000",
+    "retrievedAt": "2026-10-29T01:59:17Z",
+    "note": "Preise aus strukturierten Daten (SKU für 60 Tabletten); Aktionsende nur dort. „500 mg“ im Namen ist die Verbindung je Tablette, nicht Magnesium."
+  },
+  {
+    "id": "weider-magnesium-produktseite",
+    "kind": "label",
+    "title": "Weider Magnesium Complex (120 Kapseln) – Produktseite",
+    "publisher": "Weider Germany GmbH",
+    "url": "https://www.weider.de/products/magnesium-caps",
+    "retrievedAt": "2026-10-29T01:59:46Z",
+    "note": null
+  }
+]

@@ -1,0 +1,61 @@
+{
+  "id": "esn-omega-3-60",
+  "brandId": "esn",
+  "substanceId": "omega-3",
+  "name": "ESN Omega-3 Kapseln",
+  "variant": "60 Kapseln",
+  "netWeightG": null,
+  "activeDeclaredAs": "EPA+DHA",
+  "activePer100g": null,
+  "activeTotalG": 42.0,
+  "servingSizeG": null,
+  "activePerServingG": 2.1,
+  "ingredients": null,
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": null,
+  "labTesting": {
+    "statement": "Die ESN Omega-3 Kapseln werden regelmäßig von externen Laboren auf Mikrobiologie, Schwermetalle, Kontaminanten und produktspezifische Parameter untersucht.",
+    "sourceId": "esn-omega3-produktseite"
+  },
+  "label": {
+    "sourceId": "esn-omega3-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T01:20:06Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: Kapselform nicht angegeben. Portion = 3 Kapseln: 1200 mg EPA + 900 mg DHA (je Kapsel 400 + 300 mg, zusammen 700 mg). Die Summe aus EPA und DHA nennt die Seite nicht; wir haben sie aus den Einzelwerten gerechnet. 60 Kapseln × 700 mg = 42 g EPA+DHA.",
+    "Die Kopfzeile „1200 mg EPA & 900 mg DHA“ gilt je Portion von 3 Kapseln, nicht je Kapsel.",
+    "Keine Zutatenliste, keine Allergenangabe und kein Antioxidans auf der Seite gefunden (Fließtext: Fischöl, Rindergelatine, Glycerin, Wasser). Prüfberichte (PDF) nicht geöffnet.",
+    "Größere Packung: 300 Kapseln für 55,90 € (210 g EPA+DHA, rechnerisch 2,66 € je 10 g): bei Kapselprodukten senkt die Packungsgröße den Preis je Gramm deutlich."
+  ],
+  "prices": [
+    {
+      "retailer": "esn.com",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 1690,
+      "regularPriceNote": null,
+      "salePriceCents": null,
+      "saleConditions": null,
+      "saleEndsAt": null,
+      "shipping": {
+        "note": "4,90 € innerhalb Deutschlands; kostenlos ab 75 € Bestellwert; Lieferung 2–4 Werktage.",
+        "costCents": 490,
+        "freeFromCents": 7500,
+        "sourceId": "esn-versand-hilfe"
+      },
+      "observedAt": "2026-10-29T01:20:06Z",
+      "sourceId": "esn-omega3-produktseite"
+    }
+  ],
+  "status": "draft",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Entwurf angelegt (Omega-3-Cluster noch ohne fachliche Prüfung)."
+    }
+  ]
+}

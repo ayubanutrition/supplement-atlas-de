@@ -1,0 +1,9 @@
+{
+  // Cloudflare Workers Static Assets: nur statische Dateien aus dist/, kein Worker-Code.
+  "name": "supplement-atlas-de",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "404-page"
+  }
+}

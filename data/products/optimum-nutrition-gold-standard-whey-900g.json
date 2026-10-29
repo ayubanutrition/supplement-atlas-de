@@ -1,0 +1,59 @@
+{
+  "id": "optimum-nutrition-gold-standard-whey-900g",
+  "brandId": "optimum-nutrition",
+  "substanceId": "whey-protein",
+  "name": "Optimum Nutrition Gold Standard 100% Whey",
+  "variant": "French Vanilla, 900 g",
+  "netWeightG": 900,
+  "activeDeclaredAs": "Protein",
+  "activePer100g": 79,
+  "servingSizeG": 30,
+  "activePerServingG": 24,
+  "ingredients": "Molkeneiweißmischung (98 %) (Molkeneiweißisolat (Milch), Molkeneiweiß-Konzentrat (Milch), hydrolysiertes Molkeneiweißisolat (Milch), Emulgator (Sojalecithin)), Aromen, Natriumchlorid, Verdickungsmittel (Xanthan), Süßungsmittel (Sucralose), Farbstoff (Kurkumin).",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": "Milch und Soja stehen in der Zutatenliste fett gedruckt; kein eigener Allergenhinweis. „Kann Spuren enthalten von Gluten, Eier, Schalenfrüchten, Erdnüssen“.",
+  "labTesting": {
+    "statement": null,
+    "sourceId": null
+  },
+  "label": {
+    "sourceId": "on-whey-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T01:03:12Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: Mischung, in der das Isolat an erster Stelle steht (Isolat, Konzentrat, hydrolysiertes Isolat), kein reines Konzentrat. Geschmack „French Vanilla“, 900 g.",
+    "Nährwerte je 100 g: 376 kcal, Fett 4,2 g, Kohlenhydrate 5,2 g (davon Zucker 3,3 g), Eiweiß 79 g, Salz 0,49 g. Je Portion (30 g): 24 g Protein, 30 Portionen.",
+    "Auf der Produktseite fanden wir keine Aussage zu Labor- oder Dopingtests (nur Stichwortsuche, nicht jede Seite im Volltext gelesen).",
+    "Versandkosten unter 55 € und ein Grundpreis wurden nicht erhoben. Die Anbieterseite listet zusätzlich Newsletter- und Aktionsrabatte, die nicht im Preis enthalten sind."
+  ],
+  "prices": [
+    {
+      "retailer": "optimumnutrition.com/de-de",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 4999,
+      "regularPriceNote": null,
+      "salePriceCents": null,
+      "saleConditions": null,
+      "shipping": {
+        "note": "Kostenloser Versand ab 55 € Bestellwert; Kosten darunter nicht erhoben.",
+        "costCents": null,
+        "freeFromCents": 5500,
+        "sourceId": "on-kontakt"
+      },
+      "observedAt": "2026-10-29T01:03:12Z",
+      "sourceId": "on-whey-produktseite"
+    }
+  ],
+  "status": "published",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Erstaufnahme: Nährwerte, Zutaten, Preis und Versandgrenze erfasst."
+    }
+  ]
+}

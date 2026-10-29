@@ -1,0 +1,14 @@
+{
+  "id": "nu3",
+  "name": "nu3",
+  "legalProvider": {
+    "name": "Shop-Apotheke B.V. (Verkäufer; Hersteller laut Produktseite: nu3 GmbH, Brückenstr. 5, 10179 Berlin)",
+    "address": "Erik de Rodeweg 11–13, 5975 WD Sevenum, Niederlande",
+    "sourceId": "shop-apotheke-impressum"
+  },
+  "parentCompany": null,
+  "countries": [
+    "DE"
+  ],
+  "status": "published"
+}

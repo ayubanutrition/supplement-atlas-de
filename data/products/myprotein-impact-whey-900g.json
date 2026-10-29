@@ -1,0 +1,59 @@
+{
+  "id": "myprotein-impact-whey-900g",
+  "brandId": "myprotein",
+  "substanceId": "whey-protein",
+  "name": "Myprotein Impact Whey Protein",
+  "variant": "Vanille, 900 g",
+  "netWeightG": 900,
+  "activeDeclaredAs": "Protein",
+  "activePer100g": 72,
+  "servingSizeG": 30,
+  "activePerServingG": 22,
+  "ingredients": "Molkenproteinkonzentrat (Milch) (96 %) (enthält Emulgatoren (Soja lecithin, Sonnenblumenlecithin)), Aroma, Süßungsmittel (Sucralose).",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": "Enthält Milch und Soja (Lecithin); keine Spurenhinweise gefunden.",
+  "labTesting": {
+    "statement": "Zertifiziert durch Informed Choice: freiwillige, zufällige Tests, regelmäßig getestet, frei von Verunreinigungen und verbotenen Substanzen. Qualitätsseite: Jede einzelne Charge wird auf verbotene Substanzen getestet.",
+    "sourceId": "myprotein-whey-produktseite"
+  },
+  "label": {
+    "sourceId": "myprotein-whey-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T00:00:14Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: reines Whey-Konzentrat (96 % Molkenproteinkonzentrat). Geschmack „Vanille“, 900 g.",
+    "Nährwerte je 100 g: 379 kcal, Fett 5,9 g, Kohlenhydrate 8,9 g (davon Zucker 5,1 g), Eiweiß 72 g, Salz 0,44 g. Je Portion (30 g): 22 g Protein, 30 Portionen.",
+    "Widerspruch auf der Seite: Werbetext nennt 23 g Protein, Nährwerttabelle 22 g.",
+    "Die Seite nennt „zufällige Tests“ (Informed Choice) und auf einer anderen Seite „jede Charge“ auf verbotene Substanzen; das sind keine Analysen von Inhaltsstoffen. Herstellerangabe."
+  ],
+  "prices": [
+    {
+      "retailer": "de.myprotein.com",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 4499,
+      "regularPriceNote": "Vom Shop als durchgestrichener Preis angezeigt. Dauer und Herkunft sind nicht belegt.",
+      "salePriceCents": 3599,
+      "saleConditions": "Shop-Aktion „Bis zu 30 % Rabatt auf Bestseller – kein Code benötigt“; kein Enddatum genannt.",
+      "shipping": {
+        "note": "4,99 € unter 50 € Bestellwert; kostenlos ab 50 €; Lieferung laut Versandseite 4–6 Werktage.",
+        "costCents": 499,
+        "freeFromCents": 5000,
+        "sourceId": "myprotein-versand"
+      },
+      "observedAt": "2026-10-29T00:00:14Z",
+      "sourceId": "myprotein-whey-produktseite"
+    }
+  ],
+  "status": "published",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Erstaufnahme: Nährwerte, Zutaten, Preis und Versand erfasst."
+    }
+  ]
+}

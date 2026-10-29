@@ -1,0 +1,14 @@
+{
+  "id": "weider",
+  "name": "Weider",
+  "legalProvider": {
+    "name": "Weider Germany GmbH (AG Hamburg HRB 86525)",
+    "address": "Oberaltenallee 44, 22081 Hamburg",
+    "sourceId": "weider-impressum"
+  },
+  "parentCompany": null,
+  "countries": [
+    "DE"
+  ],
+  "status": "published"
+}

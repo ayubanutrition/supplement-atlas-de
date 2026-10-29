@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadOperator, missingOperatorFields } from '../lib/operator.ts';
+
+const op = loadOperator();
+const missing = missingOperatorFields(op);
+const complete = missing.length === 0;
+if (process.env.PUBLIC_INDEXING === 'true' && !complete) {
+  throw new Error(`Impressum unvollständig, Freigabe blockiert. Fehlend: ${missing.join(', ')}`);
+}
+---
+<Base title="Impressum" description="Anbieterkennzeichnung nach § 5 DDG." noindex={!complete}>
+  <h1>Impressum</h1>
+  {complete ? (
+    <>
+      <p>
+        <strong>{op.name}{op.legalForm ? ` (${op.legalForm})` : ''}</strong><br />
+        {op.street}<br />
+        {op.postalCodeCity}
+      </p>
+      {op.representedBy && <p>Vertreten durch: {op.representedBy}</p>}
+      <p>
+        E-Mail: <a href={`mailto:${op.email}`}>{op.email}</a>
+        {op.phone && <><br />Telefon: {op.phone}</>}
+      </p>
+      {op.register && <p>Register: {op.register}</p>}
+      {op.vatId && <p>Umsatzsteuer-ID: {op.vatId}</p>}
+      <p>Verantwortlich für den Inhalt: {op.responsibleForContent}</p>
+    </>
+  ) : (
+    <p class="note">Die Betreiberangaben werden vor der Veröffentlichung ergänzt. Dieses Angebot ist eine nicht öffentliche Vorschau.</p>
+  )}
+</Base>

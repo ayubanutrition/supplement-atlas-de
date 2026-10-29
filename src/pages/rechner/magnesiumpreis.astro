@@ -1,0 +1,69 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Magnesium-Preisrechner: Preis pro 10 g elementares Magnesium"
+  description="Rechne den Preis von Magnesium-Kapseln oder -Tabletten auf 10 g elementares Magnesium um – aus Stückzahl, Magnesium je Stück und Versandkosten."
+>
+  <p class="crumbs"><a href="/">Start</a> › <a href="/rechner/">Rechner</a> › Magnesium</p>
+  <h1>Magnesium-Preisrechner</h1>
+  <p class="lede">Rechnet den Preis von Magnesium-Kapseln oder -Tabletten auf <strong>10 g elementares Magnesium</strong> um. Nur das Magnesium zählt, nicht das Gewicht der Verbindung (z. B. „Magnesiumcitrat 1000 mg“).</p>
+
+  <div class="grid grid-2" style="align-items:start">
+    <form class="card" id="calc" novalidate>
+      <div class="field"><label for="price">Packungspreis in €</label><input id="price" type="text" inputmode="decimal" autocomplete="off" placeholder="z. B. 16,90" /><span class="hint">Preis laut Shop, ohne Versand.</span></div>
+      <div class="field"><label for="count">Anzahl Kapseln oder Tabletten</label><input id="count" type="text" inputmode="numeric" autocomplete="off" placeholder="z. B. 120" /></div>
+      <div class="field"><label for="mg">Magnesium (elementar) je Kapsel oder Tablette in mg</label><input id="mg" type="text" inputmode="decimal" autocomplete="off" placeholder="z. B. 150" aria-describedby="dose-hint" /><span class="hint" id="dose-hint">Auf Etiketten steht oft der Wert je Portion (z. B. 2 Kapseln): dann durch die Stückzahl der Portion teilen. Nur den Wert für Magnesium nehmen, nicht für die Verbindung.</span></div>
+      <div class="field"><label for="shipping">Versandkosten in € (optional)</label><input id="shipping" type="text" inputmode="decimal" autocomplete="off" placeholder="0" /></div>
+    </form>
+    <section class="card" aria-labelledby="ergebnis">
+      <h2 id="ergebnis" style="margin-top:0">Ergebnis</h2>
+      <div aria-live="polite">
+        <p class="muted" id="out-empty">Preis, Stückzahl und Magnesium je Stück eingeben.</p>
+        <div id="out-values" hidden>
+          <div class="small muted">pro 10 g Magnesium</div>
+          <p class="result" id="r10">–</p>
+          <div class="small muted">pro 1 g Magnesium</div>
+          <p class="result" style="font-size:1.2rem" id="r1">–</p>
+          <p class="small muted" id="rdetail"></p>
+        </div>
+        <p class="note" id="out-error" hidden></p>
+      </div>
+    </section>
+  </div>
+
+  <h2>So wird gerechnet</h2>
+  <p><code>Preis pro 10 g = (Packungspreis + Versand) ÷ (Stück × Magnesium je Stück in mg ÷ 1000) × 10</code></p>
+  <p>Gerundet wird erst am Ende auf ganze Cent. Die Vergleichseinheit ist keine Einnahmeempfehlung; zur Obergrenze von 250 mg Magnesium aus Präparaten pro Tag siehe den Artikel zu Magnesium.</p>
+</Base>
+
+<script>
+  import { eurToCents, formatEur, parseDecimal, pricePer } from '../../lib/price.ts';
+  const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+  const fields = ['price', 'count', 'mg', 'shipping'].map($);
+  const [price, count, mg, shipping] = fields;
+  const empty = document.getElementById('out-empty')!, values = document.getElementById('out-values')!, error = document.getElementById('out-error')!;
+  const show = (s: 'empty' | 'values' | 'error', msg = '') => { empty.hidden = s !== 'empty'; values.hidden = s !== 'values'; error.hidden = s !== 'error'; error.textContent = msg; };
+  function update() {
+    fields.forEach((f) => f.removeAttribute('aria-invalid'));
+    if ([price, count, mg].some((f) => f.value.trim() === '')) return show('empty');
+    const p = parseDecimal(price.value), n = parseDecimal(count.value), m = parseDecimal(mg.value);
+    const ship = shipping.value.trim() === '' ? 0 : parseDecimal(shipping.value);
+    const bad: [HTMLInputElement, string][] = [];
+    if (p === null || p < 0) bad.push([price, 'Preis ist keine gültige Zahl.']);
+    if (n === null || n <= 0 || !Number.isInteger(n)) bad.push([count, 'Stückzahl muss eine ganze Zahl über 0 sein.']);
+    if (m === null || m <= 0) bad.push([mg, 'Magnesium je Stück muss eine Zahl über 0 sein.']);
+    if (m !== null && m > 500) bad.push([mg, 'Über 500 mg Magnesium je Stück ist unplausibel; steht der Wert je Portion oder für die Verbindung?']);
+    if (ship === null || ship < 0) bad.push([shipping, 'Versandkosten sind keine gültige Zahl.']);
+    if (bad.length) { bad.forEach(([f]) => f.setAttribute('aria-invalid', 'true')); return show('error', bad.map((b) => b[1]).join(' ')); }
+    const total = eurToCents(p!) + eurToCents(ship!);
+    const grams = (n! * m!) / 1000;
+    document.getElementById('r10')!.textContent = formatEur(pricePer(total, grams, 10));
+    document.getElementById('r1')!.textContent = formatEur(pricePer(total, grams, 1));
+    document.getElementById('rdetail')!.textContent = `Gerechnet mit ${formatEur(total)} für ${new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 }).format(grams)} g Magnesium.`;
+    show('values');
+  }
+  fields.forEach((f) => f.addEventListener('input', update));
+  document.getElementById('calc')!.addEventListener('submit', (e) => e.preventDefault());
+  update();
+</script>

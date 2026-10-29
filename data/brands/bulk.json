@@ -1,0 +1,14 @@
+{
+  "id": "bulk",
+  "name": "Bulk",
+  "legalProvider": {
+    "name": "Sports Supplements Limited (Handelsname Bulk), England & Wales, Nr. 05654661",
+    "address": "Unit 1 Gunfleet Business Park, Brunel Way, Colchester CO4 9QX, Vereinigtes Königreich; EU-Niederlassung: Centrum Logistyczne, Łąkowa 23, 55-095 Mirków, Polen",
+    "sourceId": "bulk-kreatin-produktseite"
+  },
+  "parentCompany": null,
+  "countries": [
+    "DE"
+  ],
+  "status": "published"
+}

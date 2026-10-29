@@ -1,0 +1,60 @@
+{
+  "id": "bulk-magnesium-bisglycinat-60",
+  "brandId": "bulk",
+  "substanceId": "magnesium",
+  "name": "Bulk Magnesium Bisglycinat Tabletten",
+  "variant": "60 Tabletten",
+  "netWeightG": null,
+  "activeDeclaredAs": "elementares Magnesium",
+  "activePer100g": null,
+  "activeTotalG": 6.0,
+  "servingSizeG": null,
+  "activePerServingG": 0.2,
+  "ingredients": "Gepuffertes Magnesiumbisglycinat (Magnesiumbisglycinat, Magnesiumoxid), Füllstoffe (mikrokristalline Cellulose, Dicalciumphosphat), Trennmittel (Siliciumdioxid, Magnesiumsalze der Speisefettsäuren), Überzugsmittel (Hydroxypropylmethylcellulose, Glycerin).",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": "Hinweise zu Allergenen: Kann Soja, glutenhaltiges Getreide, Fisch, Krebstiere, Weichtiere, Schwefeldioxid und Sulphite enthalten.",
+  "labTesting": {
+    "statement": "Jede Tablette wird gründlich getestet, damit sie unsere Standards hinsichtlich Wirksamkeit und Nährwert erfüllt.",
+    "sourceId": "bulk-magnesium-produktseite"
+  },
+  "label": {
+    "sourceId": "bulk-magnesium-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T01:59:17Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: Tabletten statt Kapseln; Form gepuffertes Bisglycinat mit Magnesiumoxid. Portion = 2 Tabletten: 1000 mg Verbindung, davon 200 mg Magnesium (100 mg je Tablette, 60 Tabletten = 6 g). 53 % der Referenzmenge. Die Seite nennt keine Tagesdosis, nur die Portion.",
+    "Der Preis je 10 g hängt stark von der Aktion ab (Aktionspreis 7,49 € gegenüber Streichpreis 9,99 €). Größere Packung: 180 Tabletten im Aktionspreis 18,49 € laut strukturierten Daten (rechnerisch 10,27 € je 10 g).",
+    "Die Prüfaussage nennt weder Labor noch Zertifikat; sie ist eine Herstellerangabe. „500 mg“ im Produktnamen ist die Verbindung je Tablette, nicht das Magnesium."
+  ],
+  "prices": [
+    {
+      "retailer": "bulk.com",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 999,
+      "regularPriceNote": "Vom Shop als durchgestrichener Preis angezeigt. Ob er zuletzt tatsächlich verlangt wurde, ist nicht geprüft.",
+      "salePriceCents": 749,
+      "saleConditions": "Shop-Aktion „Payday Sale: Bis zu 75 % Rabatt – kein Code nötig“ (für dieses Produkt rund 25 %); laut strukturierten Daten gültig bis 03.11.2026.",
+      "saleEndsAt": "2026-11-03",
+      "shipping": {
+        "note": "4,95 € unter 59 € Bestellwert; kostenlos ab 59 €; Lieferung 2–4 Werktage.",
+        "costCents": 495,
+        "freeFromCents": 5900,
+        "sourceId": "bulk-magnesium-produktseite"
+      },
+      "observedAt": "2026-10-29T01:59:17Z",
+      "sourceId": "bulk-magnesium-produktseite"
+    }
+  ],
+  "status": "draft",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Entwurf angelegt (Magnesium-Cluster noch ohne fachliche Prüfung)."
+    }
+  ]
+}

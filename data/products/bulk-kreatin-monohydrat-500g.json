@@ -1,0 +1,60 @@
+{
+  "id": "bulk-kreatin-monohydrat-500g",
+  "brandId": "bulk",
+  "substanceId": "kreatin",
+  "name": "Bulk Kreatin Monohydrat",
+  "variant": "Neutral, 500 g",
+  "netWeightG": 500,
+  "activeDeclaredAs": "Kreatin-Monohydrat",
+  "activePer100g": 100,
+  "servingSizeG": 3.4,
+  "activePerServingG": 3.4,
+  "ingredients": "Kreatin-Monohydrat",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": "„Kann Milch, Soja, glutenhaltiges Getreide, Senf, Sesamsamen, Schwefeldioxid und Sulphite enthalten.“",
+  "labTesting": {
+    "statement": "Unser Kreatin-Monohydrat-Pulver wird nach den höchsten Qualitätsstandards streng geprüft … Mit einer Reinheit von 99,9 % garantiert es maximale Wirkung.",
+    "sourceId": "bulk-kreatin-produktseite"
+  },
+  "label": {
+    "sourceId": "bulk-kreatin-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-28T23:57:23Z"
+  },
+  "labelNotes": [
+    "Der Anteil von 100 % Kreatin-Monohydrat je 100 g ergibt sich aus der Ein-Zutaten-Liste; die Nährwerttabelle des Shops nennt nur Werte je Portion.",
+    "Nährwerte je Portion (3,4 g, „1,5 Löffel“): 3,4 g Kreatin-Monohydrat, davon 3 g Kreatin.",
+    "Die Prüfaussage nennt kein Labor und keinen Prüfumfang; sie ist eine Herstellerangabe.",
+    "Die Packungszahl nennt die Seite nicht."
+  ],
+  "prices": [
+    {
+      "retailer": "bulk.com",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 2499,
+      "regularPriceNote": "Vom Shop als durchgestrichener Preis angezeigt. Ob er zuletzt tatsächlich verlangt wurde, ist nicht geprüft.",
+      "salePriceCents": 1599,
+      "saleConditions": "Shop-Aktion „Payday Sale: Bis zu 75 % Rabatt – kein Code nötig“; laut strukturierten Daten gültig bis 03.11.2026.",
+      "shipping": {
+        "note": "4,95 € innerhalb Deutschlands; kostenlos ab 59 € Bestellwert; Lieferung 2–4 Werktage.",
+        "costCents": 495,
+        "freeFromCents": 5900,
+        "sourceId": "bulk-kreatin-produktseite"
+      },
+      "observedAt": "2026-10-28T23:57:23Z",
+      "sourceId": "bulk-kreatin-produktseite",
+      "saleEndsAt": "2026-11-03"
+    }
+  ],
+  "status": "published",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Erstaufnahme: Etikettangaben, Aktionspreis und Versand erfasst."
+    }
+  ]
+}

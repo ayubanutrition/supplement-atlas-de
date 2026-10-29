@@ -1,0 +1,72 @@
+---
+import Base from '../../layouts/Base.astro';
+---
+<Base
+  title="Omega-3-Preisrechner: Preis pro 10 g EPA+DHA"
+  description="Rechne den Preis von Omega-3-Kapseln auf 10 g EPA+DHA um – aus Kapselzahl, EPA und DHA je Kapsel und Versandkosten."
+>
+  <p class="crumbs"><a href="/">Start</a> › <a href="/rechner/">Rechner</a> › Omega-3</p>
+  <h1>Omega-3-Preisrechner</h1>
+  <p class="lede">Rechnet den Preis von Fischöl-Kapseln auf <strong>10 g EPA+DHA</strong> um. Nur diese beiden Fettsäuren zählen, nicht die Menge Fischöl.</p>
+
+  <div class="grid grid-2" style="align-items:start">
+    <form class="card" id="calc" novalidate>
+      <div class="field"><label for="price">Packungspreis in €</label><input id="price" type="text" inputmode="decimal" autocomplete="off" placeholder="z. B. 16,90" /><span class="hint">Preis laut Shop, ohne Versand.</span></div>
+      <div class="field"><label for="count">Anzahl Kapseln</label><input id="count" type="text" inputmode="numeric" autocomplete="off" placeholder="z. B. 60" /></div>
+      <div class="field"><label for="epa">EPA je Kapsel in mg</label><input id="epa" type="text" inputmode="decimal" autocomplete="off" placeholder="z. B. 400" aria-describedby="dose-hint" /></div>
+      <div class="field"><label for="dha">DHA je Kapsel in mg</label><input id="dha" type="text" inputmode="decimal" autocomplete="off" placeholder="z. B. 300" aria-describedby="dose-hint" /><span class="hint" id="dose-hint">Auf Etiketten steht oft der Wert je Portion (z. B. 3 Kapseln): dann durch die Kapselzahl der Portion teilen.</span></div>
+      <div class="field"><label for="shipping">Versandkosten in € (optional)</label><input id="shipping" type="text" inputmode="decimal" autocomplete="off" placeholder="0" /></div>
+    </form>
+    <section class="card" aria-labelledby="ergebnis">
+      <h2 id="ergebnis" style="margin-top:0">Ergebnis</h2>
+      <div aria-live="polite">
+        <p class="muted" id="out-empty">Preis, Kapselzahl, EPA und DHA eingeben.</p>
+        <div id="out-values" hidden>
+          <div class="small muted">pro 10 g EPA+DHA</div>
+          <p class="result" id="r10">–</p>
+          <div class="small muted">pro 1 g EPA+DHA</div>
+          <p class="result" style="font-size:1.2rem" id="r1">–</p>
+          <p class="small muted" id="rdetail"></p>
+        </div>
+        <p class="note" id="out-error" hidden></p>
+      </div>
+    </section>
+  </div>
+
+  <h2>So wird gerechnet</h2>
+  <p><code>Preis pro 10 g = (Packungspreis + Versand) ÷ (Kapseln × (EPA + DHA) in mg ÷ 1000) × 10</code></p>
+  <p>Gerundet wird erst am Ende auf ganze Cent. Die Vergleichseinheit ist keine Einnahmeempfehlung; wie viel EPA+DHA sinnvoll ist, steht im Artikel zu Omega-3.</p>
+</Base>
+
+<script>
+  import { eurToCents, formatEur, parseDecimal, pricePer } from '../../lib/price.ts';
+  const $ = (id: string) => document.getElementById(id) as HTMLInputElement;
+  const fields = ['price', 'count', 'epa', 'dha', 'shipping'].map($);
+  const [price, count, epa, dha, shipping] = fields;
+  const empty = document.getElementById('out-empty')!, values = document.getElementById('out-values')!, error = document.getElementById('out-error')!;
+  const show = (s: 'empty' | 'values' | 'error', msg = '') => { empty.hidden = s !== 'empty'; values.hidden = s !== 'values'; error.hidden = s !== 'error'; error.textContent = msg; };
+  function update() {
+    fields.forEach((f) => f.removeAttribute('aria-invalid'));
+    if ([price, count, epa, dha].some((f) => f.value.trim() === '')) return show('empty');
+    const p = parseDecimal(price.value), n = parseDecimal(count.value), e = parseDecimal(epa.value), d = parseDecimal(dha.value);
+    const ship = shipping.value.trim() === '' ? 0 : parseDecimal(shipping.value);
+    const bad: [HTMLInputElement, string][] = [];
+    if (p === null || p < 0) bad.push([price, 'Preis ist keine gültige Zahl.']);
+    if (n === null || n <= 0 || !Number.isInteger(n)) bad.push([count, 'Kapselzahl muss eine ganze Zahl über 0 sein.']);
+    if (e === null || e < 0) bad.push([epa, 'EPA ist keine gültige Zahl.']);
+    if (d === null || d < 0) bad.push([dha, 'DHA ist keine gültige Zahl.']);
+    if (e !== null && d !== null && e + d <= 0) bad.push([epa, 'EPA + DHA muss größer als 0 sein.']);
+    if (e !== null && d !== null && e + d > 1500) bad.push([epa, 'EPA + DHA je Kapsel über 1500 mg ist unplausibel; steht der Wert je Portion?']);
+    if (ship === null || ship < 0) bad.push([shipping, 'Versandkosten sind keine gültige Zahl.']);
+    if (bad.length) { bad.forEach(([f]) => f.setAttribute('aria-invalid', 'true')); return show('error', bad.map((b) => b[1]).join(' ')); }
+    const total = eurToCents(p!) + eurToCents(ship!);
+    const grams = (n! * (e! + d!)) / 1000;
+    document.getElementById('r10')!.textContent = formatEur(pricePer(total, grams, 10));
+    document.getElementById('r1')!.textContent = formatEur(pricePer(total, grams, 1));
+    document.getElementById('rdetail')!.textContent = `Gerechnet mit ${formatEur(total)} für ${new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 }).format(grams)} g EPA+DHA.`;
+    show('values');
+  }
+  fields.forEach((f) => f.addEventListener('input', update));
+  document.getElementById('calc')!.addEventListener('submit', (e) => e.preventDefault());
+  update();
+</script>

@@ -1,0 +1,77 @@
+---
+import Base from '../../layouts/Base.astro';
+import CompareTable from '../../components/CompareTable.astro';
+import PriceBars from '../../components/PriceBars.astro';
+import { getDataset } from '../../lib/load.ts';
+import { published, type Duel } from '../../lib/schema.ts';
+import { formatEur } from '../../lib/price.ts';
+import { categoryBySubstance } from '../../lib/categories.ts';
+import { formatDate, productView, priceNote } from '../../lib/view.ts';
+
+// Nur ausdrücklich angelegte Duelle – keine automatisch erzeugten Paarungen.
+export function getStaticPaths() {
+  return published(getDataset().duels).map((duel) => ({ params: { slug: duel.slug }, props: { duel } }));
+}
+interface Props { duel: Duel }
+const { duel } = Astro.props;
+const d = getDataset();
+const [a, b] = [duel.a, duel.b].map((id) => {
+  const prod = d.products.find((p) => p.id === id);
+  if (!prod || prod.status !== 'published') throw new Error(`Duell ${duel.slug}: Produkt ${id} fehlt oder ist nicht veröffentlicht`);
+  return productView(d, prod);
+});
+const cat = categoryBySubstance(a.product.substanceId);
+// Nur frische, nicht abgelaufene Preise dürfen als „günstiger“ hervorgehoben werden (siehe Methodik).
+const usable = (v: typeof a) => v.latest !== null && v.latest.freshness === 'aktuell' && !v.latest.saleExpired && v.latest.payablePerBasis !== null;
+const pa = usable(a) ? a.latest!.payablePerBasis : null;
+const pb = usable(b) ? b.latest!.payablePerBasis : null;
+const rawDiff = pa !== null && pb !== null ? Math.abs(pa - pb) / Math.max(pa, pb) : 0;
+const diffPct = Math.round(rawDiff * 100);
+const cheaper = pa !== null && pb !== null && diffPct >= 1 ? (pa < pb ? a : b) : null;
+const pricier = cheaper === a ? b : a;
+const nearlyEqual = pa !== null && pb !== null && diffPct < 1;
+const labText = (v: typeof a) => (v.product.labTesting.statement ? `${v.brand.name} nennt Prüfhinweise` : `${v.brand.name} nennt keine konkreten Prüfhinweise`);
+const asOf = [a, b].map((v) => v.latest?.obs.observedAt ?? '').sort().pop() ?? '';
+---
+<Base title={`${a.product.name} vs. ${b.product.name}`} description={`${a.product.name} und ${b.product.name} im direkten Vergleich: Preis pro ${cat.basisLabel}, Zutaten, Portion und Versand – mit Quellen.`}>
+  <p class="crumbs"><a href="/">Start</a> › <a href={`/vergleich/${cat.slug}/`}>{cat.name}-Vergleich</a> › Duell</p>
+  <h1>{a.product.name} vs. {b.product.name}</h1>
+  <p class="lede">{duel.question}</p>
+
+  <div class="answer">
+    {cheaper ? (
+      <p><strong>Beim Preis ohne Code war {cheaper.product.name} am {formatDate(asOf)} rund {diffPct} % günstiger</strong> ({formatEur(cheaper.latest!.payablePerBasis)} gegenüber {formatEur(pricier.latest!.payablePerBasis)} pro {cat.basisLabel} {cat.unit}){cheaper.latest!.isSale ? ', allerdings als zeitlich unbestimmte Aktion' : ''}.</p>
+    ) : nearlyEqual ? (
+      <p>Beim Preis ohne Code liegen beide am {formatDate(asOf)} praktisch gleichauf (weniger als 1 % Unterschied).</p>
+    ) : (
+      <p>Ein Preisvergleich ist derzeit nicht möglich: mindestens ein Preis ist älter als 30 Tage, die Aktion ist beendet oder nicht berechenbar. Die Preise stehen unten zur Ansicht.</p>
+    )}
+    <p>Prüfhinweise der Anbieter: {labText(a)}; {labText(b)}. Geprüft haben wir das nicht.</p>
+  </div>
+
+  {[a, b].some((v) => v.product.labelNotes.some((n) => n.startsWith('Vergleichbarkeit:'))) && (
+    <>
+      <h2>Wie vergleichbar sind die Produkte?</h2>
+      <ul>
+        {[a, b].map((v) => v.product.labelNotes.filter((n) => n.startsWith('Vergleichbarkeit:')).map((n) => <li><strong>{v.product.name}:</strong> {n.replace('Vergleichbarkeit: ', '')}</li>))}
+      </ul>
+    </>
+  )}
+
+  <h2>Preis pro {cat.basisLabel} {cat.unit}</h2>
+  <PriceBars
+    caption="Ohne Code zahlbarer Preis am Erfassungstag, ohne Versand."
+    items={[a, b].map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.payablePerBasis ?? null, note: priceNote(v.latest) }))}
+  />
+  <p class="small muted">Mit regulärem bzw. Streichpreis: {a.product.name} {formatEur(a.latest?.regularPerBasis)}, {b.product.name} {formatEur(b.latest?.regularPerBasis)} pro {cat.basisLabel}. Versand kommt jeweils hinzu, wenn der Mindestbestellwert nicht erreicht wird.</p>
+
+  <h2>Alle Angaben nebeneinander</h2>
+  <CompareTable views={[a, b]} unit={cat.unit} basis={cat.basisLabel} caption="Angaben der Anbieter. Details und Quellen auf den Produktseiten." />
+
+  <h2>Für wen was passt</h2>
+  <ul>
+    <li>Wer vor allem auf den Preis achtet: Entscheidend ist der Preis am Kauftag – Aktionen ändern das Ergebnis schnell. Mit dem <a href={cat.calculatorPath}>Preisrechner</a> lässt sich ein aktuelles Angebot nachrechnen.</li>
+    <li>Wer Wert auf dokumentierte Prüfungen legt: Ein Anbieterhinweis auf Labortests ist kein unabhängiger Nachweis. Vor dem Kauf die verlinkten Analysen beim Anbieter ansehen und auf Chargenbezug und Datum achten.</li>
+  </ul>
+  <p class="small muted">Produktseiten: <a href={`/produkte/${a.product.id}/`}>{a.product.name}</a> · <a href={`/produkte/${b.product.id}/`}>{b.product.name}</a></p>
+</Base>

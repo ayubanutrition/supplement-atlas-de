@@ -1,0 +1,14 @@
+{
+  "id": "optimum-nutrition",
+  "name": "Optimum Nutrition",
+  "legalProvider": {
+    "name": "Optimum Nutrition (Rechtsform auf der Seite nicht genannt; Handelsregister Niederlande 01098673, USt-IdNr. DE366815390)",
+    "address": "Halle 5, Dr.-Wilhelm-Roelen-Str. 60–72, 47179 Duisburg",
+    "sourceId": "on-kontakt"
+  },
+  "parentCompany": null,
+  "countries": [
+    "DE"
+  ],
+  "status": "published"
+}

@@ -1,0 +1,14 @@
+{
+  "id": "more-nutrition",
+  "name": "More Nutrition",
+  "legalProvider": {
+    "name": "Quality First GmbH",
+    "address": "Werner-von-Siemens-Straße 8, 25337 Elmshorn",
+    "sourceId": "morenutrition-impressum"
+  },
+  "parentCompany": null,
+  "countries": [
+    "DE"
+  ],
+  "status": "published"
+}

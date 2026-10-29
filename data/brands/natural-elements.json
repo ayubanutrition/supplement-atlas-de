@@ -1,0 +1,14 @@
+{
+  "id": "natural-elements",
+  "name": "Natural Elements",
+  "legalProvider": {
+    "name": "natural elements GmbH (AG Düsseldorf HRB 85595)",
+    "address": "Immermannstraße 45, 40210 Düsseldorf",
+    "sourceId": "natural-elements-impressum"
+  },
+  "parentCompany": null,
+  "countries": [
+    "DE"
+  ],
+  "status": "published"
+}

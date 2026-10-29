@@ -1,0 +1,131 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PriceBars from '../../components/PriceBars.astro';
+import SourceList from '../../components/SourceList.astro';
+import { getDataset } from '../../lib/load.ts';
+import { categoryBySubstance } from '../../lib/categories.ts';
+import { formatDate, publishedProducts, sourceMap, priceNote } from '../../lib/view.ts';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('wirkstoffe', (e) => e.data.status === 'published');
+  // Freigabesperre: Ohne fachliche Prüfung keine indexierbare Veröffentlichung.
+  if (process.env.PUBLIC_INDEXING === 'true') {
+    const unreviewed = entries.filter((e) => !e.data.reviewedBy).map((e) => e.id);
+    if (unreviewed.length) throw new Error(`Ohne fachliche Prüfung nicht veröffentlichbar: ${unreviewed.join(', ')}`);
+  }
+  return entries.map((entry) => ({ params: { slug: categoryBySubstance(entry.data.substanceId).slug }, props: { entry } }));
+}
+interface Props { entry: CollectionEntry<'wirkstoffe'> }
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = getDataset();
+const src = sourceMap(d);
+const ev = d.evidence.find((e) => e.substanceId === entry.data.substanceId);
+const products = publishedProducts(d, entry.data.substanceId);
+const cat = categoryBySubstance(entry.data.substanceId);
+const topics: Record<string, string> = {
+  // Reihenfolge = Reihenfolge auf der Seite; Sicherheit steht bewusst am Ende.
+  uebersicht: 'Übersichtsarbeiten',
+  muskel: 'Muskelaufbau und Kraft',
+  kraft: 'Kraft (Erwachsene unter 50)',
+  koerperzusammensetzung: 'Körperzusammensetzung',
+  herz: 'Herz und Kreislauf',
+  triglyceride: 'Triglyceride',
+  aeltere: 'Ältere Erwachsene',
+  quellen: 'Proteinquellen im Vergleich',
+  gehirn: 'Gehirn und Stimmung',
+  kognition: 'Gehirn und Gedächtnis',
+  schwangerschaft: 'Schwangerschaft',
+  krampf: 'Muskelkrämpfe',
+  blutdruck: 'Blutdruck',
+  schlaf: 'Schlaf',
+  psyche: 'Stimmung, Angst und Stress',
+  migraene: 'Migräne',
+  diabetes: 'Blutzucker',
+  bioverfuegbarkeit: 'Aufnahme der Magnesium-Formen',
+  nieren: 'Nierenwerte und Sicherheit',
+  sicherheit: 'Sicherheit und Risiken',
+};
+// Kein Thema darf stillschweigend entfallen: unbekannte Themen erscheinen unter „Weitere Studien“.
+const allTopics: Record<string, string> = { ...topics };
+for (const e of ev?.evidence ?? []) if (!(e.topic in allTopics)) allTopics[e.topic] = 'Weitere Studien';
+const used = [
+  ...(ev?.claims.map((c) => c.sourceId) ?? []),
+  ...entry.data.extraSources,
+  ...(ev?.evidence.map((e) => e.sourceId) ?? []),
+]
+  .map((id) => src.get(id))
+  .filter((s) => s !== undefined)
+  // gleiche Reihenfolge und Nummerierung wie die gerenderte Quellenliste: jede Quelle genau einmal
+  .filter((s, i, arr) => arr.findIndex((x) => x.id === s.id) === i);
+const ref = (id: string) => used.findIndex((s) => s.id === id) + 1;
+---
+<Base title={entry.data.title} description={entry.data.description}>
+  <p class="crumbs"><a href="/">Start</a> › Wirkstoffe</p>
+  <h1>{cat.name}</h1>
+  <div class="meta-line">
+    <span>Aktualisiert: {formatDate(entry.data.updatedAt)}</span>
+    <span>Text: {entry.data.author}</span>
+    <span>Fachliche Prüfung: {entry.data.reviewedBy ?? <span class="tag warn">ausstehend</span>}</span>
+  </div>
+
+  <div class="answer">
+    <p><strong>Kurz gesagt:</strong> {entry.data.summary}</p>
+  </div>
+
+  <Content />
+
+  {ev && (
+    <>
+      <h2 id="claims">Zugelassene und abgelehnte Aussagen in der EU</h2>
+      <div class="table-scroll" role="region" aria-label={`EU-Aussagen zu ${cat.name}`} tabindex="0">
+        <table>
+          <thead><tr><th scope="col">Status</th><th scope="col">Wortlaut</th><th scope="col">Bedingungen</th><th scope="col">Rechtsgrundlage</th></tr></thead>
+          <tbody>
+            {ev.claims.map((c) => (
+              <tr>
+                <td>{c.status === 'zugelassen' ? <span class="tag ok">zugelassen</span> : <span class="tag warn">abgelehnt</span>}</td>
+                <td>„{c.wording}“</td>
+                <td class="small">{c.conditions}</td>
+                <td class="small">{c.regulation} <a class="sup" href={`#q-${c.sourceId}`}>[{ref(c.sourceId)}]</a></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 id="studien">Studienlage nach Fragestellung</h2>
+      <p class="small muted">Ausgewählte systematische Übersichtsarbeiten und Positionspapiere, Stand {formatDate(ev.reviewedAt)}. Ergebnisse stammen aus den Zusammenfassungen (Abstracts); eine eigene Bewertung der Evidenzsicherheit steht noch aus.</p>
+      {[...new Map(Object.entries(allTopics).map(([k, l]) => [l, k])).entries()].map(([label]) => {
+        const items = ev.evidence.filter((e) => allTopics[e.topic] === label);
+        return items.length > 0 && (
+          <>
+            <h3>{label}</h3>
+            {items.map((e) => (
+              <div class="card" style="margin-bottom:12px">
+                <p style="margin-top:0"><strong>{e.title}</strong> <span class="muted small">– {e.design}, {e.year}</span> <a class="sup" href={`#q-${e.sourceId}`}>[{ref(e.sourceId)}]</a></p>
+                <p class="small"><strong>Wer:</strong> {e.population}. <strong>Was:</strong> {e.intervention}{e.comparison && ` vs. ${e.comparison}`}. <strong>Gemessen:</strong> {e.outcome}.</p>
+                <p>{e.result}</p>
+                <p class="small muted"><strong>Grenzen:</strong> {e.limitations}{e.funding && <> <strong>Finanzierung/Interessen:</strong> {e.funding}</>}</p>
+              </div>
+            ))}
+          </>
+        );
+      })}
+    </>
+  )}
+
+  {products.length > 0 && (
+    <>
+      <h2>Erfasste Produkte</h2>
+      <PriceBars
+        caption={`Preis pro ${cat.basisLabel} ${cat.unit}, ohne Code, ohne Versand.`}
+        items={products.map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.payablePerBasis ?? null, note: priceNote(v.latest) }))}
+      />
+      <p><a class="btn" href={`/vergleich/${cat.slug}/`}>Zum {cat.name}-Vergleich</a> <a class="btn secondary" href={cat.calculatorPath}>Preis selbst berechnen</a></p>
+    </>
+  )}
+
+  <SourceList sources={used} />
+</Base>

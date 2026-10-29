@@ -1,0 +1,14 @@
+{
+  "id": "bodylab24",
+  "name": "Bodylab24",
+  "legalProvider": {
+    "name": "ADDVANCE Consumer Health Group GmbH",
+    "address": "Radlkoferstraße 2, 81373 München",
+    "sourceId": "bodylab24-impressum"
+  },
+  "parentCompany": null,
+  "countries": [
+    "DE"
+  ],
+  "status": "published"
+}

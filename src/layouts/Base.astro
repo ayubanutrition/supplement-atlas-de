@@ -1,0 +1,104 @@
+---
+import '../styles/global.css';
+import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../lib/categories.ts';
+import { today } from '../lib/view.ts';
+
+interface Props {
+  title: string;
+  description: string;
+  /** Erzwingt noindex auch nach Freigabe (z. B. Rechner-Zwischenzustände, 404). */
+  noindex?: boolean;
+}
+const { title, description, noindex = false } = Astro.props;
+
+// Indexierung nur, wenn Domain gesetzt UND ausdrücklich freigegeben.
+const indexingAllowed = Boolean(Astro.site) && process.env.PUBLIC_INDEXING === 'true';
+const robots = !indexingAllowed || noindex ? 'noindex, nofollow' : 'index, follow';
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
+const path = Astro.url.pathname;
+// Navigation aus den veröffentlichten Artikeln: neue Kategorien erscheinen automatisch, Entwürfe nie.
+const live = new Set((await getCollection('wirkstoffe', (e) => e.data.status === 'published')).map((e) => e.data.substanceId));
+const nav = [
+  ...CATEGORIES.filter((c) => live.has(c.substanceId)).map((c) => ({ href: `/wirkstoffe/${c.slug}/`, label: c.name })),
+  { href: '/rechner/', label: 'Rechner' },
+  { href: '/methodik/', label: 'Methodik' },
+];
+const fullTitle = path === '/' ? title : `${title} · Supplement Atlas`;
+---
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={robots} />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Supplement Atlas" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    {canonical && <meta property="og:url" content={canonical} />}
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#1d5c4e" />
+    <meta name="built-on" content={today()} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+    <header class="site-head">
+      {!indexingAllowed && (
+        <div class="preview-bar" role="note">
+          <div class="wrap">Vorschau – noch nicht veröffentlicht. Inhalte befinden sich in Prüfung.</div>
+        </div>
+      )}
+      <div class="wrap head-row">
+        <a class="brand" href="/">Supplement <span>Atlas</span></a>
+        <nav aria-label="Hauptnavigation">
+          <ul class="nav">
+            {nav.map((n) => (
+              <li><a href={n.href} aria-current={path.startsWith(n.href) ? 'page' : undefined}>{n.label}</a></li>
+            ))}
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="inhalt">
+      <div class="wrap">
+        <slot />
+      </div>
+    </main>
+    <footer class="site-foot">
+      <div class="wrap">
+        <ul>
+          <li><a href="/methodik/">Methodik &amp; Bewertungsregeln</a></li>
+          <li><a href="/ueber-uns/">Über dieses Projekt</a></li>
+          <li><a href="/impressum/">Impressum</a></li>
+          <li><a href="/datenschutz/">Datenschutz</a></li>
+        </ul>
+        <p>Informationsangebot, keine medizinische Beratung. Preise und Etiketten ändern sich – maßgeblich ist die Angabe des Anbieters zum Kaufzeitpunkt.</p>
+      </div>
+    </footer>
+    <script is:inline>
+      // Statische Seite: Wurde sie lange nicht neu gebaut, im Browser auf mögliche Veraltung hinweisen.
+      (function () {
+        try {
+          var m = document.querySelector('meta[name="built-on"]');
+          if (!m) return;
+          var days = Math.floor((Date.now() - Date.parse(m.content + 'T00:00:00Z')) / 864e5);
+          if (days > 30) {
+            var p = m.content.split('-');
+            var el = document.createElement('div');
+            el.className = 'stale-banner';
+            el.setAttribute('role', 'note');
+            el.textContent = 'Diese Seite wurde am ' + p[2] + '.' + p[1] + '.' + p[0] + ' erstellt. Preise und Aktionen können inzwischen abgelaufen sein.';
+            document.body.insertBefore(el, document.body.firstChild);
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </body>
+</html>

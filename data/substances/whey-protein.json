@@ -1,0 +1,16 @@
+{
+  "id": "whey-protein",
+  "name": "Whey-Protein",
+  "synonyms": [
+    "Molkenprotein",
+    "Whey",
+    "Proteinpulver",
+    "Whey-Konzentrat"
+  ],
+  "forms": [
+    "Whey-Konzentrat",
+    "Whey-Konzentrat/Isolat-Mischungen"
+  ],
+  "status": "published",
+  "updatedAt": "2026-10-28"
+}

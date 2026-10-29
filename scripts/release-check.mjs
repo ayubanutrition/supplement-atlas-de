@@ -30,6 +30,10 @@ if (!existsSync('wrangler.jsonc')) blockers.push('wrangler.jsonc fehlt');
 
 const stale = data.products.filter((p) => p.status === 'published').flatMap((p) => p.prices.filter((x) => priceFreshness(x.observedAt, today) === 'erneut-pruefen').map(() => p.id));
 if (stale.length) blockers.push(`Preise älter als 30 Tage (neu erfassen): ${[...new Set(stale)].join(', ')}`);
+const expired = data.products.filter((p) => p.status === 'published').flatMap((p) => p.prices.filter((x) => x.saleEndsAt && x.saleEndsAt < today).map(() => p.id));
+if (expired.length) blockers.push(`Aktionen laut Anbieter beendet (Preis neu erfassen): ${[...new Set(expired)].join(', ')}`);
+const soon = data.products.filter((p) => p.status === 'published').flatMap((p) => p.prices.filter((x) => x.saleEndsAt && x.saleEndsAt >= today && x.saleEndsAt <= new Date(Date.now() + 7 * 864e5).toISOString().slice(0, 10)).map((x) => `${p.id} (bis ${x.saleEndsAt})`));
+if (soon.length) infos.push(`Aktionen laufen innerhalb von 7 Tagen aus: ${soon.join(', ')}`);
 const drafts = data.products.filter((p) => p.status === 'draft').map((p) => p.id);
 if (drafts.length) infos.push(`Produkte im Entwurf (werden nicht gezeigt): ${drafts.join(', ')}`);
 const untested = data.evidence.flatMap((e) => e.evidence).filter((x) => x.certainty === 'nicht bewertet').length;

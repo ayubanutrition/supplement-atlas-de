@@ -89,6 +89,9 @@ In der EU dürfen Hersteller nur zugelassene gesundheitsbezogene Angaben verwend
 | Bulk Kreatin Monohydrat (Neutral, 500 g) | 500 g | 100 g | 15,99 € (Aktion) | 3,20 € | 24,99 € → 5,00 € | 2026-10-28 |
 | ESN Ultrapure Kreatin Pulver (Neutral, 500 g) | 500 g | 100 g | 29,90 € | 5,98 € | 29,90 € → 5,98 € | 2026-10-28 |
 | Myprotein Kreatin Monohydrat (Geschmacksneutral, 500 g) | 500 g | 100 g | 14,99 € (Aktion) | 3,00 € | 19,99 € → 4,00 € | 2026-10-28 |
+| Natural Elements Kreatin Monohydrat Pulver (500 g (einzige Variante)) | 500 g | 100 g | 16,99 € | 3,40 € | 16,99 € → 3,40 € | 2026-10-29 |
+| nu3 Creatine Pulver (Geschmacksneutral, 500 g) | 500 g | 100 g | 36,99 € (Aktion) | 7,40 € | 38,99 € → 7,80 € | 2026-10-29 |
+| Weider Pure Creatine (600 g) | 600 g | 100 g | 36,99 € | 6,17 € | 36,99 € → 6,17 € | 2026-10-29 |
 
 ---
 
@@ -147,9 +150,9 @@ In der EU sind für Protein drei gesundheitsbezogene Aussagen zugelassen: Protei
 
 | Status | Wortlaut | Bedingungen | Rechtsgrundlage | Quelle |
 |---|---|---|---|---|
-| zugelassen | Proteine tragen zu einer Zunahme an Muskelmasse bei. | Nur für Lebensmittel, die die Mindestanforderungen an eine „Proteinquelle“ erfüllen (mindestens 12 % des Brennwerts aus Protein). | VO (EU) Nr. 432/2012 | [Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (Ursprungsfassung; Proteine)](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32012R0432) (abgerufen 2026-10-28) |
-| zugelassen | Proteine tragen zur Erhaltung von Muskelmasse bei. | Wie oben: nur bei Lebensmitteln, die als „Proteinquelle“ gelten dürfen. | VO (EU) Nr. 432/2012 | [Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (Ursprungsfassung; Proteine)](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32012R0432) (abgerufen 2026-10-28) |
-| zugelassen | Proteine tragen zur Erhaltung normaler Knochen bei. | Wie oben: nur bei Lebensmitteln, die als „Proteinquelle“ gelten dürfen. | VO (EU) Nr. 432/2012 | [Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (Ursprungsfassung; Proteine)](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32012R0432) (abgerufen 2026-10-28) |
+| zugelassen | Proteine tragen zu einer Zunahme an Muskelmasse bei. | Nur für Lebensmittel, die die Mindestanforderungen an eine „Proteinquelle“ erfüllen (mindestens 12 % des Brennwerts aus Protein). | VO (EU) Nr. 432/2012 | [Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025; Proteine)](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820) (abgerufen 2026-10-29) |
+| zugelassen | Proteine tragen zur Erhaltung von Muskelmasse bei. | Wie oben: nur bei Lebensmitteln, die als „Proteinquelle“ gelten dürfen. | VO (EU) Nr. 432/2012 | [Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025; Proteine)](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820) (abgerufen 2026-10-29) |
+| zugelassen | Proteine tragen zur Erhaltung normaler Knochen bei. | Wie oben: nur bei Lebensmitteln, die als „Proteinquelle“ gelten dürfen. | VO (EU) Nr. 432/2012 | [Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025; Proteine)](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820) (abgerufen 2026-10-29) |
 | zugelassen | „Proteinquelle“ (nährwertbezogene Angabe). | Zulässig nur, wenn mindestens 12 % des Brennwerts auf Protein entfallen. „Hoher Proteingehalt“: mindestens 20 %. | VO (EG) Nr. 1924/2006, Anhang | [Verordnung (EG) Nr. 1924/2006 – nährwert- und gesundheitsbezogene Angaben (Anhang: Proteinquelle, hoher Proteingehalt; Ursprungsfassung)](https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32006R1924) (abgerufen 2026-10-28) |
 
 ## C. Studien
@@ -183,4 +186,5 @@ In der EU sind für Protein drei gesundheitsbezogene Aussagen zugelassen: Protei
 | Bulk Pure Whey Protein (Vanille, 1 kg) | 1000 g | 71 g | 37,99 € (Aktion) | 5,35 € | 43,99 € → 6,20 € | 2026-10-29 |
 | ESN Designer Whey Protein (Vanilla Milk, 908 g) | 908 g | 75 g | 47,90 € | 7,03 € | 47,90 € → 7,03 € | 2026-10-28 |
 | Myprotein Impact Whey Protein (Vanille, 900 g) | 900 g | 72 g | 35,99 € (Aktion) | 5,55 € | 44,99 € → 6,94 € | 2026-10-29 |
+| Optimum Nutrition Gold Standard 100% Whey (French Vanilla, 900 g) | 900 g | 79 g | 49,99 € | 7,03 € | 49,99 € → 7,03 € | 2026-10-29 |
 

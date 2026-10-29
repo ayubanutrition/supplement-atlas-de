@@ -28,4 +28,6 @@ Erst wenn `pnpm release-check` keine Blocker mehr meldet:
 4. Rückweg: letzte gute Deploy-Version in Cloudflare behalten; Git-Commit ist reproduzierbar (`pnpm install --frozen-lockfile`).
 
 ## Nach dem Start
+**Neu bauen:** Die Seite ist statisch; „aktuell“, „Aktion beendet“ und Preisalter werden beim Build berechnet. Mindestens alle 30 Tage und nach jedem Aktionsende neu bauen (Cloudflare: Deploy-Hook oder leerer Commit). Zur Sicherheit blendet die Seite nach 30 Tagen ohne Neubau im Browser einen Hinweis ein; `pnpm release-check` meldet auslaufende Aktionen 7 Tage im Voraus.
+
 Preise alle 30 Tage prüfen, Änderungen im Änderungsprotokoll der Produktseite vermerken, falsche Daten sofort zurückziehen (Status `draft`).

@@ -134,6 +134,15 @@ describe('loadDataset', () => {
     expect(errors.join()).toMatch(/kaputt\.json label\.retrievedAt/);
   });
 
+  it('meldet ungültiges JSON mit Dateipfad statt abzustürzen', () => {
+    const root = mkdtempSync(join(tmpdir(), 'atlas-'));
+    mkdirSync(join(root, 'products'));
+    writeFileSync(join(root, 'products', 'komma.json'), '{ "id": "x", }');
+    writeFileSync(join(root, 'sources.json'), '[]');
+    const { errors } = loadDataset(root);
+    expect(errors.join()).toMatch(/komma\.json: ungültiges JSON/);
+  });
+
   it('die echten Projektdaten sind gültig', () => {
     const { errors } = loadDataset();
     expect(errors).toEqual([]);

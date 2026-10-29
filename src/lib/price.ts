@@ -10,7 +10,8 @@ export const STALE_AFTER_DAYS = 30;
 export function parseDecimal(input: string | number | null | undefined): number | null {
   if (input === null || input === undefined) return null;
   if (typeof input === 'number') return Number.isFinite(input) ? input : null;
-  let s = input.trim().replace(/\s|€|g/gi, '');
+  // Nur führende/nachgestellte Einheiten und Leerraum entfernen, nie Zeichen mitten im Text.
+  let s = input.trim().replace(/^€\s*/, '').replace(/\s*(€|g)$/i, '').replace(/\s+/g, '');
   if (s === '') return null;
   const hasComma = s.includes(',');
   const hasDot = s.includes('.');
@@ -20,6 +21,9 @@ export function parseDecimal(input: string | number | null | undefined): number 
     else s = s.replace(/,/g, '');
   } else if (hasComma) {
     s = s.replace(',', '.');
+  } else if (/^[1-9]\d{0,2}(\.\d{3})+$/.test(s)) {
+    // Deutsche Tausenderpunkte ("1.000" = 1000, "12.500" = 12500). "0.125" bleibt ein Dezimalwert.
+    s = s.replace(/\./g, '');
   }
   if (!/^-?\d+(\.\d+)?$/.test(s)) return null;
   const n = Number(s);
@@ -28,7 +32,8 @@ export function parseDecimal(input: string | number | null | undefined): number 
 
 /** Euro → Cent, kaufmännisch gerundet. */
 export function eurToCents(eur: number): number {
-  return Math.round((eur + Number.EPSILON) * 100);
+  // toPrecision beseitigt Gleitkomma-Reste (10,075 × 100 = 1007,4999…) vor dem Runden.
+  return Math.round(Number((eur * 100).toPrecision(12)));
 }
 
 /**

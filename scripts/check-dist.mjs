@@ -6,6 +6,7 @@
 import { readdirSync, readFileSync, statSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { loadDataset } from '../src/lib/load.ts';
+import { CATEGORIES } from '../src/lib/categories.ts';
 
 const root = 'dist';
 const walk = (d) => readdirSync(d).flatMap((f) => (statSync(join(d, f)).isDirectory() ? walk(join(d, f)) : [join(d, f)]));
@@ -16,6 +17,7 @@ const indexing = process.env.PUBLIC_INDEXING === 'true' && Boolean(process.env.S
 
 const urlOf = (f) => '/' + relative(root, f).replace(/index\.html$/, '').replace(/\.html$/, '');
 const known = new Set(htmlFiles.map(urlOf));
+const assets = new Set(files.filter((f) => !f.endsWith('.html')).map((f) => '/' + relative(root, f)));
 const ids = new Map(htmlFiles.map((f) => [urlOf(f), new Set([...readFileSync(f, 'utf8').matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]))]));
 const titles = new Map();
 
@@ -37,10 +39,23 @@ for (const f of htmlFiles) {
   for (const m of html.matchAll(/<a [^>]*href="([^"]+)"/g)) {
     const href = m[1];
     if (/^(https?:|mailto:|tel:)/.test(href)) continue;
-    const [path, hash] = href.split('#');
-    const target = path === '' ? u : path;
-    if (!known.has(target)) errors.push(`${u}: toter Link ${href}`);
-    else if (hash && !ids.get(target)?.has(hash)) errors.push(`${u}: Anker fehlt ${href}`);
+    const [pathAndQuery, hash] = href.split('#');
+    let path = pathAndQuery.split('?')[0];
+    if (path === '') {
+      // Nur-Anker-Link auf derselben Seite
+      if (hash && !ids.get(u)?.has(hash)) errors.push(`${u}: Anker fehlt #${hash}`);
+      continue;
+    }
+    const target = path;
+    const last = target.split('/').pop();
+    if (last.includes('.')) {
+      // Datei-Link (Asset, XML, PDF): muss im Output existieren
+      if (!assets.has(target) && !known.has(target)) errors.push(`${u}: toter Datei-Link ${href}`);
+      continue;
+    }
+    const normalized = target.endsWith('/') ? target : target + '/'; // trailingSlash: 'always' leitet um
+    if (!known.has(normalized)) errors.push(`${u}: toter Link ${href}`);
+    else if (hash && !ids.get(normalized)?.has(hash)) errors.push(`${u}: Anker fehlt ${href}`);
   }
 }
 
@@ -53,6 +68,15 @@ if (!indexing) {
 const { data } = loadDataset();
 for (const p of data.products.filter((x) => x.status === 'draft')) if (known.has(`/produkte/${p.id}/`)) errors.push(`Entwurf hat Seite: /produkte/${p.id}/`);
 for (const p of data.products.filter((x) => x.status === 'published')) if (!known.has(`/produkte/${p.id}/`)) errors.push(`Veröffentlichtes Produkt ohne Seite: ${p.id}`);
+for (const d of data.duels.filter((x) => x.status === 'draft')) if (known.has(`/duell/${d.slug}/`)) errors.push(`Entwurf hat Seite: /duell/${d.slug}/`);
+for (const f of readdirSync('content/wirkstoffe').filter((x) => x.endsWith('.md'))) {
+  const fm = /^---\r?\n([\s\S]*?)\r?\n---/.exec(readFileSync(`content/wirkstoffe/${f}`, 'utf8'))?.[1] ?? '';
+  const status = /^status:\s*["']?(\w+)/m.exec(fm)?.[1];
+  const sid = /^substanceId:\s*["']?([\w-]+)/m.exec(fm)?.[1];
+  const cat = CATEGORIES.find((c) => c.substanceId === sid);
+  if (cat && status !== 'published' && known.has(`/wirkstoffe/${cat.slug}/`)) errors.push(`Entwurfsartikel hat Seite: /wirkstoffe/${cat.slug}/`);
+  if (cat && status === 'published' && !known.has(`/wirkstoffe/${cat.slug}/`)) errors.push(`Veröffentlichter Artikel ohne Seite: ${f}`);
+}
 if (!existsSync(join(root, '404.html'))) errors.push('404.html fehlt');
 
 if (errors.length) { console.error(`Output-Prüfung fehlgeschlagen (${errors.length}):\n  - ` + errors.join('\n  - ')); process.exit(1); }

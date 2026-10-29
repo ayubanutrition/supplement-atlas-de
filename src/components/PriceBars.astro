@@ -14,10 +14,10 @@ const max = Math.max(1, ...items.map((i) => i.cents ?? 0));
     <div class="bar-row" data-name={i.label} data-pay={i.sortPay ?? ""} data-reg={i.sortReg ?? ""}>
       <div class="bar-label">
         {i.href ? <a href={i.href}>{i.label}</a> : i.label}
-        {i.note && <div class="small muted">{i.note}</div>}
+        {i.note && i.cents !== null && <div class="small muted">{i.note}</div>}
       </div>
       {i.cents === null ? (
-        <div class="bar-na">nicht berechenbar – Angabe fehlt</div>
+        <div class="bar-na">{i.note ?? 'nicht berechenbar – Angabe fehlt'}</div>
       ) : (
         <div class="bar-cell">
           <div class="bar-track" aria-hidden="true">

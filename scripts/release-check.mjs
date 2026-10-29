@@ -7,16 +7,23 @@ import { priceFreshness } from '../src/lib/price.ts';
 
 const blockers = [];
 const infos = [];
-const today = new Date().toISOString().slice(0, 10);
+const today = new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Berlin' }).format(new Date());
 
 const { data, errors } = loadDataset();
 if (errors.length) blockers.push(`Datenprüfung fehlgeschlagen (${errors.length} Fehler) – pnpm validate`);
 
+// Frontmatter robust lesen: Anführungszeichen, leere Werte und "null" gelten als nicht gesetzt.
+const fmValue = (fm, key) => {
+  const m = new RegExp(`^${key}:[ \\t]*(.*)$`, 'm').exec(fm);
+  if (!m) return null;
+  const v = m[1].replace(/\s+#.*$/, '').trim().replace(/^(["'])(.*)\1$/, '$2').trim();
+  return v === '' || v.toLowerCase() === 'null' || v === '~' ? null : v;
+};
 for (const f of readdirSync('content/wirkstoffe').filter((x) => x.endsWith('.md'))) {
-  const fm = readFileSync(`content/wirkstoffe/${f}`, 'utf8').split('---')[1] ?? '';
-  const status = /^status:\s*(\w+)/m.exec(fm)?.[1];
-  const reviewed = /^reviewedBy:\s*(.+)$/m.exec(fm)?.[1]?.trim();
-  if (status === 'published' && (!reviewed || reviewed === 'null')) blockers.push(`Fachliche Prüfung fehlt: content/wirkstoffe/${f} (reviewedBy)`);
+  const fm = /^---\r?\n([\s\S]*?)\r?\n---/.exec(readFileSync(`content/wirkstoffe/${f}`, 'utf8'))?.[1] ?? '';
+  const status = fmValue(fm, 'status');
+  if (status !== 'published' && status !== 'draft') blockers.push(`content/wirkstoffe/${f}: status fehlt oder ungültig (${status})`);
+  if (status === 'published' && !fmValue(fm, 'reviewedBy')) blockers.push(`Fachliche Prüfung fehlt: content/wirkstoffe/${f} (reviewedBy)`);
 }
 
 const op = loadOperator();
@@ -28,11 +35,13 @@ if (!process.env.SITE_URL) blockers.push('SITE_URL nicht gesetzt (Domain steht n
 if (process.env.PUBLIC_INDEXING !== 'true') infos.push('PUBLIC_INDEXING ist nicht „true“ (Vorschau-Modus, gewollt bis zur Freigabe)');
 if (!existsSync('wrangler.jsonc')) blockers.push('wrangler.jsonc fehlt');
 
-const stale = data.products.filter((p) => p.status === 'published').flatMap((p) => p.prices.filter((x) => priceFreshness(x.observedAt, today) === 'erneut-pruefen').map(() => p.id));
+const latestObs = (p) => [...p.prices].sort((a, b) => b.observedAt.localeCompare(a.observedAt))[0];
+const stale = data.products.filter((p) => p.status === 'published' && latestObs(p) && priceFreshness(latestObs(p).observedAt, today) === 'erneut-pruefen').map((p) => p.id);
 if (stale.length) blockers.push(`Preise älter als 30 Tage (neu erfassen): ${[...new Set(stale)].join(', ')}`);
-const expired = data.products.filter((p) => p.status === 'published').flatMap((p) => p.prices.filter((x) => x.saleEndsAt && x.saleEndsAt < today).map(() => p.id));
+const expired = data.products.filter((p) => p.status === 'published' && latestObs(p)?.saleEndsAt && latestObs(p).saleEndsAt < today).map((p) => p.id);
 if (expired.length) blockers.push(`Aktionen laut Anbieter beendet (Preis neu erfassen): ${[...new Set(expired)].join(', ')}`);
-const soon = data.products.filter((p) => p.status === 'published').flatMap((p) => p.prices.filter((x) => x.saleEndsAt && x.saleEndsAt >= today && x.saleEndsAt <= new Date(Date.now() + 7 * 864e5).toISOString().slice(0, 10)).map((x) => `${p.id} (bis ${x.saleEndsAt})`));
+const in7 = new Date(Date.now() + 7 * 864e5).toISOString().slice(0, 10);
+const soon = data.products.filter((p) => p.status === 'published' && latestObs(p)?.saleEndsAt && latestObs(p).saleEndsAt >= today && latestObs(p).saleEndsAt <= in7).map((p) => `${p.id} (bis ${latestObs(p).saleEndsAt})`);
 if (soon.length) infos.push(`Aktionen laufen innerhalb von 7 Tagen aus: ${soon.join(', ')}`);
 const draftArticles = readdirSync('content/wirkstoffe').filter((f) => f.endsWith('.md') && /^status:\s*draft/m.test(readFileSync(`content/wirkstoffe/${f}`, 'utf8').split('---')[1] ?? ''));
 if (draftArticles.length) infos.push(`Artikel im Entwurf (werden nicht gezeigt): ${draftArticles.join(', ')}`);

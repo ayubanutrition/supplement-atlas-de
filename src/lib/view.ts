@@ -26,8 +26,9 @@ export interface ProductView {
   latest: PriceView | null;
 }
 
+/** Heutiges Datum in Berlin (YYYY-MM-DD), nicht UTC: um Mitternacht zählt sonst der falsche Tag. */
 export function today(): string {
-  return new Date().toISOString().slice(0, 10);
+  return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Berlin' }).format(new Date());
 }
 
 /** Wirkstoffmenge je Packung in g: Gesamtmenge, sonst Füllmenge × Anteil. */
@@ -44,7 +45,8 @@ export function priceView(p: Product, obs: PriceObservation, asOf = today()): Pr
     salePerBasis: obs.salePriceCents === null ? null : pricePer(obs.salePriceCents, active, basis),
     regularPerGram: pricePer(obs.regularPriceCents, active, 1),
     payableCents: obs.salePriceCents ?? obs.regularPriceCents,
-    payablePerBasis: pricePer(obs.salePriceCents ?? obs.regularPriceCents, active, basis),
+    // Abgelaufene Aktion: kein gültiger Preis mehr (der Streichpreis ist kein belegter Normalpreis).
+    payablePerBasis: obs.saleEndsAt && obs.saleEndsAt < asOf && obs.salePriceCents !== null ? null : pricePer(obs.salePriceCents ?? obs.regularPriceCents, active, basis),
     isSale: obs.salePriceCents !== null,
     saleExpired: Boolean(obs.saleEndsAt && obs.saleEndsAt < asOf),
     freshness: Boolean(obs.saleEndsAt && obs.saleEndsAt < asOf) ? 'erneut-pruefen' : priceFreshness(obs.observedAt, asOf),

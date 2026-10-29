@@ -20,7 +20,13 @@ function readJson(path: string): unknown {
 
 function parseFile<S extends z.ZodType>(schema: S, path: string, errors: string[]): z.infer<S>[] {
   if (!existsSync(path)) return [];
-  const raw = readJson(path);
+  let raw: unknown;
+  try {
+    raw = readJson(path);
+  } catch (e) {
+    errors.push(`${path}: ungültiges JSON (${(e as Error).message})`);
+    return [];
+  }
   const list = Array.isArray(raw) ? raw : [raw];
   const out: z.infer<S>[] = [];
   list.forEach((item, i) => {

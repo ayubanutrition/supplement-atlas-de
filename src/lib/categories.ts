@@ -29,7 +29,7 @@ export const CATEGORIES: Category[] = [
     basisLabel: '100 g',
     calculatorPath: '/rechner/kreatinpreis/',
     basisNote:
-      'Alle erfassten Produkte bestehen laut Anbieter zu 100 % aus Kreatin-Monohydrat, deshalb entspricht der Preis pro 100 g Pulver dem Preis pro 100 g Kreatin-Monohydrat.',
+      'Bei Pulvern aus reinem Kreatin-Monohydrat entspricht der Preis pro 100 g Pulver dem Preis pro 100 g Kreatin-Monohydrat; bei Mischungen rechnen wir mit dem Monohydrat-Anteil laut Etikett. Den Anteil je Produkt zeigt die Tabelle.',
   },
   {
     substanceId: 'whey-protein',
@@ -53,7 +53,7 @@ export const CATEGORIES: Category[] = [
     basisLabel: '10 g',
     calculatorPath: '/rechner/omega3preis/',
     basisNote:
-      'Fischöl-Kapseln unterscheiden sich stark im Gehalt an EPA und DHA. Darum rechnen wir den Preis auf 10 g EPA+DHA laut Etikett um (Summe aus EPA und DHA je Kapsel × Kapselzahl), nicht auf Kapseln oder Fischöl-Menge. Die erfassten Packungen unterscheiden sich stark in der Kapselzahl (60 bis 365); größere Packungen sind je Gramm meist deutlich günstiger, auch innerhalb einer Marke.',
+      'Fischöl-Kapseln unterscheiden sich stark im Gehalt an EPA und DHA. Darum rechnen wir den Preis auf 10 g EPA+DHA laut Etikett um (Summe aus EPA und DHA je Kapsel × Kapselzahl), nicht auf Kapseln oder Fischöl-Menge. Die Kapselzahl der Packungen unterscheidet sich; das kann den Preis je Gramm stark beeinflussen, auch innerhalb einer Marke (siehe Hinweise zu den Produkten).',
   },
 ];
 

@@ -118,6 +118,7 @@ describe('Aktionsende', () => {
     const after = productView(data, p, '2026-10-31').latest!;
     expect(after.saleExpired).toBe(true);
     expect(after.freshness).toBe('erneut-pruefen');
+    expect(after.payablePerBasis).toBeNull(); // abgelaufene Aktion zählt nicht als gültiger Preis
     expect(priceNote(after)).toBe('Aktion laut Anbieter beendet – erneut prüfen');
   });
   it('ohne Enddatum: „Ende nicht angegeben“; ohne Aktion: „regulärer Preis“', () => {

@@ -18,6 +18,18 @@ describe('parseDecimal', () => {
     expect(parseDecimal(' 24,90 € ')).toBe(24.9);
     expect(parseDecimal('500 g')).toBe(500);
   });
+  it('liest deutsche Tausenderpunkte, aber keine Dezimalwerte als Tausender', () => {
+    expect(parseDecimal('1.000')).toBe(1000);
+    expect(parseDecimal('12.500')).toBe(12500);
+    expect(parseDecimal('1.000.000')).toBe(1000000);
+    expect(parseDecimal('0.125')).toBe(0.125);
+    expect(parseDecimal('1.5')).toBe(1.5);
+    expect(parseDecimal('1000 g')).toBe(1000);
+  });
+  it('verwirft Zeichen mitten im Text', () => {
+    expect(parseDecimal('2g5')).toBeNull();
+    expect(parseDecimal('1 000')).toBe(1000);
+  });
   it('liefert null für leere oder ungültige Eingaben', () => {
     expect(parseDecimal('')).toBeNull();
     expect(parseDecimal('   ')).toBeNull();
@@ -38,6 +50,8 @@ describe('eurToCents', () => {
     expect(eurToCents(19.99)).toBe(1999);
     expect(eurToCents(1.005)).toBe(101);
     expect(eurToCents(0.1 + 0.2)).toBe(30);
+    expect(eurToCents(10.075)).toBe(1008);
+    expect(eurToCents(2.675)).toBe(268);
   });
 });
 

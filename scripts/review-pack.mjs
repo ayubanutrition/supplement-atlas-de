@@ -26,6 +26,7 @@ for (const f of readdirSync('content/wirkstoffe').filter((x) => x.endsWith('.md'
   const sid = /^substanceId:\s*(.+)$/m.exec(fm)[1].trim();
   const cat = CATEGORIES.find((c) => c.substanceId === sid);
   const ev = data.evidence.find((e) => e.substanceId === sid);
+  if (!cat || !ev) { out.push('---', '', `# ${f}`, '', `**Übersprungen:** ${!cat ? 'keine Kategorie-Konfiguration' : 'keine Evidenzdatei'} für ${sid}.`, ''); continue; }
   out.push(`---`, '', `# ${cat.name}${/^status:\s*draft/m.test(fm) ? ' (Artikel im ENTWURF – noch nicht zur Veröffentlichung vorgesehen)' : ''}`, '', '## A. Artikeltext (zu prüfen)', '', `Kurzantwort: ${/^summary:\s*"(.*)"$/m.exec(fm)?.[1] ?? ''}`, '', body.trim().replace(/^## /gm, '### '), '');
   out.push('## B. EU-Aussagen', '', '| Status | Wortlaut | Bedingungen | Rechtsgrundlage | Quelle |', '|---|---|---|---|---|');
   for (const c of ev.claims) out.push(`| ${c.status} | ${c.wording} | ${c.conditions} | ${c.regulation} | ${link(c.sourceId)} |`);
@@ -37,6 +38,7 @@ for (const f of readdirSync('content/wirkstoffe').filter((x) => x.endsWith('.md'
   out.push('', '## E. Preisvergleich (Zahlen nachrechnen)', '', `| Produkt | Packung | Wirkstoff (je 100 g bzw. je Packung) | Preis (ohne Code) | Pro ${cat.basisLabel} Wirkstoff | Streichpreis → pro ${cat.basisLabel} | Stand |`, '|---|---|---|---|---|---|---|');
   for (const p of data.products.filter((x) => x.substanceId === sid)) {
     const pr = [...p.prices].sort((a, b) => b.observedAt.localeCompare(a.observedAt))[0];
+    if (!pr) { out.push(`| ${p.name} (${p.variant})${p.status === 'draft' ? ' – ENTWURF' : ''} | – | – | keine Preisbeobachtung | – | – | – |`); continue; }
     const act = packActive(p);
     const pay = pr.salePriceCents ?? pr.regularPriceCents;
     out.push(`| ${p.name} (${p.variant})${p.status === 'draft' ? ' – ENTWURF' : ''} | ${p.netWeightG ?? '–'} g | ${p.activePer100g ?? (p.activeTotalG ?? '–')} g | ${formatEur(pay)}${pr.salePriceCents !== null ? ' (Aktion)' : ''} | ${formatEur(pricePer(pay, act, cat.basisG))} | ${formatEur(pr.regularPriceCents)} → ${formatEur(pricePer(pr.regularPriceCents, act, cat.basisG))} | ${pr.observedAt.slice(0, 10)} |`);

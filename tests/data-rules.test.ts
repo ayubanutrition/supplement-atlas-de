@@ -133,3 +133,14 @@ describe('loadDataset', () => {
     expect(errors).toEqual([]);
   });
 });
+
+describe('operator', () => {
+  it('meldet fehlende Pflichtangaben und ungültige E-Mail', async () => {
+    const { missingOperatorFields } = await import('../src/lib/operator.ts');
+    const empty = { name: null, legalForm: null, street: null, postalCodeCity: null, email: null, phone: null, representedBy: null, register: null, vatId: null, responsibleForContent: null, privacyReviewedBy: null };
+    expect(missingOperatorFields(empty)).toEqual(['name', 'street', 'postalCodeCity', 'email', 'responsibleForContent']);
+    const bad = { ...empty, name: 'X', street: 'S', postalCodeCity: 'P', responsibleForContent: 'Y', email: 'kein-mail' };
+    expect(missingOperatorFields(bad)).toEqual(['email (ungültig)']);
+    expect(missingOperatorFields({ ...bad, email: 'a@b.de' })).toEqual([]);
+  });
+});

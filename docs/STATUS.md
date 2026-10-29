@@ -10,8 +10,9 @@ Stand: 29.10.2026 · Branch `feat/m3-protein` (enthält M1/M2; Basis `main` @ 5a
   - Whey: 4 veröffentlichte Produkte (ESN, Myprotein, Bulk, Bodylab24), 2 Duelle. Vergleichbarkeitshinweise sichtbar (ESN/Bodylab24 sind Konzentrat-Isolat-Mischungen, Geschmack und Packung unterschiedlich, drei von vier Preisen sind Aktionen; Reihenfolge kippt zwischen Aktions- und Streichpreis).
   - Evidenz: Kreatin 8 Arbeiten + 3 EU-Aussagen; Protein 13 Arbeiten + 4 EU-Aussagen (Wortlaut aus Amtsblatt-Ursprungsfassungen); 51 dokumentierte Quellen.
   - Release-Technik: `wrangler.jsonc` (Workers Static Assets), `_headers` (CSP u. a., mit Testserver geprüft), `sitemap.xml` nur nach Freigabe, `noindex`/robots bis Freigabe.
-- Prüfungen: `pnpm build` = Datenprüfung + 34 Tests + 23 Seiten grün. Browser-QA (`scripts/qa-browser.cjs`, gegen Server mit echten Headern): alle internen Links 200, 404 korrekt, kein Überlauf bei 360 px, keine Konsolenfehler, keine axe-core-Befunde (WCAG 2.1 AA + Best Practice), beide Rechner korrekt. Screenshots 360/1280 px gesichtet.
-- Freigabesperre: Build mit `PUBLIC_INDEXING=true` bricht ab, solange ein Artikel kein `reviewedBy` hat.
+- Prüfungen: `pnpm build` = Datenprüfung + 35 Tests + 25 Seiten grün. Browser-QA (`scripts/qa-browser.cjs`, gegen Server mit echten Headern): alle internen Links 200, 404 korrekt, kein Überlauf bei 360 px, keine Konsolenfehler, keine axe-core-Befunde (WCAG 2.1 AA + Best Practice), beide Rechner korrekt. Screenshots 360/1280 px gesichtet.
+- Freigabesperren (alle getestet): Build mit `PUBLIC_INDEXING=true` bricht ab ohne `reviewedBy` am Artikel, ohne vollständiges Impressum (`data/operator.json`) und ohne geprüfte Datenschutzerklärung. `pnpm release-check` listet alle offenen Blocker; Schritt-für-Schritt-Anleitung in `docs/RELEASE.md`.
+- Pull Request (Entwurf): https://github.com/ayubanutrition/supplement-atlas-de/pull/1
 
 ## Entscheidungen
 - Preisbasis Kreatin = Kreatin-Monohydrat (Etiketten runden „davon Kreatin“ unterschiedlich); Whey = Protein laut Nährwerttabelle.
@@ -22,11 +23,11 @@ Stand: 29.10.2026 · Branch `feat/m3-protein` (enthält M1/M2; Basis `main` @ 5a
 
 ## Offen / Blocker (nur der Eigentümer kann das lösen)
 1. **Fachliche Prüfung** beider Artikel durch qualifizierte Person (`reviewedBy`) – ohne sie keine Indexierung.
-2. **Impressum, Datenschutz, Kontakt** (Betreiberangaben) fehlen; dürfen nicht erfunden werden.
+2. **Impressum/Kontakt:** `data/operator.json` mit echten Angaben füllen; **Datenschutz-Text** (Entwurf des technischen Ist-Zustands liegt vor) rechtlich prüfen lassen.
 3. **Domain/Marke** nicht geprüft, nichts gekauft. Cloudflare-Konto nicht verbunden (`wrangler.jsonc` liegt bereit; Build `pnpm build`, Ausgabe `dist`).
 4. Preise sind Momentaufnahmen vom 28./29.10.2026 und werden nach 30 Tagen als „erneut zu prüfen“ markiert; die Bulk-Aktion endet laut Shop am 03.11.2026.
 5. Quellenlücken: ESN ohne Zutatenliste (Kreatin); Prüfberichte/PDFs der Anbieter nicht geöffnet; Herstellerangaben zu Tests nicht verifiziert; konsolidierte EU-Fassung bei Protein-Claims nicht abgeglichen; More-Nutrition-Verfügbarkeit ungeklärt.
-6. `gh` CLI hat in der Cloud kein gültiges Token: Pull Request im Browser anlegen.
+6. `gh` ohne gültiges Token und GraphQL gesperrt; PR-Anlage über die REST-API funktioniert (`gh api repos/…/pulls`).
 
 ## Nächste Aufgabe
-Nach fachlicher Prüfung und Betreiberangaben: M4 (Cloudflare-Vorschau, Domain-Entscheidung mit konkreten Kosten, Freigabe). Parallel möglich: weitere Produkte erfassen, Rubrik kalibrieren (mind. 6 Produkte je Kategorie), Omega-3/Magnesium vorbereiten.
+Eigentümer: `docs/RELEASE.md` Schritte 1–3 (Prüfung, Impressum, Domain-/Cloudflare-Entscheidung). Danach M4: Vorschau prüfen, `pnpm release-check` ohne Blocker, Variablen setzen, veröffentlichen. Parallel möglich: weitere Produkte erfassen, Rubrik kalibrieren (mind. 6 Produkte je Kategorie), Omega-3/Magnesium vorbereiten.

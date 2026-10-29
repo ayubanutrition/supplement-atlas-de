@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import { loadOperator, missingOperatorFields } from '../lib/operator.ts';
+
+const op = loadOperator();
+const reviewed = Boolean(op.privacyReviewedBy);
+const complete = missingOperatorFields(op).length === 0 && reviewed;
+if (process.env.PUBLIC_INDEXING === 'true' && !complete) {
+  throw new Error('Datenschutzerklärung nicht freigegeben (Betreiberangaben unvollständig oder privacyReviewedBy fehlt).');
+}
+---
+<Base title="Datenschutz" description="Hinweise zur Verarbeitung personenbezogener Daten." noindex={!complete}>
+  <h1>Datenschutz</h1>
+  {!reviewed && <p class="note"><strong>Entwurf – rechtliche Prüfung ausstehend.</strong> Der folgende Text beschreibt den technischen Ist-Zustand der Seite und ersetzt keine Rechtsberatung. Er muss vor der Veröffentlichung geprüft und um die Angaben zum Hosting-Anbieter ergänzt werden.</p>}
+
+  <h2>Verantwortlicher</h2>
+  <p>{complete || op.name ? <>{op.name}, {op.street}, {op.postalCodeCity}, {op.email}</> : 'Wird mit den Betreiberangaben ergänzt.'}</p>
+
+  <h2>Was die Seite selbst verarbeitet</h2>
+  <ul>
+    <li>Die Seite setzt <strong>keine Cookies</strong>, nutzt <strong>kein Tracking</strong> und bindet <strong>keine externen Schriften, Skripte oder Bilder</strong> ein.</li>
+    <li>Der <a href="/rechner/">Preisrechner</a> rechnet vollständig im Browser. Eingaben werden weder gespeichert noch übertragen.</li>
+    <li>Es gibt keine Konten, Formulare, Kommentare oder Newsletter.</li>
+  </ul>
+
+  <h2>Server-Logdaten beim Hosting</h2>
+  <p>Beim Aufruf verarbeitet der Hosting-Anbieter technisch notwendige Verbindungsdaten (z. B. IP-Adresse, Zeitpunkt, abgerufene Seite), um die Seite auszuliefern und abzusichern. Anbieter, Rechtsgrundlage und Speicherdauer sind vor der Veröffentlichung nach dem tatsächlich gewählten Hosting zu ergänzen.</p>
+
+  <h2>Externe Links</h2>
+  <p>Links zu Anbieterseiten und Quellen führen auf fremde Websites; dort gelten deren Datenschutzhinweise.</p>
+
+  <h2>Ihre Rechte</h2>
+  <p>Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch und Beschwerde bei einer Aufsichtsbehörde. Details werden mit der rechtlichen Prüfung ergänzt.</p>
+</Base>

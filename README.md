@@ -15,6 +15,7 @@ Strategie: [CLAUDE_MASTER_HANDOFF.md](CLAUDE_MASTER_HANDOFF.md) · Aktueller Sta
 | `pnpm preview` | gebaute Seite lokal ausliefern |
 | `node scripts/serve-dist.cjs [port]` | `dist/` mit den Headern aus `public/_headers` ausliefern (wie Cloudflare) |
 | `node scripts/perf-sample.cjs [url]` | Mobil-Stichprobe: FCP, LCP, CLS, Transfergröße (gedrosselt) |
+| `node scripts/rubric-sim.mjs [kreatin\|whey-protein]` | interne Kalibrierung des Rubrik-Entwurfs (keine öffentlichen Noten) |
 | `pnpm release-check` / `pnpm review-pack` | offene Release-Blocker / Prüfpaket für die Fachprüfung |
 | `node scripts/qa-browser.cjs http://localhost:4321 [screenshotDir]` | Browser-QA: Links, 404, 360 px, axe-core, Rechner per Tastatur (benötigt Playwright) |
 

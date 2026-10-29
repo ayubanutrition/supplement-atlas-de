@@ -40,3 +40,24 @@ Geschmack, Löslichkeit, Verträglichkeit: nur mit tatsächlich durchgeführter,
 3. Randfälle testen: fehlende Angaben, Widersprüche, Aktion vs. Regulär, Marken-Rohstoff.
 4. Sensitivitätsprüfung: Ändert ein anderes Preis-Ankersystem die Reihenfolge?
 5. Fachliche Prüfung der Rubrik, dann auf /methodik/ veröffentlichen, erst danach Noten anzeigen.
+
+---
+
+## Kalibrierungsergebnis 29.10.2026 (`node scripts/rubric-sim.mjs [kreatin|whey-protein]`)
+
+Der Entwurf wurde auf den echten Daten simuliert (Kreatin n=7, Whey n=5). **Ergebnis: In dieser Form darf keine Note veröffentlicht werden.**
+
+| Befund | Zahl | Folge |
+|---|---|---|
+| Preisrang hängt von der Preisbasis ab (Aktionspreis vs. Streich-/Listenpreis) | Kreatin: 3 von 7 Produkten wechseln den Rang, Whey: **5 von 5** (Bodylab24 Rang 1 → 5) | Eine einzelne Preisnote ist instabil. Preis nur als Zahl je 100 g mit beiden Basen zeigen, nicht als 1–10. |
+| Preisachse bestraft Produkte mit Marken-Rohstoff | nu3 (Creapure) = 1/10, Weider (Creapure) = 3,4/10 | Preis und Produktmerkmal (Achse D) dürfen nicht ohne Gegengewicht in getrennten Noten stehen; sonst wirkt „teuer“ wie „schlecht“. |
+| Achse A (Zusammensetzung) unterscheidet bei Standardprodukten kaum | Whey: Spannweite 1 Punkt; bei Kreatin bewertet sie das Fehlen von Allergen- und Rohstoffangaben, nicht die Qualität der Dokumentation | Als Checkliste (✓ / – / unbekannt) zeigen statt als Note. Rohstoffherkunft gehört zu Achse D. |
+| Achse B vermischt „keine Angabe“ mit „schlecht“ | 3 von 7 (Kreatin) bzw. 1 von 5 (Whey) bekommen 1/10 nur wegen fehlender Angabe | Fehlende Angaben als „keine Angabe gefunden“ ohne Zahl. Keine Unterlagen wurden geöffnet; höchstens die Aussage „nennt akkreditiertes Labor“ ist belegbar. |
+| Relative Preisskala hängt von der Stichprobe ab | Neues Produkt verschiebt alle Noten | Entweder feste Ankerpreise je Kategorie oder keine Preisnote. |
+
+### Konsequenz (Rubrik v2, Vorschlag)
+1. **Keine 1–10-Noten zum Start.** Stattdessen: Preis je 100 g Wirkstoff (beide Basen, Rangänderung offen benennen), Checkliste zu Zusammensetzung und Prüfangaben (✓ / – / keine Angabe), Hinweis auf Marken-Rohstoff.
+2. Noten erst, wenn (a) die Rangfolge unter beiden Preisbasen stabil ist oder die Basis fest definiert und begründet ist, (b) Achsen unabhängig bewertet wurden und (c) eine Sensitivitätsprüfung vorliegt.
+3. Eigene Erhebungen (Geschmack, Löslichkeit) bleiben ausgeschlossen, solange sie nicht durchgeführt und beschrieben sind.
+
+Der Methodik-Text („keine Noten“) bleibt damit zutreffend. Die Kalibrierung ist ein internes Werkzeug: `scripts/rubric-sim.mjs`.

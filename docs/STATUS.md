@@ -20,7 +20,7 @@ Stand: 29.10.2026 · Branch `feat/m3-protein` (enthält M1/M2; Basis `main` @ 5a
 ## Entscheidungen
 - Preisbasis Kreatin = Kreatin-Monohydrat (Etiketten runden „davon Kreatin“ unterschiedlich); Whey = Protein laut Nährwerttabelle.
 - Anzeige = ohne Code zahlbarer Preis (Aktion, sonst regulär) plus Streichpreis; Versand daneben, nicht eingerechnet.
-- Keine Punktnoten, kein Testsieger. Rubrik nur als Entwurf: `docs/RUBRIK-ENTWURF.md`.
+- Keine Punktnoten, kein Testsieger. Rubrik nur als Entwurf: `docs/RUBRIK-ENTWURF.md`; Kalibrierung auf echten Daten (`scripts/rubric-sim.mjs`) ergab: Preisnote instabil (Whey: 5 von 5 Produkten wechseln den Rang je nach Preisbasis), Achsen A/B unterscheiden schlecht → Rubrik v2: keine 1–10-Noten zum Start, sondern Preiszahlen mit beiden Basen und Checklisten.
 - Systemschriften, kein Drittanbieter-Request. Abhängigkeiten gepinnt (astro 7.3.8, vitest 5.0.4, zod 4.6.7, axe-core 4.13.0).
 - Nicht abrufbar/nicht geeignet, bewusst weggelassen: Sunday Natural, HSN (Bot-Schutz, nicht umgangen), foodspring (Proxy-Sperre), Bulk-AGB (403), Rocka (500-g-Variante nicht lieferbar), Weider Whey (keine passende Größe).
 

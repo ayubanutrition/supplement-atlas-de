@@ -6,7 +6,7 @@ import { getDataset } from '../../lib/load.ts';
 import { published, type Duel } from '../../lib/schema.ts';
 import { formatEur } from '../../lib/price.ts';
 import { categoryBySubstance } from '../../lib/categories.ts';
-import { formatDate, productView } from '../../lib/view.ts';
+import { formatDate, productView, priceNote } from '../../lib/view.ts';
 
 // Nur ausdrücklich angelegte Duelle – keine automatisch erzeugten Paarungen.
 export function getStaticPaths() {
@@ -51,7 +51,7 @@ const asOf = [a, b].map((v) => v.latest?.obs.observedAt ?? '').sort().pop() ?? '
   <h2>Preis pro 100 g {cat.unit}</h2>
   <PriceBars
     caption="Ohne Code zahlbarer Preis am Erfassungstag, ohne Versand."
-    items={[a, b].map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.payablePer100 ?? null, note: v.latest?.isSale ? 'Aktionspreis' : 'regulärer Preis' }))}
+    items={[a, b].map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.payablePer100 ?? null, note: priceNote(v.latest) }))}
   />
   <p class="small muted">Mit regulärem bzw. Streichpreis: {a.product.name} {formatEur(a.latest?.regularPer100)}, {b.product.name} {formatEur(b.latest?.regularPer100)} pro 100 g. Versand kommt jeweils hinzu, wenn der Mindestbestellwert nicht erreicht wird.</p>
 

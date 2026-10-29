@@ -46,7 +46,8 @@
         "sourceId": "bulk-kreatin-produktseite"
       },
       "observedAt": "2026-10-28T23:57:23Z",
-      "sourceId": "bulk-kreatin-produktseite"
+      "sourceId": "bulk-kreatin-produktseite",
+      "saleEndsAt": "2026-11-03"
     }
   ],
   "status": "published",

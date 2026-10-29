@@ -26,5 +26,19 @@
     "b": "bodylab24-whey-protein-1000g",
     "question": "ESN Designer Whey oder Bodylab24 Whey: Was unterscheidet die beiden Konzentrat-Isolat-Mischungen?",
     "status": "published"
+  },
+  {
+    "slug": "esn-designer-whey-908g-vs-optimum-nutrition-gold-standard-whey-900g",
+    "a": "esn-designer-whey-908g",
+    "b": "optimum-nutrition-gold-standard-whey-900g",
+    "question": "ESN Designer Whey oder Optimum Nutrition Gold Standard: Was unterscheidet die beiden Whey-Mischungen?",
+    "status": "published"
+  },
+  {
+    "slug": "weider-pure-creatine-600g-vs-nu3-creatine-pulver-500g",
+    "a": "weider-pure-creatine-600g",
+    "b": "nu3-creatine-pulver-500g",
+    "question": "Weider Pure Creatine oder nu3 Creatine: Was unterscheidet die beiden Creapure-Pulver?",
+    "status": "published"
   }
 ]

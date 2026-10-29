@@ -47,6 +47,8 @@ export const PriceObservationSchema = z.object({
   regularPriceNote: z.string().nullable(),
   salePriceCents: z.number().int().nonnegative().nullable(),
   saleConditions: z.string().nullable(),
+  /** Enddatum der Aktion, falls der Anbieter eines nennt (YYYY-MM-DD). Danach gilt der Preis als abgelaufen. */
+  saleEndsAt: isoDate.nullable().default(null),
   shipping: z.object({
     note: z.string(),
     costCents: z.number().int().nonnegative().nullable(),
@@ -189,6 +191,7 @@ export function crossCheck(d: Dataset): string[] {
       needSrc(`${w} Versand`, pr.shipping.sourceId);
       if (pr.salePriceCents !== null && !pr.saleConditions)
         errors.push(`${w}: Aktionspreis ohne Bedingungen`);
+      if (pr.saleEndsAt && pr.salePriceCents === null) errors.push(`${w}: Aktionsende ohne Aktionspreis`);
     }
     if (p.status === 'published') {
       if (brand && brand.status !== 'published') errors.push(`${w}: veröffentlicht, Marke aber Entwurf`);

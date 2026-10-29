@@ -1,0 +1,58 @@
+{
+  "id": "natural-elements-kreatin-monohydrat-500g",
+  "brandId": "natural-elements",
+  "substanceId": "kreatin",
+  "name": "Natural Elements Kreatin Monohydrat Pulver",
+  "variant": "500 g (einzige Variante)",
+  "netWeightG": 500,
+  "activeDeclaredAs": "Kreatin-Monohydrat",
+  "activePer100g": 100,
+  "servingSizeG": 3,
+  "activePerServingG": 3,
+  "ingredients": "Kreatin Monohydrat",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": null,
+  "labTesting": {
+    "statement": "Wir lassen jede Charge von einem unabhängigen deutschen und akkreditierten Labor prüfen.",
+    "sourceId": "natural-elements-kreatin"
+  },
+  "label": {
+    "sourceId": "natural-elements-kreatin",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T01:03:49Z"
+  },
+  "labelNotes": [
+    "Der Anteil von 100 % Kreatin-Monohydrat je 100 g ergibt sich aus der Zutatenangabe bzw. Dosisangabe; die Dosis von 3 g wird auf der Seite als Menge je Portion genannt.",
+    "Die verlinkte Untersuchungsbescheinigung (PDF) haben wir nicht geöffnet; die Prüfaussage ist eine Herstellerangabe.",
+    "Kein Rohstoff und keine Allergenangabe auf der Seite gefunden. Optionales Abo (–10 %) nicht eingerechnet."
+  ],
+  "prices": [
+    {
+      "retailer": "naturalelements.de",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 1699,
+      "regularPriceNote": null,
+      "salePriceCents": null,
+      "saleConditions": null,
+      "shipping": {
+        "note": "3,50 € pauschal; kostenlos ab 50 € Bestellwert.",
+        "costCents": 350,
+        "freeFromCents": 5000,
+        "sourceId": "natural-elements-kreatin"
+      },
+      "observedAt": "2026-10-29T01:03:49Z",
+      "sourceId": "natural-elements-kreatin"
+    }
+  ],
+  "status": "published",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Erstaufnahme: Etikettangaben, Preis und Versand erfasst."
+    }
+  ]
+}

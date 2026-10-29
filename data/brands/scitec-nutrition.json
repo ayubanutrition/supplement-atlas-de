@@ -1,0 +1,14 @@
+{
+  "id": "scitec-nutrition",
+  "name": "Scitec Nutrition",
+  "legalProvider": {
+    "name": "BioTechUSA Kft. (Betreiber des Scitec Webshops)",
+    "address": "Huszti út 60., H-1033 Budapest, Ungarn",
+    "sourceId": "scitec-impressum"
+  },
+  "parentCompany": null,
+  "countries": [
+    "DE"
+  ],
+  "status": "draft"
+}

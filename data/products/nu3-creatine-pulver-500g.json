@@ -1,0 +1,60 @@
+{
+  "id": "nu3-creatine-pulver-500g",
+  "brandId": "nu3",
+  "substanceId": "kreatin",
+  "name": "nu3 Creatine Pulver",
+  "variant": "Geschmacksneutral, 500 g",
+  "netWeightG": 500,
+  "activeDeclaredAs": "Kreatin-Monohydrat",
+  "activePer100g": 100,
+  "servingSizeG": 3.5,
+  "activePerServingG": 3.5,
+  "ingredients": "Kreatin-Monohydrat (100 %)",
+  "rawMaterial": {
+    "name": "Creapure®",
+    "sourceId": "nu3-kreatin-shopapotheke"
+  },
+  "allergenNote": "Kann Spuren von glutenhaltigem Getreide, Soja, Ei und Milcheiweiß enthalten.",
+  "labTesting": {
+    "statement": null,
+    "sourceId": null
+  },
+  "label": {
+    "sourceId": "nu3-kreatin-shopapotheke",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T01:02:56Z"
+  },
+  "labelNotes": [
+    "Vergleichbarkeit: Marken-Rohstoff Creapure® laut Produktdetails; Verkauf über Shop Apotheke (nu3.de leitet dorthin um).",
+    "Der Anteil von 100 % Kreatin-Monohydrat je 100 g ergibt sich aus der Zutatenangabe bzw. Dosisangabe; die Nährwertspalte je 100 g fehlt.",
+    "Die Portionszahl nennt die Seite nicht.",
+    "Der Preis ist laut strukturierten Daten nur bis 30.10.2026 gültig."
+  ],
+  "prices": [
+    {
+      "retailer": "shop-apotheke.com",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 3899,
+      "regularPriceNote": "Als UVP durchgestrichen angezeigt, kein eigener Normalpreis des Shops.",
+      "salePriceCents": 3699,
+      "saleConditions": "–5 % gegenüber UVP laut Shop, kein Code; laut strukturierten Daten gültig bis 30.10.2026.",
+      "shipping": {
+        "note": "Versandkostenfrei laut Produktseite; unter 19 € Bestellwert 3,99 €.",
+        "costCents": 399,
+        "freeFromCents": 1900,
+        "sourceId": "shop-apotheke-versand"
+      },
+      "observedAt": "2026-10-29T01:02:56Z",
+      "sourceId": "nu3-kreatin-shopapotheke",
+      "saleEndsAt": "2026-10-30"
+    }
+  ],
+  "status": "published",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Erstaufnahme: Etikettangaben, Preis und Versand erfasst."
+    }
+  ]
+}

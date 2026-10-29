@@ -1,0 +1,57 @@
+{
+  "id": "scitec-100-whey-professional-1kg",
+  "brandId": "scitec-nutrition",
+  "substanceId": "whey-protein",
+  "name": "Scitec Nutrition 100% Whey Protein Professional",
+  "variant": "Geschmack nicht gewählt, Titel „1 kg“",
+  "netWeightG": 1000,
+  "activeDeclaredAs": "Protein",
+  "activePer100g": 73,
+  "servingSizeG": 30,
+  "activePerServingG": 22,
+  "ingredients": "Instant-Molkenproteine 85 % (Molkenproteinkonzentrat (Milch), Molkenproteinisolat (Milch); Emulgator Lecithine (Soja)), Aromen, Taurin 3,3 %, Joghurtpulver (Milch), L-Arginin 1,7 %, L-Glutamin 1,7 %, Speisesalz, Verdickungsmittel (Xanthan), Süßungsmittel (Acesulfam K, Sucralose), L-Leucin 0,3 %, Trennmittel (Siliciumdioxid), Bromelain 0,07 %, Papain 0,07 % (Zeile „Vanille“; je Sorte unterschiedlich).",
+  "rawMaterial": {
+    "name": null,
+    "sourceId": null
+  },
+  "allergenNote": "Hergestellt in einem Betrieb, in dem Milch, Eier, Soja, Erdnüsse, Schalenfrüchte, Sellerie, Fisch, Krebstiere, Weichtiere und Schwefeldioxid verarbeitet werden.",
+  "labTesting": {
+    "statement": null,
+    "sourceId": null
+  },
+  "label": {
+    "sourceId": "scitec-whey-produktseite",
+    "version": "2026-10-29",
+    "retrievedAt": "2026-10-29T01:07:53Z"
+  },
+  "labelNotes": [
+    "ENTWURF: Das Nettogewicht ist nicht eindeutig (Titel „1 kg“, Portionstabelle „30 Portionen (920 g)“), es ist kein Geschmack gewählt, und Versandkosten sowie Impressum-Text waren im Abruf nicht lesbar. Erst veröffentlichen, wenn Gewicht, Sorte und Versand geklärt sind.",
+    "Vergleichbarkeit: Mischung mit Isolat, zusätzlich Aminosäuren (Taurin, Glutamin, Arginin, Leucin) und Enzyme; die Nährwerttabelle gilt gemeinsam für alle Sorten."
+  ],
+  "prices": [
+    {
+      "retailer": "scitecshop.de",
+      "country": "DE",
+      "currency": "EUR",
+      "regularPriceCents": 3750,
+      "regularPriceNote": "Shop zeigt 37,50 €/kg; keine Aktion auf dieser Seite.",
+      "salePriceCents": null,
+      "saleConditions": null,
+      "shipping": {
+        "note": "Versandkosten und Gratisgrenze nicht lesbar (Infoseiten wurden nicht ausgeliefert).",
+        "costCents": null,
+        "freeFromCents": null,
+        "sourceId": null
+      },
+      "observedAt": "2026-10-29T01:07:53Z",
+      "sourceId": "scitec-whey-produktseite"
+    }
+  ],
+  "status": "draft",
+  "changelog": [
+    {
+      "date": "2026-10-29",
+      "note": "Entwurf angelegt; Gewicht, Sorte und Versand ungeklärt."
+    }
+  ]
+}

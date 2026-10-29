@@ -5,7 +5,7 @@ import PriceBars from '../../components/PriceBars.astro';
 import { getDataset } from '../../lib/load.ts';
 import { published } from '../../lib/schema.ts';
 import { CATEGORIES, type Category } from '../../lib/categories.ts';
-import { formatDate, publishedProducts } from '../../lib/view.ts';
+import { formatDate, publishedProducts, priceNote } from '../../lib/view.ts';
 
 export function getStaticPaths() {
   const d = getDataset();
@@ -38,7 +38,7 @@ const asOf = dates.length ? formatDate(dates[dates.length - 1]) : '–';
       label: v.product.name,
       href: `/produkte/${v.product.id}/`,
       cents: v.latest?.payablePer100 ?? null,
-      note: v.latest?.isSale ? 'Aktionspreis, Ende unbekannt' : 'regulärer Preis',
+      note: priceNote(v.latest),
     }))}
   />
   <PriceBars

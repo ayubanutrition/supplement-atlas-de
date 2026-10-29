@@ -12,6 +12,8 @@ export interface PriceView {
   payableCents: number;
   payablePer100: number | null;
   isSale: boolean;
+  /** Aktion laut Anbieter bereits beendet: Preis nicht mehr als aktuell zeigen. */
+  saleExpired: boolean;
   freshness: PriceFreshness;
 }
 
@@ -37,7 +39,8 @@ export function priceView(p: Product, obs: PriceObservation, asOf = today()): Pr
     payableCents: obs.salePriceCents ?? obs.regularPriceCents,
     payablePer100: pricePer(obs.salePriceCents ?? obs.regularPriceCents, active, 100),
     isSale: obs.salePriceCents !== null,
-    freshness: priceFreshness(obs.observedAt, asOf),
+    saleExpired: Boolean(obs.saleEndsAt && obs.saleEndsAt < asOf),
+    freshness: Boolean(obs.saleEndsAt && obs.saleEndsAt < asOf) ? 'erneut-pruefen' : priceFreshness(obs.observedAt, asOf),
   };
 }
 
@@ -71,4 +74,12 @@ export function formatDate(iso: string): string {
 export function formatGrams(g: number | null): string {
   if (g === null) return 'nicht angegeben';
   return `${new Intl.NumberFormat('de-DE', { maximumFractionDigits: 1 }).format(g)} g`;
+}
+
+/** Kurzhinweis zur Preisart für Balken und Tabellen. */
+export function priceNote(v: PriceView | null | undefined): string | undefined {
+  if (!v) return undefined;
+  if (!v.isSale) return 'regulärer Preis';
+  if (v.saleExpired) return 'Aktion laut Anbieter beendet – erneut prüfen';
+  return v.obs.saleEndsAt ? `Aktionspreis bis ${formatDate(v.obs.saleEndsAt)}` : 'Aktionspreis, Ende nicht angegeben';
 }

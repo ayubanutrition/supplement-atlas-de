@@ -46,7 +46,8 @@
         "sourceId": "bulk-whey-produktseite"
       },
       "observedAt": "2026-10-29T00:03:43Z",
-      "sourceId": "bulk-whey-produktseite"
+      "sourceId": "bulk-whey-produktseite",
+      "saleEndsAt": "2026-11-03"
     }
   ],
   "status": "published",

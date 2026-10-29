@@ -2,7 +2,7 @@
 // im Kommentar), damit Datenänderungen bewusst bestätigt werden müssen.
 import { describe, expect, it } from 'vitest';
 import { loadDataset } from '../src/lib/load.ts';
-import { productView, publishedProducts } from '../src/lib/view.ts';
+import { priceNote, productView, publishedProducts } from '../src/lib/view.ts';
 
 const { data } = loadDataset();
 const view = (id: string) => productView(data, data.products.find((p) => p.id === id)!, '2026-10-28');
@@ -35,6 +35,18 @@ describe('Kreatin-Preise (Stand 28.10.2026)', () => {
     expect(v.regularPer100).toBe(400); // 399,8 gerundet
   });
 
+  it('nu3: Aktion 36,99 € → 7,40 €/100 g; UVP 38,99 € → 7,80 €/100 g', () => {
+    const v = view('nu3-creatine-pulver-500g').latest!;
+    expect(v.payablePer100).toBe(740); // 739,8 gerundet
+    expect(v.regularPer100).toBe(780); // 779,8 gerundet
+  });
+  it('Natural Elements: 16,99 € / 500 g = 3,40 €/100 g', () => {
+    expect(view('natural-elements-kreatin-monohydrat-500g').latest!.payablePer100).toBe(340);
+  });
+  it('Weider: 36,99 € / 600 g = 6,17 €/100 g (616,5 Cent, kaufmännisch gerundet)', () => {
+    expect(view('weider-pure-creatine-600g').latest!.payablePer100).toBe(617);
+  });
+
   it('nur veröffentlichte Produkte erscheinen im Vergleich', () => {
     const ids = publishedProducts(data, 'kreatin', '2026-10-28').map((v) => v.product.id);
     expect(ids).toEqual([
@@ -42,6 +54,9 @@ describe('Kreatin-Preise (Stand 28.10.2026)', () => {
       'bulk-kreatin-monohydrat-500g',
       'esn-ultrapure-kreatin-500g',
       'myprotein-kreatin-monohydrat-500g',
+      'natural-elements-kreatin-monohydrat-500g',
+      'nu3-creatine-pulver-500g',
+      'weider-pure-creatine-600g',
     ]);
     expect(ids).not.toContain('more-nutrition-daily-creatine-250g');
   });
@@ -75,11 +90,40 @@ describe('Whey-Preise pro 100 g Protein (Stand 29.10.2026)', () => {
     expect(v.payablePer100).toBe(703);
     expect(v.isSale).toBe(false);
   });
+  it('Optimum Nutrition: 49,99 € / (900 g × 79 %) = 7,03 € (keine Aktion)', () => {
+    const v = view('optimum-nutrition-gold-standard-whey-900g').latest!;
+    expect(v.payablePer100).toBe(703); // 4999 / 711 g
+    expect(v.isSale).toBe(false);
+  });
+  it('Entwurf Scitec erscheint nicht im Vergleich', () => {
+    const ids = publishedProducts(data, 'whey-protein', '2026-10-29').map((v) => v.product.id);
+    expect(ids).toHaveLength(5);
+    expect(ids).not.toContain('scitec-100-whey-professional-1kg');
+  });
   it('Reihenfolge kippt je nach Preisbasis (Listenpreis vs. Aktion) – beides wird gezeigt', () => {
     const ids = ['bodylab24-whey-protein-1000g', 'bulk-pure-whey-1kg', 'myprotein-impact-whey-900g', 'esn-designer-whey-908g'];
     const byPayable = [...ids].sort((a, b) => view(a).latest!.payablePer100! - view(b).latest!.payablePer100!);
     const byRegular = [...ids].sort((a, b) => view(a).latest!.regularPer100! - view(b).latest!.regularPer100!);
     expect(byPayable[0]).toBe('bodylab24-whey-protein-1000g');
     expect(byRegular[0]).toBe('bulk-pure-whey-1kg');
+  });
+});
+
+describe('Aktionsende', () => {
+  it('nu3: Aktion bis 30.10.2026 – danach „beendet“ und erneut zu prüfen', () => {
+    const p = data.products.find((x) => x.id === 'nu3-creatine-pulver-500g')!;
+    const before = productView(data, p, '2026-10-30').latest!;
+    expect(before.saleExpired).toBe(false);
+    expect(priceNote(before)).toBe('Aktionspreis bis 30.10.2026');
+    const after = productView(data, p, '2026-10-31').latest!;
+    expect(after.saleExpired).toBe(true);
+    expect(after.freshness).toBe('erneut-pruefen');
+    expect(priceNote(after)).toBe('Aktion laut Anbieter beendet – erneut prüfen');
+  });
+  it('ohne Enddatum: „Ende nicht angegeben“; ohne Aktion: „regulärer Preis“', () => {
+    const noEnd = productView(data, data.products.find((x) => x.id === 'myprotein-kreatin-monohydrat-500g')!, '2026-10-30').latest!;
+    expect(priceNote(noEnd)).toBe('Aktionspreis, Ende nicht angegeben');
+    const reg = productView(data, data.products.find((x) => x.id === 'esn-ultrapure-kreatin-500g')!, '2026-10-30').latest!;
+    expect(priceNote(reg)).toBe('regulärer Preis');
   });
 });

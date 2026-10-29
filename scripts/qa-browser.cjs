@@ -81,6 +81,23 @@ const problems = [];
   const err = await kp.isVisible('#out-error');
   if (!err) problems.push('Rechner: ungültiger Anteil (120) zeigt keinen Fehler');
 
+  // Dunkelmodus und stark reduzierte Bewegung: axe (inkl. Kontrast) auf allen gefundenen Seiten
+  {
+    const dctx = await browser.newContext({ viewport: { width: 360, height: 800 }, colorScheme: 'dark', reducedMotion: 'reduce' });
+    const dp = await dctx.newPage();
+    for (const url of seen) {
+      await dp.goto(BASE + url, { waitUntil: 'load' });
+      await dp.addScriptTag({ content: AXE });
+      const dark = await dp.evaluate(async () => {
+        const r = await window.axe.run(document, { runOnly: ['wcag2a', 'wcag2aa', 'wcag21aa', 'best-practice'] });
+        return r.violations.map((v) => `${v.impact} ${v.id} (${v.nodes.length}×)`);
+      });
+      dark.forEach((a) => problems.push(`${url} [dunkel] axe: ${a}`));
+      if (SHOTS && ['/', '/vergleich/kreatin/'].includes(url)) await dp.screenshot({ path: path.join(SHOTS, `dark${url.replace(/\//g, '_') || '_'}.png`), fullPage: true });
+    }
+    await dctx.close();
+  }
+
   // Sortierschalter im Vergleich: Standard alphabetisch, per Tastatur auf Preis umstellbar
   const sp = await browser.newPage({ viewport: { width: 360, height: 800 } });
   await sp.goto(BASE + '/vergleich/whey-protein/');

@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../lib/categories.ts';
 
 interface Props {
   title: string;
@@ -14,9 +16,10 @@ const indexingAllowed = Boolean(Astro.site) && process.env.PUBLIC_INDEXING === '
 const robots = !indexingAllowed || noindex ? 'noindex, nofollow' : 'index, follow';
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : null;
 const path = Astro.url.pathname;
+// Navigation aus den veröffentlichten Artikeln: neue Kategorien erscheinen automatisch, Entwürfe nie.
+const live = new Set((await getCollection('wirkstoffe', (e) => e.data.status === 'published')).map((e) => e.data.substanceId));
 const nav = [
-  { href: '/wirkstoffe/kreatin/', label: 'Kreatin' },
-  { href: '/wirkstoffe/whey-protein/', label: 'Protein' },
+  ...CATEGORIES.filter((c) => live.has(c.substanceId)).map((c) => ({ href: `/wirkstoffe/${c.slug}/`, label: c.name })),
   { href: '/rechner/', label: 'Rechner' },
   { href: '/methodik/', label: 'Methodik' },
 ];

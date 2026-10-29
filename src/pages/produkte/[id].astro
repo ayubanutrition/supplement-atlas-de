@@ -26,14 +26,15 @@ const usedSources = [
   ...p.prices.flatMap((x) => [x.sourceId, x.shipping.sourceId]),
 ]
   .map(ref)
-  .filter((s) => s !== undefined);
+  .filter((s) => s !== undefined)
+  .filter((s, i, arr) => arr.findIndex((x) => x.id === s.id) === i); // jede Quelle einmal, wie in der Quellenliste
 const n = (id: string | null) => (id ? usedSources.findIndex((s) => s.id === id) + 1 : 0);
 const duels = published(d.duels).filter((x) => x.a === p.id || x.b === p.id);
 const substance = d.substances.find((s) => s.id === p.substanceId)!;
 const cat = categoryBySubstance(p.substanceId);
 ---
 <Base title={`${p.name} (${p.variant}) – Daten & Preis`} description={`${p.name} von ${brand.name}: Zutaten, ${p.activeDeclaredAs} je Portion, Preis pro 100 g und Quellen mit Abrufdatum.`}>
-  <p class="crumbs"><a href="/">Start</a> › <a href={`/wirkstoffe/${substance.id}/`}>{substance.name}</a> › Produkt</p>
+  <p class="crumbs"><a href="/">Start</a> › <a href={`/wirkstoffe/${cat.slug}/`}>{substance.name}</a> › Produkt</p>
   <h1>{p.name}</h1>
   <div class="meta-line">
     <span>Marke: {brand.name}</span>

@@ -15,14 +15,22 @@ export function getStaticPaths() {
 interface Props { duel: Duel }
 const { duel } = Astro.props;
 const d = getDataset();
-const [a, b] = [duel.a, duel.b].map((id) => productView(d, d.products.find((p) => p.id === id)!));
+const [a, b] = [duel.a, duel.b].map((id) => {
+  const prod = d.products.find((p) => p.id === id);
+  if (!prod || prod.status !== 'published') throw new Error(`Duell ${duel.slug}: Produkt ${id} fehlt oder ist nicht veröffentlicht`);
+  return productView(d, prod);
+});
 const cat = categoryBySubstance(a.product.substanceId);
-const pa = a.latest?.payablePerBasis ?? null;
-const pb = b.latest?.payablePerBasis ?? null;
-const cheaper = pa !== null && pb !== null && pa !== pb ? (pa < pb ? a : b) : null;
+// Nur frische, nicht abgelaufene Preise dürfen als „günstiger“ hervorgehoben werden (siehe Methodik).
+const usable = (v: typeof a) => v.latest !== null && v.latest.freshness === 'aktuell' && !v.latest.saleExpired && v.latest.payablePerBasis !== null;
+const pa = usable(a) ? a.latest!.payablePerBasis : null;
+const pb = usable(b) ? b.latest!.payablePerBasis : null;
+const rawDiff = pa !== null && pb !== null ? Math.abs(pa - pb) / Math.max(pa, pb) : 0;
+const diffPct = Math.round(rawDiff * 100);
+const cheaper = pa !== null && pb !== null && diffPct >= 1 ? (pa < pb ? a : b) : null;
 const pricier = cheaper === a ? b : a;
-const diffPct =
-  cheaper && pa !== null && pb !== null ? Math.round((Math.abs(pa - pb) / Math.max(pa, pb)) * 100) : null;
+const nearlyEqual = pa !== null && pb !== null && diffPct < 1;
+const labText = (v: typeof a) => (v.product.labTesting.statement ? `${v.brand.name} nennt Prüfhinweise` : `${v.brand.name} nennt keine konkreten Prüfhinweise`);
 const asOf = [a, b].map((v) => v.latest?.obs.observedAt ?? '').sort().pop() ?? '';
 ---
 <Base title={`${a.product.name} vs. ${b.product.name}`} description={`${a.product.name} und ${b.product.name} im direkten Vergleich: Preis pro ${cat.basisLabel}, Zutaten, Portion und Versand – mit Quellen.`}>
@@ -33,10 +41,12 @@ const asOf = [a, b].map((v) => v.latest?.obs.observedAt ?? '').sort().pop() ?? '
   <div class="answer">
     {cheaper ? (
       <p><strong>Beim Preis ohne Code war {cheaper.product.name} am {formatDate(asOf)} rund {diffPct} % günstiger</strong> ({formatEur(cheaper.latest!.payablePerBasis)} gegenüber {formatEur(pricier.latest!.payablePerBasis)} pro {cat.basisLabel} {cat.unit}){cheaper.latest!.isSale ? ', allerdings als zeitlich unbestimmte Aktion' : ''}.</p>
+    ) : nearlyEqual ? (
+      <p>Beim Preis ohne Code liegen beide am {formatDate(asOf)} praktisch gleichauf (weniger als 1 % Unterschied).</p>
     ) : (
-      <p>Ein Preisunterschied lässt sich derzeit nicht berechnen oder ist gleich.</p>
+      <p>Ein Preisvergleich ist derzeit nicht möglich: mindestens ein Preis ist älter als 30 Tage, die Aktion ist beendet oder nicht berechenbar. Die Preise stehen unten zur Ansicht.</p>
     )}
-    <p>Unterschiede gibt es bei den Angaben der Anbieter: {a.product.labTesting.statement ? `${a.brand.name} nennt externe Labortests` : `${a.brand.name} nennt keine konkreten Labortests`}, {b.product.labTesting.statement ? `${b.brand.name} ebenfalls` : `${b.brand.name} nennt für diese Variante keine`}. Geprüft haben wir das nicht.</p>
+    <p>Prüfhinweise der Anbieter: {labText(a)}; {labText(b)}. Geprüft haben wir das nicht.</p>
   </div>
 
   {[a, b].some((v) => v.product.labelNotes.some((n) => n.startsWith('Vergleichbarkeit:'))) && (

@@ -14,7 +14,7 @@ if (process.env.PUBLIC_INDEXING === 'true' && !complete) {
   {!reviewed && <p class="note"><strong>Entwurf – rechtliche Prüfung ausstehend.</strong> Der folgende Text beschreibt den technischen Ist-Zustand der Seite und ersetzt keine Rechtsberatung. Er muss vor der Veröffentlichung geprüft und um die Angaben zum Hosting-Anbieter ergänzt werden.</p>}
 
   <h2>Verantwortlicher</h2>
-  <p>{complete || op.name ? <>{op.name}, {op.street}, {op.postalCodeCity}, {op.email}</> : 'Wird mit den Betreiberangaben ergänzt.'}</p>
+  <p>{missingOperatorFields(op).length === 0 ? <>{op.name}, {op.street}, {op.postalCodeCity}, {op.email}</> : 'Wird mit den Betreiberangaben ergänzt.'}</p>
 
   <h2>Was die Seite selbst verarbeitet</h2>
   <ul>

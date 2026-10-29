@@ -4,9 +4,9 @@
 import { formatEur } from '../lib/price.ts';
 
 interface Item { label: string; href?: string; cents: number | null; note?: string; sortPay?: number | null; sortReg?: number | null }
-interface Props { items: Item[]; caption: string }
-const { items, caption } = Astro.props;
-const max = Math.max(1, ...items.map((i) => i.cents ?? 0));
+interface Props { items: Item[]; caption: string; /** Gemeinsames Maximum, wenn mehrere Grafiken dieselbe Skala teilen. */ max?: number }
+const { items, caption, max: sharedMax } = Astro.props;
+const max = Math.max(1, sharedMax ?? 0, ...items.map((i) => i.cents ?? 0));
 ---
 <figure class="bars" aria-label={caption}>
   <figcaption class="small muted">{caption}</figcaption>

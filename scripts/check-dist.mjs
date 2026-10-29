@@ -36,6 +36,12 @@ for (const f of htmlFiles) {
   const robots = /<meta name="robots" content="([^"]+)"/.exec(html)?.[1];
   if (!indexing && !/noindex/.test(robots ?? '')) errors.push(`${u}: Vorschau ohne noindex (${robots})`);
   if (/TESTFIXTURE|example\.invalid/.test(html)) errors.push(`${u}: Test-Fixture im Output`);
+  // Zitatnummern: [n] im Text muss auf den n-ten Eintrag der Quellenliste zeigen
+  const order = [...html.matchAll(/<li id="q-([^"]+)"/g)].map((m) => m[1]);
+  for (const m of html.matchAll(/href="#q-([^"]+)">\[(\d+)\]/g)) {
+    const n = Number(m[2]);
+    if (order[n - 1] !== m[1]) errors.push(`${u}: Zitat [${n}] zeigt auf "${m[1]}", Quellenliste hat dort "${order[n - 1] ?? 'nichts'}"`);
+  }
   for (const m of html.matchAll(/<a [^>]*href="([^"]+)"/g)) {
     const href = m[1];
     if (/^(https?:|mailto:|tel:)/.test(href)) continue;

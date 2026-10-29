@@ -15,7 +15,9 @@ interface Props { cat: Category }
 const { cat } = Astro.props;
 const d = getDataset();
 const views = publishedProducts(d, cat.substanceId);
-const duels = published(d.duels).filter((x) => views.some((v) => v.product.id === x.a));
+const duels = published(d.duels).filter((x) => views.some((v) => v.product.id === x.a) && views.some((v) => v.product.id === x.b));
+// Beide Balkengrafiken teilen dieselbe Skala (Streichpreise sind meist höher als Aktionspreise).
+const scaleMax = Math.max(1, ...views.flatMap((v) => [v.latest?.payablePerBasis ?? 0, v.latest?.regularPerBasis ?? 0]));
 const dates = views.flatMap((v) => (v.latest ? [v.latest.obs.observedAt] : [])).sort();
 const asOf = dates.length ? formatDate(dates[dates.length - 1]) : '–';
 ---
@@ -40,6 +42,7 @@ const asOf = dates.length ? formatDate(dates[dates.length - 1]) : '–';
     <span class="small muted" id="sort-status" aria-live="polite"></span>
   </div>
   <PriceBars
+    max={scaleMax}
     caption="Ohne Rabattcode zahlbarer Preis am Erfassungstag, ohne Versand. Gleiche Skala für alle Balken."
     items={views.map((v) => ({
       label: v.product.name,
@@ -51,6 +54,7 @@ const asOf = dates.length ? formatDate(dates[dates.length - 1]) : '–';
     }))}
   />
   <PriceBars
+    max={scaleMax}
     caption={`Zum Vergleich: regulärer bzw. vom Shop angegebener Streichpreis pro ${cat.basisLabel}.`}
     items={views.map((v) => ({ label: v.product.name, href: `/produkte/${v.product.id}/`, cents: v.latest?.regularPerBasis ?? null, sortPay: v.latest?.payablePerBasis ?? null, sortReg: v.latest?.regularPerBasis ?? null }))}
   />

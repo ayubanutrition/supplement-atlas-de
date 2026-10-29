@@ -1,0 +1,17 @@
+{
+  "id": "magnesium",
+  "name": "Magnesium",
+  "synonyms": [
+    "Magnesiumcitrat",
+    "Magnesiumglycinat",
+    "Magnesiumbisglycinat",
+    "Magnesiumoxid"
+  ],
+  "forms": [
+    "Magnesiumcitrat",
+    "Magnesiumglycinat",
+    "Magnesiumoxid"
+  ],
+  "status": "draft",
+  "updatedAt": "2026-10-29"
+}

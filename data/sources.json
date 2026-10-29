@@ -826,5 +826,221 @@
     "url": "https://naturalelements.de/products/omega-3-fischol-kapseln",
     "retrievedAt": "2026-10-29T01:24:40Z",
     "note": "Die Variante mit 180 Kapseln hat widersprüchliche Seitentexte und wird nicht verwendet."
+  },
+  {
+    "id": "vo-432-2012-magnesium",
+    "kind": "regulation",
+    "title": "Verordnung (EU) Nr. 432/2012 – Liste zulässiger gesundheitsbezogener Angaben (konsolidierte Fassung vom 20.08.2025; Magnesium)",
+    "publisher": "Europäische Kommission, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02012R0432-20250820",
+    "retrievedAt": "2026-10-29",
+    "note": "Wortlaut der Magnesium-Angaben aus der amtlichen Fassung des Amts für Veröffentlichungen. Konsolidierte Fassungen haben keine Rechtswirkung; verbindlich ist das Amtsblatt."
+  },
+  {
+    "id": "vo-1169-2011-nrv",
+    "kind": "regulation",
+    "title": "Verordnung (EU) Nr. 1169/2011, Anhang XIII Teil A (Nährstoffbezugswerte; Magnesium 375 mg; konsolidierte Fassung vom 01.04.2025)",
+    "publisher": "Europäisches Parlament und Rat, Amtsblatt der EU",
+    "url": "https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:02011R1169-20250401",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "efsa-mg-referenzwerte-2015",
+    "kind": "authority",
+    "title": "EFSA: Referenzwerte für Magnesium (Adäquate Zufuhr; Pressemeldung 28.07.2015)",
+    "publisher": "Europäische Behörde für Lebensmittelsicherheit (EFSA)",
+    "url": "https://www.efsa.europa.eu/en/press/news/150728",
+    "retrievedAt": "2026-10-29",
+    "note": "Nur die Pressemeldung wurde gelesen, nicht das Gutachten."
+  },
+  {
+    "id": "scf-2001-magnesium-ul",
+    "kind": "authority",
+    "title": "SCF: Opinion on the Tolerable Upper Intake Level of Magnesium (SCF/CS/NUT/UPPLEV/54, 11.10.2001)",
+    "publisher": "Wissenschaftlicher Lebensmittelausschuss der EU (SCF)",
+    "url": "https://ec.europa.eu/food/fs/sc/scf/out105_en.pdf",
+    "retrievedAt": "2026-10-29",
+    "note": "Wortlaut im PDF gelesen. EFSA hat den Wert laut DGE und BfR übernommen; das EFSA-Dokument selbst wurde nicht geöffnet."
+  },
+  {
+    "id": "bfr-009-2021-magnesium",
+    "kind": "authority",
+    "title": "BfR: Höchstmengenvorschläge für Magnesium in Lebensmitteln einschließlich Nahrungsergänzungsmitteln (Stellungnahme 009/2021)",
+    "publisher": "Bundesinstitut für Risikobewertung (BfR)",
+    "url": "https://www.bfr.bund.de/cm/343/hoechstmengenvorschlaege-fuer-magnesium-in-lebensmitteln-inklusive-nahrungsergaenzungsmitteln.pdf",
+    "retrievedAt": "2026-10-29",
+    "note": "Eine neuere Fassung wurde nicht gesucht."
+  },
+  {
+    "id": "dge-faq-magnesium-2022",
+    "kind": "authority",
+    "title": "DGE: Fragen und Antworten zu Magnesium (2022)",
+    "publisher": "Deutsche Gesellschaft für Ernährung (DGE)",
+    "url": "https://www.dge.de/fileadmin/dok/gesunde-ernaehrung/faq/DGE-FAQ-Magnesium-2022.pdf",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-32956536",
+    "kind": "study",
+    "title": "Magnesium for skeletal muscle cramps (Cochrane, 2020)",
+    "publisher": "Cochrane Database Syst Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32956536/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-27402922",
+    "kind": "study",
+    "title": "Zhang et al. (2016): Magnesium supplementation and blood pressure – meta-analysis of 34 RCTs",
+    "publisher": "Hypertension",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27402922/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-28724644",
+    "kind": "study",
+    "title": "Magnesium and blood pressure in insulin resistance, prediabetes or chronic diseases – meta-analysis (2017)",
+    "publisher": "Am J Clin Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28724644/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-16856052",
+    "kind": "study",
+    "title": "Magnesium supplementation for essential hypertension in adults (Cochrane, 2006)",
+    "publisher": "Cochrane Database Syst Rev",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16856052/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-33865376",
+    "kind": "study",
+    "title": "Oral magnesium for insomnia in older adults – systematic review and meta-analysis (2021)",
+    "publisher": "BMC Complement Med Ther",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/33865376/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-42661485",
+    "kind": "study",
+    "title": "Magnesium supplementation for sleep in adults – systematic review of RCTs (2026)",
+    "publisher": "J Diet Suppl",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/42661485/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-40918053",
+    "kind": "study",
+    "title": "Magnesium bisglycinate in healthy adults reporting poor sleep – randomized trial (2025)",
+    "publisher": "Nat Sci Sleep",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40918053/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-32503201",
+    "kind": "study",
+    "title": "The role and the effect of magnesium in mental disorders – systematic review (2020)",
+    "publisher": "Nutrients",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32503201/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-28445426",
+    "kind": "study",
+    "title": "Magnesium supplementation and subjective anxiety and stress – systematic review (2017)",
+    "publisher": "Nutrients",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28445426/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-28654669",
+    "kind": "study",
+    "title": "Role of magnesium supplementation in the treatment of depression – randomized clinical trial (2017)",
+    "publisher": "PLoS One",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28654669/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-39404918",
+    "kind": "study",
+    "title": "Dietary supplements for migraine prophylaxis – systematic review and dose-response meta-analysis (2025)",
+    "publisher": "Neurol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39404918/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-30764890",
+    "kind": "study",
+    "title": "Vitamins and minerals for migraine prophylaxis – systematic review and meta-analysis (2019)",
+    "publisher": "Can J Neurol Sci",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30764890/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-27530471",
+    "kind": "study",
+    "title": "Magnesium and glucose metabolism in people with or at risk of diabetes – meta-analysis (2016)",
+    "publisher": "Eur J Clin Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/27530471/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-14596323",
+    "kind": "study",
+    "title": "Mg citrate more bioavailable than other Mg preparations – randomised double-blind study (2003)",
+    "publisher": "Magnes Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14596323/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-32162607",
+    "kind": "study",
+    "title": "Bioavailability of Mg from Mg citrate and Mg oxide by urinary excretion (2019)",
+    "publisher": "Magnes Res",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/32162607/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-39770988",
+    "kind": "study",
+    "title": "Magnesium absorption of microencapsulated magnesium versus other magnesium sources – randomized crossover study (2024)",
+    "publisher": "Nutrients",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/39770988/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-37487817",
+    "kind": "study",
+    "title": "Perspective: Call for re-evaluation of the tolerable upper intake level for magnesium supplementation in adults (2023)",
+    "publisher": "Adv Nutr",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37487817/",
+    "retrievedAt": "2026-10-29",
+    "note": null
+  },
+  {
+    "id": "pmid-36749131",
+    "kind": "study",
+    "title": "Magnesium supplementation and vascular calcification in CKD (MAGiCAL-CKD, 2023)",
+    "publisher": "J Am Soc Nephrol",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36749131/",
+    "retrievedAt": "2026-10-29",
+    "note": null
   }
 ]

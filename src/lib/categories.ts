@@ -55,6 +55,18 @@ export const CATEGORIES: Category[] = [
     basisNote:
       'Fischöl-Kapseln unterscheiden sich stark im Gehalt an EPA und DHA. Darum rechnen wir den Preis auf 10 g EPA+DHA laut Etikett um (Summe aus EPA und DHA je Kapsel × Kapselzahl), nicht auf Kapseln oder Fischöl-Menge. Die Kapselzahl der Packungen unterscheidet sich; das kann den Preis je Gramm stark beeinflussen, auch innerhalb einer Marke (siehe Hinweise zu den Produkten).',
   },
+  {
+    substanceId: 'magnesium',
+    slug: 'magnesium',
+    name: 'Magnesium',
+    unit: 'elementares Magnesium',
+    unitShort: 'Mg (elementar)',
+    basisG: 10,
+    basisLabel: '10 g',
+    calculatorPath: '/rechner/magnesiumpreis/',
+    basisNote:
+      'Etiketten nennen oft die Verbindung (z. B. Magnesiumcitrat) und das darin enthaltene Magnesium getrennt. Wir rechnen den Preis auf 10 g elementares Magnesium je Etikett um (Kapselzahl × Magnesium je Kapsel). Die Form (Citrat, Glycinat, Oxid) wird bei jedem Produkt genannt; wie gut sie aufgenommen wird, ist unterschiedlich gut belegt.',
+  },
 ];
 
 export const categoryBySubstance = (id: string): Category => {

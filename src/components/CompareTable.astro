@@ -11,6 +11,8 @@ const rows: { label: string; cell: (v: ProductView) => string }[] = [
   { label: 'Variante', cell: (v) => v.product.variant },
   { label: 'Zutaten', cell: (v) => v.product.ingredients ?? 'nicht angegeben' },
   { label: `${unit} je 100 g`, cell: (v) => formatGrams(v.product.activePer100g) },
+  { label: 'Rohstoff laut Anbieter', cell: (v) => v.product.rawMaterial.name ?? 'nicht angegeben' },
+  { label: 'Allergenhinweis', cell: (v) => v.product.allergenNote ?? 'nicht angegeben' },
   { label: 'Portion laut Anbieter', cell: (v) => formatGrams(v.product.servingSizeG) },
   { label: 'Preis ohne Code', cell: (v) => (v.latest ? `${formatEur(v.latest.payableCents)}${v.latest.isSale ? (v.latest.saleExpired ? ' (Aktion beendet)' : v.latest.obs.saleEndsAt ? ` (Aktion bis ${formatDate(v.latest.obs.saleEndsAt)})` : ' (Aktion)') : ''}` : 'unbekannt') },
   { label: `Pro 100 g ${unit}`, cell: (v) => formatEur(v.latest?.payablePer100) },
